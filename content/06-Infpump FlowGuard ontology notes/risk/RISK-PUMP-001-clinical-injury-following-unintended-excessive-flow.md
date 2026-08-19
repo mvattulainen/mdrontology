@@ -66,7 +66,7 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 
 ## Traceability
 
-Previous dependencies are ontology notes that lead into this record. They reach it through `has_risk` from [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]]; `mitigates` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-001-independent-flow-monitoring|RCM-PUMP-001 — Independent flow monitoring]], [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-041-sterile-single-use-administration-set|RCM-PUMP-041 — Sterile single-use administration set]]; `impacts` from [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-001-battery-cell-supplier-replacement|CHG-PUMP-001 — Battery cell supplier replacement]]. These incoming links show which product, decision, process or evidence records depend on the current note.
+Previous dependencies are ontology notes that lead into this record. They reach it through `has_risk` from [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]]; `mitigates` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-001-independent-flow-monitoring|RCM-PUMP-001 — Independent flow monitoring]], [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-041-sterile-single-use-administration-set|RCM-PUMP-041 — Sterile single-use administration set]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
 Succeeding dependencies are ontology notes to which this record leads. The trace continues through `concerns` to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
@@ -81,8 +81,6 @@ flowchart LR
   PREV1 -->|"mitigates"| CURRENT
   PREV2["RCM-PUMP-041<br/>Sterile single-use administration set"]
   PREV2 -->|"mitigates"| CURRENT
-  PREV3["CHG-PUMP-001<br/>Battery cell supplier replacement"]
-  PREV3 -->|"impacts"| CURRENT
   NEXT0["DEVC-PUMP-001<br/>Infpump FlowGuard bedside configuration 1.0"]
   CURRENT -->|"concerns"| NEXT0
   classDef current fill:#dbeafe,stroke:#2563eb,stroke-width:2px

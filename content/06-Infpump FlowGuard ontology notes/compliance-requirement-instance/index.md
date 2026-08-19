@@ -11,7 +11,7 @@
 
 # Compliance requirement instance ontology notes
 
-50 independently identifiable compliance requirement instance notes for the imaginary Infpump FlowGuard infusion pump.
+51 independently identifiable compliance requirement instance notes for the imaginary Infpump FlowGuard infusion pump.
 
 ## Notes
 
@@ -65,6 +65,7 @@
 - [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-048-vigilance-readiness|CRI-PUMP-048 — Vigilance readiness]]
 - [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-049-production-release-controls|CRI-PUMP-049 — Production release controls]]
 - [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-050-configuration-and-change-control|CRI-PUMP-050 — Configuration and change control]]
+- [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-051-battery-endurance-after-cell-supplier-change|CRI-PUMP-051 — Battery endurance after cell-supplier change]]
 
 ## Continue
 

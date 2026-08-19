@@ -57,7 +57,7 @@ const familyDefinitions = [
   { type: "device-configuration", label: "Device configuration", count: 5, prefix: "DEVC-PUMP", file: "TF-01 Device Description/Device Configuration Index.xlsx" },
   { type: "intended-purpose", label: "Intended purpose", count: 5, prefix: "IP-PUMP", file: "TF-02 Intended Purpose/Intended Purpose Specification.docx" },
   { type: "classification-decision", label: "Classification decision", count: 5, prefix: "CLD-PUMP", file: "TF-03 Classification/Classification Rationale.docx" },
-  { type: "compliance-requirement-instance", label: "Compliance requirement instance", count: 50, prefix: "CRI-PUMP", file: "TF-04 GSPR/GSPR Checklist.xlsx" },
+  { type: "compliance-requirement-instance", label: "Compliance requirement instance", count: 51, prefix: "CRI-PUMP", file: "TF-04 GSPR/GSPR Checklist.xlsx" },
   { type: "hazard", label: "Hazard", count: 20, prefix: "HAZ-PUMP", file: "TF-05 Risk Management/Risk Analysis and Risk Matrix.xlsx" },
   { type: "hazardous-situation", label: "Hazardous situation", count: 20, prefix: "HS-PUMP", file: "TF-05 Risk Management/Risk Analysis and Risk Matrix.xlsx" },
   { type: "harm", label: "Harm", count: 10, prefix: "HARM-PUMP", file: "TF-05 Risk Management/Risk Analysis and Risk Matrix.xlsx" },
@@ -66,6 +66,7 @@ const familyDefinitions = [
   { type: "clinical-claim", label: "Clinical claim", count: 20, prefix: "CLM-PUMP", file: "TF-06 Clinical Evaluation/Clinical Claims Matrix.xlsx" },
   { type: "verification-evidence", label: "Verification evidence", count: 30, prefix: "EVD-PUMP", file: "TF-07 Verification and Validation/V&V Evidence Index.xlsx" },
   { type: "change", label: "Change", count: 12, prefix: "CHG-PUMP", file: "TF-08 Change Control/Design Change Register.xlsx" },
+  { type: "change-impact-assessment", label: "Change impact assessment", count: 1, prefix: "CIA-PUMP", file: "TF-08 Change Control/Change Impact Assessments.xlsx" },
   { type: "signal", label: "Signal", count: 10, prefix: "SIGNAL-PUMP", file: "TF-09 PMS/PMS Signal Register.xlsx" },
   { type: "certificate", label: "Certificate", count: 3, prefix: "CERT-PUMP", file: "TF-10 Conformity/MDR Certificates Register.xlsx" },
   { type: "component", label: "Component", count: 10, prefix: "COMP-PUMP", file: "TF-01 Device Description/Bill of Materials.xlsx" },
@@ -117,6 +118,7 @@ const titles = {
     "Data integrity", "Clock and event chronology", "Interoperability", "Network-disconnection behaviour", "Human factors validation",
     "Display readability", "Control-panel usability", "Labelling content", "Instructions-for-use completeness", "UDI traceability",
     "Clinical evaluation support", "PMS planning", "Vigilance readiness", "Production release controls", "Configuration and change control",
+    "Battery endurance after cell-supplier change",
   ],
   hazard: [
     "Unintended excessive flow", "Insufficient delivered flow", "Occluded infusion pathway", "Air introduced into infusion line", "Uncontrolled free flow",
@@ -162,6 +164,9 @@ const titles = {
   change: [
     "Battery cell supplier replacement", "Occlusion algorithm threshold update", "Air-sensor component revision", "Touchscreen controller replacement", "Alarm speaker supplier change", "Drug-library schema update",
     "Cybersecurity operating-system patch", "Pole-clamp material change", "Ingress seal geometry update", "Administration-set compatibility extension", "Network protocol revision", "Manufacturing test-station software update",
+  ],
+  "change-impact-assessment": [
+    "Battery cell-supplier change impact assessment",
   ],
   signal: [
     "Unexpected battery runtime reduction", "Delayed occlusion alarm trend", "Intermittent air-sensor nuisance alarms", "Touchscreen confirmation mis-selection", "Reduced alarm audibility reports",
@@ -214,7 +219,7 @@ for (const family of familyDefinitions) {
     records.push({ id, type: family.type, title, number, family, relations: {}, extra: {} })
   })
 }
-if (records.length !== 310) throw new Error(`Expected 310 ontology notes (300 core plus 10 architecture extensions), found ${records.length}`)
+if (records.length !== 312) throw new Error(`Expected 312 ontology notes (300 core, 10 architecture extensions and 2 battery-workflow extensions), found ${records.length}`)
 
 const byType = new Map(familyDefinitions.map((family) => [family.type, records.filter((record) => record.type === family.type)]))
 const at = (type, index) => byType.get(type)[index % byType.get(type).length]
@@ -235,6 +240,10 @@ for (const record of records) {
     record.relations.has_hazard = byType.get("hazard").slice(index * 4, index * 4 + 4).map((item) => item.id)
     record.relations.has_risk = byType.get("risk").slice(index * 8, index * 8 + 8).map((item) => item.id)
     record.relations.includes_component = byType.get("component").slice(index * 2, index * 2 + 2).map((item) => item.id)
+    if (index === 0) {
+      record.relations.has_applicable_requirement.push("CRI-PUMP-051")
+      record.relations.includes_component.push("COMP-PUMP-004")
+    }
     record.relations.makes_clinical_claim = byType.get("clinical-claim").slice(index * 4, index * 4 + 4).map((item) => item.id)
     record.relations.has_certificate = [at("certificate", index).id]
     record.relations.has_baseline = [at("configuration-baseline", 0).id]
@@ -267,6 +276,13 @@ for (const record of records) {
     record.extra.applicability_rationale = `Applicable to ${config.id} because the configured function or lifecycle control is within the requirement scope.`
     record.extra.compliance_method = `Verification and controlled-document review for ${record.id}`
     record.extra.compliance_status = "satisfied"
+    if (record.id === "CRI-PUMP-051") {
+      record.relations.instantiates_requirement = ["GSPR-0001"]
+      delete record.relations.satisfied_by
+      record.extra.applicability_rationale = "Applicable to DEVC-PUMP-001 because CHG-PUMP-001 changes the safety-critical battery-cell supply and the released endurance claim must be reconfirmed before change closure."
+      record.extra.compliance_method = "Planned battery-endurance verification against the released acceptance criteria after CHG-PUMP-001"
+      record.extra.compliance_status = "planned"
+    }
   } else if (record.type === "hazard") {
     record.relations.can_lead_to = [at("hazardous-situation", index).id]
     record.extra.hazard_category = index < 6 ? "therapy-delivery" : index < 12 ? "electrical-software" : "mechanical-use-environment"
@@ -277,10 +293,18 @@ for (const record of records) {
     record.extra.risk_matrix_identifier = record.id
     record.extra.initial_risk = index % 3 === 0 ? "high" : "medium"
     record.extra.residual_risk = index % 5 === 0 ? "medium" : "low"
+    if (record.id === "RISK-PUMP-013") {
+      record.extra.device_context = "DEVC-PUMP-001"
+      record.relations.concerns = ["DEVC-PUMP-001"]
+    }
   } else if (record.type === "risk-control-measure") {
     record.relations.mitigates = [at("risk", index).id]
     record.relations.verified_by = [at("verification-evidence", index).id]
     record.extra.control_priority = index < 30 ? "inherent-safety-or-protective-measure" : "information-for-safety-or-production-control"
+    if (record.id === "RCM-PUMP-013") {
+      record.extra.device_context = "DEVC-PUMP-001"
+      record.relations.verified_by = ["EVD-PUMP-007"]
+    }
   } else if (record.type === "clinical-claim") {
     record.extra.claim_status = "supported"
     record.extra.claim_scope = config.id
@@ -288,17 +312,32 @@ for (const record of records) {
     record.relations.applies_to_configuration = [config.id]
     record.extra.approved_at = today
     record.extra.evidence_scope = record.title
+    if (record.id === "EVD-PUMP-007") {
+      record.extra.device_context = "DEVC-PUMP-001"
+      record.relations.applies_to_configuration = ["DEVC-PUMP-001"]
+    }
   } else if (record.type === "change") {
     record.relations.concerns = [config.id]
     record.relations.impacts = [at("risk", index * 2).id]
     record.relations.affected_evidence = [at("verification-evidence", index).id]
     record.extra.impact_level = index % 3 === 0 ? "high" : "medium"
     record.extra.change_state = "under-assessment"
+    if (record.id === "CHG-PUMP-001") {
+      record.relations.impacts = ["RISK-PUMP-013"]
+      record.relations.affected_evidence = ["EVD-PUMP-007"]
+      record.relations.has_impact_assessment = ["CIA-PUMP-001"]
+    }
+  } else if (record.type === "change-impact-assessment") {
+    record.relations.concerns = ["DEVC-PUMP-001"]
+    record.relations.supported_by = ["EVD-PUMP-007"]
+    record.extra.assessment_scope = "Battery endurance, supplier controls, residual risk and verification impact of CHG-PUMP-001"
+    record.extra.assessment_state = "under-assessment"
   } else if (record.type === "signal") {
     record.relations.concerns = [config.id]
     record.relations.triggers = [at("change", index).id]
     record.extra.signal_state = "under-assessment"
     record.extra.detected_at = today
+    if (record.id === "SIGNAL-PUMP-001") record.extra.signal_state = "accepted"
   } else if (record.type === "certificate") {
     record.relations.applies_to_configuration = byType.get("device-configuration").filter((_, configIndex) => configIndex % 3 === index).map((item) => item.id)
     record.extra.valid_from = today
@@ -307,10 +346,12 @@ for (const record of records) {
   } else if (record.type === "component") {
     record.extra.component_criticality = index < 8 ? "safety-critical" : "major"
     record.extra.part_number = `FG-${String(1000 + record.number)}`
+    if (record.id === "COMP-PUMP-004") record.extra.device_context = "DEVC-PUMP-001"
   } else if (record.type === "supplier") {
     record.extra.supplied_component = at("component", index * 2 + 1).id
     record.extra.supplier_criticality = "critical"
     record.extra.approval_state = "approved"
+    if (record.id === "SUP-PUMP-001") record.extra.supplied_component = "COMP-PUMP-004"
   } else if (record.type === "qms-process") {
     record.relations.owned_by = [index % 2 === 0 ? "ROLE-QUALITY" : "ROLE-REGULATORY-AFFAIRS"]
     if (index === 3) record.relations.outsourced_to = [at("supplier", index).id]
@@ -507,6 +548,7 @@ const semanticRole = (record) => {
     "clinical-claim": "Defines one device-performance or clinical-use claim that requires controlled clinical support.",
     "verification-evidence": "Describes what one approved evidence item demonstrates and which exact device configuration it covers.",
     change: "Represents one proposed product or process change whose regulatory impact must be assessed before implementation.",
+    "change-impact-assessment": "Documents the controlled assessment of how a proposed change affects requirements, configuration, risk, evidence and required follow-up actions.",
     signal: "Represents one post-market finding that requires assessment and can trigger a controlled change or other action.",
     certificate: "Represents one certificate, its configuration coverage and temporal validity state.",
     component: "Gives a safety-relevant physical or software component an identity that can be referenced by configurations, suppliers, risks and changes.",
@@ -539,7 +581,15 @@ for (const record of records) {
       `18-ontology-notes/${record.type}/${basenameById.get(record.id)}`,
       `03-Ontology notes/${record.type}/${basenameById.get(record.id)}`,
     ],
-    status: record.type === "risk" ? "accepted" : record.type === "change" || record.type === "signal" ? "under-assessment" : "approved",
+    status: record.id === "CRI-PUMP-051"
+      ? "draft"
+      : record.id === "SIGNAL-PUMP-001" || record.type === "risk"
+        ? "accepted"
+        : record.id === "RCM-PUMP-013"
+          ? "implemented"
+          : record.type === "change" || record.type === "signal" || record.type === "change-impact-assessment"
+            ? "under-assessment"
+            : "approved",
     version: "1",
     created: today,
     modified: today,
@@ -646,11 +696,30 @@ const ontologyOverviewBody = [
 const allIndexBody = [
   "# 06-Infpump FlowGuard ontology notes",
   "",
-  "This index groups all 310 ontology notes by their existing vault class. Shared organisations and other reusable domain instances remain canonical under 01 — Ontology instances, while regulatory sources remain canonical under 02 — Sources. This section adds device-specific Infpump FlowGuard notes and links to those canonical nodes rather than duplicating them.",
+  "This index groups all 312 ontology notes by their existing vault class. Shared organisations and other reusable domain instances remain canonical under 01 — Ontology instances, while regulatory sources remain canonical under 02 — Sources. This section adds device-specific Infpump FlowGuard notes and links to those canonical nodes rather than duplicating them.",
   "",
   "## Canonical-node policy",
   "",
   "A shared legal provision, guidance source, organisation or generic GSPR is referenced in its canonical ontology-instance or source page. Only the device-specific regulated object is created here. Backlinks and typed provenance relations join the two layers.",
+  "",
+  "<!-- ontology-note-guides:start -->",
+  "## Understanding and traversing ontology notes",
+  "",
+  "Read [[07_Other/00-Meta/META-ONTOLOGY-NOTE-ontology-note|What is an ontology note?]] for the purpose, structure and review boundary of these records.",
+  "",
+  "The following diagrams connect real Infpump FlowGuard notes into regulatory reasoning paths:",
+  "",
+  "- [Device identity and regulatory context](/06-infpump-flowguard-ontology-notes/connections/01-device-identity-and-regulatory-context)",
+  "- [Excessive-flow risk-control chain](/06-infpump-flowguard-ontology-notes/connections/02-excessive-flow-risk-control-chain)",
+  "- [Occlusion-detection safety case](/06-infpump-flowguard-ontology-notes/connections/03-occlusion-detection-safety-case)",
+  "- [Air-in-line protection chain](/06-infpump-flowguard-ontology-notes/connections/04-air-in-line-protection-chain)",
+  "- [Battery signal to change assessment](/06-infpump-flowguard-ontology-notes/connections/05-battery-signal-to-change-assessment)",
+  "- [Cybersecurity control and feedback loop](/06-infpump-flowguard-ontology-notes/connections/06-cybersecurity-control-and-feedback-loop)",
+  "- [Clinical claim to evaluation report](/06-infpump-flowguard-ontology-notes/connections/07-clinical-claim-to-evaluation-report)",
+  "- [Electrical-safety compliance trace](/06-infpump-flowguard-ontology-notes/connections/08-electrical-safety-compliance-trace)",
+  "- [PMS signal and change feedback](/06-infpump-flowguard-ontology-notes/connections/09-pms-signal-and-change-feedback)",
+  "- [Supplier and component change control](/06-infpump-flowguard-ontology-notes/connections/10-supplier-component-change-control)",
+  "<!-- ontology-note-guides:end -->",
   "",
   ...familyDefinitions.flatMap((family) => [
     `## ${family.label}`,
@@ -697,6 +766,12 @@ const questionTargets = {
 }
 
 const questionFiles = (await walk(path.join(contentRoot, "05-Questions"))).sort()
+const atForQuestion = (type, index) => {
+  const candidates = type === "compliance-requirement-instance"
+    ? byType.get(type).filter((record) => record.id !== "CRI-PUMP-051")
+    : byType.get(type)
+  return candidates[index % candidates.length]
+}
 const removedQuestionSections = [
   "Current rule result",
   "Evidence and compliance state",
@@ -711,7 +786,7 @@ for (const [questionIndex, file] of questionFiles.entries()) {
   const folder = path.basename(path.dirname(file))
   const types = questionTargets[folder]
   if (!types) throw new Error(`No ontology-note mapping for question folder ${folder}`)
-  const primary = at(types[questionIndex % types.length], questionIndex)
+  const primary = atForQuestion(types[questionIndex % types.length], questionIndex)
   const secondary = at("device-configuration", questionIndex)
   const refs = primary.id === secondary.id ? [primary] : [primary, secondary]
   parsed.data.example_ontology_notes = refs.map((record) => link(record.id))

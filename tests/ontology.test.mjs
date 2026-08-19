@@ -98,10 +98,10 @@ test("five high-impact use cases are assessed and executable as demonstrations",
   assert.match(api.byId.get("UC-DEMO-18").body, /device_type/)
 })
 
-test("the 300-note infusion-pump core and architecture extensions are complete and use established classes", () => {
+test("the infusion-pump core and architecture extensions are complete and use established classes", () => {
   const notes = api.notes.filter((note) => note.path.startsWith("06-Infpump FlowGuard ontology notes/") && note.data.id)
-  assert.equal(notes.length, 310)
-  assert.equal(new Set(notes.map((note) => note.data.type)).size, 28)
+  assert.equal(notes.length, 312)
+  assert.equal(new Set(notes.map((note) => note.data.type)).size, 29)
   for (const note of notes) {
     assert.ok(api.classes.has(note.data.type), `${note.data.id} uses an unknown ontology class`)
     assert.ok(note.data.aliases.some((alias) => alias.startsWith(`${note.data.id}-`)), `${note.data.id} lacks its root-level filename alias`)
@@ -131,6 +131,11 @@ test("the 300-note infusion-pump core and architecture extensions are complete a
   const risk = api.byId.get("RISK-PUMP-001")
   assert.equal(risk.data.risk_matrix_identifier, "RISK-PUMP-001")
   assert.match(risk.data.technical_file, /Risk Analysis and Risk Matrix\.xlsx/)
+
+  const batteryWorkflowStatuses = new Set([
+    "CRI-PUMP-051", "CIA-PUMP-001", "SIGNAL-PUMP-001", "RCM-PUMP-013", "EVD-PUMP-007", "RISK-PUMP-013",
+  ].map((id) => api.byId.get(id)?.data.status))
+  assert.deepEqual(batteryWorkflowStatuses, new Set(["draft", "under-assessment", "accepted", "implemented", "approved"]))
 })
 
 test("ontology-note guidance and ten linked Mermaid narratives are complete", async () => {
@@ -157,6 +162,14 @@ test("ontology-note guidance and ten linked Mermaid narratives are complete", as
     const clickableNodes = [...source.matchAll(/^\s*click N\d+ "\/06-infpump-flowguard-ontology-notes\//gm)]
     assert.equal(clickableNodes.length, linkedTargets.size, `${page.name} must make every Mermaid node clickable`)
   }
+
+  const batteryPage = await readFile(new URL("05-battery-signal-to-change-assessment.md", directory), "utf8")
+  for (const status of ["draft", "approved", "accepted", "under-assessment", "implemented"]) {
+    assert.match(batteryPage, new RegExp(`classDef ${status.replace("-", "_")} .*stroke-width:4px`))
+  }
+  assert.match(batteryPage, /Status border legend/)
+  assert.match(batteryPage, /CRI-PUMP-051/)
+  assert.match(batteryPage, /CIA-PUMP-001/)
 
   const notesIndex = await readFile(new URL("../content/06-Infpump%20FlowGuard%20ontology%20notes/index.md", import.meta.url), "utf8")
   assert.match(notesIndex, /META-ONTOLOGY-NOTE-ontology-note/)

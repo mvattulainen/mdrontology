@@ -64,7 +64,7 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 
 ## Traceability
 
-Previous dependencies are ontology notes that lead into this record. They reach it through `satisfied_by` from [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-013-measurement-accuracy|CRI-PUMP-013 — Measurement accuracy]], [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-043-labelling-content|CRI-PUMP-043 — Labelling content]]; `verified_by` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-013-battery-state-of-charge-estimation|RCM-PUMP-013 — Battery state-of-charge estimation]], [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-043-setup-workflow-checklist|RCM-PUMP-043 — Setup workflow checklist]]. These incoming links show which product, decision, process or evidence records depend on the current note.
+Previous dependencies are ontology notes that lead into this record. They reach it through `satisfied_by` from [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-013-measurement-accuracy|CRI-PUMP-013 — Measurement accuracy]], [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-043-labelling-content|CRI-PUMP-043 — Labelling content]]; `verified_by` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-043-setup-workflow-checklist|RCM-PUMP-043 — Setup workflow checklist]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
 Succeeding dependencies are ontology notes to which this record leads. The trace continues through `applies_to_configuration` to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003 — Infpump FlowGuard paediatric configuration 1.0]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
@@ -77,10 +77,8 @@ flowchart LR
   PREV0 -->|"satisfied_by"| CURRENT
   PREV1["CRI-PUMP-043<br/>Labelling content"]
   PREV1 -->|"satisfied_by"| CURRENT
-  PREV2["RCM-PUMP-013<br/>Battery state-of-charge estimation"]
+  PREV2["RCM-PUMP-043<br/>Setup workflow checklist"]
   PREV2 -->|"verified_by"| CURRENT
-  PREV3["RCM-PUMP-043<br/>Setup workflow checklist"]
-  PREV3 -->|"verified_by"| CURRENT
   NEXT0["DEVC-PUMP-003<br/>Infpump FlowGuard paediatric configuration 1.0"]
   CURRENT -->|"applies_to_configuration"| NEXT0
   classDef current fill:#dbeafe,stroke:#2563eb,stroke-width:2px

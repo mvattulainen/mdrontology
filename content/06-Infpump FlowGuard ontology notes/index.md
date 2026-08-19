@@ -12,7 +12,7 @@
 
 # 06-Infpump FlowGuard ontology notes
 
-This index groups all 310 ontology notes by their existing vault class. Shared organisations and other reusable domain instances remain canonical under 01 — Ontology instances, while regulatory sources remain canonical under 02 — Sources. This section adds device-specific Infpump FlowGuard notes and links to those canonical nodes rather than duplicating them.
+This index groups all 312 ontology notes by their existing vault class. Shared organisations and other reusable domain instances remain canonical under 01 — Ontology instances, while regulatory sources remain canonical under 02 — Sources. This section adds device-specific Infpump FlowGuard notes and links to those canonical nodes rather than duplicating them.
 
 ## Canonical-node policy
 
@@ -51,7 +51,7 @@ The following diagrams connect real Infpump FlowGuard notes into regulatory reas
 
 ## Compliance requirement instance
 
-[Browse 50 compliance requirement instance notes](/06-infpump-flowguard-ontology-notes/compliance-requirement-instance/). Example: [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-001-risk-reduction-and-acceptable-residual-risk|CRI-PUMP-001]].
+[Browse 51 compliance requirement instance notes](/06-infpump-flowguard-ontology-notes/compliance-requirement-instance/). Example: [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-001-risk-reduction-and-acceptable-residual-risk|CRI-PUMP-001]].
 
 ## Hazard
 
@@ -84,6 +84,10 @@ The following diagrams connect real Infpump FlowGuard notes into regulatory reas
 ## Change
 
 [Browse 12 change notes](/06-infpump-flowguard-ontology-notes/change/). Example: [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-001-battery-cell-supplier-replacement|CHG-PUMP-001]].
+
+## Change impact assessment
+
+[Browse 1 change impact assessment notes](/06-infpump-flowguard-ontology-notes/change-impact-assessment/). Example: [[06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-001-battery-cell-supplier-change-impact-assessment|CIA-PUMP-001]].
 
 ## Signal
 

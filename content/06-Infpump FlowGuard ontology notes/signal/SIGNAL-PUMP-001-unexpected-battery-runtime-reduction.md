@@ -9,7 +9,7 @@
     "18-ontology-notes/signal/SIGNAL-PUMP-001-unexpected-battery-runtime-reduction",
     "03-Ontology notes/signal/SIGNAL-PUMP-001-unexpected-battery-runtime-reduction"
   ],
-  "status": "under-assessment",
+  "status": "accepted",
   "version": "1",
   "created": "2026-08-15",
   "modified": "2026-08-15",
@@ -24,7 +24,7 @@
   "valid_from": "2026-08-15",
   "review_status": "approved",
   "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
-  "signal_state": "under-assessment",
+  "signal_state": "accepted",
   "detected_at": "2026-08-15",
   "concerns": [
     "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
@@ -49,7 +49,7 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **type:** `signal`
 - **title:** `Unexpected battery runtime reduction`
 - **aliases:** `SIGNAL-PUMP-001`, `SIGNAL-PUMP-001-unexpected-battery-runtime-reduction`, `18-ontology-notes/signal/SIGNAL-PUMP-001-unexpected-battery-runtime-reduction`, `03-Ontology notes/signal/SIGNAL-PUMP-001-unexpected-battery-runtime-reduction`
-- **status:** `under-assessment`
+- **status:** `accepted`
 - **version:** `1`
 - **created:** `2026-08-15`
 - **modified:** `2026-08-15`
@@ -61,7 +61,7 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **valid_from:** `2026-08-15`
 - **review_status:** `approved`
 - **device_context:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]
-- **signal_state:** `under-assessment`
+- **signal_state:** `accepted`
 - **detected_at:** `2026-08-15`
 - **concerns:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]
 - **triggers:** [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-001-battery-cell-supplier-replacement|CHG-PUMP-001]]

@@ -23,7 +23,7 @@
   "technical_file_identifier": "COMP-PUMP-004",
   "valid_from": "2026-08-15",
   "review_status": "approved",
-  "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004]]",
+  "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
   "component_criticality": "safety-critical",
   "part_number": "FG-1004"
 }
@@ -54,25 +54,29 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **technical_file_identifier:** `COMP-PUMP-004`
 - **valid_from:** `2026-08-15`
 - **review_status:** `approved`
-- **device_context:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004]]
+- **device_context:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]
 - **component_criticality:** `safety-critical`
 - **part_number:** `FG-1004`
 
 ## Traceability
 
-Previous dependencies are ontology notes that lead into this record. They reach it through `includes_component` from [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002 — Infpump FlowGuard transport configuration 1.0]]; `supplied_component` from [[06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-002-air-sensor-critical-supplier|SUP-PUMP-002 — Air sensor critical supplier]]. These incoming links show which product, decision, process or evidence records depend on the current note.
+Previous dependencies are ontology notes that lead into this record. They reach it through `includes_component` from [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]], [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002 — Infpump FlowGuard transport configuration 1.0]]; `supplied_component` from [[06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-001-battery-pack-critical-supplier|SUP-PUMP-001 — Battery pack critical supplier]], [[06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-002-air-sensor-critical-supplier|SUP-PUMP-002 — Air sensor critical supplier]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
-No succeeding ontology-note dependency is currently asserted for this record. It remains scoped to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004 — Infpump FlowGuard oncology configuration 1.1]], and any future downstream dependency should be added as a typed relationship rather than inferred from prose.
+No succeeding ontology-note dependency is currently asserted for this record. It remains scoped to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]], and any future downstream dependency should be added as a typed relationship rather than inferred from prose.
 
 The left-to-right diagram shows up to five asserted previous and five asserted succeeding ontology-note dependencies. When more links exist, the additional-dependency node states how many remain available through the verbal links and structured metadata above.
 
 ```mermaid
 flowchart LR
   CURRENT["COMP-PUMP-004<br/>Rechargeable battery pack"]
-  PREV0["DEVC-PUMP-002<br/>Infpump FlowGuard transport configuration 1.0"]
+  PREV0["DEVC-PUMP-001<br/>Infpump FlowGuard bedside configuration 1.0"]
   PREV0 -->|"includes_component"| CURRENT
-  PREV1["SUP-PUMP-002<br/>Air sensor critical supplier"]
-  PREV1 -->|"supplied_component"| CURRENT
+  PREV1["DEVC-PUMP-002<br/>Infpump FlowGuard transport configuration 1.0"]
+  PREV1 -->|"includes_component"| CURRENT
+  PREV2["SUP-PUMP-001<br/>Battery pack critical supplier"]
+  PREV2 -->|"supplied_component"| CURRENT
+  PREV3["SUP-PUMP-002<br/>Air sensor critical supplier"]
+  PREV3 -->|"supplied_component"| CURRENT
   NEXT_NONE["No asserted succeeding dependency"]
   CURRENT -.-> NEXT_NONE
   classDef current fill:#dbeafe,stroke:#2563eb,stroke-width:2px

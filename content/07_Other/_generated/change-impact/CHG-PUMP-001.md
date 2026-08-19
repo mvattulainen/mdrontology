@@ -13,12 +13,12 @@
 - Change type: `undefined`
 - Status: `under-assessment`
 - Affected configuration: DEVC-PUMP-001
-- Impact assessment: missing
+- Impact assessment: CIA-PUMP-001
 - Mandatory impact domains reviewed: 
 
 ## Impacted nodes
 
-- RISK-PUMP-001 — Clinical injury following unintended excessive flow (`risk`)
+- RISK-PUMP-013 — Clinical injury following premature battery depletion (`risk`)
 
 ## Derived reassessments
 

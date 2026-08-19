@@ -20,7 +20,7 @@
     "[[CLS-DECISION-decision|CLS-DECISION]]"
   ],
   "example_ontology_notes": [
-    "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
+    "[[06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-001-battery-cell-supplier-change-impact-assessment|CIA-PUMP-001]]"
   ],
   "terminology_type": "Ontology",
   "definition": "A documented evaluation of how a proposed or implemented change affects device configuration, risk, clinical evidence, regulatory status, documentation and required actions."
@@ -48,6 +48,6 @@ Parent class: [[CLS-DECISION-decision|CLS-DECISION]].
 
 ## Infusion-pump ontology-note example
 
-- [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]]
+- [[06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-001-battery-cell-supplier-change-impact-assessment|CIA-PUMP-001 — Battery cell-supplier change impact assessment]]
 
 This ontology-class page is connected to a concrete Infpump FlowGuard ontology note so its terminology or contract can be inspected in device-specific context.

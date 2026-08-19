@@ -1,7 +1,7 @@
 {
   "metadata": {
     "specification": "SPEC-MDR-MFR-ONTOLOGY-001",
-    "generated_at": "2026-08-17T07:17:52.656Z",
+    "generated_at": "2026-08-19T03:18:23.266Z",
     "relevant_date": "2026-08-17",
     "canonical_source": "content/**/*.md"
   },
@@ -621,7 +621,7 @@
           "[[CLS-DECISION-decision|CLS-DECISION]]"
         ],
         "example_ontology_notes": [
-          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
+          "[[06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-001-battery-cell-supplier-change-impact-assessment|CIA-PUMP-001]]"
         ],
         "terminology_type": "Ontology",
         "definition": "A documented evaluation of how a proposed or implemented change affects device configuration, risk, clinical evidence, regulatory status, documentation and required actions."
@@ -7635,7 +7635,7 @@
         "provenance_required": false,
         "temporal_qualification_required": false,
         "example_ontology_notes": [
-          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
+          "[[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-001-battery-cell-supplier-replacement|CHG-PUMP-001]]"
         ]
       }
     },
@@ -17352,10 +17352,13 @@
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
         ],
         "impacts": [
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-001-clinical-injury-following-unintended-excessive-flow|RISK-PUMP-001]]"
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-013-clinical-injury-following-premature-battery-depletion|RISK-PUMP-013]]"
         ],
         "affected_evidence": [
-          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-001-flow-accuracy-verification-report|EVD-PUMP-001]]"
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-007-battery-endurance-validation-report|EVD-PUMP-007]]"
+        ],
+        "has_impact_assessment": [
+          "[[06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-001-battery-cell-supplier-change-impact-assessment|CIA-PUMP-001]]"
         ]
       }
     },
@@ -17829,6 +17832,46 @@
         ],
         "affected_evidence": [
           "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-012-cybersecurity-penetration-test-report|EVD-PUMP-012]]"
+        ]
+      }
+    },
+    {
+      "id": "CIA-PUMP-001",
+      "type": "change-impact-assessment",
+      "title": "Battery cell-supplier change impact assessment",
+      "path": "06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-001-battery-cell-supplier-change-impact-assessment.md",
+      "data": {
+        "id": "CIA-PUMP-001",
+        "type": "change-impact-assessment",
+        "title": "Battery cell-supplier change impact assessment",
+        "aliases": [
+          "CIA-PUMP-001",
+          "CIA-PUMP-001-battery-cell-supplier-change-impact-assessment",
+          "18-ontology-notes/change-impact-assessment/CIA-PUMP-001-battery-cell-supplier-change-impact-assessment",
+          "03-Ontology notes/change-impact-assessment/CIA-PUMP-001-battery-cell-supplier-change-impact-assessment"
+        ],
+        "status": "under-assessment",
+        "version": "1",
+        "created": "2026-08-15",
+        "modified": "2026-08-15",
+        "tags": [
+          "ontology-note/change-impact-assessment",
+          "device/infpump-flowguard"
+        ],
+        "draft": false,
+        "note_origin": "human-reviewed synthetic example",
+        "technical_file": "TF-08 Change Control/Change Impact Assessments.xlsx",
+        "technical_file_identifier": "CIA-PUMP-001",
+        "valid_from": "2026-08-15",
+        "review_status": "approved",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
+        "assessment_scope": "Battery endurance, supplier controls, residual risk and verification impact of CHG-PUMP-001",
+        "assessment_state": "under-assessment",
+        "concerns": [
+          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
+        ],
+        "supported_by": [
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-007-battery-endurance-validation-report|EVD-PUMP-007]]"
         ]
       }
     },
@@ -21185,6 +21228,48 @@
       }
     },
     {
+      "id": "CRI-PUMP-051",
+      "type": "compliance-requirement-instance",
+      "title": "Battery endurance after cell-supplier change",
+      "path": "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-051-battery-endurance-after-cell-supplier-change.md",
+      "data": {
+        "id": "CRI-PUMP-051",
+        "type": "compliance-requirement-instance",
+        "title": "Battery endurance after cell-supplier change",
+        "aliases": [
+          "CRI-PUMP-051",
+          "CRI-PUMP-051-battery-endurance-after-cell-supplier-change",
+          "18-ontology-notes/compliance-requirement-instance/CRI-PUMP-051-battery-endurance-after-cell-supplier-change",
+          "03-Ontology notes/compliance-requirement-instance/CRI-PUMP-051-battery-endurance-after-cell-supplier-change"
+        ],
+        "status": "draft",
+        "version": "1",
+        "created": "2026-08-15",
+        "modified": "2026-08-15",
+        "tags": [
+          "ontology-note/compliance-requirement-instance",
+          "device/infpump-flowguard"
+        ],
+        "draft": false,
+        "note_origin": "human-reviewed synthetic example",
+        "technical_file": "TF-04 GSPR/GSPR Checklist.xlsx",
+        "technical_file_identifier": "CRI-PUMP-051",
+        "valid_from": "2026-08-15",
+        "review_status": "approved",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
+        "applicable": true,
+        "applicability_rationale": "Applicable to DEVC-PUMP-001 because CHG-PUMP-001 changes the safety-critical battery-cell supply and the released endurance claim must be reconfirmed before change closure.",
+        "compliance_method": "Planned battery-endurance verification against the released acceptance criteria after CHG-PUMP-001",
+        "compliance_status": "planned",
+        "instantiates_requirement": [
+          "[[01-Ontology instances/04-requirements/gspr/GSPR-0001-electrical-safety|GSPR-0001]]"
+        ],
+        "derived_from": [
+          "[[02-Sources/legislation/PROV-MDR-ANNEX-I-mdr-annex-i-gsprs|PROV-MDR-ANNEX-I]]"
+        ]
+      }
+    },
+    {
       "id": "COMP-PUMP-001",
       "type": "component",
       "title": "Infusion pumping mechanism",
@@ -21315,7 +21400,7 @@
         "technical_file_identifier": "COMP-PUMP-004",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
         "component_criticality": "safety-critical",
         "part_number": "FG-1004"
       }
@@ -21618,7 +21703,8 @@
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-007-device-lifetime-definition|CRI-PUMP-007]]",
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-008-transport-and-storage-protection|CRI-PUMP-008]]",
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-009-compatibility-with-medicinal-products|CRI-PUMP-009]]",
-          "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-010-biological-safety-of-fluid-path-materials|CRI-PUMP-010]]"
+          "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-010-biological-safety-of-fluid-path-materials|CRI-PUMP-010]]",
+          "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-051-battery-endurance-after-cell-supplier-change|CRI-PUMP-051]]"
         ],
         "has_hazard": [
           "[[06-Infpump FlowGuard ontology notes/hazard/HAZ-PUMP-001-unintended-excessive-flow|HAZ-PUMP-001]]",
@@ -21638,7 +21724,8 @@
         ],
         "includes_component": [
           "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-001-infusion-pumping-mechanism|COMP-PUMP-001]]",
-          "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-002-air-in-line-sensor-assembly|COMP-PUMP-002]]"
+          "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-002-air-in-line-sensor-assembly|COMP-PUMP-002]]",
+          "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-004-rechargeable-battery-pack|COMP-PUMP-004]]"
         ],
         "makes_clinical_claim": [
           "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-001-maintains-programmed-volumetric-flow-within-specified-accuracy|CLM-PUMP-001]]",
@@ -25099,12 +25186,12 @@
         "technical_file_identifier": "RISK-PUMP-013",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
         "risk_matrix_identifier": "RISK-PUMP-013",
         "initial_risk": "high",
         "residual_risk": "low",
         "concerns": [
-          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]"
+          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
         ]
       }
     },
@@ -26617,7 +26704,7 @@
           "18-ontology-notes/risk-control-measure/RCM-PUMP-013-battery-state-of-charge-estimation",
           "03-Ontology notes/risk-control-measure/RCM-PUMP-013-battery-state-of-charge-estimation"
         ],
-        "status": "approved",
+        "status": "implemented",
         "version": "1",
         "created": "2026-08-15",
         "modified": "2026-08-15",
@@ -26631,13 +26718,13 @@
         "technical_file_identifier": "RCM-PUMP-013",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
         "control_priority": "inherent-safety-or-protective-measure",
         "mitigates": [
           "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-013-clinical-injury-following-premature-battery-depletion|RISK-PUMP-013]]"
         ],
         "verified_by": [
-          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-013-security-update-verification-report|EVD-PUMP-013]]"
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-007-battery-endurance-validation-report|EVD-PUMP-007]]"
         ]
       }
     },
@@ -27904,7 +27991,7 @@
           "18-ontology-notes/signal/SIGNAL-PUMP-001-unexpected-battery-runtime-reduction",
           "03-Ontology notes/signal/SIGNAL-PUMP-001-unexpected-battery-runtime-reduction"
         ],
-        "status": "under-assessment",
+        "status": "accepted",
         "version": "1",
         "created": "2026-08-15",
         "modified": "2026-08-15",
@@ -27919,7 +28006,7 @@
         "valid_from": "2026-08-15",
         "review_status": "approved",
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
-        "signal_state": "under-assessment",
+        "signal_state": "accepted",
         "detected_at": "2026-08-15",
         "concerns": [
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
@@ -28356,7 +28443,7 @@
         "valid_from": "2026-08-15",
         "review_status": "approved",
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
-        "supplied_component": "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-002-air-in-line-sensor-assembly|COMP-PUMP-002]]",
+        "supplied_component": "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-004-rechargeable-battery-pack|COMP-PUMP-004]]",
         "supplier_criticality": "critical",
         "approval_state": "approved"
       }
@@ -28809,11 +28896,11 @@
         "technical_file_identifier": "EVD-PUMP-007",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
         "approved_at": "2026-08-15",
         "evidence_scope": "Battery endurance validation report",
         "applies_to_configuration": [
-          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]"
+          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
         ]
       }
     },
@@ -32634,7 +32721,13 @@
     {
       "subject": "CHG-PUMP-001",
       "predicate": "impacts",
-      "object": "RISK-PUMP-001",
+      "object": "RISK-PUMP-013",
+      "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-001-battery-cell-supplier-replacement.md"
+    },
+    {
+      "subject": "CHG-PUMP-001",
+      "predicate": "has_impact_assessment",
+      "object": "CIA-PUMP-001",
       "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-001-battery-cell-supplier-replacement.md"
     },
     {
@@ -32768,6 +32861,18 @@
       "predicate": "impacts",
       "object": "RISK-PUMP-023",
       "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-012-manufacturing-test-station-software-update.md"
+    },
+    {
+      "subject": "CIA-PUMP-001",
+      "predicate": "concerns",
+      "object": "DEVC-PUMP-001",
+      "source_note": "06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-001-battery-cell-supplier-change-impact-assessment.md"
+    },
+    {
+      "subject": "CIA-PUMP-001",
+      "predicate": "supported_by",
+      "object": "EVD-PUMP-007",
+      "source_note": "06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-001-battery-cell-supplier-change-impact-assessment.md"
     },
     {
       "subject": "CLD-PUMP-001",
@@ -34126,6 +34231,18 @@
       "source_note": "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-050-configuration-and-change-control.md"
     },
     {
+      "subject": "CRI-PUMP-051",
+      "predicate": "instantiates_requirement",
+      "object": "GSPR-0001",
+      "source_note": "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-051-battery-endurance-after-cell-supplier-change.md"
+    },
+    {
+      "subject": "CRI-PUMP-051",
+      "predicate": "derived_from",
+      "object": "PROV-MDR-ANNEX-I",
+      "source_note": "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-051-battery-endurance-after-cell-supplier-change.md"
+    },
+    {
       "subject": "BASE-PUMP-001",
       "predicate": "includes",
       "object": "SW-PUMP-001",
@@ -34229,6 +34346,12 @@
     },
     {
       "subject": "DEVC-PUMP-001",
+      "predicate": "has_applicable_requirement",
+      "object": "CRI-PUMP-051",
+      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
+    },
+    {
+      "subject": "DEVC-PUMP-001",
       "predicate": "has_hazard",
       "object": "HAZ-PUMP-001",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
@@ -34309,6 +34432,12 @@
       "subject": "DEVC-PUMP-001",
       "predicate": "includes_component",
       "object": "COMP-PUMP-002",
+      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
+    },
+    {
+      "subject": "DEVC-PUMP-001",
+      "predicate": "includes_component",
+      "object": "COMP-PUMP-004",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
     },
     {
@@ -36024,7 +36153,7 @@
     {
       "subject": "RISK-PUMP-013",
       "predicate": "concerns",
-      "object": "DEVC-PUMP-003",
+      "object": "DEVC-PUMP-001",
       "source_note": "06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-013-clinical-injury-following-premature-battery-depletion.md"
     },
     {
@@ -36342,7 +36471,7 @@
     {
       "subject": "RCM-PUMP-013",
       "predicate": "verified_by",
-      "object": "EVD-PUMP-013",
+      "object": "EVD-PUMP-007",
       "source_note": "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-013-battery-state-of-charge-estimation.md"
     },
     {
@@ -37008,7 +37137,7 @@
     {
       "subject": "EVD-PUMP-007",
       "predicate": "applies_to_configuration",
-      "object": "DEVC-PUMP-002",
+      "object": "DEVC-PUMP-001",
       "source_note": "06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-007-battery-endurance-validation-report.md"
     },
     {
@@ -37688,23 +37817,6 @@
       "evaluated_at": "2026-08-17"
     },
     {
-      "id": "DA-944125834917",
-      "type": "derived-assertion",
-      "subject": "SIGNAL-PUMP-001",
-      "predicate": "pms_review_required",
-      "object": true,
-      "derived_by_rule": "RULE-SIGNAL-REVIEW-001",
-      "source_provisions": [
-        "PROV-MDR-ARTICLE-83",
-        "PROV-MDR-ARTICLE-83"
-      ],
-      "assurance_level": "review-trigger",
-      "normative_basis": "regulatory-source",
-      "confidence": "medium",
-      "human_review_required": true,
-      "evaluated_at": "2026-08-17"
-    },
-    {
       "id": "DA-B2E4BFD1F9A7",
       "type": "derived-assertion",
       "subject": "SIGNAL-PUMP-002",
@@ -38043,6 +38155,21 @@
       "confidence": "high",
       "human_review_required": true,
       "blocking": true
+    },
+    {
+      "id": "GAP-51D5F71B13",
+      "type": "compliance-gap",
+      "constraint": "CON-GSPR-001",
+      "subject": "CRI-PUMP-051",
+      "severity": "major",
+      "status": "open",
+      "detected_at": "2026-08-17",
+      "message": "Relation satisfied_by has 0; minimum is 1",
+      "assurance_level": "hard",
+      "normative_basis": "regulatory-source",
+      "confidence": "high",
+      "human_review_required": true,
+      "blocking": true
     }
   ],
   "compliance_gaps": [
@@ -38051,6 +38178,21 @@
       "type": "compliance-gap",
       "constraint": "CON-GSPR-001",
       "subject": "CRI-0002",
+      "severity": "major",
+      "status": "open",
+      "detected_at": "2026-08-17",
+      "message": "Relation satisfied_by has 0; minimum is 1",
+      "assurance_level": "hard",
+      "normative_basis": "regulatory-source",
+      "confidence": "high",
+      "human_review_required": true,
+      "blocking": true
+    },
+    {
+      "id": "GAP-51D5F71B13",
+      "type": "compliance-gap",
+      "constraint": "CON-GSPR-001",
+      "subject": "CRI-PUMP-051",
       "severity": "major",
       "status": "open",
       "detected_at": "2026-08-17",
