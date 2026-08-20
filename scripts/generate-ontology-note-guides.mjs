@@ -193,6 +193,25 @@ const diagrams = [
     ],
     edges: [[0, 1, "qualifies_supplier"], [1, 2, "supplied_component"], [3, 2, "includes_component"], [4, 5, "impacts"], [4, 7, "impacts"], [6, 5, "mitigates"], [6, 7, "verified_by"]],
   },
+  {
+    slug: "11-completed-battery-endurance-lifecycle",
+    title: "Completed battery-endurance lifecycle",
+    purpose: "Shows one completed, configuration-specific regulatory sequence from planned post-market surveillance through signal handling, change assessment, risk reassessment, requirement implementation and verification to a supported clinical claim.",
+    nodes: [
+      note("DEVC-PUMP-001", "Released bedside configuration", "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10"),
+      note("PMS-PLAN-PUMP-002", "Battery-endurance PMS plan", "06-Infpump FlowGuard ontology notes/pms-plan/PMS-PLAN-PUMP-002-bedside-battery-endurance-post-market-surveillance-plan"),
+      note("SIGNAL-PUMP-011", "Accepted degradation signal", "06-Infpump FlowGuard ontology notes/signal/SIGNAL-PUMP-011-confirmed-battery-endurance-degradation-trend"),
+      note("CHG-PUMP-013", "Controlled change record<br/>current state: implemented", "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-013-battery-energy-reserve-threshold-update"),
+      note("CIA-PUMP-002", "Completed impact assessment", "06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-002-battery-endurance-signal-change-impact-assessment"),
+      note("RISK-PUMP-041", "Reassessed and accepted risk", "06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-041-therapy-interruption-after-battery-endurance-degradation"),
+      note("CRI-PUMP-052", "Satisfied endurance requirement", "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-052-minimum-post-change-battery-endurance"),
+      note("RCM-PUMP-046", "Implemented shutdown reserve", "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-046-conservative-low-battery-shutdown-reserve"),
+      note("EVD-PUMP-032", "Approved verification report", "06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-032-post-change-battery-endurance-verification-report"),
+      note("CLM-PUMP-021", "Supported battery-duration claim", "06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-021-maintains-specified-battery-backed-therapy-duration"),
+    ],
+    edges: [[0, 1, "covered_by_pms_plan"], [1, 2, "identifies_signal"], [2, 3, "triggers"], [3, 4, "has_impact_assessment"], [4, 5, "requires_reassessment_of"], [5, 6, "informs_requirement"], [6, 7, "implemented_by_control"], [7, 8, "verified_by"], [8, 9, "supports_claim"]],
+    explanation: "The sequence represents a completed regulatory workflow for DEVC-PUMP-001. An effective PMS plan identifies an accepted battery-endurance signal; the signal opens a controlled change record and its impact assessment; the assessment requires risk reassessment; the accepted risk result informs a device-specific requirement; an implemented risk control fulfils the design intent; approved verification evidence demonstrates the control; and that evidence supports the continued battery-duration claim. The change record is created before assessment but reaches its displayed implemented state only after assessment, control implementation and verification are complete. The ordering does not imply that initial risk management or the original claim began only after market release—it records the governed post-market reassessment and confirmation cycle for the changed configuration.",
+  },
 ]
 
 function routeFor(target) {

@@ -11,7 +11,7 @@
 
 # Risk control measure ontology notes
 
-45 independently identifiable risk control measure notes for the imaginary Infpump FlowGuard infusion pump.
+46 independently identifiable risk control measure notes for the imaginary Infpump FlowGuard infusion pump.
 
 ## Notes
 
@@ -60,6 +60,7 @@
 - [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-043-setup-workflow-checklist|RCM-PUMP-043 — Setup workflow checklist]]
 - [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-044-priming-confirmation|RCM-PUMP-044 — Priming confirmation]]
 - [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-045-independent-release-inspection|RCM-PUMP-045 — Independent release inspection]]
+- [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-046-conservative-low-battery-shutdown-reserve|RCM-PUMP-046 — Conservative low-battery shutdown reserve]]
 
 ## Continue
 

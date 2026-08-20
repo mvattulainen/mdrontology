@@ -18,7 +18,8 @@
   "predicate": "supports_claim",
   "label": "supports claim",
   "domain": [
-    "clinical-evidence"
+    "clinical-evidence",
+    "verification-evidence"
   ],
   "range": [
     "clinical-claim"
@@ -37,7 +38,7 @@
 
 # supports_claim
 
-Relates clinical-evidence to clinical-claim.
+Relates clinical or verification evidence to a clinical claim supported by that evidence.
 
 ## Purpose
 
@@ -47,7 +48,7 @@ Defines the ontology predicate `supports_claim`. It constrains which subject and
 
 | Property | Value |
 |---|---|
-| Domain | `clinical-evidence` |
+| Domain | `clinical-evidence`, `verification-evidence` |
 | Range | `clinical-claim` |
 | Functional | `false` |
 | Transitive | `false` |

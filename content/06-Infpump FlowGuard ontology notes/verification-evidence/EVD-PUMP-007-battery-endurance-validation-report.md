@@ -68,7 +68,7 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 
 ## Traceability
 
-Previous dependencies are ontology notes that lead into this record. They reach it through `satisfied_by` from [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-007-device-lifetime-definition|CRI-PUMP-007 — Device lifetime definition]], [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-037-clock-and-event-chronology|CRI-PUMP-037 — Clock and event chronology]]; `verified_by` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-013-battery-state-of-charge-estimation|RCM-PUMP-013 — Battery state-of-charge estimation]], [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-037-temperature-monitoring|RCM-PUMP-037 — Temperature monitoring]]; `impacts` from [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-001-battery-cell-supplier-replacement|CHG-PUMP-001 — Battery cell supplier replacement]]; `supported_by` from [[06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-001-battery-cell-supplier-change-impact-assessment|CIA-PUMP-001 — Battery cell-supplier change impact assessment]]. These incoming links show which product, decision, process or evidence records depend on the current note.
+Previous dependencies are ontology notes that lead into this record. They reach it through `satisfied_by` from [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-007-device-lifetime-definition|CRI-PUMP-007 — Device lifetime definition]], [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-037-clock-and-event-chronology|CRI-PUMP-037 — Clock and event chronology]]; `verified_by` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-013-battery-state-of-charge-estimation|RCM-PUMP-013 — Battery state-of-charge estimation]], [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-037-temperature-monitoring|RCM-PUMP-037 — Temperature monitoring]]; `impacts` from [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-001-battery-cell-supplier-replacement|CHG-PUMP-001 — Battery cell supplier replacement]]; `supported_by` from [[06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-001-battery-cell-supplier-change-impact-assessment|CIA-PUMP-001 — Battery cell-supplier change impact assessment]], [[06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-002-battery-endurance-signal-change-impact-assessment|CIA-PUMP-002 — Battery-endurance signal change-impact assessment]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
 Succeeding dependencies are ontology notes to which this record leads. The trace continues through `applies_to_configuration` to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
@@ -87,7 +87,7 @@ flowchart LR
   PREV3 -->|"verified_by"| CURRENT
   PREV4["CHG-PUMP-001<br/>Battery cell supplier replacement"]
   PREV4 -->|"impacts"| CURRENT
-  PREV_MORE["1 more previous dependencies"]
+  PREV_MORE["2 more previous dependencies"]
   PREV_MORE -->|"additional typed links"| CURRENT
   NEXT0["DEVC-PUMP-001<br/>Infpump FlowGuard bedside configuration 1.0"]
   CURRENT -->|"applies_to_configuration"| NEXT0

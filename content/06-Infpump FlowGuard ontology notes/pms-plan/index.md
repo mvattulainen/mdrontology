@@ -11,11 +11,12 @@
 
 # PMS plan ontology notes
 
-1 independently identifiable pms plan notes for the imaginary Infpump FlowGuard infusion pump.
+2 independently identifiable pms plan notes for the imaginary Infpump FlowGuard infusion pump.
 
 ## Notes
 
 - [[06-Infpump FlowGuard ontology notes/pms-plan/PMS-PLAN-PUMP-001-infpump-flowguard-post-market-surveillance-plan|PMS-PLAN-PUMP-001 — Infpump FlowGuard post-market surveillance plan]]
+- [[06-Infpump FlowGuard ontology notes/pms-plan/PMS-PLAN-PUMP-002-bedside-battery-endurance-post-market-surveillance-plan|PMS-PLAN-PUMP-002 — Bedside battery-endurance post-market surveillance plan]]
 
 ## Continue
 

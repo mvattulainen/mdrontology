@@ -11,7 +11,7 @@
 
 # Change ontology notes
 
-12 independently identifiable change notes for the imaginary Infpump FlowGuard infusion pump.
+13 independently identifiable change notes for the imaginary Infpump FlowGuard infusion pump.
 
 ## Notes
 
@@ -27,6 +27,7 @@
 - [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-010-administration-set-compatibility-extension|CHG-PUMP-010 — Administration-set compatibility extension]]
 - [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-011-network-protocol-revision|CHG-PUMP-011 — Network protocol revision]]
 - [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-012-manufacturing-test-station-software-update|CHG-PUMP-012 — Manufacturing test-station software update]]
+- [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-013-battery-energy-reserve-threshold-update|CHG-PUMP-013 — Battery energy-reserve threshold update]]
 
 ## Continue
 

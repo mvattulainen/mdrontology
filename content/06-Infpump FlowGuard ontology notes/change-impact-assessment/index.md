@@ -11,11 +11,12 @@
 
 # Change impact assessment ontology notes
 
-1 independently identifiable change impact assessment notes for the imaginary Infpump FlowGuard infusion pump.
+2 independently identifiable change impact assessment notes for the imaginary Infpump FlowGuard infusion pump.
 
 ## Notes
 
 - [[06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-001-battery-cell-supplier-change-impact-assessment|CIA-PUMP-001 — Battery cell-supplier change impact assessment]]
+- [[06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-002-battery-endurance-signal-change-impact-assessment|CIA-PUMP-002 — Battery-endurance signal change-impact assessment]]
 
 ## Continue
 

@@ -100,7 +100,7 @@ test("five high-impact use cases are assessed and executable as demonstrations",
 
 test("the infusion-pump core and architecture extensions are complete and use established classes", () => {
   const notes = api.notes.filter((note) => note.path.startsWith("06-Infpump FlowGuard ontology notes/") && note.data.id)
-  assert.equal(notes.length, 315)
+  assert.equal(notes.length, 324)
   assert.equal(new Set(notes.map((note) => note.data.type)).size, 29)
   for (const note of notes) {
     assert.ok(api.classes.has(note.data.type), `${note.data.id} uses an unknown ontology class`)
@@ -138,7 +138,7 @@ test("the infusion-pump core and architecture extensions are complete and use es
   assert.deepEqual(batteryWorkflowStatuses, new Set(["draft", "under-assessment", "accepted", "implemented", "approved"]))
 })
 
-test("ontology-note guidance and ten linked Mermaid narratives are complete", async () => {
+test("ontology-note guidance and eleven linked Mermaid narratives are complete", async () => {
   const guide = api.byId.get("META-ONTOLOGY-NOTE")
   assert.ok(guide)
   assert.match(guide.path, /^07_Other\/00-Meta\//)
@@ -153,7 +153,7 @@ test("ontology-note guidance and ten linked Mermaid narratives are complete", as
 
   const directory = new URL("../content/06-Infpump%20FlowGuard%20ontology%20notes/connections/", import.meta.url)
   const pages = (await readdir(directory, { withFileTypes: true })).filter((entry) => entry.isFile() && entry.name.endsWith(".md"))
-  assert.equal(pages.length, 10)
+  assert.equal(pages.length, 11)
   const hasEdge = (subject, predicate, object) => (api.outgoing.get(subject) ?? []).some((edge) => edge.predicate === predicate && edge.object === object)
   for (const page of pages) {
     const source = await readFile(new URL(page.name, directory), "utf8")
@@ -185,17 +185,31 @@ test("ontology-note guidance and ten linked Mermaid narratives are complete", as
   assert.match(batteryPage, /CIA-PUMP-001/)
   assert.match(batteryPage, /EVTYPE-PUMP-001/)
 
+  const lifecyclePage = await readFile(new URL("11-completed-battery-endurance-lifecycle.md", directory), "utf8")
+  const lifecycleIds = [...lifecyclePage.matchAll(/^\s*N\d+\["([^<"]+)/gm)].map((match) => match[1])
+  assert.equal(lifecycleIds.length, 10)
+  assert.equal(new Set(lifecycleIds).size, 10, "the lifecycle must use one note per type")
+  assert.deepEqual(new Set(lifecycleIds.map((id) => api.byId.get(id).data.type)), new Set([
+    "device-configuration", "pms-plan", "signal", "change", "change-impact-assessment", "risk",
+    "compliance-requirement-instance", "risk-control-measure", "verification-evidence", "clinical-claim",
+  ]))
+  const lifecycleEdges = [...lifecyclePage.matchAll(/^\s*N\d+ -->\|[^|]+\| N\d+$/gm)]
+  assert.deepEqual(lifecycleEdges.map((match) => match[0].match(/N(\d+) -->.* N(\d+)/).slice(1).map(Number)), [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]])
+  for (const id of lifecycleIds) assert.match(JSON.stringify(api.byId.get(id).data.device_context), /DEVC-PUMP-001/, `${id} is not scoped to DEVC-PUMP-001`)
+  assert.deepEqual(lifecycleIds.map((id) => api.byId.get(id).data.status), ["approved", "approved", "accepted", "implemented", "approved", "accepted", "approved", "implemented", "approved", "approved"])
+
   const notesIndex = await readFile(new URL("../content/06-Infpump%20FlowGuard%20ontology%20notes/index.md", import.meta.url), "utf8")
   assert.match(notesIndex, /META-ONTOLOGY-NOTE-ontology-note/)
-  assert.equal([...notesIndex.matchAll(/\]\(\/06-infpump-flowguard-ontology-notes\/connections\//g)].length, 10)
+  assert.equal([...notesIndex.matchAll(/\]\(\/06-infpump-flowguard-ontology-notes\/connections\//g)].length, 11)
 })
 
 test("high-impact ontology-note extensions reuse canonical requirements and sources", () => {
   const extensionTypes = [
     "device-family", "device-model", "device-variant", "configuration-baseline", "software-version",
-    "clinical-evaluation", "clinical-evidence", "clinical-evaluation-report", "technical-documentation-set", "pms-plan",
+    "clinical-evaluation", "clinical-evidence", "clinical-evaluation-report", "technical-documentation-set",
   ]
   for (const type of extensionTypes) assert.equal(api.notes.filter((note) => note.path.startsWith("06-Infpump FlowGuard ontology notes/") && note.data.type === type).length, 1, `${type} extension missing`)
+  assert.equal(api.notes.filter((note) => note.path.startsWith("06-Infpump FlowGuard ontology notes/") && note.data.type === "pms-plan").length, 2)
 
   const hasEdge = (subject, predicate, object) => (api.outgoing.get(subject) ?? []).some((edge) => edge.predicate === predicate && edge.object === object)
   assert.ok(hasEdge("DEVF-PUMP-001", "has_model", "DEVM-PUMP-001"))
@@ -322,7 +336,7 @@ test("competency questions, ontology definitions, and landing pages follow the c
   const paragraphs = overview.split(/\n\s*\n/).map((block) => block.trim()).filter((block) => block && !block.startsWith("#"))
   assert.equal(paragraphs.length, 5)
   assert.match(overview, /shared, explicit model/)
-  assert.match(overview, /179 class definitions, 85 relation definitions, 22 constraints and 9 executable rules/)
+  assert.match(overview, /179 class definitions, 88 relation definitions, 22 constraints and 9 executable rules/)
   assert.match(overview, /three assurance levels/)
   assert.match(overview, /advisory constraints identify non-blocking data-quality findings/)
   assert.match(overview, /review-trigger rules derive a need for qualified assessment/)

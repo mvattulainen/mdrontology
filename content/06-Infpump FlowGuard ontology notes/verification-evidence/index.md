@@ -11,7 +11,7 @@
 
 # Verification evidence ontology notes
 
-31 independently identifiable verification evidence notes for the imaginary Infpump FlowGuard infusion pump.
+32 independently identifiable verification evidence notes for the imaginary Infpump FlowGuard infusion pump.
 
 ## Notes
 
@@ -46,6 +46,7 @@
 - [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-029-clinical-claims-evidence-summary|EVD-PUMP-029 — Clinical claims evidence summary]]
 - [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-030-configuration-baseline-verification-report|EVD-PUMP-030 — Configuration baseline verification report]]
 - [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-031-post-change-battery-endurance-verification|EVD-PUMP-031 — Post-change battery endurance verification]]
+- [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-032-post-change-battery-endurance-verification-report|EVD-PUMP-032 — Post-change battery-endurance verification report]]
 
 ## Continue
 

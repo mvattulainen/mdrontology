@@ -1,10 +1,10 @@
 # Ontology validation report
 
-Generated: 2026-08-20T08:21:32.652Z
+Generated: 2026-08-20T13:14:34.034Z
 
-- Nodes: 807
-- Edges: 1183
-- Derived assertions: 49
+- Nodes: 819
+- Edges: 1211
+- Derived assertions: 50
 - Open compliance gaps: 2
 - Advisory findings: 0
 - Errors: 0

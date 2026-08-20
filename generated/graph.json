@@ -1,7 +1,7 @@
 {
   "metadata": {
     "specification": "SPEC-MDR-MFR-ONTOLOGY-001",
-    "generated_at": "2026-08-20T08:21:32.652Z",
+    "generated_at": "2026-08-20T13:14:34.034Z",
     "relevant_date": "2026-08-20",
     "canonical_source": "content/**/*.md"
   },
@@ -8042,6 +8042,45 @@
       }
     },
     {
+      "id": "REL-IDENTIFIES-SIGNAL",
+      "type": "relation-definition",
+      "title": "identifies_signal",
+      "path": "00-Ontology/relations/REL-IDENTIFIES-SIGNAL-identifies-signal.md",
+      "data": {
+        "id": "REL-IDENTIFIES-SIGNAL",
+        "type": "relation-definition",
+        "title": "identifies_signal",
+        "aliases": [
+          "REL-IDENTIFIES-SIGNAL"
+        ],
+        "status": "active",
+        "version": "1",
+        "created": "2026-08-20",
+        "modified": "2026-08-20",
+        "tags": [
+          "ontology/relation-definition"
+        ],
+        "draft": false,
+        "predicate": "identifies_signal",
+        "label": "identifies signal",
+        "domain": [
+          "pms-plan"
+        ],
+        "range": [
+          "signal"
+        ],
+        "inverse": null,
+        "transitive": false,
+        "symmetric": false,
+        "functional": false,
+        "provenance_required": false,
+        "temporal_qualification_required": false,
+        "example_ontology_notes": [
+          "[[06-Infpump FlowGuard ontology notes/pms-plan/PMS-PLAN-PUMP-002-bedside-battery-endurance-post-market-surveillance-plan|PMS-PLAN-PUMP-002]]"
+        ]
+      }
+    },
+    {
       "id": "REL-IMPACTS",
       "type": "relation-definition",
       "title": "impacts",
@@ -8086,6 +8125,45 @@
         "temporal_qualification_required": false,
         "example_ontology_notes": [
           "[[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-001-battery-cell-supplier-replacement|CHG-PUMP-001]]"
+        ]
+      }
+    },
+    {
+      "id": "REL-IMPLEMENTED-BY-CONTROL",
+      "type": "relation-definition",
+      "title": "implemented_by_control",
+      "path": "00-Ontology/relations/REL-IMPLEMENTED-BY-CONTROL-implemented-by-control.md",
+      "data": {
+        "id": "REL-IMPLEMENTED-BY-CONTROL",
+        "type": "relation-definition",
+        "title": "implemented_by_control",
+        "aliases": [
+          "REL-IMPLEMENTED-BY-CONTROL"
+        ],
+        "status": "active",
+        "version": "1",
+        "created": "2026-08-20",
+        "modified": "2026-08-20",
+        "tags": [
+          "ontology/relation-definition"
+        ],
+        "draft": false,
+        "predicate": "implemented_by_control",
+        "label": "implemented by control",
+        "domain": [
+          "compliance-requirement-instance"
+        ],
+        "range": [
+          "risk-control-measure"
+        ],
+        "inverse": null,
+        "transitive": false,
+        "symmetric": false,
+        "functional": false,
+        "provenance_required": false,
+        "temporal_qualification_required": false,
+        "example_ontology_notes": [
+          "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-052-minimum-post-change-battery-endurance|CRI-PUMP-052]]"
         ]
       }
     },
@@ -8250,6 +8328,45 @@
         "temporal_qualification_required": false,
         "example_ontology_notes": [
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
+        ]
+      }
+    },
+    {
+      "id": "REL-INFORMS-REQUIREMENT",
+      "type": "relation-definition",
+      "title": "informs_requirement",
+      "path": "00-Ontology/relations/REL-INFORMS-REQUIREMENT-informs-requirement.md",
+      "data": {
+        "id": "REL-INFORMS-REQUIREMENT",
+        "type": "relation-definition",
+        "title": "informs_requirement",
+        "aliases": [
+          "REL-INFORMS-REQUIREMENT"
+        ],
+        "status": "active",
+        "version": "1",
+        "created": "2026-08-20",
+        "modified": "2026-08-20",
+        "tags": [
+          "ontology/relation-definition"
+        ],
+        "draft": false,
+        "predicate": "informs_requirement",
+        "label": "informs requirement",
+        "domain": [
+          "risk"
+        ],
+        "range": [
+          "compliance-requirement-instance"
+        ],
+        "inverse": null,
+        "transitive": false,
+        "symmetric": false,
+        "functional": false,
+        "provenance_required": false,
+        "temporal_qualification_required": false,
+        "example_ontology_notes": [
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-041-therapy-interruption-after-battery-endurance-degradation|RISK-PUMP-041]]"
         ]
       }
     },
@@ -9004,12 +9121,14 @@
         "predicate": "requires_reassessment_of",
         "label": "requires reassessment of",
         "domain": [
-          "change"
+          "change",
+          "change-impact-assessment"
         ],
         "range": [
           "assessment",
           "document",
-          "decision"
+          "decision",
+          "risk"
         ],
         "inverse": null,
         "transitive": false,
@@ -9018,7 +9137,7 @@
         "provenance_required": false,
         "temporal_qualification_required": false,
         "example_ontology_notes": [
-          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
+          "[[06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-002-battery-endurance-signal-change-impact-assessment|CIA-PUMP-002]]"
         ]
       }
     },
@@ -9469,7 +9588,8 @@
         "predicate": "supports_claim",
         "label": "supports claim",
         "domain": [
-          "clinical-evidence"
+          "clinical-evidence",
+          "verification-evidence"
         ],
         "range": [
           "clinical-claim"
@@ -18050,6 +18170,51 @@
       }
     },
     {
+      "id": "CHG-PUMP-013",
+      "type": "change",
+      "title": "Battery energy-reserve threshold update",
+      "path": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-013-battery-energy-reserve-threshold-update.md",
+      "data": {
+        "id": "CHG-PUMP-013",
+        "type": "change",
+        "title": "Battery energy-reserve threshold update",
+        "aliases": [
+          "CHG-PUMP-013",
+          "CHG-PUMP-013-battery-energy-reserve-threshold-update",
+          "18-ontology-notes/change/CHG-PUMP-013-battery-energy-reserve-threshold-update",
+          "03-Ontology notes/change/CHG-PUMP-013-battery-energy-reserve-threshold-update"
+        ],
+        "status": "implemented",
+        "version": "1",
+        "created": "2026-08-15",
+        "modified": "2026-08-15",
+        "tags": [
+          "ontology-note/change",
+          "device/infpump-flowguard"
+        ],
+        "draft": false,
+        "note_origin": "human-reviewed synthetic example",
+        "technical_file": "TF-08 Change Control/Design Change Register.xlsx",
+        "technical_file_identifier": "CHG-PUMP-013",
+        "valid_from": "2026-08-15",
+        "review_status": "approved",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
+        "impact_level": "high",
+        "change_state": "implemented",
+        "topic": "completed-battery-endurance-lifecycle",
+        "concerns": [
+          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
+        ],
+        "impacts": [
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-041-therapy-interruption-after-battery-endurance-degradation|RISK-PUMP-041]]",
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-032-post-change-battery-endurance-verification-report|EVD-PUMP-032]]"
+        ],
+        "has_impact_assessment": [
+          "[[06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-002-battery-endurance-signal-change-impact-assessment|CIA-PUMP-002]]"
+        ]
+      }
+    },
+    {
       "id": "CIA-PUMP-001",
       "type": "change-impact-assessment",
       "title": "Battery cell-supplier change impact assessment",
@@ -18087,6 +18252,50 @@
         ],
         "supported_by": [
           "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-007-battery-endurance-validation-report|EVD-PUMP-007]]"
+        ]
+      }
+    },
+    {
+      "id": "CIA-PUMP-002",
+      "type": "change-impact-assessment",
+      "title": "Battery-endurance signal change-impact assessment",
+      "path": "06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-002-battery-endurance-signal-change-impact-assessment.md",
+      "data": {
+        "id": "CIA-PUMP-002",
+        "type": "change-impact-assessment",
+        "title": "Battery-endurance signal change-impact assessment",
+        "aliases": [
+          "CIA-PUMP-002",
+          "CIA-PUMP-002-battery-endurance-signal-change-impact-assessment",
+          "18-ontology-notes/change-impact-assessment/CIA-PUMP-002-battery-endurance-signal-change-impact-assessment",
+          "03-Ontology notes/change-impact-assessment/CIA-PUMP-002-battery-endurance-signal-change-impact-assessment"
+        ],
+        "status": "approved",
+        "version": "1",
+        "created": "2026-08-15",
+        "modified": "2026-08-15",
+        "tags": [
+          "ontology-note/change-impact-assessment",
+          "device/infpump-flowguard"
+        ],
+        "draft": false,
+        "note_origin": "human-reviewed synthetic example",
+        "technical_file": "TF-08 Change Control/Change Impact Assessments.xlsx",
+        "technical_file_identifier": "CIA-PUMP-002",
+        "valid_from": "2026-08-15",
+        "review_status": "approved",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
+        "assessment_scope": "Battery endurance, supplier controls, residual risk and verification impact of CHG-PUMP-001",
+        "assessment_state": "completed",
+        "topic": "completed-battery-endurance-lifecycle",
+        "concerns": [
+          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
+        ],
+        "supported_by": [
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-007-battery-endurance-validation-report|EVD-PUMP-007]]"
+        ],
+        "requires_reassessment_of": [
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-041-therapy-interruption-after-battery-endurance-degradation|RISK-PUMP-041]]"
         ]
       }
     },
@@ -19038,6 +19247,42 @@
       }
     },
     {
+      "id": "CLM-PUMP-021",
+      "type": "clinical-claim",
+      "title": "Maintains specified battery-backed therapy duration",
+      "path": "06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-021-maintains-specified-battery-backed-therapy-duration.md",
+      "data": {
+        "id": "CLM-PUMP-021",
+        "type": "clinical-claim",
+        "title": "Maintains specified battery-backed therapy duration",
+        "aliases": [
+          "CLM-PUMP-021",
+          "CLM-PUMP-021-maintains-specified-battery-backed-therapy-duration",
+          "18-ontology-notes/clinical-claim/CLM-PUMP-021-maintains-specified-battery-backed-therapy-duration",
+          "03-Ontology notes/clinical-claim/CLM-PUMP-021-maintains-specified-battery-backed-therapy-duration"
+        ],
+        "status": "approved",
+        "version": "1",
+        "created": "2026-08-15",
+        "modified": "2026-08-15",
+        "tags": [
+          "ontology-note/clinical-claim",
+          "device/infpump-flowguard"
+        ],
+        "draft": false,
+        "note_origin": "human-reviewed synthetic example",
+        "technical_file": "TF-06 Clinical Evaluation/Clinical Claims Matrix.xlsx",
+        "technical_file_identifier": "CLM-PUMP-021",
+        "valid_from": "2026-08-15",
+        "review_status": "approved",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
+        "claim_status": "supported",
+        "claim_scope": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
+        "topic": "completed-battery-endurance-lifecycle",
+        "claim_state": "supported"
+      }
+    },
+    {
       "id": "CE-PUMP-001",
       "type": "clinical-evaluation",
       "title": "Infpump FlowGuard continuous clinical evaluation",
@@ -19186,7 +19431,8 @@
           "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-017-supports-cleaning-between-patient-uses|CLM-PUMP-017]]",
           "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-018-maintains-performance-near-specified-electromagnetic-sources|CLM-PUMP-018]]",
           "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-019-supports-secure-networked-configuration|CLM-PUMP-019]]",
-          "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-020-provides-clinically-interpretable-event-chronology|CLM-PUMP-020]]"
+          "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-020-provides-clinically-interpretable-event-chronology|CLM-PUMP-020]]",
+          "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-021-maintains-specified-battery-backed-therapy-duration|CLM-PUMP-021]]"
         ],
         "source_provisions": [
           "[[02-Sources/legislation/PROV-MDR-ARTICLE-61-mdr-article-61-clinical-evaluation|PROV-MDR-ARTICLE-61]]",
@@ -21495,6 +21741,55 @@
       }
     },
     {
+      "id": "CRI-PUMP-052",
+      "type": "compliance-requirement-instance",
+      "title": "Minimum post-change battery endurance",
+      "path": "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-052-minimum-post-change-battery-endurance.md",
+      "data": {
+        "id": "CRI-PUMP-052",
+        "type": "compliance-requirement-instance",
+        "title": "Minimum post-change battery endurance",
+        "aliases": [
+          "CRI-PUMP-052",
+          "CRI-PUMP-052-minimum-post-change-battery-endurance",
+          "18-ontology-notes/compliance-requirement-instance/CRI-PUMP-052-minimum-post-change-battery-endurance",
+          "03-Ontology notes/compliance-requirement-instance/CRI-PUMP-052-minimum-post-change-battery-endurance"
+        ],
+        "status": "approved",
+        "version": "1",
+        "created": "2026-08-15",
+        "modified": "2026-08-15",
+        "tags": [
+          "ontology-note/compliance-requirement-instance",
+          "device/infpump-flowguard"
+        ],
+        "draft": false,
+        "note_origin": "human-reviewed synthetic example",
+        "technical_file": "TF-04 GSPR/GSPR Checklist.xlsx",
+        "technical_file_identifier": "CRI-PUMP-052",
+        "valid_from": "2026-08-15",
+        "review_status": "approved",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
+        "applicable": true,
+        "applicability_rationale": "Applicable to DEVC-PUMP-002 because the configured function or lifecycle control is within the requirement scope.",
+        "compliance_method": "Verification and controlled-document review for CRI-PUMP-052",
+        "compliance_status": "satisfied",
+        "topic": "completed-battery-endurance-lifecycle",
+        "instantiates_requirement": [
+          "[[01-Ontology instances/04-requirements/gspr/GSPR-0003-therapy-delivery-protection|GSPR-0003]]"
+        ],
+        "derived_from": [
+          "[[02-Sources/legislation/PROV-MDR-ANNEX-I-mdr-annex-i-gsprs|PROV-MDR-ANNEX-I]]"
+        ],
+        "satisfied_by": [
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-032-post-change-battery-endurance-verification-report|EVD-PUMP-032]]"
+        ],
+        "implemented_by_control": [
+          "[[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-046-conservative-low-battery-shutdown-reserve|RCM-PUMP-046]]"
+        ]
+      }
+    },
+    {
       "id": "COMP-PUMP-001",
       "type": "component",
       "title": "Infusion pumping mechanism",
@@ -21932,7 +22227,8 @@
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-009-compatibility-with-medicinal-products|CRI-PUMP-009]]",
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-010-biological-safety-of-fluid-path-materials|CRI-PUMP-010]]",
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-051-battery-endurance-after-cell-supplier-change|CRI-PUMP-051]]",
-          "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-046-clinical-evaluation-support|CRI-PUMP-046]]"
+          "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-046-clinical-evaluation-support|CRI-PUMP-046]]",
+          "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-052-minimum-post-change-battery-endurance|CRI-PUMP-052]]"
         ],
         "has_hazard": [
           "[[06-Infpump FlowGuard ontology notes/hazard/HAZ-PUMP-001-unintended-excessive-flow|HAZ-PUMP-001]]",
@@ -21945,7 +22241,8 @@
           "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-004-delayed-detection-or-secondary-harm-from-insufficient-delivered-flow|RISK-PUMP-004]]",
           "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-006-delayed-detection-or-secondary-harm-from-occluded-infusion-pathway|RISK-PUMP-006]]",
           "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-008-delayed-detection-or-secondary-harm-from-air-introduced-into-infusion-line|RISK-PUMP-008]]",
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-013-clinical-injury-following-premature-battery-depletion|RISK-PUMP-013]]"
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-013-clinical-injury-following-premature-battery-depletion|RISK-PUMP-013]]",
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-041-therapy-interruption-after-battery-endurance-degradation|RISK-PUMP-041]]"
         ],
         "includes_component": [
           "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-001-infusion-pumping-mechanism|COMP-PUMP-001]]",
@@ -21955,7 +22252,8 @@
           "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-001-maintains-programmed-volumetric-flow-within-specified-accuracy|CLM-PUMP-001]]",
           "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-003-supports-intermittent-intravenous-therapy|CLM-PUMP-003]]",
           "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-004-reduces-unintended-free-flow-exposure|CLM-PUMP-004]]",
-          "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-002-supports-continuous-intravenous-therapy|CLM-PUMP-002]]"
+          "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-002-supports-continuous-intravenous-therapy|CLM-PUMP-002]]",
+          "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-021-maintains-specified-battery-backed-therapy-duration|CLM-PUMP-021]]"
         ],
         "has_certificate": [
           "[[06-Infpump FlowGuard ontology notes/certificate/CERT-PUMP-001-eu-mdr-quality-management-system-certificate|CERT-PUMP-001]]"
@@ -21973,7 +22271,8 @@
           "[[06-Infpump FlowGuard ontology notes/technical-documentation-set/TD-PUMP-001-infpump-flowguard-mdr-technical-documentation-set|TD-PUMP-001]]"
         ],
         "covered_by_pms_plan": [
-          "[[06-Infpump FlowGuard ontology notes/pms-plan/PMS-PLAN-PUMP-001-infpump-flowguard-post-market-surveillance-plan|PMS-PLAN-PUMP-001]]"
+          "[[06-Infpump FlowGuard ontology notes/pms-plan/PMS-PLAN-PUMP-001-infpump-flowguard-post-market-surveillance-plan|PMS-PLAN-PUMP-001]]",
+          "[[06-Infpump FlowGuard ontology notes/pms-plan/PMS-PLAN-PUMP-002-bedside-battery-endurance-post-market-surveillance-plan|PMS-PLAN-PUMP-002]]"
         ],
         "source_provisions": [
           "[[02-Sources/standards/SRC-EMDN-european-medical-devices-nomenclature|SRC-EMDN]]",
@@ -24797,6 +25096,50 @@
       }
     },
     {
+      "id": "PMS-PLAN-PUMP-002",
+      "type": "pms-plan",
+      "title": "Bedside battery-endurance post-market surveillance plan",
+      "path": "06-Infpump FlowGuard ontology notes/pms-plan/PMS-PLAN-PUMP-002-bedside-battery-endurance-post-market-surveillance-plan.md",
+      "data": {
+        "id": "PMS-PLAN-PUMP-002",
+        "type": "pms-plan",
+        "title": "Bedside battery-endurance post-market surveillance plan",
+        "aliases": [
+          "PMS-PLAN-PUMP-002",
+          "PMS-PLAN-PUMP-002-bedside-battery-endurance-post-market-surveillance-plan",
+          "18-ontology-notes/pms-plan/PMS-PLAN-PUMP-002-bedside-battery-endurance-post-market-surveillance-plan",
+          "03-Ontology notes/pms-plan/PMS-PLAN-PUMP-002-bedside-battery-endurance-post-market-surveillance-plan"
+        ],
+        "status": "approved",
+        "version": "1",
+        "created": "2026-08-15",
+        "modified": "2026-08-15",
+        "tags": [
+          "ontology-note/pms-plan",
+          "device/infpump-flowguard"
+        ],
+        "draft": false,
+        "note_origin": "human-reviewed synthetic example",
+        "technical_file": "TF-09 PMS/Post-Market Surveillance Plan.docx",
+        "technical_file_identifier": "PMS-PLAN-PUMP-002",
+        "valid_from": "2026-08-15",
+        "review_status": "approved",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
+        "plan_state": "effective",
+        "topic": "completed-battery-endurance-lifecycle",
+        "applies_to_configuration": [
+          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
+        ],
+        "source_provisions": [
+          "[[02-Sources/legislation/PROV-MDR-ARTICLE-83-mdr-article-83-pms-system|PROV-MDR-ARTICLE-83]]",
+          "[[02-Sources/guidance/SRC-MDCG-2025-10-mdcg-2025-10-post-market-surveillance|SRC-MDCG-2025-10]]"
+        ],
+        "identifies_signal": [
+          "[[06-Infpump FlowGuard ontology notes/signal/SIGNAL-PUMP-011-confirmed-battery-endurance-degradation-trend|SIGNAL-PUMP-011]]"
+        ]
+      }
+    },
+    {
       "id": "PROC-PUMP-001",
       "type": "qms-process",
       "title": "Infusion-pump design and development control",
@@ -26504,6 +26847,49 @@
         "residual_risk": "low",
         "concerns": [
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-005-infpump-flowguard-critical-care-configuration-11|DEVC-PUMP-005]]"
+        ]
+      }
+    },
+    {
+      "id": "RISK-PUMP-041",
+      "type": "risk",
+      "title": "Therapy interruption after battery-endurance degradation",
+      "path": "06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-041-therapy-interruption-after-battery-endurance-degradation.md",
+      "data": {
+        "id": "RISK-PUMP-041",
+        "type": "risk",
+        "title": "Therapy interruption after battery-endurance degradation",
+        "aliases": [
+          "RISK-PUMP-041",
+          "RISK-PUMP-041-therapy-interruption-after-battery-endurance-degradation",
+          "18-ontology-notes/risk/RISK-PUMP-041-therapy-interruption-after-battery-endurance-degradation",
+          "03-Ontology notes/risk/RISK-PUMP-041-therapy-interruption-after-battery-endurance-degradation"
+        ],
+        "status": "accepted",
+        "version": "1",
+        "created": "2026-08-15",
+        "modified": "2026-08-15",
+        "tags": [
+          "ontology-note/risk",
+          "device/infpump-flowguard"
+        ],
+        "draft": false,
+        "note_origin": "human-reviewed synthetic example",
+        "technical_file": "TF-05 Risk Management/Risk Analysis and Risk Matrix.xlsx",
+        "technical_file_identifier": "RISK-PUMP-041",
+        "valid_from": "2026-08-15",
+        "review_status": "approved",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
+        "risk_matrix_identifier": "RISK-PUMP-041",
+        "initial_risk": "medium",
+        "residual_risk": "medium",
+        "topic": "completed-battery-endurance-lifecycle",
+        "risk_acceptance_state": "accepted-after-reassessment",
+        "concerns": [
+          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
+        ],
+        "informs_requirement": [
+          "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-052-minimum-post-change-battery-endurance|CRI-PUMP-052]]"
         ]
       }
     },
@@ -28273,6 +28659,47 @@
       }
     },
     {
+      "id": "RCM-PUMP-046",
+      "type": "risk-control-measure",
+      "title": "Conservative low-battery shutdown reserve",
+      "path": "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-046-conservative-low-battery-shutdown-reserve.md",
+      "data": {
+        "id": "RCM-PUMP-046",
+        "type": "risk-control-measure",
+        "title": "Conservative low-battery shutdown reserve",
+        "aliases": [
+          "RCM-PUMP-046",
+          "RCM-PUMP-046-conservative-low-battery-shutdown-reserve",
+          "18-ontology-notes/risk-control-measure/RCM-PUMP-046-conservative-low-battery-shutdown-reserve",
+          "03-Ontology notes/risk-control-measure/RCM-PUMP-046-conservative-low-battery-shutdown-reserve"
+        ],
+        "status": "implemented",
+        "version": "1",
+        "created": "2026-08-15",
+        "modified": "2026-08-15",
+        "tags": [
+          "ontology-note/risk-control-measure",
+          "device/infpump-flowguard"
+        ],
+        "draft": false,
+        "note_origin": "human-reviewed synthetic example",
+        "technical_file": "TF-05 Risk Management/Risk Analysis and Risk Matrix.xlsx",
+        "technical_file_identifier": "RCM-PUMP-046",
+        "valid_from": "2026-08-15",
+        "review_status": "approved",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
+        "control_priority": "information-for-safety-or-production-control",
+        "topic": "completed-battery-endurance-lifecycle",
+        "implementation_state": "implemented",
+        "mitigates": [
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-041-therapy-interruption-after-battery-endurance-degradation|RISK-PUMP-041]]"
+        ],
+        "verified_by": [
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-032-post-change-battery-endurance-verification-report|EVD-PUMP-032]]"
+        ]
+      }
+    },
+    {
       "id": "SIGNAL-PUMP-001",
       "type": "signal",
       "title": "Unexpected battery runtime reduction",
@@ -28672,6 +29099,47 @@
         ],
         "triggers": [
           "[[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-010-administration-set-compatibility-extension|CHG-PUMP-010]]"
+        ]
+      }
+    },
+    {
+      "id": "SIGNAL-PUMP-011",
+      "type": "signal",
+      "title": "Confirmed battery-endurance degradation trend",
+      "path": "06-Infpump FlowGuard ontology notes/signal/SIGNAL-PUMP-011-confirmed-battery-endurance-degradation-trend.md",
+      "data": {
+        "id": "SIGNAL-PUMP-011",
+        "type": "signal",
+        "title": "Confirmed battery-endurance degradation trend",
+        "aliases": [
+          "SIGNAL-PUMP-011",
+          "SIGNAL-PUMP-011-confirmed-battery-endurance-degradation-trend",
+          "18-ontology-notes/signal/SIGNAL-PUMP-011-confirmed-battery-endurance-degradation-trend",
+          "03-Ontology notes/signal/SIGNAL-PUMP-011-confirmed-battery-endurance-degradation-trend"
+        ],
+        "status": "accepted",
+        "version": "1",
+        "created": "2026-08-15",
+        "modified": "2026-08-15",
+        "tags": [
+          "ontology-note/signal",
+          "device/infpump-flowguard"
+        ],
+        "draft": false,
+        "note_origin": "human-reviewed synthetic example",
+        "technical_file": "TF-09 PMS/PMS Signal Register.xlsx",
+        "technical_file_identifier": "SIGNAL-PUMP-011",
+        "valid_from": "2026-08-15",
+        "review_status": "approved",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
+        "signal_state": "accepted",
+        "detected_at": "2026-08-15",
+        "topic": "completed-battery-endurance-lifecycle",
+        "concerns": [
+          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
+        ],
+        "triggers": [
+          "[[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-013-battery-energy-reserve-threshold-update|CHG-PUMP-013]]"
         ]
       }
     },
@@ -30153,6 +30621,48 @@
         "topic": "battery-power",
         "applies_to_configuration": [
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
+        ]
+      }
+    },
+    {
+      "id": "EVD-PUMP-032",
+      "type": "verification-evidence",
+      "title": "Post-change battery-endurance verification report",
+      "path": "06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-032-post-change-battery-endurance-verification-report.md",
+      "data": {
+        "id": "EVD-PUMP-032",
+        "type": "verification-evidence",
+        "title": "Post-change battery-endurance verification report",
+        "aliases": [
+          "EVD-PUMP-032",
+          "EVD-PUMP-032-post-change-battery-endurance-verification-report",
+          "18-ontology-notes/verification-evidence/EVD-PUMP-032-post-change-battery-endurance-verification-report",
+          "03-Ontology notes/verification-evidence/EVD-PUMP-032-post-change-battery-endurance-verification-report"
+        ],
+        "status": "approved",
+        "version": "1",
+        "created": "2026-08-15",
+        "modified": "2026-08-15",
+        "tags": [
+          "ontology-note/verification-evidence",
+          "device/infpump-flowguard"
+        ],
+        "draft": false,
+        "note_origin": "human-reviewed synthetic example",
+        "technical_file": "TF-07 Verification and Validation/V&V Evidence Index.xlsx",
+        "technical_file_identifier": "EVD-PUMP-032",
+        "valid_from": "2026-08-15",
+        "review_status": "approved",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
+        "approved_at": "2026-08-15",
+        "evidence_scope": "Post-change battery-endurance verification report",
+        "topic": "completed-battery-endurance-lifecycle",
+        "evidence_state": "approved",
+        "applies_to_configuration": [
+          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
+        ],
+        "supports_claim": [
+          "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-021-maintains-specified-battery-backed-therapy-duration|CLM-PUMP-021]]"
         ]
       }
     },
@@ -33353,6 +33863,30 @@
       "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-012-manufacturing-test-station-software-update.md"
     },
     {
+      "subject": "CHG-PUMP-013",
+      "predicate": "concerns",
+      "object": "DEVC-PUMP-001",
+      "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-013-battery-energy-reserve-threshold-update.md"
+    },
+    {
+      "subject": "CHG-PUMP-013",
+      "predicate": "impacts",
+      "object": "RISK-PUMP-041",
+      "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-013-battery-energy-reserve-threshold-update.md"
+    },
+    {
+      "subject": "CHG-PUMP-013",
+      "predicate": "impacts",
+      "object": "EVD-PUMP-032",
+      "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-013-battery-energy-reserve-threshold-update.md"
+    },
+    {
+      "subject": "CHG-PUMP-013",
+      "predicate": "has_impact_assessment",
+      "object": "CIA-PUMP-002",
+      "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-013-battery-energy-reserve-threshold-update.md"
+    },
+    {
       "subject": "CIA-PUMP-001",
       "predicate": "concerns",
       "object": "DEVC-PUMP-001",
@@ -33363,6 +33897,24 @@
       "predicate": "supported_by",
       "object": "EVD-PUMP-007",
       "source_note": "06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-001-battery-cell-supplier-change-impact-assessment.md"
+    },
+    {
+      "subject": "CIA-PUMP-002",
+      "predicate": "concerns",
+      "object": "DEVC-PUMP-001",
+      "source_note": "06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-002-battery-endurance-signal-change-impact-assessment.md"
+    },
+    {
+      "subject": "CIA-PUMP-002",
+      "predicate": "supported_by",
+      "object": "EVD-PUMP-007",
+      "source_note": "06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-002-battery-endurance-signal-change-impact-assessment.md"
+    },
+    {
+      "subject": "CIA-PUMP-002",
+      "predicate": "requires_reassessment_of",
+      "object": "RISK-PUMP-041",
+      "source_note": "06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-002-battery-endurance-signal-change-impact-assessment.md"
     },
     {
       "subject": "CLD-PUMP-001",
@@ -33788,6 +34340,12 @@
       "subject": "CEVD-PUMP-001",
       "predicate": "supports_claim",
       "object": "CLM-PUMP-020",
+      "source_note": "06-Infpump FlowGuard ontology notes/clinical-evidence/CEVD-PUMP-001-infpump-flowguard-clinical-evidence-set.md"
+    },
+    {
+      "subject": "CEVD-PUMP-001",
+      "predicate": "supports_claim",
+      "object": "CLM-PUMP-021",
       "source_note": "06-Infpump FlowGuard ontology notes/clinical-evidence/CEVD-PUMP-001-infpump-flowguard-clinical-evidence-set.md"
     },
     {
@@ -34721,6 +35279,30 @@
       "source_note": "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-051-battery-endurance-after-cell-supplier-change.md"
     },
     {
+      "subject": "CRI-PUMP-052",
+      "predicate": "instantiates_requirement",
+      "object": "GSPR-0003",
+      "source_note": "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-052-minimum-post-change-battery-endurance.md"
+    },
+    {
+      "subject": "CRI-PUMP-052",
+      "predicate": "derived_from",
+      "object": "PROV-MDR-ANNEX-I",
+      "source_note": "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-052-minimum-post-change-battery-endurance.md"
+    },
+    {
+      "subject": "CRI-PUMP-052",
+      "predicate": "satisfied_by",
+      "object": "EVD-PUMP-032",
+      "source_note": "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-052-minimum-post-change-battery-endurance.md"
+    },
+    {
+      "subject": "CRI-PUMP-052",
+      "predicate": "implemented_by_control",
+      "object": "RCM-PUMP-046",
+      "source_note": "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-052-minimum-post-change-battery-endurance.md"
+    },
+    {
       "subject": "BASE-PUMP-001",
       "predicate": "includes",
       "object": "SW-PUMP-001",
@@ -34836,6 +35418,12 @@
     },
     {
       "subject": "DEVC-PUMP-001",
+      "predicate": "has_applicable_requirement",
+      "object": "CRI-PUMP-052",
+      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
+    },
+    {
+      "subject": "DEVC-PUMP-001",
       "predicate": "has_hazard",
       "object": "HAZ-PUMP-001",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
@@ -34890,6 +35478,12 @@
     },
     {
       "subject": "DEVC-PUMP-001",
+      "predicate": "has_risk",
+      "object": "RISK-PUMP-041",
+      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
+    },
+    {
+      "subject": "DEVC-PUMP-001",
       "predicate": "includes_component",
       "object": "COMP-PUMP-001",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
@@ -34926,6 +35520,12 @@
     },
     {
       "subject": "DEVC-PUMP-001",
+      "predicate": "makes_clinical_claim",
+      "object": "CLM-PUMP-021",
+      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
+    },
+    {
+      "subject": "DEVC-PUMP-001",
       "predicate": "has_certificate",
       "object": "CERT-PUMP-001",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
@@ -34958,6 +35558,12 @@
       "subject": "DEVC-PUMP-001",
       "predicate": "covered_by_pms_plan",
       "object": "PMS-PLAN-PUMP-001",
+      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
+    },
+    {
+      "subject": "DEVC-PUMP-001",
+      "predicate": "covered_by_pms_plan",
+      "object": "PMS-PLAN-PUMP-002",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
     },
     {
@@ -36533,6 +37139,30 @@
       "source_note": "06-Infpump FlowGuard ontology notes/pms-plan/PMS-PLAN-PUMP-001-infpump-flowguard-post-market-surveillance-plan.md"
     },
     {
+      "subject": "PMS-PLAN-PUMP-002",
+      "predicate": "applies_to_configuration",
+      "object": "DEVC-PUMP-001",
+      "source_note": "06-Infpump FlowGuard ontology notes/pms-plan/PMS-PLAN-PUMP-002-bedside-battery-endurance-post-market-surveillance-plan.md"
+    },
+    {
+      "subject": "PMS-PLAN-PUMP-002",
+      "predicate": "source_provisions",
+      "object": "PROV-MDR-ARTICLE-83",
+      "source_note": "06-Infpump FlowGuard ontology notes/pms-plan/PMS-PLAN-PUMP-002-bedside-battery-endurance-post-market-surveillance-plan.md"
+    },
+    {
+      "subject": "PMS-PLAN-PUMP-002",
+      "predicate": "source_provisions",
+      "object": "SRC-MDCG-2025-10",
+      "source_note": "06-Infpump FlowGuard ontology notes/pms-plan/PMS-PLAN-PUMP-002-bedside-battery-endurance-post-market-surveillance-plan.md"
+    },
+    {
+      "subject": "PMS-PLAN-PUMP-002",
+      "predicate": "identifies_signal",
+      "object": "SIGNAL-PUMP-011",
+      "source_note": "06-Infpump FlowGuard ontology notes/pms-plan/PMS-PLAN-PUMP-002-bedside-battery-endurance-post-market-surveillance-plan.md"
+    },
+    {
       "subject": "PROC-PUMP-001",
       "predicate": "owned_by",
       "object": "ROLE-QUALITY",
@@ -36807,6 +37437,18 @@
       "predicate": "concerns",
       "object": "DEVC-PUMP-005",
       "source_note": "06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-040-delayed-detection-or-secondary-harm-from-use-error-during-setup.md"
+    },
+    {
+      "subject": "RISK-PUMP-041",
+      "predicate": "concerns",
+      "object": "DEVC-PUMP-001",
+      "source_note": "06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-041-therapy-interruption-after-battery-endurance-degradation.md"
+    },
+    {
+      "subject": "RISK-PUMP-041",
+      "predicate": "informs_requirement",
+      "object": "CRI-PUMP-052",
+      "source_note": "06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-041-therapy-interruption-after-battery-endurance-degradation.md"
     },
     {
       "subject": "RCM-PUMP-001",
@@ -37349,6 +37991,18 @@
       "source_note": "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-045-independent-release-inspection.md"
     },
     {
+      "subject": "RCM-PUMP-046",
+      "predicate": "mitigates",
+      "object": "RISK-PUMP-041",
+      "source_note": "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-046-conservative-low-battery-shutdown-reserve.md"
+    },
+    {
+      "subject": "RCM-PUMP-046",
+      "predicate": "verified_by",
+      "object": "EVD-PUMP-032",
+      "source_note": "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-046-conservative-low-battery-shutdown-reserve.md"
+    },
+    {
       "subject": "SIGNAL-PUMP-001",
       "predicate": "concerns",
       "object": "DEVC-PUMP-001",
@@ -37467,6 +38121,18 @@
       "predicate": "triggers",
       "object": "CHG-PUMP-010",
       "source_note": "06-Infpump FlowGuard ontology notes/signal/SIGNAL-PUMP-010-therapy-log-timestamp-discrepancies.md"
+    },
+    {
+      "subject": "SIGNAL-PUMP-011",
+      "predicate": "concerns",
+      "object": "DEVC-PUMP-001",
+      "source_note": "06-Infpump FlowGuard ontology notes/signal/SIGNAL-PUMP-011-confirmed-battery-endurance-degradation-trend.md"
+    },
+    {
+      "subject": "SIGNAL-PUMP-011",
+      "predicate": "triggers",
+      "object": "CHG-PUMP-013",
+      "source_note": "06-Infpump FlowGuard ontology notes/signal/SIGNAL-PUMP-011-confirmed-battery-endurance-degradation-trend.md"
     },
     {
       "subject": "SW-PUMP-001",
@@ -37827,6 +38493,18 @@
       "predicate": "applies_to_configuration",
       "object": "DEVC-PUMP-001",
       "source_note": "06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-031-post-change-battery-endurance-verification.md"
+    },
+    {
+      "subject": "EVD-PUMP-032",
+      "predicate": "applies_to_configuration",
+      "object": "DEVC-PUMP-001",
+      "source_note": "06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-032-post-change-battery-endurance-verification-report.md"
+    },
+    {
+      "subject": "EVD-PUMP-032",
+      "predicate": "supports_claim",
+      "object": "CLM-PUMP-021",
+      "source_note": "06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-032-post-change-battery-endurance-verification-report.md"
     }
   ],
   "assertions": [
@@ -37996,6 +38674,23 @@
       "id": "DA-CC652520B58B",
       "type": "derived-assertion",
       "subject": "CHG-PUMP-010",
+      "predicate": "multidomain_review_required",
+      "object": true,
+      "derived_by_rule": "RULE-CHANGE-HIGH-IMPACT-001",
+      "source_provisions": [
+        "PROV-MDR-ARTICLE-10",
+        "PROV-MDR-ARTICLE-10"
+      ],
+      "assurance_level": "review-trigger",
+      "normative_basis": "ontology-governance",
+      "confidence": "medium",
+      "human_review_required": true,
+      "evaluated_at": "2026-08-20"
+    },
+    {
+      "id": "DA-E6F2F03DB7F9",
+      "type": "derived-assertion",
+      "subject": "CHG-PUMP-013",
       "predicate": "multidomain_review_required",
       "object": true,
       "derived_by_rule": "RULE-CHANGE-HIGH-IMPACT-001",

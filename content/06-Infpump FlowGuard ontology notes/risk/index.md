@@ -11,7 +11,7 @@
 
 # Risk ontology notes
 
-40 independently identifiable risk notes for the imaginary Infpump FlowGuard infusion pump.
+41 independently identifiable risk notes for the imaginary Infpump FlowGuard infusion pump.
 
 ## Notes
 
@@ -55,6 +55,7 @@
 - [[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-038-delayed-detection-or-secondary-harm-from-microbial-contamination|RISK-PUMP-038 — Delayed detection or secondary harm from microbial contamination]]
 - [[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-039-clinical-injury-following-use-error-during-setup|RISK-PUMP-039 — Clinical injury following use error during setup]]
 - [[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-040-delayed-detection-or-secondary-harm-from-use-error-during-setup|RISK-PUMP-040 — Delayed detection or secondary harm from use error during setup]]
+- [[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-041-therapy-interruption-after-battery-endurance-degradation|RISK-PUMP-041 — Therapy interruption after battery-endurance degradation]]
 
 ## Continue
 

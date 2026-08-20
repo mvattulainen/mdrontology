@@ -11,7 +11,7 @@
 
 # Clinical claim ontology notes
 
-20 independently identifiable clinical claim notes for the imaginary Infpump FlowGuard infusion pump.
+21 independently identifiable clinical claim notes for the imaginary Infpump FlowGuard infusion pump.
 
 ## Notes
 
@@ -35,6 +35,7 @@
 - [[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-018-maintains-performance-near-specified-electromagnetic-sources|CLM-PUMP-018 — Maintains performance near specified electromagnetic sources]]
 - [[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-019-supports-secure-networked-configuration|CLM-PUMP-019 — Supports secure networked configuration]]
 - [[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-020-provides-clinically-interpretable-event-chronology|CLM-PUMP-020 — Provides clinically interpretable event chronology]]
+- [[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-021-maintains-specified-battery-backed-therapy-duration|CLM-PUMP-021 — Maintains specified battery-backed therapy duration]]
 
 ## Continue
 

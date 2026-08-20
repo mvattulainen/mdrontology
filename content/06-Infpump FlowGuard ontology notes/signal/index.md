@@ -11,7 +11,7 @@
 
 # Signal ontology notes
 
-10 independently identifiable signal notes for the imaginary Infpump FlowGuard infusion pump.
+11 independently identifiable signal notes for the imaginary Infpump FlowGuard infusion pump.
 
 ## Notes
 
@@ -25,6 +25,7 @@
 - [[06-Infpump FlowGuard ontology notes/signal/SIGNAL-PUMP-008-pole-clamp-slippage-complaints|SIGNAL-PUMP-008 — Pole-clamp slippage complaints]]
 - [[06-Infpump FlowGuard ontology notes/signal/SIGNAL-PUMP-009-fluid-ingress-service-findings|SIGNAL-PUMP-009 — Fluid-ingress service findings]]
 - [[06-Infpump FlowGuard ontology notes/signal/SIGNAL-PUMP-010-therapy-log-timestamp-discrepancies|SIGNAL-PUMP-010 — Therapy-log timestamp discrepancies]]
+- [[06-Infpump FlowGuard ontology notes/signal/SIGNAL-PUMP-011-confirmed-battery-endurance-degradation-trend|SIGNAL-PUMP-011 — Confirmed battery-endurance degradation trend]]
 
 ## Continue
 

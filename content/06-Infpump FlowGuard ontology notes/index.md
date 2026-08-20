@@ -12,7 +12,7 @@
 
 # 06-Infpump FlowGuard ontology notes
 
-This index groups all 315 ontology notes by their existing vault class. Shared organisations and other reusable domain instances remain canonical under 01 — Ontology instances, while regulatory sources remain canonical under 02 — Sources. This section adds device-specific Infpump FlowGuard notes and links to those canonical nodes rather than duplicating them.
+This index groups all 324 ontology notes by their existing vault class. Shared organisations and other reusable domain instances remain canonical under 01 — Ontology instances, while regulatory sources remain canonical under 02 — Sources. This section adds device-specific Infpump FlowGuard notes and links to those canonical nodes rather than duplicating them.
 
 ## Canonical-node policy
 
@@ -35,6 +35,7 @@ The following diagrams connect real Infpump FlowGuard notes into regulatory reas
 - [Electrical-safety compliance trace](/06-infpump-flowguard-ontology-notes/connections/08-electrical-safety-compliance-trace)
 - [PMS signal and change feedback](/06-infpump-flowguard-ontology-notes/connections/09-pms-signal-and-change-feedback)
 - [Supplier and component change control](/06-infpump-flowguard-ontology-notes/connections/10-supplier-component-change-control)
+- [Completed battery-endurance lifecycle](/06-infpump-flowguard-ontology-notes/connections/11-completed-battery-endurance-lifecycle)
 <!-- ontology-note-guides:end -->
 
 ## Device configuration
@@ -51,7 +52,7 @@ The following diagrams connect real Infpump FlowGuard notes into regulatory reas
 
 ## Compliance requirement instance
 
-[Browse 51 compliance requirement instance notes](/06-infpump-flowguard-ontology-notes/compliance-requirement-instance/). Example: [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-001-risk-reduction-and-acceptable-residual-risk|CRI-PUMP-001]].
+[Browse 52 compliance requirement instance notes](/06-infpump-flowguard-ontology-notes/compliance-requirement-instance/). Example: [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-001-risk-reduction-and-acceptable-residual-risk|CRI-PUMP-001]].
 
 ## Hazard
 
@@ -67,31 +68,31 @@ The following diagrams connect real Infpump FlowGuard notes into regulatory reas
 
 ## Risk
 
-[Browse 40 risk notes](/06-infpump-flowguard-ontology-notes/risk/). Example: [[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-001-clinical-injury-following-unintended-excessive-flow|RISK-PUMP-001]].
+[Browse 41 risk notes](/06-infpump-flowguard-ontology-notes/risk/). Example: [[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-001-clinical-injury-following-unintended-excessive-flow|RISK-PUMP-001]].
 
 ## Risk control measure
 
-[Browse 45 risk control measure notes](/06-infpump-flowguard-ontology-notes/risk-control-measure/). Example: [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-001-independent-flow-monitoring|RCM-PUMP-001]].
+[Browse 46 risk control measure notes](/06-infpump-flowguard-ontology-notes/risk-control-measure/). Example: [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-001-independent-flow-monitoring|RCM-PUMP-001]].
 
 ## Clinical claim
 
-[Browse 20 clinical claim notes](/06-infpump-flowguard-ontology-notes/clinical-claim/). Example: [[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-001-maintains-programmed-volumetric-flow-within-specified-accuracy|CLM-PUMP-001]].
+[Browse 21 clinical claim notes](/06-infpump-flowguard-ontology-notes/clinical-claim/). Example: [[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-001-maintains-programmed-volumetric-flow-within-specified-accuracy|CLM-PUMP-001]].
 
 ## Verification evidence
 
-[Browse 31 verification evidence notes](/06-infpump-flowguard-ontology-notes/verification-evidence/). Example: [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-001-flow-accuracy-verification-report|EVD-PUMP-001]].
+[Browse 32 verification evidence notes](/06-infpump-flowguard-ontology-notes/verification-evidence/). Example: [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-001-flow-accuracy-verification-report|EVD-PUMP-001]].
 
 ## Change
 
-[Browse 12 change notes](/06-infpump-flowguard-ontology-notes/change/). Example: [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-001-battery-cell-supplier-replacement|CHG-PUMP-001]].
+[Browse 13 change notes](/06-infpump-flowguard-ontology-notes/change/). Example: [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-001-battery-cell-supplier-replacement|CHG-PUMP-001]].
 
 ## Change impact assessment
 
-[Browse 1 change impact assessment notes](/06-infpump-flowguard-ontology-notes/change-impact-assessment/). Example: [[06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-001-battery-cell-supplier-change-impact-assessment|CIA-PUMP-001]].
+[Browse 2 change impact assessment notes](/06-infpump-flowguard-ontology-notes/change-impact-assessment/). Example: [[06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-001-battery-cell-supplier-change-impact-assessment|CIA-PUMP-001]].
 
 ## Signal
 
-[Browse 10 signal notes](/06-infpump-flowguard-ontology-notes/signal/). Example: [[06-Infpump FlowGuard ontology notes/signal/SIGNAL-PUMP-001-unexpected-battery-runtime-reduction|SIGNAL-PUMP-001]].
+[Browse 11 signal notes](/06-infpump-flowguard-ontology-notes/signal/). Example: [[06-Infpump FlowGuard ontology notes/signal/SIGNAL-PUMP-001-unexpected-battery-runtime-reduction|SIGNAL-PUMP-001]].
 
 ## Certificate
 
@@ -151,4 +152,4 @@ The following diagrams connect real Infpump FlowGuard notes into regulatory reas
 
 ## PMS plan
 
-[Browse 1 pms plan notes](/06-infpump-flowguard-ontology-notes/pms-plan/). Example: [[06-Infpump FlowGuard ontology notes/pms-plan/PMS-PLAN-PUMP-001-infpump-flowguard-post-market-surveillance-plan|PMS-PLAN-PUMP-001]].
+[Browse 2 pms plan notes](/06-infpump-flowguard-ontology-notes/pms-plan/). Example: [[06-Infpump FlowGuard ontology notes/pms-plan/PMS-PLAN-PUMP-001-infpump-flowguard-post-market-surveillance-plan|PMS-PLAN-PUMP-001]].

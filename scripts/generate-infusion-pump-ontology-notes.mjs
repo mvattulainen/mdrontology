@@ -223,11 +223,23 @@ records.push(
   { id: "EVD-PUMP-031", type: "verification-evidence", title: "Post-change battery endurance verification", number: 31, family: familyByType.get("verification-evidence"), relations: {}, extra: {} },
   { id: "SUP-PUMP-006", type: "supplier", title: "Proposed replacement battery-cell supplier", number: 6, family: familyByType.get("supplier"), relations: {}, extra: {} },
   { id: "DOC-PUMP-006", type: "document-version", title: "Clinical evaluation report Rev D", number: 6, family: familyByType.get("document-version"), relations: {}, extra: {} },
+  { id: "PMS-PLAN-PUMP-002", type: "pms-plan", title: "Bedside battery-endurance post-market surveillance plan", number: 2, family: familyByType.get("pms-plan"), relations: {}, extra: {} },
+  { id: "SIGNAL-PUMP-011", type: "signal", title: "Confirmed battery-endurance degradation trend", number: 11, family: familyByType.get("signal"), relations: {}, extra: {} },
+  { id: "CHG-PUMP-013", type: "change", title: "Battery energy-reserve threshold update", number: 13, family: familyByType.get("change"), relations: {}, extra: {} },
+  { id: "CIA-PUMP-002", type: "change-impact-assessment", title: "Battery-endurance signal change-impact assessment", number: 2, family: familyByType.get("change-impact-assessment"), relations: {}, extra: {} },
+  { id: "RISK-PUMP-041", type: "risk", title: "Therapy interruption after battery-endurance degradation", number: 41, family: familyByType.get("risk"), relations: {}, extra: {} },
+  { id: "CRI-PUMP-052", type: "compliance-requirement-instance", title: "Minimum post-change battery endurance", number: 52, family: familyByType.get("compliance-requirement-instance"), relations: {}, extra: {} },
+  { id: "RCM-PUMP-046", type: "risk-control-measure", title: "Conservative low-battery shutdown reserve", number: 46, family: familyByType.get("risk-control-measure"), relations: {}, extra: {} },
+  { id: "EVD-PUMP-032", type: "verification-evidence", title: "Post-change battery-endurance verification report", number: 32, family: familyByType.get("verification-evidence"), relations: {}, extra: {} },
+  { id: "CLM-PUMP-021", type: "clinical-claim", title: "Maintains specified battery-backed therapy duration", number: 21, family: familyByType.get("clinical-claim"), relations: {}, extra: {} },
 )
-if (records.length !== 315) throw new Error(`Expected 315 ontology notes (300 core, 10 architecture extensions and 5 scenario-integrity extensions), found ${records.length}`)
+if (records.length !== 324) throw new Error(`Expected 324 ontology notes (300 core, 10 architecture extensions and 14 scenario-integrity extensions), found ${records.length}`)
 
 const byType = new Map(familyDefinitions.map((family) => [family.type, records.filter((record) => record.type === family.type)]))
-const extensionIds = new Set(["EVD-PUMP-031", "SUP-PUMP-006", "DOC-PUMP-006"])
+const extensionIds = new Set([
+  "EVD-PUMP-031", "SUP-PUMP-006", "DOC-PUMP-006", "PMS-PLAN-PUMP-002", "SIGNAL-PUMP-011",
+  "CHG-PUMP-013", "CIA-PUMP-002", "RISK-PUMP-041", "CRI-PUMP-052", "RCM-PUMP-046", "EVD-PUMP-032", "CLM-PUMP-021",
+])
 const at = (type, index) => {
   const candidates = byType.get(type).filter((record) => !extensionIds.has(record.id))
   return candidates[index % candidates.length]
@@ -526,6 +538,38 @@ scenarioRecord("CRI-PUMP-051").relations.requires_evidence = ["EVTYPE-PUMP-001"]
 scenarioRecord("SUP-PUMP-006").relations.supplied_component = ["COMP-PUMP-004"]
 ownByConfiguration("has_risk", "RISK-PUMP-013", "DEVC-PUMP-001")
 
+// Completed battery-endurance lifecycle demonstration: every note is scoped to
+// the released bedside configuration and each diagram step is a declared edge.
+const completedLifecycleIds = [
+  "PMS-PLAN-PUMP-002", "SIGNAL-PUMP-011", "CHG-PUMP-013", "CIA-PUMP-002", "RISK-PUMP-041",
+  "CRI-PUMP-052", "RCM-PUMP-046", "EVD-PUMP-032", "CLM-PUMP-021",
+]
+for (const id of completedLifecycleIds) configure(id, "DEVC-PUMP-001", "completed-battery-endurance-lifecycle")
+const bedsideConfiguration = scenarioRecord("DEVC-PUMP-001")
+if (!bedsideConfiguration.relations.covered_by_pms_plan.includes("PMS-PLAN-PUMP-002")) bedsideConfiguration.relations.covered_by_pms_plan.push("PMS-PLAN-PUMP-002")
+scenarioRecord("PMS-PLAN-PUMP-002").relations.identifies_signal = ["SIGNAL-PUMP-011"]
+scenarioRecord("PMS-PLAN-PUMP-002").extra.plan_state = "effective"
+scenarioRecord("SIGNAL-PUMP-011").relations.triggers = ["CHG-PUMP-013"]
+scenarioRecord("SIGNAL-PUMP-011").extra.signal_state = "accepted"
+scenarioRecord("CHG-PUMP-013").relations.has_impact_assessment = ["CIA-PUMP-002"]
+scenarioRecord("CHG-PUMP-013").relations.impacts = ["RISK-PUMP-041", "EVD-PUMP-032"]
+scenarioRecord("CHG-PUMP-013").extra.change_state = "implemented"
+scenarioRecord("CIA-PUMP-002").relations.requires_reassessment_of = ["RISK-PUMP-041"]
+scenarioRecord("CIA-PUMP-002").extra.assessment_state = "completed"
+scenarioRecord("RISK-PUMP-041").relations.informs_requirement = ["CRI-PUMP-052"]
+scenarioRecord("RISK-PUMP-041").extra.risk_acceptance_state = "accepted-after-reassessment"
+scenarioRecord("CRI-PUMP-052").relations.instantiates_requirement = ["GSPR-0003"]
+scenarioRecord("CRI-PUMP-052").relations.implemented_by_control = ["RCM-PUMP-046"]
+scenarioRecord("CRI-PUMP-052").relations.satisfied_by = ["EVD-PUMP-032"]
+scenarioRecord("CRI-PUMP-052").extra.compliance_status = "satisfied"
+scenarioRecord("RCM-PUMP-046").relations.mitigates = ["RISK-PUMP-041"]
+scenarioRecord("RCM-PUMP-046").relations.verified_by = ["EVD-PUMP-032"]
+scenarioRecord("RCM-PUMP-046").extra.implementation_state = "implemented"
+scenarioRecord("EVD-PUMP-032").relations.supports_claim = ["CLM-PUMP-021"]
+scenarioRecord("EVD-PUMP-032").extra.evidence_state = "approved"
+scenarioRecord("CLM-PUMP-021").extra.claim_state = "supported"
+for (const [predicate, id] of [["has_risk", "RISK-PUMP-041"], ["has_applicable_requirement", "CRI-PUMP-052"], ["makes_clinical_claim", "CLM-PUMP-021"]]) ownByConfiguration(predicate, id, "DEVC-PUMP-001")
+
 const existingFiles = await walk(contentRoot)
 const basenameById = new Map()
 const fileById = new Map()
@@ -691,6 +735,12 @@ const semanticRole = (record) => {
   return descriptions[record.type]
 }
 
+const lifecycleStatusById = new Map([
+  ["PMS-PLAN-PUMP-002", "approved"], ["SIGNAL-PUMP-011", "accepted"], ["CHG-PUMP-013", "implemented"],
+  ["CIA-PUMP-002", "approved"], ["RISK-PUMP-041", "accepted"], ["CRI-PUMP-052", "approved"],
+  ["RCM-PUMP-046", "implemented"], ["EVD-PUMP-032", "approved"], ["CLM-PUMP-021", "approved"],
+])
+
 for (const record of records) {
   const relationData = Object.fromEntries(Object.entries(record.relations).map(([predicate, ids]) => [predicate, ids.map((id) => link(id))]))
   const data = {
@@ -703,7 +753,7 @@ for (const record of records) {
       `18-ontology-notes/${record.type}/${basenameById.get(record.id)}`,
       `03-Ontology notes/${record.type}/${basenameById.get(record.id)}`,
     ],
-    status: record.id === "CRI-PUMP-051" || record.id === "EVD-PUMP-031"
+    status: lifecycleStatusById.get(record.id) ?? (record.id === "CRI-PUMP-051" || record.id === "EVD-PUMP-031"
       ? "draft"
       : record.id === "SUP-PUMP-006"
         ? "under-assessment"
@@ -713,7 +763,7 @@ for (const record of records) {
           ? "implemented"
           : record.type === "change" || record.type === "signal" || record.type === "change-impact-assessment"
             ? "under-assessment"
-            : "approved",
+            : "approved"),
     version: "1",
     created: today,
     modified: today,
@@ -812,7 +862,7 @@ const ontologyOverviewBody = [
   "",
   "It is also made of **relations**, which give meaning to connections between records. Relations express statements such as a manufacturer produces a device, a requirement applies to a configuration, evidence demonstrates compliance, or a risk control mitigates a risk. These typed connections turn separate Markdown pages into a traceable knowledge graph and preserve the source and scope of regulatory claims.",
   "",
-  "The current ontology has 179 class definitions, 85 relation definitions, 22 constraints and 9 executable rules. Its executable governance uses three assurance levels: hard constraints and rules may block a lifecycle decision, advisory constraints identify non-blocking data-quality findings, and review-trigger rules derive a need for qualified assessment rather than a final legal conclusion. This tiering permits broader machine assistance while keeping device-specific judgement and legally sensitive interpretation under accountable human review.",
+  "The current ontology has 179 class definitions, 88 relation definitions, 22 constraints and 9 executable rules. Its executable governance uses three assurance levels: hard constraints and rules may block a lifecycle decision, advisory constraints identify non-blocking data-quality findings, and review-trigger rules derive a need for qualified assessment rather than a final legal conclusion. This tiering permits broader machine assistance while keeping device-specific judgement and legally sensitive interpretation under accountable human review.",
   "",
   "The ontology is used by linking technical-file records to the concepts and relations that describe their regulatory meaning. People can follow those links to review a device’s intended purpose, classification, requirements, risks, evidence and open gaps, while software can validate identifiers and relationships, apply governed rules and constraints, distinguish blocking gaps from advisory findings, and assemble grounded context for the competency questions. The result supports navigation and reasoning without replacing accountable regulatory decision-making.",
 ].join("\n")
@@ -820,7 +870,7 @@ const ontologyOverviewBody = [
 const allIndexBody = [
   "# 06-Infpump FlowGuard ontology notes",
   "",
-  "This index groups all 315 ontology notes by their existing vault class. Shared organisations and other reusable domain instances remain canonical under 01 — Ontology instances, while regulatory sources remain canonical under 02 — Sources. This section adds device-specific Infpump FlowGuard notes and links to those canonical nodes rather than duplicating them.",
+  "This index groups all 324 ontology notes by their existing vault class. Shared organisations and other reusable domain instances remain canonical under 01 — Ontology instances, while regulatory sources remain canonical under 02 — Sources. This section adds device-specific Infpump FlowGuard notes and links to those canonical nodes rather than duplicating them.",
   "",
   "## Canonical-node policy",
   "",

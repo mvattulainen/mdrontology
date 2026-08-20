@@ -18,12 +18,14 @@
   "predicate": "requires_reassessment_of",
   "label": "requires reassessment of",
   "domain": [
-    "change"
+    "change",
+    "change-impact-assessment"
   ],
   "range": [
     "assessment",
     "document",
-    "decision"
+    "decision",
+    "risk"
   ],
   "inverse": null,
   "transitive": false,
@@ -32,14 +34,14 @@
   "provenance_required": false,
   "temporal_qualification_required": false,
   "example_ontology_notes": [
-    "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
+    "[[06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-002-battery-endurance-signal-change-impact-assessment|CIA-PUMP-002]]"
   ]
 }
 ---
 
 # requires_reassessment_of
 
-Relates change to assessment, document, decision.
+Relates a change or change-impact assessment to an assessment, document, decision or risk requiring reassessment.
 
 ## Purpose
 
@@ -49,8 +51,8 @@ Defines the ontology predicate `requires_reassessment_of`. It constrains which s
 
 | Property | Value |
 |---|---|
-| Domain | `change` |
-| Range | `assessment`, `document`, `decision` |
+| Domain | `change`, `change-impact-assessment` |
+| Range | `assessment`, `document`, `decision`, `risk` |
 | Functional | `false` |
 | Transitive | `false` |
 | Provenance required | `false` |
@@ -72,6 +74,6 @@ No canonical note currently references this node. Backlinks will appear as the v
 
 ## Infusion-pump ontology-note example
 
-- [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]]
+- [[06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-002-battery-endurance-signal-change-impact-assessment|CIA-PUMP-002 — Battery-endurance signal change-impact assessment]]
 
 This relation-definition page is connected to a concrete Infpump FlowGuard ontology note so its terminology or contract can be inspected in device-specific context.
