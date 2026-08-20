@@ -196,6 +196,8 @@ const diagrams = [
   {
     slug: "11-completed-battery-endurance-lifecycle",
     title: "Completed battery-endurance lifecycle",
+    direction: "LR",
+    fitWidth: false,
     purpose: "Shows one completed, configuration-specific regulatory sequence from planned post-market surveillance through signal handling, change assessment, risk reassessment, requirement implementation and verification to a supported clinical claim.",
     nodes: [
       note("DEVC-PUMP-001", "Released bedside configuration", "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10"),
@@ -219,7 +221,10 @@ function routeFor(target) {
 }
 
 function mermaidFor(diagram) {
-  const lines = ['%%{init: {"flowchart": {"curve": "linear"}}}%%', "flowchart TD"]
+  const flowchartConfig = diagram.fitWidth === false
+    ? '{"curve": "linear", "useMaxWidth": false}'
+    : '{"curve": "linear"}'
+  const lines = [`%%{init: {"flowchart": ${flowchartConfig}}}%%`, `flowchart ${diagram.direction ?? "TD"}`]
   const visualNodes = diagram.visualNodes ?? diagram.nodes
   visualNodes.forEach((item, index) => lines.push(`  N${index + 1}["${item.id}<br/>${item.label}"]`))
   diagram.edges.forEach(([from, to, label]) => lines.push(`  N${from + 1} -->|${label}| N${to + 1}`))

@@ -22,8 +22,8 @@ Shows one completed, configuration-specific regulatory sequence from planned pos
 Every arrow reproduces a typed relation asserted in the linked ontology notes. Select a diagram node, or use the links below, to inspect the underlying semantic record.
 
 ```mermaid
-%%{init: {"flowchart": {"curve": "linear"}}}%%
-flowchart TD
+%%{init: {"flowchart": {"curve": "linear", "useMaxWidth": false}}}%%
+flowchart LR
   N1["DEVC-PUMP-001<br/>Released bedside configuration"]
   N2["PMS-PLAN-PUMP-002<br/>Battery-endurance PMS plan"]
   N3["SIGNAL-PUMP-011<br/>Accepted degradation signal"]

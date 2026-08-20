@@ -157,7 +157,7 @@ test("ontology-note guidance and eleven linked Mermaid narratives are complete",
   const hasEdge = (subject, predicate, object) => (api.outgoing.get(subject) ?? []).some((edge) => edge.predicate === predicate && edge.object === object)
   for (const page of pages) {
     const source = await readFile(new URL(page.name, directory), "utf8")
-    assert.match(source, /```mermaid\r?\n%%\{init: \{"flowchart": \{"curve": "linear"\}\}\}%%\r?\nflowchart TD/)
+    assert.match(source, /```mermaid\r?\n%%\{init: \{"flowchart": \{"curve": "linear"(?:, "useMaxWidth": false)?\}\}\}%%\r?\nflowchart (?:TD|LR)/)
     const linkedTargets = new Set([...source.matchAll(/^- \[\[([^|\]]+)\|/gm)].map((match) => match[1]))
     assert.ok(linkedTargets.size >= 4 && linkedTargets.size <= 10, `${page.name} must link 4–10 ontology notes`)
     const nodes = new Map([...source.matchAll(/^\s*N(\d+)\["([^<"]+)/gm)].map((match) => [Number(match[1]), match[2]]))
@@ -197,6 +197,8 @@ test("ontology-note guidance and eleven linked Mermaid narratives are complete",
   assert.deepEqual(lifecycleEdges.map((match) => match[0].match(/N(\d+) -->.* N(\d+)/).slice(1).map(Number)), [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]])
   for (const id of lifecycleIds) assert.match(JSON.stringify(api.byId.get(id).data.device_context), /DEVC-PUMP-001/, `${id} is not scoped to DEVC-PUMP-001`)
   assert.deepEqual(lifecycleIds.map((id) => api.byId.get(id).data.status), ["approved", "approved", "accepted", "implemented", "approved", "accepted", "approved", "implemented", "approved", "approved"])
+  assert.match(lifecyclePage, /flowchart LR/)
+  assert.match(lifecyclePage, /"useMaxWidth": false/)
 
   const notesIndex = await readFile(new URL("../content/06-Infpump%20FlowGuard%20ontology%20notes/index.md", import.meta.url), "utf8")
   assert.match(notesIndex, /META-ONTOLOGY-NOTE-ontology-note/)
