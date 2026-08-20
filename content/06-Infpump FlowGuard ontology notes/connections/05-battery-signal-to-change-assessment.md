@@ -7,7 +7,7 @@
     "18-ontology-notes/connections/05-battery-signal-to-change-assessment"
   ],
   "created": "2026-08-16",
-  "modified": "2026-08-19",
+  "modified": "2026-08-20",
   "tags": [
     "ontology-note/connection-diagram",
     "device/infpump-flowguard"
@@ -20,9 +20,10 @@
 
 Shows a post-market battery signal flowing through supplier and component context into a controlled change, its change-impact assessment, a newly drafted compliance-requirement instance and the evidence needed to reassess residual risk.
 
-The arrows reproduce typed relationships in the linked ontology-note metadata. Select a diagram node, or use the links below, to open the underlying ontology note. Border colour indicates the note's current `status`; the deliberately thick borders remain distinguishable when the diagram is scaled.
+The arrows reproduce typed relationships in the linked ontology-note metadata. Select a diagram node, or use the links below, to open the underlying ontology note. All boxes use the same neutral border, and connections are routed as horizontal and vertical segments with square corners.
 
 ```mermaid
+%%{init: {"flowchart": {"curve": "stepAfter"}}}%%
 flowchart TD
   N1["DEVC-PUMP-001<br/>Bedside configuration<br/>status: approved"]
   N2["SUP-PUMP-001<br/>Battery supplier<br/>status: approved"]
@@ -46,26 +47,6 @@ flowchart TD
   N7 -->|mitigates| N6
   N7 -->|verified_by| N8
   N8 -->|applies_to_configuration| N1
-  classDef draft fill:#ffffff,stroke:#64748b,stroke-width:4px,color:#334155
-  classDef approved fill:#ffffff,stroke:#15803d,stroke-width:4px,color:#14532d
-  classDef accepted fill:#ffffff,stroke:#2563eb,stroke-width:4px,color:#1e3a8a
-  classDef under_assessment fill:#ffffff,stroke:#d97706,stroke-width:4px,color:#78350f
-  classDef implemented fill:#ffffff,stroke:#7e22ce,stroke-width:4px,color:#581c87
-  class N1,N2,N3,N8 approved
-  class N4,N6 accepted
-  class N5,N10 under_assessment
-  class N7 implemented
-  class N9 draft
-  subgraph LEGEND["Status border legend"]
-    direction LR
-    L1["draft"]:::draft
-    L2["approved"]:::approved
-    L3["accepted"]:::accepted
-    L4["under-assessment"]:::under_assessment
-    L5["implemented"]:::implemented
-  end
-  N8 ~~~ L1
-  style LEGEND fill:#f8fafc,stroke:#cbd5e1,stroke-width:1px
   click N1 "/06-infpump-flowguard-ontology-notes/device-configuration/devc-pump-001-infpump-flowguard-bedside-configuration-10" "Open DEVC-PUMP-001"
   click N2 "/06-infpump-flowguard-ontology-notes/supplier/sup-pump-001-battery-pack-critical-supplier" "Open SUP-PUMP-001"
   click N3 "/06-infpump-flowguard-ontology-notes/component/comp-pump-004-rechargeable-battery-pack" "Open COMP-PUMP-004"

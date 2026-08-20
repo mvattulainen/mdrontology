@@ -156,7 +156,7 @@ test("ontology-note guidance and ten linked Mermaid narratives are complete", as
   assert.equal(pages.length, 10)
   for (const page of pages) {
     const source = await readFile(new URL(page.name, directory), "utf8")
-    assert.match(source, /```mermaid\r?\nflowchart TD/)
+    assert.match(source, /```mermaid\r?\n(?:%%\{init:[^\n]+\}%%\r?\n)?flowchart TD/)
     const linkedTargets = new Set([...source.matchAll(/\[\[(06-Infpump FlowGuard ontology notes\/(?!connections\/)[^|\]]+)\|/g)].map((match) => match[1]))
     assert.ok(linkedTargets.size >= 4 && linkedTargets.size <= 10, `${page.name} must link 4–10 ontology notes`)
     const clickableNodes = [...source.matchAll(/^\s*click N\d+ "\/06-infpump-flowguard-ontology-notes\//gm)]
@@ -164,10 +164,9 @@ test("ontology-note guidance and ten linked Mermaid narratives are complete", as
   }
 
   const batteryPage = await readFile(new URL("05-battery-signal-to-change-assessment.md", directory), "utf8")
-  for (const status of ["draft", "approved", "accepted", "under-assessment", "implemented"]) {
-    assert.match(batteryPage, new RegExp(`classDef ${status.replace("-", "_")} .*stroke-width:4px`))
-  }
-  assert.match(batteryPage, /Status border legend/)
+  assert.match(batteryPage, /%%\{init: \{"flowchart": \{"curve": "stepAfter"\}\}\}%%/)
+  assert.doesNotMatch(batteryPage, /classDef (?:draft|approved|accepted|under_assessment|implemented)/)
+  assert.doesNotMatch(batteryPage, /Status border legend/)
   assert.match(batteryPage, /CRI-PUMP-051/)
   assert.match(batteryPage, /CIA-PUMP-001/)
 
