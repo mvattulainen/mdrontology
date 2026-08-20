@@ -56,7 +56,7 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 
 ## Traceability
 
-Previous dependencies are ontology notes that lead into this record. They reach it through `may_cause` from [[06-Infpump FlowGuard ontology notes/hazardous-situation/HS-PUMP-004-air-reaches-the-patient-line|HS-PUMP-004 — Air reaches the patient line]], [[06-Infpump FlowGuard ontology notes/hazardous-situation/HS-PUMP-014-liquid-reaches-safety-critical-electronics|HS-PUMP-014 — Liquid reaches safety-critical electronics]]. These incoming links show which product, decision, process or evidence records depend on the current note.
+Previous dependencies are ontology notes that lead into this record. They reach it through `may_cause` from [[06-Infpump FlowGuard ontology notes/hazardous-situation/HS-PUMP-014-liquid-reaches-safety-critical-electronics|HS-PUMP-014 — Liquid reaches safety-critical electronics]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
 No succeeding ontology-note dependency is currently asserted for this record. It remains scoped to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004 — Infpump FlowGuard oncology configuration 1.1]], and any future downstream dependency should be added as a typed relationship rather than inferred from prose.
 
@@ -65,10 +65,8 @@ The left-to-right diagram shows up to five asserted previous and five asserted s
 ```mermaid
 flowchart LR
   CURRENT["HARM-PUMP-004<br/>Medication overdose"]
-  PREV0["HS-PUMP-004<br/>Air reaches the patient line"]
+  PREV0["HS-PUMP-014<br/>Liquid reaches safety-critical electronics"]
   PREV0 -->|"may_cause"| CURRENT
-  PREV1["HS-PUMP-014<br/>Liquid reaches safety-critical electronics"]
-  PREV1 -->|"may_cause"| CURRENT
   NEXT_NONE["No asserted succeeding dependency"]
   CURRENT -.-> NEXT_NONE
   classDef current fill:#dbeafe,stroke:#2563eb,stroke-width:2px

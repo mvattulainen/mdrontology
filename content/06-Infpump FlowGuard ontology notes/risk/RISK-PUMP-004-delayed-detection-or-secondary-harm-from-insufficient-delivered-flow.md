@@ -66,7 +66,7 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 
 ## Traceability
 
-Previous dependencies are ontology notes that lead into this record. They reach it through `has_risk` from [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]]; `mitigates` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-004-occlusion-pressure-monitoring|RCM-PUMP-004 — Occlusion pressure monitoring]], [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-044-priming-confirmation|RCM-PUMP-044 — Priming confirmation]]. These incoming links show which product, decision, process or evidence records depend on the current note.
+Previous dependencies are ontology notes that lead into this record. They reach it through `has_risk` from [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]]; `mitigates` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-044-priming-confirmation|RCM-PUMP-044 — Priming confirmation]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
 Succeeding dependencies are ontology notes to which this record leads. The trace continues through `concerns` to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004 — Infpump FlowGuard oncology configuration 1.1]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
@@ -77,10 +77,8 @@ flowchart LR
   CURRENT["RISK-PUMP-004<br/>Delayed detection or secondary harm from insufficient delivered flow"]
   PREV0["DEVC-PUMP-001<br/>Infpump FlowGuard bedside configuration 1.0"]
   PREV0 -->|"has_risk"| CURRENT
-  PREV1["RCM-PUMP-004<br/>Occlusion pressure monitoring"]
+  PREV1["RCM-PUMP-044<br/>Priming confirmation"]
   PREV1 -->|"mitigates"| CURRENT
-  PREV2["RCM-PUMP-044<br/>Priming confirmation"]
-  PREV2 -->|"mitigates"| CURRENT
   NEXT0["DEVC-PUMP-004<br/>Infpump FlowGuard oncology configuration 1.1"]
   CURRENT -->|"concerns"| NEXT0
   classDef current fill:#dbeafe,stroke:#2563eb,stroke-width:2px

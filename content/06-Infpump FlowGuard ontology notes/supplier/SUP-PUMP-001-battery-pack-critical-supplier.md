@@ -24,9 +24,11 @@
   "valid_from": "2026-08-15",
   "review_status": "approved",
   "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
-  "supplied_component": "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-004-rechargeable-battery-pack|COMP-PUMP-004]]",
   "supplier_criticality": "critical",
-  "approval_state": "approved"
+  "approval_state": "approved",
+  "supplied_component": [
+    "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-004-rechargeable-battery-pack|COMP-PUMP-004]]"
+  ]
 }
 ---
 
@@ -56,9 +58,9 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **valid_from:** `2026-08-15`
 - **review_status:** `approved`
 - **device_context:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]
-- **supplied_component:** [[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-004-rechargeable-battery-pack|COMP-PUMP-004]]
 - **supplier_criticality:** `critical`
 - **approval_state:** `approved`
+- **supplied_component:** [[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-004-rechargeable-battery-pack|COMP-PUMP-004]]
 
 ## Traceability
 

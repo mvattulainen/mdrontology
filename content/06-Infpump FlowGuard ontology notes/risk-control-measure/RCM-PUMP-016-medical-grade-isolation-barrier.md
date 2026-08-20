@@ -23,13 +23,14 @@
   "technical_file_identifier": "RCM-PUMP-016",
   "valid_from": "2026-08-15",
   "review_status": "approved",
-  "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
+  "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]",
   "control_priority": "inherent-safety-or-protective-measure",
+  "topic": "electrical-safety",
   "mitigates": [
-    "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-016-delayed-detection-or-secondary-harm-from-electrical-isolation-failure|RISK-PUMP-016]]"
+    "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-015-clinical-injury-following-electrical-isolation-failure|RISK-PUMP-015]]"
   ],
   "verified_by": [
-    "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-016-touch-interface-usability-verification|EVD-PUMP-016]]"
+    "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-008-electrical-safety-test-report|EVD-PUMP-008]]"
   ]
 }
 ---
@@ -59,16 +60,17 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **technical_file_identifier:** `RCM-PUMP-016`
 - **valid_from:** `2026-08-15`
 - **review_status:** `approved`
-- **device_context:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]
+- **device_context:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]
 - **control_priority:** `inherent-safety-or-protective-measure`
-- **mitigates:** [[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-016-delayed-detection-or-secondary-harm-from-electrical-isolation-failure|RISK-PUMP-016]]
-- **verified_by:** [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-016-touch-interface-usability-verification|EVD-PUMP-016]]
+- **topic:** `electrical-safety`
+- **mitigates:** [[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-015-clinical-injury-following-electrical-isolation-failure|RISK-PUMP-015]]
+- **verified_by:** [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-008-electrical-safety-test-report|EVD-PUMP-008]]
 
 ## Traceability
 
-No previous ontology-note dependency is currently asserted for this record. Its nearest governed context is [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]], which identifies the device configuration in which the note is interpreted.
+No previous ontology-note dependency is currently asserted for this record. Its nearest governed context is [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003 — Infpump FlowGuard paediatric configuration 1.0]], which identifies the device configuration in which the note is interpreted.
 
-Succeeding dependencies are ontology notes to which this record leads. The trace continues through `mitigates` to [[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-016-delayed-detection-or-secondary-harm-from-electrical-isolation-failure|RISK-PUMP-016 — Delayed detection or secondary harm from electrical isolation failure]]; `verified_by` to [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-016-touch-interface-usability-verification|EVD-PUMP-016 — Touch-interface usability verification]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
+Succeeding dependencies are ontology notes to which this record leads. The trace continues through `mitigates` to [[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-015-clinical-injury-following-electrical-isolation-failure|RISK-PUMP-015 — Clinical injury following electrical isolation failure]]; `verified_by` to [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-008-electrical-safety-test-report|EVD-PUMP-008 — Electrical safety test report]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
 The left-to-right diagram shows up to five asserted previous and five asserted succeeding ontology-note dependencies. When more links exist, the additional-dependency node states how many remain available through the verbal links and structured metadata above.
 
@@ -77,9 +79,9 @@ flowchart LR
   CURRENT["RCM-PUMP-016<br/>Medical-grade isolation barrier"]
   PREV_NONE["No asserted previous dependency"]
   PREV_NONE -.-> CURRENT
-  NEXT0["RISK-PUMP-016<br/>Delayed detection or secondary harm from electrical isolation failure"]
+  NEXT0["RISK-PUMP-015<br/>Clinical injury following electrical isolation failure"]
   CURRENT -->|"mitigates"| NEXT0
-  NEXT1["EVD-PUMP-016<br/>Touch-interface usability verification"]
+  NEXT1["EVD-PUMP-008<br/>Electrical safety test report"]
   CURRENT -->|"verified_by"| NEXT1
   classDef current fill:#dbeafe,stroke:#2563eb,stroke-width:2px
   class CURRENT current

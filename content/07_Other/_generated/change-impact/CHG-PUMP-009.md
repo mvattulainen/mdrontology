@@ -19,6 +19,7 @@
 ## Impacted nodes
 
 - RISK-PUMP-017 — Clinical injury following software dose-calculation error (`risk`)
+- EVD-PUMP-009 — EMC test report (`verification-evidence`)
 
 ## Derived reassessments
 

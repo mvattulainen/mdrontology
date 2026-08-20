@@ -19,6 +19,7 @@
 ## Impacted nodes
 
 - RISK-PUMP-015 — Clinical injury following electrical isolation failure (`risk`)
+- EVD-PUMP-008 — Electrical safety test report (`verification-evidence`)
 
 ## Derived reassessments
 

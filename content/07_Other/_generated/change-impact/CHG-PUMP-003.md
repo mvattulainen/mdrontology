@@ -12,13 +12,14 @@
 
 - Change type: `undefined`
 - Status: `under-assessment`
-- Affected configuration: DEVC-PUMP-003
+- Affected configuration: DEVC-PUMP-002
 - Impact assessment: missing
 - Mandatory impact domains reviewed: 
 
 ## Impacted nodes
 
-- RISK-PUMP-005 — Clinical injury following occluded infusion pathway (`risk`)
+- RISK-PUMP-007 — Clinical injury following air introduced into infusion line (`risk`)
+- EVD-PUMP-004 — Air-in-line detector validation report (`verification-evidence`)
 
 ## Derived reassessments
 

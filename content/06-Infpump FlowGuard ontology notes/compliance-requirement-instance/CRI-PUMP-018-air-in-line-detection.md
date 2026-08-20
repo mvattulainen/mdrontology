@@ -23,19 +23,20 @@
   "technical_file_identifier": "CRI-PUMP-018",
   "valid_from": "2026-08-15",
   "review_status": "approved",
-  "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]",
+  "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
   "applicable": true,
   "applicability_rationale": "Applicable to DEVC-PUMP-003 because the configured function or lifecycle control is within the requirement scope.",
   "compliance_method": "Verification and controlled-document review for CRI-PUMP-018",
   "compliance_status": "satisfied",
+  "topic": "air-in-line",
   "instantiates_requirement": [
-    "[[01-Ontology instances/04-requirements/gspr/GSPR-0002-software-and-cybersecurity|GSPR-0002]]"
+    "[[01-Ontology instances/04-requirements/gspr/GSPR-0003-therapy-delivery-protection|GSPR-0003]]"
   ],
   "derived_from": [
     "[[02-Sources/legislation/PROV-MDR-ANNEX-I-mdr-annex-i-gsprs|PROV-MDR-ANNEX-I]]"
   ],
   "satisfied_by": [
-    "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-018-ingress-protection-test-report|EVD-PUMP-018]]"
+    "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-004-air-in-line-detector-validation-report|EVD-PUMP-004]]"
   ]
 }
 ---
@@ -65,20 +66,21 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **technical_file_identifier:** `CRI-PUMP-018`
 - **valid_from:** `2026-08-15`
 - **review_status:** `approved`
-- **device_context:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]
+- **device_context:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]
 - **applicable:** `true`
 - **applicability_rationale:** `Applicable to DEVC-PUMP-003 because the configured function or lifecycle control is within the requirement scope.`
 - **compliance_method:** `Verification and controlled-document review for CRI-PUMP-018`
 - **compliance_status:** `satisfied`
-- **instantiates_requirement:** [[01-Ontology instances/04-requirements/gspr/GSPR-0002-software-and-cybersecurity|GSPR-0002]]
+- **topic:** `air-in-line`
+- **instantiates_requirement:** [[01-Ontology instances/04-requirements/gspr/GSPR-0003-therapy-delivery-protection|GSPR-0003]]
 - **derived_from:** [[02-Sources/legislation/PROV-MDR-ANNEX-I-mdr-annex-i-gsprs|PROV-MDR-ANNEX-I]]
-- **satisfied_by:** [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-018-ingress-protection-test-report|EVD-PUMP-018]]
+- **satisfied_by:** [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-004-air-in-line-detector-validation-report|EVD-PUMP-004]]
 
 ## Traceability
 
 Previous dependencies are ontology notes that lead into this record. They reach it through `has_applicable_requirement` from [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002 — Infpump FlowGuard transport configuration 1.0]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
-Succeeding dependencies are ontology notes to which this record leads. The trace continues through `satisfied_by` to [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-018-ingress-protection-test-report|EVD-PUMP-018 — Ingress protection test report]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
+Succeeding dependencies are ontology notes to which this record leads. The trace continues through `satisfied_by` to [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-004-air-in-line-detector-validation-report|EVD-PUMP-004 — Air-in-line detector validation report]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
 The left-to-right diagram shows up to five asserted previous and five asserted succeeding ontology-note dependencies. When more links exist, the additional-dependency node states how many remain available through the verbal links and structured metadata above.
 
@@ -87,7 +89,7 @@ flowchart LR
   CURRENT["CRI-PUMP-018<br/>Air-in-line detection"]
   PREV0["DEVC-PUMP-002<br/>Infpump FlowGuard transport configuration 1.0"]
   PREV0 -->|"has_applicable_requirement"| CURRENT
-  NEXT0["EVD-PUMP-018<br/>Ingress protection test report"]
+  NEXT0["EVD-PUMP-004<br/>Air-in-line detector validation report"]
   CURRENT -->|"satisfied_by"| NEXT0
   classDef current fill:#dbeafe,stroke:#2563eb,stroke-width:2px
   class CURRENT current

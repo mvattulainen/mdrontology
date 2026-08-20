@@ -25,6 +25,7 @@
   "review_status": "approved",
   "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]",
   "hazard_category": "electrical-software",
+  "topic": "electrical-safety",
   "can_lead_to": [
     "[[06-Infpump FlowGuard ontology notes/hazardous-situation/HS-PUMP-008-user-or-patient-is-exposed-to-hazardous-leakage-current|HS-PUMP-008]]"
   ]
@@ -58,11 +59,12 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **review_status:** `approved`
 - **device_context:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]
 - **hazard_category:** `electrical-software`
+- **topic:** `electrical-safety`
 - **can_lead_to:** [[06-Infpump FlowGuard ontology notes/hazardous-situation/HS-PUMP-008-user-or-patient-is-exposed-to-hazardous-leakage-current|HS-PUMP-008]]
 
 ## Traceability
 
-Previous dependencies are ontology notes that lead into this record. They reach it through `has_hazard` from [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002 — Infpump FlowGuard transport configuration 1.0]]. These incoming links show which product, decision, process or evidence records depend on the current note.
+Previous dependencies are ontology notes that lead into this record. They reach it through `has_hazard` from [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003 — Infpump FlowGuard paediatric configuration 1.0]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
 Succeeding dependencies are ontology notes to which this record leads. The trace continues through `can_lead_to` to [[06-Infpump FlowGuard ontology notes/hazardous-situation/HS-PUMP-008-user-or-patient-is-exposed-to-hazardous-leakage-current|HS-PUMP-008 — User or patient is exposed to hazardous leakage current]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
@@ -71,7 +73,7 @@ The left-to-right diagram shows up to five asserted previous and five asserted s
 ```mermaid
 flowchart LR
   CURRENT["HAZ-PUMP-008<br/>Electrical isolation failure"]
-  PREV0["DEVC-PUMP-002<br/>Infpump FlowGuard transport configuration 1.0"]
+  PREV0["DEVC-PUMP-003<br/>Infpump FlowGuard paediatric configuration 1.0"]
   PREV0 -->|"has_hazard"| CURRENT
   NEXT0["HS-PUMP-008<br/>User or patient is exposed to hazardous leakage current"]
   CURRENT -->|"can_lead_to"| NEXT0

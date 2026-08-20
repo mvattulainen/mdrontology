@@ -64,7 +64,7 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 
 ## Traceability
 
-Previous dependencies are ontology notes that lead into this record. They reach it through `satisfied_by` from [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-016-protection-against-unintended-bolus|CRI-PUMP-016 — Protection against unintended bolus]], [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-046-clinical-evaluation-support|CRI-PUMP-046 — Clinical evaluation support]]; `verified_by` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-016-medical-grade-isolation-barrier|RCM-PUMP-016 — Medical-grade isolation barrier]]. These incoming links show which product, decision, process or evidence records depend on the current note.
+Previous dependencies are ontology notes that lead into this record. They reach it through `satisfied_by` from [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-016-protection-against-unintended-bolus|CRI-PUMP-016 — Protection against unintended bolus]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
 Succeeding dependencies are ontology notes to which this record leads. The trace continues through `applies_to_configuration` to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
@@ -75,10 +75,6 @@ flowchart LR
   CURRENT["EVD-PUMP-016<br/>Touch-interface usability verification"]
   PREV0["CRI-PUMP-016<br/>Protection against unintended bolus"]
   PREV0 -->|"satisfied_by"| CURRENT
-  PREV1["CRI-PUMP-046<br/>Clinical evaluation support"]
-  PREV1 -->|"satisfied_by"| CURRENT
-  PREV2["RCM-PUMP-016<br/>Medical-grade isolation barrier"]
-  PREV2 -->|"verified_by"| CURRENT
   NEXT0["DEVC-PUMP-001<br/>Infpump FlowGuard bedside configuration 1.0"]
   CURRENT -->|"applies_to_configuration"| NEXT0
   classDef current fill:#dbeafe,stroke:#2563eb,stroke-width:2px

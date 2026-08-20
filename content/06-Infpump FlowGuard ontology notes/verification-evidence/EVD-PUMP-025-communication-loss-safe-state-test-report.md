@@ -64,7 +64,7 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 
 ## Traceability
 
-Previous dependencies are ontology notes that lead into this record. They reach it through `satisfied_by` from [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-025-protective-earth-and-isolation|CRI-PUMP-025 — Protective earth and isolation]]; `verified_by` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-025-role-based-access-control|RCM-PUMP-025 — Role-based access control]]. These incoming links show which product, decision, process or evidence records depend on the current note.
+Previous dependencies are ontology notes that lead into this record. They reach it through `satisfied_by` from [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-025-protective-earth-and-isolation|CRI-PUMP-025 — Protective earth and isolation]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
 Succeeding dependencies are ontology notes to which this record leads. The trace continues through `applies_to_configuration` to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-005-infpump-flowguard-critical-care-configuration-11|DEVC-PUMP-005 — Infpump FlowGuard critical-care configuration 1.1]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
@@ -75,8 +75,6 @@ flowchart LR
   CURRENT["EVD-PUMP-025<br/>Communication-loss safe-state test report"]
   PREV0["CRI-PUMP-025<br/>Protective earth and isolation"]
   PREV0 -->|"satisfied_by"| CURRENT
-  PREV1["RCM-PUMP-025<br/>Role-based access control"]
-  PREV1 -->|"verified_by"| CURRENT
   NEXT0["DEVC-PUMP-005<br/>Infpump FlowGuard critical-care configuration 1.1"]
   CURRENT -->|"applies_to_configuration"| NEXT0
   classDef current fill:#dbeafe,stroke:#2563eb,stroke-width:2px

@@ -25,6 +25,7 @@
     "requirement",
     "risk",
     "evidence",
+    "verification-evidence",
     "certificate",
     "udi",
     "clinical-evaluation",
@@ -44,7 +45,7 @@
 
 # impacts
 
-Relates change to device, requirement, risk, evidence, certificate, udi, clinical-evaluation, software-version.
+Relates change to device, requirement, risk, evidence, verification evidence, certificate, udi, clinical-evaluation or software version.
 
 ## Purpose
 
@@ -55,7 +56,7 @@ Defines the ontology predicate `impacts`. It constrains which subject and object
 | Property | Value |
 |---|---|
 | Domain | `change` |
-| Range | `device`, `requirement`, `risk`, `evidence`, `certificate`, `udi`, `clinical-evaluation`, `software-version` |
+| Range | `device`, `requirement`, `risk`, `evidence`, `verification-evidence`, `certificate`, `udi`, `clinical-evaluation`, `software-version` |
 | Functional | `false` |
 | Transitive | `false` |
 | Provenance required | `false` |

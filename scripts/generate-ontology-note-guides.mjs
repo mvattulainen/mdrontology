@@ -28,7 +28,7 @@ const diagrams = [
       note("BASE-PUMP-001", "Released design baseline", "06-Infpump FlowGuard ontology notes/configuration-baseline/BASE-PUMP-001-infpump-flowguard-released-design-baseline-11"),
       note("SW-PUMP-001", "Control software 4.2.0", "06-Infpump FlowGuard ontology notes/software-version/SW-PUMP-001-infpump-flowguard-control-software-420"),
     ],
-    edges: [[0, 1, "has model"], [1, 2, "has variant"], [2, 3, "has configuration"], [3, 4, "has intended purpose"], [3, 5, "classified by"], [3, 6, "has baseline"], [3, 7, "includes software"]],
+    edges: [[0, 1, "has_model"], [1, 2, "has_variant"], [2, 3, "has_configuration"], [3, 4, "has_intended_purpose"], [3, 5, "classified_by"], [3, 6, "has_baseline"], [3, 7, "includes_software_version"]],
   },
   {
     slug: "02-excessive-flow-risk-control-chain",
@@ -38,12 +38,12 @@ const diagrams = [
       note("DEVC-PUMP-001", "Bedside configuration", "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10"),
       note("HAZ-PUMP-001", "Unintended excessive flow", "06-Infpump FlowGuard ontology notes/hazard/HAZ-PUMP-001-unintended-excessive-flow"),
       note("HS-PUMP-001", "Patient exposed to excessive delivery", "06-Infpump FlowGuard ontology notes/hazardous-situation/HS-PUMP-001-patient-connected-while-pump-delivers-above-programmed-rate"),
-      note("RISK-PUMP-001", "Clinical injury risk", "06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-001-clinical-injury-following-unintended-excessive-flow"),
       note("HARM-PUMP-001", "Fluid overload", "06-Infpump FlowGuard ontology notes/harm/HARM-PUMP-001-fluid-overload"),
+      note("RISK-PUMP-001", "Clinical injury risk", "06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-001-clinical-injury-following-unintended-excessive-flow"),
       note("RCM-PUMP-001", "Independent flow monitoring", "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-001-independent-flow-monitoring"),
       note("EVD-PUMP-001", "Flow accuracy verification", "06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-001-flow-accuracy-verification-report"),
     ],
-    edges: [[0, 1, "has hazard"], [1, 2, "creates situation"], [2, 3, "contributes to risk"], [3, 4, "may result in"], [5, 3, "mitigates"], [5, 6, "verified by"]],
+    edges: [[0, 1, "has_hazard"], [1, 2, "can_lead_to"], [2, 3, "may_cause"], [5, 4, "mitigates"], [5, 6, "verified_by"]],
   },
   {
     slug: "03-occlusion-detection-safety-case",
@@ -52,14 +52,16 @@ const diagrams = [
     nodes: [
       note("HAZ-PUMP-003", "Occluded infusion pathway", "06-Infpump FlowGuard ontology notes/hazard/HAZ-PUMP-003-occluded-infusion-pathway"),
       note("HS-PUMP-003", "Undetected pressure rise", "06-Infpump FlowGuard ontology notes/hazardous-situation/HS-PUMP-003-pressure-rises-while-downstream-occlusion-is-undetected"),
+      note("HARM-PUMP-002", "Underdose or loss of therapy", "06-Infpump FlowGuard ontology notes/harm/HARM-PUMP-002-underdose-or-loss-of-therapy"),
       note("RISK-PUMP-005", "Occlusion injury risk", "06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-005-clinical-injury-following-occluded-infusion-pathway"),
       note("RCM-PUMP-004", "Pressure monitoring", "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-004-occlusion-pressure-monitoring"),
       note("RCM-PUMP-005", "Alarm escalation", "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-005-occlusion-alarm-escalation"),
       note("EVD-PUMP-003", "Occlusion validation", "06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-003-occlusion-detection-validation-report"),
       note("CRI-PUMP-017", "Occlusion-detection requirement", "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-017-occlusion-detection"),
       note("CLM-PUMP-005", "Timely detection claim", "06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-005-detects-downstream-occlusion-before-prolonged-therapy-interruption"),
+      note("CEVD-PUMP-001", "Clinical evidence set", "06-Infpump FlowGuard ontology notes/clinical-evidence/CEVD-PUMP-001-infpump-flowguard-clinical-evidence-set"),
     ],
-    edges: [[0, 1, "creates situation"], [1, 2, "contributes to risk"], [3, 2, "mitigates"], [4, 2, "mitigates"], [3, 5, "verified by"], [4, 5, "verified by"], [6, 5, "satisfied by"], [5, 7, "supports"]],
+    edges: [[0, 1, "can_lead_to"], [1, 2, "may_cause"], [4, 3, "mitigates"], [5, 3, "mitigates"], [4, 6, "verified_by"], [5, 6, "verified_by"], [7, 6, "satisfied_by"], [9, 8, "supports_claim"]],
   },
   {
     slug: "04-air-in-line-protection-chain",
@@ -75,14 +77,13 @@ const diagrams = [
       note("EVD-PUMP-004", "Detector validation", "06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-004-air-in-line-detector-validation-report"),
       note("CRI-PUMP-018", "Air-detection requirement", "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-018-air-in-line-detection"),
     ],
-    edges: [[0, 1, "creates situation"], [1, 2, "contributes to risk"], [2, 3, "may result in"], [4, 2, "mitigates"], [5, 2, "mitigates"], [4, 6, "verified by"], [5, 6, "verified by"], [7, 6, "satisfied by"]],
+    edges: [[0, 1, "can_lead_to"], [1, 3, "may_cause"], [4, 2, "mitigates"], [5, 2, "mitigates"], [4, 6, "verified_by"], [5, 6, "verified_by"], [7, 6, "satisfied_by"]],
   },
   {
     slug: "05-battery-signal-to-change-assessment",
     title: "Battery signal to change assessment",
-    purpose: "Shows the controlled baseline that existed before a battery signal and the resulting regulatory sequence from signal confirmation to planned post-change evidence.",
+    purpose: "Separates the approved battery baseline from the accepted signal, the change assessment it triggers, and the new evidence type required before release.",
     nodes: [
-      note("COMP-PUMP-004", "Battery pack<br/>component: safety-critical", "06-Infpump FlowGuard ontology notes/component/COMP-PUMP-004-rechargeable-battery-pack"),
       note("RCM-PUMP-013", "State-of-charge estimation<br/>implementation: implemented", "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-013-battery-state-of-charge-estimation"),
       note("EVD-PUMP-007", "Battery endurance validation<br/>evidence: approved baseline", "06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-007-battery-endurance-validation-report"),
       note("RISK-PUMP-013", "Premature depletion risk<br/>acceptance: baseline accepted<br/>reassessment: required", "06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-013-clinical-injury-following-premature-battery-depletion"),
@@ -90,11 +91,22 @@ const diagrams = [
       note("CHG-PUMP-001", "Supplier replacement<br/>change: under assessment", "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-001-battery-cell-supplier-replacement"),
       note("CIA-PUMP-001", "Change-impact assessment<br/>assessment: under assessment", "06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-001-battery-cell-supplier-change-impact-assessment"),
       note("CRI-PUMP-051", "Post-change endurance requirement<br/>requirement: draft<br/>compliance: planned", "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-051-battery-endurance-after-cell-supplier-change"),
-      note("SUP-PUMP-006", "Proposed replacement cell supplier<br/>qualification: in progress", "06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-006-proposed-replacement-battery-cell-supplier"),
-      note("EVD-PUMP-031", "Post-change endurance verification<br/>evidence: planned", "06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-031-post-change-battery-endurance-verification"),
+      note("EVTYPE-PUMP-001", "Required post-change evidence type", "01-Ontology instances/08-technical-documentation/evidence-types/EVTYPE-PUMP-001-post-change-battery-endurance-verification"),
     ],
-    edges: [[0, 1, "controlled by"], [1, 2, "verified by"], [2, 3, "supports baseline acceptance"], [3, 4, "challenged by PMS signal"], [4, 5, "triggers"], [5, 6, "has impact assessment"], [6, 7, "defines verification need"], [7, 8, "sets qualification criteria"], [8, 9, "enables post-change verification"]],
-    explanation: "This is a regulatory lifecycle sequence, not a universal status state machine. The first four notes describe the controlled baseline. The accepted PMS signal challenges that baseline and opens a change package. The impact assessment then drives a draft device-specific requirement, qualification of the proposed replacement supplier and planned post-change evidence. The change must not be released until the evidence is approved and the affected risk is reassessed and accepted for the changed configuration.",
+    visualNodes: [
+      note("RCM-PUMP-013", "State-of-charge estimation<br/>implementation: implemented", "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-013-battery-state-of-charge-estimation"),
+      note("EVD-PUMP-007", "Battery endurance validation<br/>evidence: approved baseline", "06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-007-battery-endurance-validation-report"),
+      note("RISK-PUMP-013", "Premature depletion risk<br/>baseline reference", "06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-013-clinical-injury-following-premature-battery-depletion"),
+      note("SIGNAL-PUMP-001", "Runtime reduction signal<br/>signal: accepted", "06-Infpump FlowGuard ontology notes/signal/SIGNAL-PUMP-001-unexpected-battery-runtime-reduction"),
+      note("CHG-PUMP-001", "Supplier replacement<br/>change: under assessment", "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-001-battery-cell-supplier-replacement"),
+      note("CIA-PUMP-001", "Change-impact assessment<br/>assessment: under assessment", "06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-001-battery-cell-supplier-change-impact-assessment"),
+      note("CRI-PUMP-051", "Post-change endurance requirement<br/>requirement: draft", "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-051-battery-endurance-after-cell-supplier-change"),
+      note("EVTYPE-PUMP-001", "Required post-change evidence type", "01-Ontology instances/08-technical-documentation/evidence-types/EVTYPE-PUMP-001-post-change-battery-endurance-verification"),
+      note("RISK-PUMP-013", "Premature depletion risk<br/>change-impact target", "06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-013-clinical-injury-following-premature-battery-depletion"),
+      note("EVD-PUMP-007", "Approved evidence<br/>change-impact target", "06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-007-battery-endurance-validation-report"),
+    ],
+    edges: [[0, 2, "mitigates"], [0, 1, "verified_by"], [3, 4, "triggers"], [4, 8, "impacts"], [4, 9, "impacts"], [4, 5, "has_impact_assessment"], [6, 7, "requires_evidence"]],
+    explanation: "This is a regulatory lifecycle view, not a universal status state machine. The implemented control and approved evidence describe the released baseline, while the accepted post-market signal triggers a change that remains under assessment. The draft compliance requirement identifies the evidence type needed for the changed configuration; it is deliberately not shown as satisfied by planned evidence. Release remains blocked until actual evidence is generated and approved, the impact assessment is completed, and the affected risk is reassessed and accepted.",
   },
   {
     slug: "06-cybersecurity-control-and-feedback-loop",
@@ -104,6 +116,7 @@ const diagrams = [
       note("SW-PUMP-001", "Control software", "06-Infpump FlowGuard ontology notes/software-version/SW-PUMP-001-infpump-flowguard-control-software-420"),
       note("HAZ-PUMP-012", "Cybersecurity compromise", "06-Infpump FlowGuard ontology notes/hazard/HAZ-PUMP-012-cybersecurity-compromise"),
       note("HS-PUMP-012", "Unauthorised configuration change", "06-Infpump FlowGuard ontology notes/hazardous-situation/HS-PUMP-012-unauthorised-actor-changes-therapy-or-device-configuration"),
+      note("HARM-PUMP-010", "Serious deterioration or death", "06-Infpump FlowGuard ontology notes/harm/HARM-PUMP-010-serious-deterioration-or-death"),
       note("RISK-PUMP-023", "Cybersecurity injury risk", "06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-023-clinical-injury-following-cybersecurity-compromise"),
       note("RCM-PUMP-025", "Role-based access", "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-025-role-based-access-control"),
       note("RCM-PUMP-026", "Signed updates", "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-026-signed-software-update-packages"),
@@ -111,7 +124,7 @@ const diagrams = [
       note("SIGNAL-PUMP-007", "Unauthorised login signal", "06-Infpump FlowGuard ontology notes/signal/SIGNAL-PUMP-007-repeated-unauthorised-login-attempts"),
       note("CHG-PUMP-007", "Operating-system patch", "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-007-cybersecurity-operating-system-patch"),
     ],
-    edges: [[0, 1, "exposed to"], [1, 2, "creates situation"], [2, 3, "contributes to risk"], [4, 3, "mitigates"], [5, 3, "mitigates"], [4, 6, "verified by"], [7, 3, "concerns"], [7, 8, "triggers"], [8, 0, "updates"]],
+    edges: [[1, 2, "can_lead_to"], [2, 3, "may_cause"], [5, 4, "mitigates"], [6, 4, "mitigates"], [5, 7, "verified_by"], [6, 7, "verified_by"], [8, 9, "triggers"], [9, 4, "impacts"], [9, 0, "impacts"], [9, 7, "impacts"]],
   },
   {
     slug: "07-clinical-claim-to-evaluation-report",
@@ -124,17 +137,18 @@ const diagrams = [
       note("CEVD-PUMP-001", "Clinical evidence set", "06-Infpump FlowGuard ontology notes/clinical-evidence/CEVD-PUMP-001-infpump-flowguard-clinical-evidence-set"),
       note("CE-PUMP-001", "Continuous clinical evaluation", "06-Infpump FlowGuard ontology notes/clinical-evaluation/CE-PUMP-001-infpump-flowguard-continuous-clinical-evaluation"),
       note("CER-PUMP-001", "Clinical evaluation report", "06-Infpump FlowGuard ontology notes/clinical-evaluation-report/CER-PUMP-001-infpump-flowguard-clinical-evaluation-report-rev-d"),
-      note("DOC-PUMP-004", "Controlled CER document version", "06-Infpump FlowGuard ontology notes/document-version/DOC-PUMP-004-clinical-evaluation-report-rev-c"),
+      note("DOC-PUMP-006", "Controlled CER document version Rev D", "06-Infpump FlowGuard ontology notes/document-version/DOC-PUMP-006-clinical-evaluation-report-rev-d"),
       note("CRI-PUMP-046", "Clinical-evaluation requirement", "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-046-clinical-evaluation-support"),
+      note("EVD-PUMP-029", "Clinical-claims evidence summary", "06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-029-clinical-claims-evidence-summary"),
     ],
-    edges: [[0, 1, "has intended purpose"], [1, 2, "frames claim"], [3, 2, "supports"], [4, 3, "uses evidence"], [4, 0, "evaluates"], [4, 5, "documented by"], [5, 6, "controlled as"], [7, 5, "satisfied by"]],
+    edges: [[0, 1, "has_intended_purpose"], [0, 2, "makes_clinical_claim"], [3, 2, "supports_claim"], [4, 3, "uses_evidence"], [4, 0, "evaluates"], [4, 5, "documented_by"], [5, 6, "represented_by_document_version"], [7, 8, "satisfied_by"]],
   },
   {
     slug: "08-electrical-safety-compliance-trace",
     title: "Electrical-safety compliance trace",
     purpose: "Connects the current device configuration to its electrical-safety requirement, hazard, risk, isolation control, test evidence, certificate and technical-documentation set.",
     nodes: [
-      note("DEVC-PUMP-001", "Bedside configuration", "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10"),
+      note("DEVC-PUMP-003", "Paediatric configuration", "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10"),
       note("CRI-PUMP-022", "Electrical-safety requirement", "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-022-electrical-safety"),
       note("HAZ-PUMP-008", "Electrical isolation failure", "06-Infpump FlowGuard ontology notes/hazard/HAZ-PUMP-008-electrical-isolation-failure"),
       note("RISK-PUMP-015", "Electrical injury risk", "06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-015-clinical-injury-following-electrical-isolation-failure"),
@@ -143,13 +157,14 @@ const diagrams = [
       note("CERT-PUMP-003", "CB test certificate", "06-Infpump FlowGuard ontology notes/certificate/CERT-PUMP-003-electrical-safety-cb-test-certificate"),
       note("TD-PUMP-001", "MDR technical-documentation set", "06-Infpump FlowGuard ontology notes/technical-documentation-set/TD-PUMP-001-infpump-flowguard-mdr-technical-documentation-set"),
     ],
-    edges: [[0, 1, "has requirement"], [0, 2, "has hazard"], [2, 3, "contributes to risk"], [4, 3, "mitigates"], [4, 5, "verified by"], [1, 5, "satisfied by"], [5, 6, "supports certificate"], [7, 5, "includes"]],
+    edges: [[0, 1, "has_applicable_requirement"], [0, 2, "has_hazard"], [0, 3, "has_risk"], [0, 6, "has_certificate"], [4, 3, "mitigates"], [4, 5, "verified_by"], [1, 5, "satisfied_by"], [5, 6, "supports_certificate"], [7, 5, "includes"]],
   },
   {
     slug: "09-pms-signal-and-change-feedback",
     title: "PMS signal and change feedback",
     purpose: "Shows how the PMS plan receives an occlusion signal, initiates change assessment and feeds updated controls and evidence back into risk management.",
     nodes: [
+      note("DEVC-PUMP-002", "Transport configuration", "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10"),
       note("PMS-PLAN-PUMP-001", "Post-market surveillance plan", "06-Infpump FlowGuard ontology notes/pms-plan/PMS-PLAN-PUMP-001-infpump-flowguard-post-market-surveillance-plan"),
       note("SIGNAL-PUMP-002", "Delayed alarm trend", "06-Infpump FlowGuard ontology notes/signal/SIGNAL-PUMP-002-delayed-occlusion-alarm-trend"),
       note("CHG-PUMP-002", "Occlusion threshold update", "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-002-occlusion-algorithm-threshold-update"),
@@ -157,26 +172,26 @@ const diagrams = [
       note("RISK-PUMP-005", "Occlusion injury risk", "06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-005-clinical-injury-following-occluded-infusion-pathway"),
       note("RCM-PUMP-004", "Pressure monitoring", "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-004-occlusion-pressure-monitoring"),
       note("EVD-PUMP-003", "Occlusion validation", "06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-003-occlusion-detection-validation-report"),
-      note("PROC-PUMP-002", "Risk-management process", "06-Infpump FlowGuard ontology notes/qms-process/PROC-PUMP-002-infusion-pump-risk-management-process"),
+      note("HS-PUMP-003", "Undetected pressure rise", "06-Infpump FlowGuard ontology notes/hazardous-situation/HS-PUMP-003-pressure-rises-while-downstream-occlusion-is-undetected"),
+      note("HARM-PUMP-002", "Underdose or loss of therapy", "06-Infpump FlowGuard ontology notes/harm/HARM-PUMP-002-underdose-or-loss-of-therapy"),
     ],
-    edges: [[0, 1, "collects signal"], [1, 2, "triggers"], [1, 4, "concerns"], [3, 4, "contributes to risk"], [2, 5, "updates"], [5, 4, "mitigates"], [5, 6, "verified by"], [7, 4, "governs reassessment"]],
+    edges: [[0, 1, "covered_by_pms_plan"], [2, 3, "triggers"], [3, 5, "impacts"], [3, 7, "impacts"], [6, 5, "mitigates"], [6, 7, "verified_by"], [4, 8, "can_lead_to"], [8, 9, "may_cause"]],
   },
   {
     slug: "10-supplier-component-change-control",
     title: "Supplier and component change control",
     purpose: "Connects supplier control, an air-sensor component revision and its downstream risk, control, evidence and released baseline implications.",
     nodes: [
+      note("PROC-PUMP-004", "Supplier-control process", "06-Infpump FlowGuard ontology notes/qms-process/PROC-PUMP-004-infusion-pump-supplier-control-process"),
       note("SUP-PUMP-002", "Air-sensor supplier", "06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-002-air-sensor-critical-supplier"),
       note("COMP-PUMP-002", "Air-sensor assembly", "06-Infpump FlowGuard ontology notes/component/COMP-PUMP-002-air-in-line-sensor-assembly"),
+      note("DEVC-PUMP-002", "Transport configuration", "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10"),
       note("CHG-PUMP-003", "Sensor component revision", "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-003-air-sensor-component-revision"),
-      note("HAZ-PUMP-004", "Air in infusion line", "06-Infpump FlowGuard ontology notes/hazard/HAZ-PUMP-004-air-introduced-into-infusion-line"),
       note("RISK-PUMP-007", "Air-introduction injury risk", "06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-007-clinical-injury-following-air-introduced-into-infusion-line"),
       note("RCM-PUMP-006", "Dual air sensors", "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-006-dual-air-in-line-sensors"),
       note("EVD-PUMP-004", "Detector validation", "06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-004-air-in-line-detector-validation-report"),
-      note("PROC-PUMP-004", "Supplier-control process", "06-Infpump FlowGuard ontology notes/qms-process/PROC-PUMP-004-infusion-pump-supplier-control-process"),
-      note("BASE-PUMP-001", "Released design baseline", "06-Infpump FlowGuard ontology notes/configuration-baseline/BASE-PUMP-001-infpump-flowguard-released-design-baseline-11"),
     ],
-    edges: [[7, 0, "qualifies"], [0, 1, "supplies"], [2, 1, "changes"], [1, 3, "detects"], [3, 4, "contributes to risk"], [5, 4, "mitigates"], [5, 6, "verified by"], [2, 6, "requires review"], [2, 8, "updates baseline"]],
+    edges: [[0, 1, "qualifies_supplier"], [1, 2, "supplied_component"], [3, 2, "includes_component"], [4, 5, "impacts"], [4, 7, "impacts"], [6, 5, "mitigates"], [6, 7, "verified_by"]],
   },
 ]
 
@@ -185,10 +200,11 @@ function routeFor(target) {
 }
 
 function mermaidFor(diagram) {
-  const lines = ["flowchart TD"]
-  diagram.nodes.forEach((item, index) => lines.push(`  N${index + 1}["${item.id}<br/>${item.label}"]`))
+  const lines = ['%%{init: {"flowchart": {"curve": "linear"}}}%%', "flowchart TD"]
+  const visualNodes = diagram.visualNodes ?? diagram.nodes
+  visualNodes.forEach((item, index) => lines.push(`  N${index + 1}["${item.id}<br/>${item.label}"]`))
   diagram.edges.forEach(([from, to, label]) => lines.push(`  N${from + 1} -->|${label}| N${to + 1}`))
-  diagram.nodes.forEach((item, index) => lines.push(`  click N${index + 1} "${routeFor(item.target)}" "Open ${item.id}"`))
+  visualNodes.forEach((item, index) => lines.push(`  click N${index + 1} "${routeFor(item.target)}" "Open ${item.id}"`))
   return lines.join("\n")
 }
 
@@ -201,7 +217,7 @@ for (const diagram of diagrams) {
     "",
     diagram.purpose,
     "",
-    "The arrows show the reasoning path used in this example. Select a diagram node, or use the links below, to open the underlying ontology note.",
+    "Every arrow reproduces a typed relation asserted in the linked ontology notes. Select a diagram node, or use the links below, to inspect the underlying semantic record.",
     "",
     "```mermaid",
     mermaidFor(diagram),
@@ -212,7 +228,7 @@ for (const diagram of diagrams) {
     "",
     ...diagram.nodes.map((item) => `- [[${item.target}|${item.id} — ${item.label}]]`),
     "",
-    "These connections are navigation and reasoning aids. The linked notes and their governed metadata remain the semantic source; the diagram does not create additional regulatory facts.",
+    "These connections are graph projections and navigation aids. The linked notes and their governed metadata remain the semantic source; the diagram does not create additional regulatory facts.",
   ].join("\n")
   await writeFile(path.join(connectionRoot, `${diagram.slug}.md`), markdown({
     title: diagram.title,

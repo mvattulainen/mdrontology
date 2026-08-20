@@ -28,14 +28,15 @@
   "applicability_rationale": "Applicable to DEVC-PUMP-002 because the configured function or lifecycle control is within the requirement scope.",
   "compliance_method": "Verification and controlled-document review for CRI-PUMP-017",
   "compliance_status": "satisfied",
+  "topic": "occlusion",
   "instantiates_requirement": [
-    "[[01-Ontology instances/04-requirements/gspr/GSPR-0001-electrical-safety|GSPR-0001]]"
+    "[[01-Ontology instances/04-requirements/gspr/GSPR-0003-therapy-delivery-protection|GSPR-0003]]"
   ],
   "derived_from": [
     "[[02-Sources/legislation/PROV-MDR-ANNEX-I-mdr-annex-i-gsprs|PROV-MDR-ANNEX-I]]"
   ],
   "satisfied_by": [
-    "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-017-pole-clamp-mechanical-test-report|EVD-PUMP-017]]"
+    "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-003-occlusion-detection-validation-report|EVD-PUMP-003]]"
   ]
 }
 ---
@@ -70,15 +71,16 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **applicability_rationale:** `Applicable to DEVC-PUMP-002 because the configured function or lifecycle control is within the requirement scope.`
 - **compliance_method:** `Verification and controlled-document review for CRI-PUMP-017`
 - **compliance_status:** `satisfied`
-- **instantiates_requirement:** [[01-Ontology instances/04-requirements/gspr/GSPR-0001-electrical-safety|GSPR-0001]]
+- **topic:** `occlusion`
+- **instantiates_requirement:** [[01-Ontology instances/04-requirements/gspr/GSPR-0003-therapy-delivery-protection|GSPR-0003]]
 - **derived_from:** [[02-Sources/legislation/PROV-MDR-ANNEX-I-mdr-annex-i-gsprs|PROV-MDR-ANNEX-I]]
-- **satisfied_by:** [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-017-pole-clamp-mechanical-test-report|EVD-PUMP-017]]
+- **satisfied_by:** [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-003-occlusion-detection-validation-report|EVD-PUMP-003]]
 
 ## Traceability
 
 Previous dependencies are ontology notes that lead into this record. They reach it through `has_applicable_requirement` from [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002 — Infpump FlowGuard transport configuration 1.0]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
-Succeeding dependencies are ontology notes to which this record leads. The trace continues through `satisfied_by` to [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-017-pole-clamp-mechanical-test-report|EVD-PUMP-017 — Pole-clamp mechanical test report]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
+Succeeding dependencies are ontology notes to which this record leads. The trace continues through `satisfied_by` to [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-003-occlusion-detection-validation-report|EVD-PUMP-003 — Occlusion detection validation report]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
 The left-to-right diagram shows up to five asserted previous and five asserted succeeding ontology-note dependencies. When more links exist, the additional-dependency node states how many remain available through the verbal links and structured metadata above.
 
@@ -87,7 +89,7 @@ flowchart LR
   CURRENT["CRI-PUMP-017<br/>Occlusion detection"]
   PREV0["DEVC-PUMP-002<br/>Infpump FlowGuard transport configuration 1.0"]
   PREV0 -->|"has_applicable_requirement"| CURRENT
-  NEXT0["EVD-PUMP-017<br/>Pole-clamp mechanical test report"]
+  NEXT0["EVD-PUMP-003<br/>Occlusion detection validation report"]
   CURRENT -->|"satisfied_by"| NEXT0
   classDef current fill:#dbeafe,stroke:#2563eb,stroke-width:2px
   class CURRENT current

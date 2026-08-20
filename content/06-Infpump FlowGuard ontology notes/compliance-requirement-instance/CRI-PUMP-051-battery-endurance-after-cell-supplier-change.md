@@ -28,11 +28,15 @@
   "applicability_rationale": "Applicable to DEVC-PUMP-001 because CHG-PUMP-001 changes the safety-critical battery-cell supply and the released endurance claim must be reconfirmed before change closure.",
   "compliance_method": "Planned battery-endurance verification against the released acceptance criteria after CHG-PUMP-001",
   "compliance_status": "planned",
+  "topic": "battery-power",
   "instantiates_requirement": [
     "[[01-Ontology instances/04-requirements/gspr/GSPR-0001-electrical-safety|GSPR-0001]]"
   ],
   "derived_from": [
     "[[02-Sources/legislation/PROV-MDR-ANNEX-I-mdr-annex-i-gsprs|PROV-MDR-ANNEX-I]]"
+  ],
+  "requires_evidence": [
+    "[[01-Ontology instances/08-technical-documentation/evidence-types/EVTYPE-PUMP-001-post-change-battery-endurance-verification|EVTYPE-PUMP-001]]"
   ]
 }
 ---
@@ -67,8 +71,10 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **applicability_rationale:** `Applicable to DEVC-PUMP-001 because CHG-PUMP-001 changes the safety-critical battery-cell supply and the released endurance claim must be reconfirmed before change closure.`
 - **compliance_method:** `Planned battery-endurance verification against the released acceptance criteria after CHG-PUMP-001`
 - **compliance_status:** `planned`
+- **topic:** `battery-power`
 - **instantiates_requirement:** [[01-Ontology instances/04-requirements/gspr/GSPR-0001-electrical-safety|GSPR-0001]]
 - **derived_from:** [[02-Sources/legislation/PROV-MDR-ANNEX-I-mdr-annex-i-gsprs|PROV-MDR-ANNEX-I]]
+- **requires_evidence:** [[01-Ontology instances/08-technical-documentation/evidence-types/EVTYPE-PUMP-001-post-change-battery-endurance-verification|EVTYPE-PUMP-001]]
 
 ## Traceability
 

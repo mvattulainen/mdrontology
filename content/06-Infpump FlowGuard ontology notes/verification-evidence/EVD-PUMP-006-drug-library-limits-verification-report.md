@@ -64,7 +64,7 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 
 ## Traceability
 
-Previous dependencies are ontology notes that lead into this record. They reach it through `satisfied_by` from [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-006-performance-under-normal-conditions|CRI-PUMP-006 — Performance under normal conditions]], [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-036-data-integrity|CRI-PUMP-036 — Data integrity]]; `verified_by` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-006-dual-air-in-line-sensors|RCM-PUMP-006 — Dual air-in-line sensors]], [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-036-connection-compatibility-labelling|RCM-PUMP-036 — Connection compatibility labelling]]; `affected_evidence` from [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-006-drug-library-schema-update|CHG-PUMP-006 — Drug-library schema update]]. These incoming links show which product, decision, process or evidence records depend on the current note.
+Previous dependencies are ontology notes that lead into this record. They reach it through `satisfied_by` from [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-006-performance-under-normal-conditions|CRI-PUMP-006 — Performance under normal conditions]], [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-036-data-integrity|CRI-PUMP-036 — Data integrity]]; `verified_by` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-036-connection-compatibility-labelling|RCM-PUMP-036 — Connection compatibility labelling]]; `impacts` from [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-006-drug-library-schema-update|CHG-PUMP-006 — Drug-library schema update]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
 Succeeding dependencies are ontology notes to which this record leads. The trace continues through `applies_to_configuration` to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
@@ -77,12 +77,10 @@ flowchart LR
   PREV0 -->|"satisfied_by"| CURRENT
   PREV1["CRI-PUMP-036<br/>Data integrity"]
   PREV1 -->|"satisfied_by"| CURRENT
-  PREV2["RCM-PUMP-006<br/>Dual air-in-line sensors"]
+  PREV2["RCM-PUMP-036<br/>Connection compatibility labelling"]
   PREV2 -->|"verified_by"| CURRENT
-  PREV3["RCM-PUMP-036<br/>Connection compatibility labelling"]
-  PREV3 -->|"verified_by"| CURRENT
-  PREV4["CHG-PUMP-006<br/>Drug-library schema update"]
-  PREV4 -->|"affected_evidence"| CURRENT
+  PREV3["CHG-PUMP-006<br/>Drug-library schema update"]
+  PREV3 -->|"impacts"| CURRENT
   NEXT0["DEVC-PUMP-001<br/>Infpump FlowGuard bedside configuration 1.0"]
   CURRENT -->|"applies_to_configuration"| NEXT0
   classDef current fill:#dbeafe,stroke:#2563eb,stroke-width:2px

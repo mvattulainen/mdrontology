@@ -26,6 +26,7 @@
   "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]",
   "valid_to": "2029-08-14",
   "certificate_state": "valid",
+  "topic": "electrical-safety",
   "applies_to_configuration": [
     "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]"
   ]
@@ -60,11 +61,12 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **device_context:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]
 - **valid_to:** `2029-08-14`
 - **certificate_state:** `valid`
+- **topic:** `electrical-safety`
 - **applies_to_configuration:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]
 
 ## Traceability
 
-Previous dependencies are ontology notes that lead into this record. They reach it through `has_certificate` from [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003 — Infpump FlowGuard paediatric configuration 1.0]]. These incoming links show which product, decision, process or evidence records depend on the current note.
+Previous dependencies are ontology notes that lead into this record. They reach it through `has_certificate` from [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003 — Infpump FlowGuard paediatric configuration 1.0]]; `supports_certificate` from [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-008-electrical-safety-test-report|EVD-PUMP-008 — Electrical safety test report]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
 Succeeding dependencies are ontology notes to which this record leads. The trace continues through `applies_to_configuration` to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003 — Infpump FlowGuard paediatric configuration 1.0]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
@@ -75,6 +77,8 @@ flowchart LR
   CURRENT["CERT-PUMP-003<br/>Electrical safety CB test certificate"]
   PREV0["DEVC-PUMP-003<br/>Infpump FlowGuard paediatric configuration 1.0"]
   PREV0 -->|"has_certificate"| CURRENT
+  PREV1["EVD-PUMP-008<br/>Electrical safety test report"]
+  PREV1 -->|"supports_certificate"| CURRENT
   NEXT0["DEVC-PUMP-003<br/>Infpump FlowGuard paediatric configuration 1.0"]
   CURRENT -->|"applies_to_configuration"| NEXT0
   classDef current fill:#dbeafe,stroke:#2563eb,stroke-width:2px

@@ -18,7 +18,8 @@
 
 ## Impacted nodes
 
-- RISK-PUMP-003 — Clinical injury following insufficient delivered flow (`risk`)
+- RISK-PUMP-005 — Clinical injury following occluded infusion pathway (`risk`)
+- EVD-PUMP-003 — Occlusion detection validation report (`verification-evidence`)
 
 ## Derived reassessments
 

@@ -23,8 +23,9 @@
   "technical_file_identifier": "HAZ-PUMP-003",
   "valid_from": "2026-08-15",
   "review_status": "approved",
-  "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]",
+  "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
   "hazard_category": "therapy-delivery",
+  "topic": "occlusion",
   "can_lead_to": [
     "[[06-Infpump FlowGuard ontology notes/hazardous-situation/HS-PUMP-003-pressure-rises-while-downstream-occlusion-is-undetected|HS-PUMP-003]]"
   ]
@@ -56,13 +57,14 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **technical_file_identifier:** `HAZ-PUMP-003`
 - **valid_from:** `2026-08-15`
 - **review_status:** `approved`
-- **device_context:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]
+- **device_context:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]
 - **hazard_category:** `therapy-delivery`
+- **topic:** `occlusion`
 - **can_lead_to:** [[06-Infpump FlowGuard ontology notes/hazardous-situation/HS-PUMP-003-pressure-rises-while-downstream-occlusion-is-undetected|HS-PUMP-003]]
 
 ## Traceability
 
-Previous dependencies are ontology notes that lead into this record. They reach it through `has_hazard` from [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]]. These incoming links show which product, decision, process or evidence records depend on the current note.
+Previous dependencies are ontology notes that lead into this record. They reach it through `has_hazard` from [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002 — Infpump FlowGuard transport configuration 1.0]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
 Succeeding dependencies are ontology notes to which this record leads. The trace continues through `can_lead_to` to [[06-Infpump FlowGuard ontology notes/hazardous-situation/HS-PUMP-003-pressure-rises-while-downstream-occlusion-is-undetected|HS-PUMP-003 — Pressure rises while downstream occlusion is undetected]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
@@ -71,7 +73,7 @@ The left-to-right diagram shows up to five asserted previous and five asserted s
 ```mermaid
 flowchart LR
   CURRENT["HAZ-PUMP-003<br/>Occluded infusion pathway"]
-  PREV0["DEVC-PUMP-001<br/>Infpump FlowGuard bedside configuration 1.0"]
+  PREV0["DEVC-PUMP-002<br/>Infpump FlowGuard transport configuration 1.0"]
   PREV0 -->|"has_hazard"| CURRENT
   NEXT0["HS-PUMP-003<br/>Pressure rises while downstream occlusion is undetected"]
   CURRENT -->|"can_lead_to"| NEXT0

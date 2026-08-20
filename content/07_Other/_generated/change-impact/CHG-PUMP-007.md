@@ -18,7 +18,9 @@
 
 ## Impacted nodes
 
-- RISK-PUMP-013 — Clinical injury following premature battery depletion (`risk`)
+- RISK-PUMP-023 — Clinical injury following cybersecurity compromise (`risk`)
+- SW-PUMP-001 — Infpump FlowGuard control software 4.2.0 (`software-version`)
+- EVD-PUMP-012 — Cybersecurity penetration test report (`verification-evidence`)
 
 ## Derived reassessments
 

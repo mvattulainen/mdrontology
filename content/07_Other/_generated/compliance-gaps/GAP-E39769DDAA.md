@@ -6,7 +6,7 @@
   "subject": "CRI-0002",
   "severity": "major",
   "status": "open",
-  "detected_at": "2026-08-17",
+  "detected_at": "2026-08-20",
   "message": "Relation satisfied_by has 0; minimum is 1",
   "assurance_level": "hard",
   "normative_basis": "regulatory-source",

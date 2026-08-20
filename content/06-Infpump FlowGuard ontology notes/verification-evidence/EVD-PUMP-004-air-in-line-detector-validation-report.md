@@ -23,11 +23,12 @@
   "technical_file_identifier": "EVD-PUMP-004",
   "valid_from": "2026-08-15",
   "review_status": "approved",
-  "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004]]",
+  "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
   "approved_at": "2026-08-15",
   "evidence_scope": "Air-in-line detector validation report",
+  "topic": "air-in-line",
   "applies_to_configuration": [
-    "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004]]"
+    "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]"
   ]
 }
 ---
@@ -57,16 +58,17 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **technical_file_identifier:** `EVD-PUMP-004`
 - **valid_from:** `2026-08-15`
 - **review_status:** `approved`
-- **device_context:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004]]
+- **device_context:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]
 - **approved_at:** `2026-08-15`
 - **evidence_scope:** `Air-in-line detector validation report`
-- **applies_to_configuration:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004]]
+- **topic:** `air-in-line`
+- **applies_to_configuration:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]
 
 ## Traceability
 
-Previous dependencies are ontology notes that lead into this record. They reach it through `supported_by` from [[06-Infpump FlowGuard ontology notes/classification-decision/CLD-PUMP-004-oncology-configuration-classification-decision|CLD-PUMP-004 — Oncology configuration classification decision]]; `satisfied_by` from [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-004-risk-control-verification|CRI-PUMP-004 — Risk-control verification]], [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-034-access-control|CRI-PUMP-034 — Access control]]; `verified_by` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-004-occlusion-pressure-monitoring|RCM-PUMP-004 — Occlusion pressure monitoring]], [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-034-clamp-load-verification|RCM-PUMP-034 — Clamp-load verification]]; `affected_evidence` from [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-004-touchscreen-controller-replacement|CHG-PUMP-004 — Touchscreen controller replacement]]; `includes` from [[06-Infpump FlowGuard ontology notes/technical-documentation-set/TD-PUMP-001-infpump-flowguard-mdr-technical-documentation-set|TD-PUMP-001 — Infpump FlowGuard MDR technical documentation set]]. These incoming links show which product, decision, process or evidence records depend on the current note.
+Previous dependencies are ontology notes that lead into this record. They reach it through `supported_by` from [[06-Infpump FlowGuard ontology notes/classification-decision/CLD-PUMP-004-oncology-configuration-classification-decision|CLD-PUMP-004 — Oncology configuration classification decision]]; `satisfied_by` from [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-004-risk-control-verification|CRI-PUMP-004 — Risk-control verification]], [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-018-air-in-line-detection|CRI-PUMP-018 — Air-in-line detection]], [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-034-access-control|CRI-PUMP-034 — Access control]]; `verified_by` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-006-dual-air-in-line-sensors|RCM-PUMP-006 — Dual air-in-line sensors]], [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-007-air-in-line-automatic-stop|RCM-PUMP-007 — Air-in-line automatic stop]], [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-034-clamp-load-verification|RCM-PUMP-034 — Clamp-load verification]]; `impacts` from [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-003-air-sensor-component-revision|CHG-PUMP-003 — Air-sensor component revision]], [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-004-touchscreen-controller-replacement|CHG-PUMP-004 — Touchscreen controller replacement]]; `includes` from [[06-Infpump FlowGuard ontology notes/technical-documentation-set/TD-PUMP-001-infpump-flowguard-mdr-technical-documentation-set|TD-PUMP-001 — Infpump FlowGuard MDR technical documentation set]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
-Succeeding dependencies are ontology notes to which this record leads. The trace continues through `applies_to_configuration` to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004 — Infpump FlowGuard oncology configuration 1.1]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
+Succeeding dependencies are ontology notes to which this record leads. The trace continues through `applies_to_configuration` to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002 — Infpump FlowGuard transport configuration 1.0]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
 The left-to-right diagram shows up to five asserted previous and five asserted succeeding ontology-note dependencies. When more links exist, the additional-dependency node states how many remain available through the verbal links and structured metadata above.
 
@@ -77,15 +79,15 @@ flowchart LR
   PREV0 -->|"supported_by"| CURRENT
   PREV1["CRI-PUMP-004<br/>Risk-control verification"]
   PREV1 -->|"satisfied_by"| CURRENT
-  PREV2["CRI-PUMP-034<br/>Access control"]
+  PREV2["CRI-PUMP-018<br/>Air-in-line detection"]
   PREV2 -->|"satisfied_by"| CURRENT
-  PREV3["RCM-PUMP-004<br/>Occlusion pressure monitoring"]
-  PREV3 -->|"verified_by"| CURRENT
-  PREV4["RCM-PUMP-034<br/>Clamp-load verification"]
+  PREV3["CRI-PUMP-034<br/>Access control"]
+  PREV3 -->|"satisfied_by"| CURRENT
+  PREV4["RCM-PUMP-006<br/>Dual air-in-line sensors"]
   PREV4 -->|"verified_by"| CURRENT
-  PREV_MORE["2 more previous dependencies"]
+  PREV_MORE["5 more previous dependencies"]
   PREV_MORE -->|"additional typed links"| CURRENT
-  NEXT0["DEVC-PUMP-004<br/>Infpump FlowGuard oncology configuration 1.1"]
+  NEXT0["DEVC-PUMP-002<br/>Infpump FlowGuard transport configuration 1.0"]
   CURRENT -->|"applies_to_configuration"| NEXT0
   classDef current fill:#dbeafe,stroke:#2563eb,stroke-width:2px
   class CURRENT current

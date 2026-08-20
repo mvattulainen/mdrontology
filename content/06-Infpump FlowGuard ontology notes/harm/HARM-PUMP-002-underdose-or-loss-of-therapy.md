@@ -23,7 +23,8 @@
   "technical_file_identifier": "HARM-PUMP-002",
   "valid_from": "2026-08-15",
   "review_status": "approved",
-  "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]"
+  "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
+  "topic": "occlusion"
 }
 ---
 
@@ -53,10 +54,11 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **valid_from:** `2026-08-15`
 - **review_status:** `approved`
 - **device_context:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]
+- **topic:** `occlusion`
 
 ## Traceability
 
-Previous dependencies are ontology notes that lead into this record. They reach it through `may_cause` from [[06-Infpump FlowGuard ontology notes/hazardous-situation/HS-PUMP-002-patient-connected-while-therapy-is-interrupted|HS-PUMP-002 — Patient connected while therapy is interrupted]], [[06-Infpump FlowGuard ontology notes/hazardous-situation/HS-PUMP-012-unauthorised-actor-changes-therapy-or-device-configuration|HS-PUMP-012 — Unauthorised actor changes therapy or device configuration]]. These incoming links show which product, decision, process or evidence records depend on the current note.
+Previous dependencies are ontology notes that lead into this record. They reach it through `may_cause` from [[06-Infpump FlowGuard ontology notes/hazardous-situation/HS-PUMP-002-patient-connected-while-therapy-is-interrupted|HS-PUMP-002 — Patient connected while therapy is interrupted]], [[06-Infpump FlowGuard ontology notes/hazardous-situation/HS-PUMP-003-pressure-rises-while-downstream-occlusion-is-undetected|HS-PUMP-003 — Pressure rises while downstream occlusion is undetected]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
 No succeeding ontology-note dependency is currently asserted for this record. It remains scoped to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002 — Infpump FlowGuard transport configuration 1.0]], and any future downstream dependency should be added as a typed relationship rather than inferred from prose.
 
@@ -67,7 +69,7 @@ flowchart LR
   CURRENT["HARM-PUMP-002<br/>Underdose or loss of therapy"]
   PREV0["HS-PUMP-002<br/>Patient connected while therapy is interrupted"]
   PREV0 -->|"may_cause"| CURRENT
-  PREV1["HS-PUMP-012<br/>Unauthorised actor changes therapy or device configuration"]
+  PREV1["HS-PUMP-003<br/>Pressure rises while downstream occlusion is undetected"]
   PREV1 -->|"may_cause"| CURRENT
   NEXT_NONE["No asserted succeeding dependency"]
   CURRENT -.-> NEXT_NONE

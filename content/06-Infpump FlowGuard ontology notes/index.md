@@ -12,7 +12,7 @@
 
 # 06-Infpump FlowGuard ontology notes
 
-This index groups all 314 ontology notes by their existing vault class. Shared organisations and other reusable domain instances remain canonical under 01 — Ontology instances, while regulatory sources remain canonical under 02 — Sources. This section adds device-specific Infpump FlowGuard notes and links to those canonical nodes rather than duplicating them.
+This index groups all 315 ontology notes by their existing vault class. Shared organisations and other reusable domain instances remain canonical under 01 — Ontology instances, while regulatory sources remain canonical under 02 — Sources. This section adds device-specific Infpump FlowGuard notes and links to those canonical nodes rather than duplicating them.
 
 ## Canonical-node policy
 
@@ -111,7 +111,7 @@ The following diagrams connect real Infpump FlowGuard notes into regulatory reas
 
 ## Document version
 
-[Browse 5 document version notes](/06-infpump-flowguard-ontology-notes/document-version/). Example: [[06-Infpump FlowGuard ontology notes/document-version/DOC-PUMP-001-device-description-rev-c|DOC-PUMP-001]].
+[Browse 6 document version notes](/06-infpump-flowguard-ontology-notes/document-version/). Example: [[06-Infpump FlowGuard ontology notes/document-version/DOC-PUMP-001-device-description-rev-c|DOC-PUMP-001]].
 
 ## Device family
 

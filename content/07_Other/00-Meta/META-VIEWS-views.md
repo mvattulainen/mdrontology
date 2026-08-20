@@ -6,8 +6,7 @@
   "aliases": [
     "META-VIEWS",
     "Purpose of 04-Views",
-    "04-Views guidance",
-    "00-meta/META-VIEWS-views"
+    "04-Views guidance"
   ],
   "status": "active",
   "version": "1",

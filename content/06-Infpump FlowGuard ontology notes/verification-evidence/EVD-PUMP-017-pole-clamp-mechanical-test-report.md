@@ -64,7 +64,7 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 
 ## Traceability
 
-Previous dependencies are ontology notes that lead into this record. They reach it through `satisfied_by` from [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-017-occlusion-detection|CRI-PUMP-017 — Occlusion detection]], [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-047-pms-planning|CRI-PUMP-047 — PMS planning]]; `verified_by` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-017-protective-earth-continuity-monitoring|RCM-PUMP-017 — Protective earth continuity monitoring]]. These incoming links show which product, decision, process or evidence records depend on the current note.
+Previous dependencies are ontology notes that lead into this record. They reach it through `satisfied_by` from [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-047-pms-planning|CRI-PUMP-047 — PMS planning]]; `verified_by` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-017-protective-earth-continuity-monitoring|RCM-PUMP-017 — Protective earth continuity monitoring]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
 Succeeding dependencies are ontology notes to which this record leads. The trace continues through `applies_to_configuration` to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002 — Infpump FlowGuard transport configuration 1.0]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
@@ -73,12 +73,10 @@ The left-to-right diagram shows up to five asserted previous and five asserted s
 ```mermaid
 flowchart LR
   CURRENT["EVD-PUMP-017<br/>Pole-clamp mechanical test report"]
-  PREV0["CRI-PUMP-017<br/>Occlusion detection"]
+  PREV0["CRI-PUMP-047<br/>PMS planning"]
   PREV0 -->|"satisfied_by"| CURRENT
-  PREV1["CRI-PUMP-047<br/>PMS planning"]
-  PREV1 -->|"satisfied_by"| CURRENT
-  PREV2["RCM-PUMP-017<br/>Protective earth continuity monitoring"]
-  PREV2 -->|"verified_by"| CURRENT
+  PREV1["RCM-PUMP-017<br/>Protective earth continuity monitoring"]
+  PREV1 -->|"verified_by"| CURRENT
   NEXT0["DEVC-PUMP-002<br/>Infpump FlowGuard transport configuration 1.0"]
   CURRENT -->|"applies_to_configuration"| NEXT0
   classDef current fill:#dbeafe,stroke:#2563eb,stroke-width:2px

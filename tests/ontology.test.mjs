@@ -100,7 +100,7 @@ test("five high-impact use cases are assessed and executable as demonstrations",
 
 test("the infusion-pump core and architecture extensions are complete and use established classes", () => {
   const notes = api.notes.filter((note) => note.path.startsWith("06-Infpump FlowGuard ontology notes/") && note.data.id)
-  assert.equal(notes.length, 314)
+  assert.equal(notes.length, 315)
   assert.equal(new Set(notes.map((note) => note.data.type)).size, 29)
   for (const note of notes) {
     assert.ok(api.classes.has(note.data.type), `${note.data.id} uses an unknown ontology class`)
@@ -154,27 +154,36 @@ test("ontology-note guidance and ten linked Mermaid narratives are complete", as
   const directory = new URL("../content/06-Infpump%20FlowGuard%20ontology%20notes/connections/", import.meta.url)
   const pages = (await readdir(directory, { withFileTypes: true })).filter((entry) => entry.isFile() && entry.name.endsWith(".md"))
   assert.equal(pages.length, 10)
+  const hasEdge = (subject, predicate, object) => (api.outgoing.get(subject) ?? []).some((edge) => edge.predicate === predicate && edge.object === object)
   for (const page of pages) {
     const source = await readFile(new URL(page.name, directory), "utf8")
-    assert.match(source, /```mermaid\r?\n(?:%%\{init:[^\n]+\}%%\r?\n)?flowchart TD/)
-    const linkedTargets = new Set([...source.matchAll(/\[\[(06-Infpump FlowGuard ontology notes\/(?!connections\/)[^|\]]+)\|/g)].map((match) => match[1]))
+    assert.match(source, /```mermaid\r?\n%%\{init: \{"flowchart": \{"curve": "linear"\}\}\}%%\r?\nflowchart TD/)
+    const linkedTargets = new Set([...source.matchAll(/^- \[\[([^|\]]+)\|/gm)].map((match) => match[1]))
     assert.ok(linkedTargets.size >= 4 && linkedTargets.size <= 10, `${page.name} must link 4–10 ontology notes`)
-    const clickableNodes = [...source.matchAll(/^\s*click N\d+ "\/06-infpump-flowguard-ontology-notes\//gm)]
-    assert.equal(clickableNodes.length, linkedTargets.size, `${page.name} must make every Mermaid node clickable`)
+    const nodes = new Map([...source.matchAll(/^\s*N(\d+)\["([^<"]+)/gm)].map((match) => [Number(match[1]), match[2]]))
+    const clickableNodes = [...source.matchAll(/^\s*click N\d+ "\/[^"]+"/gm)]
+    assert.equal(clickableNodes.length, nodes.size, `${page.name} must make every Mermaid node clickable`)
+    const diagramEdges = [...source.matchAll(/^\s*N(\d+) -->\|([a-z_]+)\| N(\d+)$/gm)]
+    assert.ok(diagramEdges.length >= 1, `${page.name} has no typed diagram edges`)
+    for (const [, from, predicate, to] of diagramEdges) {
+      const subject = nodes.get(Number(from))
+      const object = nodes.get(Number(to))
+      assert.ok(api.relations.has(predicate), `${page.name} uses undefined predicate ${predicate}`)
+      assert.ok(hasEdge(subject, predicate, object), `${page.name} invents ${subject} --${predicate}--> ${object}`)
+    }
   }
 
   const batteryPage = await readFile(new URL("05-battery-signal-to-change-assessment.md", directory), "utf8")
   assert.doesNotMatch(batteryPage, /classDef (?:draft|approved|accepted|under_assessment|implemented)/)
   assert.doesNotMatch(batteryPage, /Status border legend/)
+  assert.doesNotMatch(batteryPage, /controlled by|supports baseline acceptance|challenged by PMS signal|defines verification need|sets qualification criteria|enables post-change verification/)
   const batteryEdges = [...batteryPage.matchAll(/^\s*N\d+ -->\|[^|]+\| N\d+$/gm)]
-  assert.equal(batteryEdges.length, 9)
-  assert.deepEqual(batteryEdges.map((match) => match[0].match(/N(\d+) -->.* N(\d+)/).slice(1).map(Number)), [
-    [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10],
-  ])
+  assert.equal(batteryEdges.length, 7)
+  assert.deepEqual(batteryEdges.map((match) => match[0].match(/N(\d+) -->.* N(\d+)/).slice(1).map(Number)), [[1, 3], [1, 2], [4, 5], [5, 9], [5, 10], [5, 6], [7, 8]])
+  for (const predicate of ["mitigates", "verified_by", "triggers", "impacts", "has_impact_assessment", "requires_evidence"]) assert.match(batteryPage, new RegExp(`\\|${predicate}\\|`))
   assert.match(batteryPage, /CRI-PUMP-051/)
   assert.match(batteryPage, /CIA-PUMP-001/)
-  assert.match(batteryPage, /SUP-PUMP-006/)
-  assert.match(batteryPage, /EVD-PUMP-031/)
+  assert.match(batteryPage, /EVTYPE-PUMP-001/)
 
   const notesIndex = await readFile(new URL("../content/06-Infpump%20FlowGuard%20ontology%20notes/index.md", import.meta.url), "utf8")
   assert.match(notesIndex, /META-ONTOLOGY-NOTE-ontology-note/)
@@ -208,6 +217,43 @@ test("high-impact ontology-note extensions reuse canonical requirements and sour
   }
   assert.equal(api.byId.get("SRC-QUARTZ-5").data.ontology_role, "contextual-reference")
   assert.equal(api.byId.get("SRC-QUARTZ-5").data.scope, "website-infrastructure")
+})
+
+test("audited infusion-pump scenarios remain configuration-coherent and graph-grounded", () => {
+  const hasEdge = (subject, predicate, object) => (api.outgoing.get(subject) ?? []).some((edge) => edge.predicate === predicate && edge.object === object)
+  const scenarios = [
+    { topic: "occlusion", configuration: "DEVC-PUMP-002", ids: ["HAZ-PUMP-003", "HS-PUMP-003", "HARM-PUMP-002", "RISK-PUMP-005", "RCM-PUMP-004", "RCM-PUMP-005", "EVD-PUMP-003", "CRI-PUMP-017", "CLM-PUMP-005", "SIGNAL-PUMP-002", "CHG-PUMP-002"] },
+    { topic: "air-in-line", configuration: "DEVC-PUMP-002", ids: ["HAZ-PUMP-004", "HS-PUMP-004", "HARM-PUMP-003", "RISK-PUMP-007", "RCM-PUMP-006", "RCM-PUMP-007", "EVD-PUMP-004", "CRI-PUMP-018", "SUP-PUMP-002", "COMP-PUMP-002", "CHG-PUMP-003", "PROC-PUMP-004"] },
+    { topic: "cybersecurity", configuration: "DEVC-PUMP-002", ids: ["SW-PUMP-001", "HAZ-PUMP-012", "HS-PUMP-012", "HARM-PUMP-010", "RISK-PUMP-023", "RCM-PUMP-025", "RCM-PUMP-026", "EVD-PUMP-012", "SIGNAL-PUMP-007", "CHG-PUMP-007"] },
+    { topic: "clinical-evaluation", configuration: "DEVC-PUMP-001", ids: ["CLM-PUMP-002", "CRI-PUMP-046", "EVD-PUMP-029", "DOC-PUMP-004", "DOC-PUMP-006", "CER-PUMP-001"] },
+    { topic: "electrical-safety", configuration: "DEVC-PUMP-003", ids: ["HAZ-PUMP-008", "RISK-PUMP-015", "RCM-PUMP-016", "EVD-PUMP-008", "CRI-PUMP-022", "CERT-PUMP-003"] },
+    { topic: "battery-power", configuration: "DEVC-PUMP-001", ids: ["RISK-PUMP-013", "RCM-PUMP-013", "EVD-PUMP-007", "SIGNAL-PUMP-001", "CHG-PUMP-001", "CIA-PUMP-001", "CRI-PUMP-051", "SUP-PUMP-006", "COMP-PUMP-004"] },
+  ]
+  for (const scenario of scenarios) {
+    for (const id of scenario.ids) {
+      const item = api.byId.get(id)
+      assert.ok(item, `${id} is missing from ${scenario.topic}`)
+      assert.equal(item.data.topic, scenario.topic, `${id} drifts from ${scenario.topic}`)
+      if (item.data.device_context) assert.match(JSON.stringify(item.data.device_context), new RegExp(scenario.configuration), `${id} has the wrong configuration context`)
+    }
+  }
+
+  for (const [subject, predicate, object] of [
+    ["HAZ-PUMP-003", "can_lead_to", "HS-PUMP-003"], ["HS-PUMP-003", "may_cause", "HARM-PUMP-002"],
+    ["RCM-PUMP-004", "mitigates", "RISK-PUMP-005"], ["CRI-PUMP-017", "satisfied_by", "EVD-PUMP-003"],
+    ["HAZ-PUMP-004", "can_lead_to", "HS-PUMP-004"], ["HS-PUMP-004", "may_cause", "HARM-PUMP-003"],
+    ["PROC-PUMP-004", "qualifies_supplier", "SUP-PUMP-002"], ["SUP-PUMP-002", "supplied_component", "COMP-PUMP-002"],
+    ["HAZ-PUMP-012", "can_lead_to", "HS-PUMP-012"], ["HS-PUMP-012", "may_cause", "HARM-PUMP-010"],
+    ["CER-PUMP-001", "represented_by_document_version", "DOC-PUMP-006"], ["CRI-PUMP-046", "satisfied_by", "EVD-PUMP-029"],
+    ["RCM-PUMP-016", "verified_by", "EVD-PUMP-008"], ["EVD-PUMP-008", "supports_certificate", "CERT-PUMP-003"],
+    ["SIGNAL-PUMP-001", "triggers", "CHG-PUMP-001"], ["CHG-PUMP-001", "has_impact_assessment", "CIA-PUMP-001"],
+    ["CRI-PUMP-051", "requires_evidence", "EVTYPE-PUMP-001"],
+  ]) assert.ok(hasEdge(subject, predicate, object), `missing audited edge ${subject} --${predicate}--> ${object}`)
+
+  for (const predicate of ["supplied_component", "qualifies_supplier", "represented_by_document_version", "supports_certificate"]) assert.ok(api.relations.has(predicate), `${predicate} lacks a central relation definition`)
+  assert.equal(api.byId.get("DOC-PUMP-004").data.document_revision, "C")
+  assert.equal(api.byId.get("DOC-PUMP-006").data.document_revision, "D")
+  assert.ok(!(api.outgoing.get("CRI-PUMP-051") ?? []).some((edge) => edge.predicate === "satisfied_by" && edge.object === "EVD-PUMP-031"), "planned evidence must not satisfy CRI-PUMP-051")
 })
 
 test("competency questions, ontology definitions, and landing pages follow the content contract", async () => {
@@ -276,7 +322,7 @@ test("competency questions, ontology definitions, and landing pages follow the c
   const paragraphs = overview.split(/\n\s*\n/).map((block) => block.trim()).filter((block) => block && !block.startsWith("#"))
   assert.equal(paragraphs.length, 5)
   assert.match(overview, /shared, explicit model/)
-  assert.match(overview, /179 class definitions, 81 relation definitions, 22 constraints and 9 executable rules/)
+  assert.match(overview, /179 class definitions, 85 relation definitions, 22 constraints and 9 executable rules/)
   assert.match(overview, /three assurance levels/)
   assert.match(overview, /advisory constraints identify non-blocking data-quality findings/)
   assert.match(overview, /review-trigger rules derive a need for qualified assessment/)

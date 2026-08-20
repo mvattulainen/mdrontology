@@ -19,6 +19,7 @@
 ## Impacted nodes
 
 - RISK-PUMP-019 — Clinical injury following suppressed or missed alarm (`risk`)
+- EVD-PUMP-010 — Software system test report (`verification-evidence`)
 
 ## Derived reassessments
 

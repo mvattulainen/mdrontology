@@ -11,7 +11,7 @@
 
 # Document version ontology notes
 
-5 independently identifiable document version notes for the imaginary Infpump FlowGuard infusion pump.
+6 independently identifiable document version notes for the imaginary Infpump FlowGuard infusion pump.
 
 ## Notes
 
@@ -20,6 +20,7 @@
 - [[06-Infpump FlowGuard ontology notes/document-version/DOC-PUMP-003-risk-management-file-rev-d|DOC-PUMP-003 — Risk management file Rev D]]
 - [[06-Infpump FlowGuard ontology notes/document-version/DOC-PUMP-004-clinical-evaluation-report-rev-c|DOC-PUMP-004 — Clinical evaluation report Rev C]]
 - [[06-Infpump FlowGuard ontology notes/document-version/DOC-PUMP-005-instructions-for-use-rev-f|DOC-PUMP-005 — Instructions for use Rev F]]
+- [[06-Infpump FlowGuard ontology notes/document-version/DOC-PUMP-006-clinical-evaluation-report-rev-d|DOC-PUMP-006 — Clinical evaluation report Rev D]]
 
 ## Continue
 

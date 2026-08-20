@@ -19,6 +19,7 @@
 ## Impacted nodes
 
 - RISK-PUMP-009 — Clinical injury following uncontrolled free flow (`risk`)
+- EVD-PUMP-005 — Free-flow protection verification report (`verification-evidence`)
 
 ## Derived reassessments
 

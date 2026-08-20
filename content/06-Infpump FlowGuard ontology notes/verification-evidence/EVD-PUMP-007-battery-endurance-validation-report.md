@@ -27,6 +27,7 @@
   "approved_at": "2026-08-15",
   "evidence_scope": "Battery endurance validation report",
   "evidence_state": "approved-baseline",
+  "topic": "battery-power",
   "applies_to_configuration": [
     "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
   ]
@@ -62,11 +63,12 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **approved_at:** `2026-08-15`
 - **evidence_scope:** `Battery endurance validation report`
 - **evidence_state:** `approved-baseline`
+- **topic:** `battery-power`
 - **applies_to_configuration:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]
 
 ## Traceability
 
-Previous dependencies are ontology notes that lead into this record. They reach it through `satisfied_by` from [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-007-device-lifetime-definition|CRI-PUMP-007 — Device lifetime definition]], [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-037-clock-and-event-chronology|CRI-PUMP-037 — Clock and event chronology]]; `verified_by` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-007-air-in-line-automatic-stop|RCM-PUMP-007 — Air-in-line automatic stop]], [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-013-battery-state-of-charge-estimation|RCM-PUMP-013 — Battery state-of-charge estimation]], [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-037-temperature-monitoring|RCM-PUMP-037 — Temperature monitoring]]; `affected_evidence` from [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-001-battery-cell-supplier-replacement|CHG-PUMP-001 — Battery cell supplier replacement]], [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-007-cybersecurity-operating-system-patch|CHG-PUMP-007 — Cybersecurity operating-system patch]]; `supported_by` from [[06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-001-battery-cell-supplier-change-impact-assessment|CIA-PUMP-001 — Battery cell-supplier change impact assessment]]. These incoming links show which product, decision, process or evidence records depend on the current note.
+Previous dependencies are ontology notes that lead into this record. They reach it through `satisfied_by` from [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-007-device-lifetime-definition|CRI-PUMP-007 — Device lifetime definition]], [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-037-clock-and-event-chronology|CRI-PUMP-037 — Clock and event chronology]]; `verified_by` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-013-battery-state-of-charge-estimation|RCM-PUMP-013 — Battery state-of-charge estimation]], [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-037-temperature-monitoring|RCM-PUMP-037 — Temperature monitoring]]; `impacts` from [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-001-battery-cell-supplier-replacement|CHG-PUMP-001 — Battery cell supplier replacement]]; `supported_by` from [[06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-001-battery-cell-supplier-change-impact-assessment|CIA-PUMP-001 — Battery cell-supplier change impact assessment]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
 Succeeding dependencies are ontology notes to which this record leads. The trace continues through `applies_to_configuration` to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
@@ -79,13 +81,13 @@ flowchart LR
   PREV0 -->|"satisfied_by"| CURRENT
   PREV1["CRI-PUMP-037<br/>Clock and event chronology"]
   PREV1 -->|"satisfied_by"| CURRENT
-  PREV2["RCM-PUMP-007<br/>Air-in-line automatic stop"]
+  PREV2["RCM-PUMP-013<br/>Battery state-of-charge estimation"]
   PREV2 -->|"verified_by"| CURRENT
-  PREV3["RCM-PUMP-013<br/>Battery state-of-charge estimation"]
+  PREV3["RCM-PUMP-037<br/>Temperature monitoring"]
   PREV3 -->|"verified_by"| CURRENT
-  PREV4["RCM-PUMP-037<br/>Temperature monitoring"]
-  PREV4 -->|"verified_by"| CURRENT
-  PREV_MORE["3 more previous dependencies"]
+  PREV4["CHG-PUMP-001<br/>Battery cell supplier replacement"]
+  PREV4 -->|"impacts"| CURRENT
+  PREV_MORE["1 more previous dependencies"]
   PREV_MORE -->|"additional typed links"| CURRENT
   NEXT0["DEVC-PUMP-001<br/>Infpump FlowGuard bedside configuration 1.0"]
   CURRENT -->|"applies_to_configuration"| NEXT0

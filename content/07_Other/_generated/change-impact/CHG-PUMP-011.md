@@ -19,6 +19,7 @@
 ## Impacted nodes
 
 - RISK-PUMP-021 — Clinical injury following incorrect touch-interface input (`risk`)
+- EVD-PUMP-011 — Software unit verification summary (`verification-evidence`)
 
 ## Derived reassessments
 

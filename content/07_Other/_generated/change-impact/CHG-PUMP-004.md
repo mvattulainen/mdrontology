@@ -19,6 +19,7 @@
 ## Impacted nodes
 
 - RISK-PUMP-007 — Clinical injury following air introduced into infusion line (`risk`)
+- EVD-PUMP-004 — Air-in-line detector validation report (`verification-evidence`)
 
 ## Derived reassessments
 

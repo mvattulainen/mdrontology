@@ -64,7 +64,7 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 
 ## Traceability
 
-Previous dependencies are ontology notes that lead into this record. They reach it through `satisfied_by` from [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-018-air-in-line-detection|CRI-PUMP-018 — Air-in-line detection]], [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-048-vigilance-readiness|CRI-PUMP-048 — Vigilance readiness]]; `verified_by` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-018-dose-calculation-unit-tests|RCM-PUMP-018 — Dose-calculation unit tests]]. These incoming links show which product, decision, process or evidence records depend on the current note.
+Previous dependencies are ontology notes that lead into this record. They reach it through `satisfied_by` from [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-048-vigilance-readiness|CRI-PUMP-048 — Vigilance readiness]]; `verified_by` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-018-dose-calculation-unit-tests|RCM-PUMP-018 — Dose-calculation unit tests]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
 Succeeding dependencies are ontology notes to which this record leads. The trace continues through `applies_to_configuration` to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003 — Infpump FlowGuard paediatric configuration 1.0]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
@@ -73,12 +73,10 @@ The left-to-right diagram shows up to five asserted previous and five asserted s
 ```mermaid
 flowchart LR
   CURRENT["EVD-PUMP-018<br/>Ingress protection test report"]
-  PREV0["CRI-PUMP-018<br/>Air-in-line detection"]
+  PREV0["CRI-PUMP-048<br/>Vigilance readiness"]
   PREV0 -->|"satisfied_by"| CURRENT
-  PREV1["CRI-PUMP-048<br/>Vigilance readiness"]
-  PREV1 -->|"satisfied_by"| CURRENT
-  PREV2["RCM-PUMP-018<br/>Dose-calculation unit tests"]
-  PREV2 -->|"verified_by"| CURRENT
+  PREV1["RCM-PUMP-018<br/>Dose-calculation unit tests"]
+  PREV1 -->|"verified_by"| CURRENT
   NEXT0["DEVC-PUMP-003<br/>Infpump FlowGuard paediatric configuration 1.0"]
   CURRENT -->|"applies_to_configuration"| NEXT0
   classDef current fill:#dbeafe,stroke:#2563eb,stroke-width:2px

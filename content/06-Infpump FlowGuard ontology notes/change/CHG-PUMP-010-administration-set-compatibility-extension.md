@@ -30,9 +30,7 @@
     "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-005-infpump-flowguard-critical-care-configuration-11|DEVC-PUMP-005]]"
   ],
   "impacts": [
-    "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-019-clinical-injury-following-suppressed-or-missed-alarm|RISK-PUMP-019]]"
-  ],
-  "affected_evidence": [
+    "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-019-clinical-injury-following-suppressed-or-missed-alarm|RISK-PUMP-019]]",
     "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-010-software-system-test-report|EVD-PUMP-010]]"
   ]
 }
@@ -67,14 +65,13 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **impact_level:** `high`
 - **change_state:** `under-assessment`
 - **concerns:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-005-infpump-flowguard-critical-care-configuration-11|DEVC-PUMP-005]]
-- **impacts:** [[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-019-clinical-injury-following-suppressed-or-missed-alarm|RISK-PUMP-019]]
-- **affected_evidence:** [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-010-software-system-test-report|EVD-PUMP-010]]
+- **impacts:** [[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-019-clinical-injury-following-suppressed-or-missed-alarm|RISK-PUMP-019]], [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-010-software-system-test-report|EVD-PUMP-010]]
 
 ## Traceability
 
 Previous dependencies are ontology notes that lead into this record. They reach it through `triggers` from [[06-Infpump FlowGuard ontology notes/signal/SIGNAL-PUMP-010-therapy-log-timestamp-discrepancies|SIGNAL-PUMP-010 — Therapy-log timestamp discrepancies]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
-Succeeding dependencies are ontology notes to which this record leads. The trace continues through `concerns` to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-005-infpump-flowguard-critical-care-configuration-11|DEVC-PUMP-005 — Infpump FlowGuard critical-care configuration 1.1]]; `impacts` to [[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-019-clinical-injury-following-suppressed-or-missed-alarm|RISK-PUMP-019 — Clinical injury following suppressed or missed alarm]]; `affected_evidence` to [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-010-software-system-test-report|EVD-PUMP-010 — Software system test report]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
+Succeeding dependencies are ontology notes to which this record leads. The trace continues through `concerns` to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-005-infpump-flowguard-critical-care-configuration-11|DEVC-PUMP-005 — Infpump FlowGuard critical-care configuration 1.1]]; `impacts` to [[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-019-clinical-injury-following-suppressed-or-missed-alarm|RISK-PUMP-019 — Clinical injury following suppressed or missed alarm]], [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-010-software-system-test-report|EVD-PUMP-010 — Software system test report]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
 The left-to-right diagram shows up to five asserted previous and five asserted succeeding ontology-note dependencies. When more links exist, the additional-dependency node states how many remain available through the verbal links and structured metadata above.
 
@@ -88,7 +85,7 @@ flowchart LR
   NEXT1["RISK-PUMP-019<br/>Clinical injury following suppressed or missed alarm"]
   CURRENT -->|"impacts"| NEXT1
   NEXT2["EVD-PUMP-010<br/>Software system test report"]
-  CURRENT -->|"affected_evidence"| NEXT2
+  CURRENT -->|"impacts"| NEXT2
   classDef current fill:#dbeafe,stroke:#2563eb,stroke-width:2px
   class CURRENT current
 ```

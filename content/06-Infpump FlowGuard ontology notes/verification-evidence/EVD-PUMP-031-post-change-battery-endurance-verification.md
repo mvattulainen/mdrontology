@@ -27,6 +27,7 @@
   "evidence_scope": "Post-change battery endurance verification for CHG-PUMP-001",
   "evidence_state": "planned",
   "execution_state": "not-started",
+  "topic": "battery-power",
   "applies_to_configuration": [
     "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
   ]
@@ -62,6 +63,7 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **evidence_scope:** `Post-change battery endurance verification for CHG-PUMP-001`
 - **evidence_state:** `planned`
 - **execution_state:** `not-started`
+- **topic:** `battery-power`
 - **applies_to_configuration:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]
 
 ## Traceability

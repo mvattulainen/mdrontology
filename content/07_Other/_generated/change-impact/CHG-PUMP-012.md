@@ -19,6 +19,7 @@
 ## Impacted nodes
 
 - RISK-PUMP-023 — Clinical injury following cybersecurity compromise (`risk`)
+- EVD-PUMP-012 — Cybersecurity penetration test report (`verification-evidence`)
 
 ## Derived reassessments
 

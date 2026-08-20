@@ -64,7 +64,7 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 
 ## Traceability
 
-Previous dependencies are ontology notes that lead into this record. They reach it through `satisfied_by` from [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-009-compatibility-with-medicinal-products|CRI-PUMP-009 — Compatibility with medicinal products]], [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-039-network-disconnection-behaviour|CRI-PUMP-039 — Network-disconnection behaviour]]; `verified_by` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-009-door-open-flow-interruption|RCM-PUMP-009 — Door-open flow interruption]], [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-039-monotonic-event-time-source|RCM-PUMP-039 — Monotonic event time source]]; `affected_evidence` from [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-009-ingress-seal-geometry-update|CHG-PUMP-009 — Ingress seal geometry update]]. These incoming links show which product, decision, process or evidence records depend on the current note.
+Previous dependencies are ontology notes that lead into this record. They reach it through `satisfied_by` from [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-009-compatibility-with-medicinal-products|CRI-PUMP-009 — Compatibility with medicinal products]], [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-039-network-disconnection-behaviour|CRI-PUMP-039 — Network-disconnection behaviour]]; `verified_by` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-009-door-open-flow-interruption|RCM-PUMP-009 — Door-open flow interruption]], [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-039-monotonic-event-time-source|RCM-PUMP-039 — Monotonic event time source]]; `impacts` from [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-009-ingress-seal-geometry-update|CHG-PUMP-009 — Ingress seal geometry update]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
 Succeeding dependencies are ontology notes to which this record leads. The trace continues through `applies_to_configuration` to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004 — Infpump FlowGuard oncology configuration 1.1]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
@@ -82,7 +82,7 @@ flowchart LR
   PREV3["RCM-PUMP-039<br/>Monotonic event time source"]
   PREV3 -->|"verified_by"| CURRENT
   PREV4["CHG-PUMP-009<br/>Ingress seal geometry update"]
-  PREV4 -->|"affected_evidence"| CURRENT
+  PREV4 -->|"impacts"| CURRENT
   NEXT0["DEVC-PUMP-004<br/>Infpump FlowGuard oncology configuration 1.1"]
   CURRENT -->|"applies_to_configuration"| NEXT0
   classDef current fill:#dbeafe,stroke:#2563eb,stroke-width:2px

@@ -1,8 +1,8 @@
 {
   "metadata": {
     "specification": "SPEC-MDR-MFR-ONTOLOGY-001",
-    "generated_at": "2026-08-19T03:18:23.266Z",
-    "relevant_date": "2026-08-17",
+    "generated_at": "2026-08-20T08:21:32.652Z",
+    "relevant_date": "2026-08-20",
     "canonical_source": "content/**/*.md"
   },
   "nodes": [
@@ -8072,6 +8072,7 @@
           "requirement",
           "risk",
           "evidence",
+          "verification-evidence",
           "certificate",
           "udi",
           "clinical-evaluation",
@@ -8652,7 +8653,7 @@
         "provenance_required": false,
         "temporal_qualification_required": false,
         "example_ontology_notes": [
-          "[[06-Infpump FlowGuard ontology notes/qms-process/PROC-PUMP-004-infusion-pump-supplier-control-process|PROC-PUMP-004]]"
+          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
         ]
       }
     },
@@ -8821,6 +8822,85 @@
       }
     },
     {
+      "id": "REL-QUALIFIES-SUPPLIER",
+      "type": "relation-definition",
+      "title": "qualifies_supplier",
+      "path": "00-Ontology/relations/REL-QUALIFIES-SUPPLIER-qualifies-supplier.md",
+      "data": {
+        "id": "REL-QUALIFIES-SUPPLIER",
+        "type": "relation-definition",
+        "title": "qualifies_supplier",
+        "aliases": [
+          "REL-QUALIFIES-SUPPLIER"
+        ],
+        "status": "active",
+        "version": "1",
+        "created": "2026-08-20",
+        "modified": "2026-08-20",
+        "tags": [
+          "ontology/relation-definition"
+        ],
+        "draft": false,
+        "predicate": "qualifies_supplier",
+        "label": "qualifies supplier",
+        "domain": [
+          "qms-process",
+          "change-impact-assessment"
+        ],
+        "range": [
+          "supplier"
+        ],
+        "inverse": null,
+        "transitive": false,
+        "symmetric": false,
+        "functional": false,
+        "provenance_required": false,
+        "temporal_qualification_required": false,
+        "example_ontology_notes": [
+          "[[06-Infpump FlowGuard ontology notes/qms-process/PROC-PUMP-004-infusion-pump-supplier-control-process|PROC-PUMP-004]]"
+        ]
+      }
+    },
+    {
+      "id": "REL-REPRESENTED-BY-DOCUMENT-VERSION",
+      "type": "relation-definition",
+      "title": "represented_by_document_version",
+      "path": "00-Ontology/relations/REL-REPRESENTED-BY-DOCUMENT-VERSION-represented-by-document-version.md",
+      "data": {
+        "id": "REL-REPRESENTED-BY-DOCUMENT-VERSION",
+        "type": "relation-definition",
+        "title": "represented_by_document_version",
+        "aliases": [
+          "REL-REPRESENTED-BY-DOCUMENT-VERSION"
+        ],
+        "status": "active",
+        "version": "1",
+        "created": "2026-08-20",
+        "modified": "2026-08-20",
+        "tags": [
+          "ontology/relation-definition"
+        ],
+        "draft": false,
+        "predicate": "represented_by_document_version",
+        "label": "represented by document version",
+        "domain": [
+          "clinical-evaluation-report"
+        ],
+        "range": [
+          "document-version"
+        ],
+        "inverse": null,
+        "transitive": false,
+        "symmetric": false,
+        "functional": true,
+        "provenance_required": false,
+        "temporal_qualification_required": false,
+        "example_ontology_notes": [
+          "[[06-Infpump FlowGuard ontology notes/clinical-evaluation-report/CER-PUMP-001-infpump-flowguard-clinical-evaluation-report-rev-d|CER-PUMP-001]]"
+        ]
+      }
+    },
+    {
       "id": "REL-REQUIRES-ACTIVITY",
       "type": "relation-definition",
       "title": "requires_activity",
@@ -8896,7 +8976,7 @@
         "provenance_required": false,
         "temporal_qualification_required": false,
         "example_ontology_notes": [
-          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
+          "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-051-battery-endurance-after-cell-supplier-change|CRI-PUMP-051]]"
         ]
       }
     },
@@ -9247,6 +9327,45 @@
       }
     },
     {
+      "id": "REL-SUPPLIED-COMPONENT",
+      "type": "relation-definition",
+      "title": "supplied_component",
+      "path": "00-Ontology/relations/REL-SUPPLIED-COMPONENT-supplied-component.md",
+      "data": {
+        "id": "REL-SUPPLIED-COMPONENT",
+        "type": "relation-definition",
+        "title": "supplied_component",
+        "aliases": [
+          "REL-SUPPLIED-COMPONENT"
+        ],
+        "status": "active",
+        "version": "1",
+        "created": "2026-08-20",
+        "modified": "2026-08-20",
+        "tags": [
+          "ontology/relation-definition"
+        ],
+        "draft": false,
+        "predicate": "supplied_component",
+        "label": "supplied component",
+        "domain": [
+          "supplier"
+        ],
+        "range": [
+          "component"
+        ],
+        "inverse": null,
+        "transitive": false,
+        "symmetric": false,
+        "functional": false,
+        "provenance_required": false,
+        "temporal_qualification_required": false,
+        "example_ontology_notes": [
+          "[[06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-001-battery-pack-critical-supplier|SUP-PUMP-001]]"
+        ]
+      }
+    },
+    {
       "id": "REL-SUPPORTED-BY",
       "type": "relation-definition",
       "title": "supported_by",
@@ -9284,6 +9403,45 @@
         "temporal_qualification_required": false,
         "example_ontology_notes": [
           "[[06-Infpump FlowGuard ontology notes/classification-decision/CLD-PUMP-001-bedside-configuration-classification-decision|CLD-PUMP-001]]"
+        ]
+      }
+    },
+    {
+      "id": "REL-SUPPORTS-CERTIFICATE",
+      "type": "relation-definition",
+      "title": "supports_certificate",
+      "path": "00-Ontology/relations/REL-SUPPORTS-CERTIFICATE-supports-certificate.md",
+      "data": {
+        "id": "REL-SUPPORTS-CERTIFICATE",
+        "type": "relation-definition",
+        "title": "supports_certificate",
+        "aliases": [
+          "REL-SUPPORTS-CERTIFICATE"
+        ],
+        "status": "active",
+        "version": "1",
+        "created": "2026-08-20",
+        "modified": "2026-08-20",
+        "tags": [
+          "ontology/relation-definition"
+        ],
+        "draft": false,
+        "predicate": "supports_certificate",
+        "label": "supports certificate",
+        "domain": [
+          "verification-evidence"
+        ],
+        "range": [
+          "certificate"
+        ],
+        "inverse": null,
+        "transitive": false,
+        "symmetric": false,
+        "functional": false,
+        "provenance_required": true,
+        "temporal_qualification_required": false,
+        "example_ontology_notes": [
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-008-electrical-safety-test-report|EVD-PUMP-008]]"
         ]
       }
     },
@@ -10680,6 +10838,56 @@
       }
     },
     {
+      "id": "GSPR-0003",
+      "type": "gspr-requirement",
+      "title": "Therapy-delivery protection",
+      "path": "01-Ontology instances/04-requirements/gspr/GSPR-0003-therapy-delivery-protection.md",
+      "data": {
+        "id": "GSPR-0003",
+        "type": "gspr-requirement",
+        "title": "Therapy-delivery protection",
+        "aliases": [
+          "GSPR-0003"
+        ],
+        "status": "active",
+        "version": "1",
+        "created": "2026-08-20",
+        "modified": "2026-08-20",
+        "tags": [
+          "ontology/gspr-requirement"
+        ],
+        "draft": false,
+        "derived_from": [
+          "[[02-Sources/legislation/PROV-MDR-ANNEX-I-mdr-annex-i-gsprs|PROV-MDR-ANNEX-I]]"
+        ]
+      }
+    },
+    {
+      "id": "GSPR-0004",
+      "type": "gspr-requirement",
+      "title": "Clinical evaluation and evidence",
+      "path": "01-Ontology instances/04-requirements/gspr/GSPR-0004-clinical-evaluation-and-evidence.md",
+      "data": {
+        "id": "GSPR-0004",
+        "type": "gspr-requirement",
+        "title": "Clinical evaluation and evidence",
+        "aliases": [
+          "GSPR-0004"
+        ],
+        "status": "active",
+        "version": "1",
+        "created": "2026-08-20",
+        "modified": "2026-08-20",
+        "tags": [
+          "ontology/gspr-requirement"
+        ],
+        "draft": false,
+        "derived_from": [
+          "[[02-Sources/legislation/PROV-MDR-ARTICLE-61-mdr-article-61-clinical-evaluation|PROV-MDR-ARTICLE-61]]"
+        ]
+      }
+    },
+    {
       "id": "CRI-0001",
       "type": "compliance-requirement-instance",
       "title": "Electrical safety requirement instance",
@@ -11070,6 +11278,30 @@
         ],
         "approved_at": "2026-07-10",
         "source_location": "synthetic://controlled-documents/EVD-0001"
+      }
+    },
+    {
+      "id": "EVTYPE-PUMP-001",
+      "type": "evidence-type",
+      "title": "Post-change battery endurance verification",
+      "path": "01-Ontology instances/08-technical-documentation/evidence-types/EVTYPE-PUMP-001-post-change-battery-endurance-verification.md",
+      "data": {
+        "id": "EVTYPE-PUMP-001",
+        "type": "evidence-type",
+        "title": "Post-change battery endurance verification",
+        "aliases": [
+          "EVTYPE-PUMP-001"
+        ],
+        "status": "active",
+        "version": "1",
+        "created": "2026-08-20",
+        "modified": "2026-08-20",
+        "tags": [
+          "ontology/evidence-type",
+          "topic/battery-power"
+        ],
+        "draft": false,
+        "topic": "battery-power"
       }
     },
     {
@@ -17311,6 +17543,7 @@
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]",
         "valid_to": "2029-08-14",
         "certificate_state": "valid",
+        "topic": "electrical-safety",
         "applies_to_configuration": [
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]"
         ]
@@ -17348,13 +17581,12 @@
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
         "impact_level": "high",
         "change_state": "under-assessment",
+        "topic": "battery-power",
         "concerns": [
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
         ],
         "impacts": [
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-013-clinical-injury-following-premature-battery-depletion|RISK-PUMP-013]]"
-        ],
-        "affected_evidence": [
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-013-clinical-injury-following-premature-battery-depletion|RISK-PUMP-013]]",
           "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-007-battery-endurance-validation-report|EVD-PUMP-007]]"
         ],
         "has_impact_assessment": [
@@ -17394,14 +17626,13 @@
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
         "impact_level": "medium",
         "change_state": "under-assessment",
+        "topic": "occlusion",
         "concerns": [
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]"
         ],
         "impacts": [
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-003-clinical-injury-following-insufficient-delivered-flow|RISK-PUMP-003]]"
-        ],
-        "affected_evidence": [
-          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-002-bolus-volume-verification-report|EVD-PUMP-002]]"
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-005-clinical-injury-following-occluded-infusion-pathway|RISK-PUMP-005]]",
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-003-occlusion-detection-validation-report|EVD-PUMP-003]]"
         ]
       }
     },
@@ -17434,17 +17665,16 @@
         "technical_file_identifier": "CHG-PUMP-003",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
         "impact_level": "medium",
         "change_state": "under-assessment",
+        "topic": "air-in-line",
         "concerns": [
-          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]"
+          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]"
         ],
         "impacts": [
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-005-clinical-injury-following-occluded-infusion-pathway|RISK-PUMP-005]]"
-        ],
-        "affected_evidence": [
-          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-003-occlusion-detection-validation-report|EVD-PUMP-003]]"
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-007-clinical-injury-following-air-introduced-into-infusion-line|RISK-PUMP-007]]",
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-004-air-in-line-detector-validation-report|EVD-PUMP-004]]"
         ]
       }
     },
@@ -17484,9 +17714,7 @@
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004]]"
         ],
         "impacts": [
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-007-clinical-injury-following-air-introduced-into-infusion-line|RISK-PUMP-007]]"
-        ],
-        "affected_evidence": [
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-007-clinical-injury-following-air-introduced-into-infusion-line|RISK-PUMP-007]]",
           "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-004-air-in-line-detector-validation-report|EVD-PUMP-004]]"
         ]
       }
@@ -17527,9 +17755,7 @@
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-005-infpump-flowguard-critical-care-configuration-11|DEVC-PUMP-005]]"
         ],
         "impacts": [
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-009-clinical-injury-following-uncontrolled-free-flow|RISK-PUMP-009]]"
-        ],
-        "affected_evidence": [
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-009-clinical-injury-following-uncontrolled-free-flow|RISK-PUMP-009]]",
           "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-005-free-flow-protection-verification-report|EVD-PUMP-005]]"
         ]
       }
@@ -17570,9 +17796,7 @@
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
         ],
         "impacts": [
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-011-clinical-injury-following-incorrect-drug-or-concentration-selection|RISK-PUMP-011]]"
-        ],
-        "affected_evidence": [
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-011-clinical-injury-following-incorrect-drug-or-concentration-selection|RISK-PUMP-011]]",
           "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-006-drug-library-limits-verification-report|EVD-PUMP-006]]"
         ]
       }
@@ -17609,14 +17833,14 @@
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
         "impact_level": "high",
         "change_state": "under-assessment",
+        "topic": "cybersecurity",
         "concerns": [
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]"
         ],
         "impacts": [
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-013-clinical-injury-following-premature-battery-depletion|RISK-PUMP-013]]"
-        ],
-        "affected_evidence": [
-          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-007-battery-endurance-validation-report|EVD-PUMP-007]]"
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-023-clinical-injury-following-cybersecurity-compromise|RISK-PUMP-023]]",
+          "[[06-Infpump FlowGuard ontology notes/software-version/SW-PUMP-001-infpump-flowguard-control-software-420|SW-PUMP-001]]",
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-012-cybersecurity-penetration-test-report|EVD-PUMP-012]]"
         ]
       }
     },
@@ -17656,9 +17880,7 @@
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]"
         ],
         "impacts": [
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-015-clinical-injury-following-electrical-isolation-failure|RISK-PUMP-015]]"
-        ],
-        "affected_evidence": [
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-015-clinical-injury-following-electrical-isolation-failure|RISK-PUMP-015]]",
           "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-008-electrical-safety-test-report|EVD-PUMP-008]]"
         ]
       }
@@ -17699,9 +17921,7 @@
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004]]"
         ],
         "impacts": [
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-017-clinical-injury-following-software-dose-calculation-error|RISK-PUMP-017]]"
-        ],
-        "affected_evidence": [
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-017-clinical-injury-following-software-dose-calculation-error|RISK-PUMP-017]]",
           "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-009-emc-test-report|EVD-PUMP-009]]"
         ]
       }
@@ -17742,9 +17962,7 @@
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-005-infpump-flowguard-critical-care-configuration-11|DEVC-PUMP-005]]"
         ],
         "impacts": [
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-019-clinical-injury-following-suppressed-or-missed-alarm|RISK-PUMP-019]]"
-        ],
-        "affected_evidence": [
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-019-clinical-injury-following-suppressed-or-missed-alarm|RISK-PUMP-019]]",
           "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-010-software-system-test-report|EVD-PUMP-010]]"
         ]
       }
@@ -17785,9 +18003,7 @@
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
         ],
         "impacts": [
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-021-clinical-injury-following-incorrect-touch-interface-input|RISK-PUMP-021]]"
-        ],
-        "affected_evidence": [
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-021-clinical-injury-following-incorrect-touch-interface-input|RISK-PUMP-021]]",
           "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-011-software-unit-verification-summary|EVD-PUMP-011]]"
         ]
       }
@@ -17828,9 +18044,7 @@
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]"
         ],
         "impacts": [
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-023-clinical-injury-following-cybersecurity-compromise|RISK-PUMP-023]]"
-        ],
-        "affected_evidence": [
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-023-clinical-injury-following-cybersecurity-compromise|RISK-PUMP-023]]",
           "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-012-cybersecurity-penetration-test-report|EVD-PUMP-012]]"
         ]
       }
@@ -17867,6 +18081,7 @@
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
         "assessment_scope": "Battery endurance, supplier controls, residual risk and verification impact of CHG-PUMP-001",
         "assessment_state": "under-assessment",
+        "topic": "battery-power",
         "concerns": [
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
         ],
@@ -18203,9 +18418,10 @@
         "technical_file_identifier": "CLM-PUMP-002",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
         "claim_status": "supported",
-        "claim_scope": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]"
+        "claim_scope": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
+        "topic": "clinical-evaluation"
       }
     },
     {
@@ -18305,9 +18521,10 @@
         "technical_file_identifier": "CLM-PUMP-005",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-005-infpump-flowguard-critical-care-configuration-11|DEVC-PUMP-005]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
         "claim_status": "supported",
-        "claim_scope": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-005-infpump-flowguard-critical-care-configuration-11|DEVC-PUMP-005]]"
+        "claim_scope": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
+        "topic": "occlusion"
       }
     },
     {
@@ -18902,12 +19119,12 @@
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
         "document_revision": "D",
         "report_state": "current",
+        "topic": "clinical-evaluation",
         "applies_to_configuration": [
-          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
-          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
-          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]",
-          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004]]",
-          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-005-infpump-flowguard-critical-care-configuration-11|DEVC-PUMP-005]]"
+          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
+        ],
+        "represented_by_document_version": [
+          "[[06-Infpump FlowGuard ontology notes/document-version/DOC-PUMP-006-clinical-evaluation-report-rev-d|DOC-PUMP-006]]"
         ]
       }
     },
@@ -19731,14 +19948,15 @@
         "applicability_rationale": "Applicable to DEVC-PUMP-002 because the configured function or lifecycle control is within the requirement scope.",
         "compliance_method": "Verification and controlled-document review for CRI-PUMP-017",
         "compliance_status": "satisfied",
+        "topic": "occlusion",
         "instantiates_requirement": [
-          "[[01-Ontology instances/04-requirements/gspr/GSPR-0001-electrical-safety|GSPR-0001]]"
+          "[[01-Ontology instances/04-requirements/gspr/GSPR-0003-therapy-delivery-protection|GSPR-0003]]"
         ],
         "derived_from": [
           "[[02-Sources/legislation/PROV-MDR-ANNEX-I-mdr-annex-i-gsprs|PROV-MDR-ANNEX-I]]"
         ],
         "satisfied_by": [
-          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-017-pole-clamp-mechanical-test-report|EVD-PUMP-017]]"
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-003-occlusion-detection-validation-report|EVD-PUMP-003]]"
         ]
       }
     },
@@ -19771,19 +19989,20 @@
         "technical_file_identifier": "CRI-PUMP-018",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
         "applicable": true,
         "applicability_rationale": "Applicable to DEVC-PUMP-003 because the configured function or lifecycle control is within the requirement scope.",
         "compliance_method": "Verification and controlled-document review for CRI-PUMP-018",
         "compliance_status": "satisfied",
+        "topic": "air-in-line",
         "instantiates_requirement": [
-          "[[01-Ontology instances/04-requirements/gspr/GSPR-0002-software-and-cybersecurity|GSPR-0002]]"
+          "[[01-Ontology instances/04-requirements/gspr/GSPR-0003-therapy-delivery-protection|GSPR-0003]]"
         ],
         "derived_from": [
           "[[02-Sources/legislation/PROV-MDR-ANNEX-I-mdr-annex-i-gsprs|PROV-MDR-ANNEX-I]]"
         ],
         "satisfied_by": [
-          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-018-ingress-protection-test-report|EVD-PUMP-018]]"
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-004-air-in-line-detector-validation-report|EVD-PUMP-004]]"
         ]
       }
     },
@@ -19951,19 +20170,20 @@
         "technical_file_identifier": "CRI-PUMP-022",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]",
         "applicable": true,
         "applicability_rationale": "Applicable to DEVC-PUMP-002 because the configured function or lifecycle control is within the requirement scope.",
         "compliance_method": "Verification and controlled-document review for CRI-PUMP-022",
         "compliance_status": "satisfied",
+        "topic": "electrical-safety",
         "instantiates_requirement": [
-          "[[01-Ontology instances/04-requirements/gspr/GSPR-0002-software-and-cybersecurity|GSPR-0002]]"
+          "[[01-Ontology instances/04-requirements/gspr/GSPR-0001-electrical-safety|GSPR-0001]]"
         ],
         "derived_from": [
           "[[02-Sources/legislation/PROV-MDR-ANNEX-I-mdr-annex-i-gsprs|PROV-MDR-ANNEX-I]]"
         ],
         "satisfied_by": [
-          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-022-biocompatibility-evaluation-report|EVD-PUMP-022]]"
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-008-electrical-safety-test-report|EVD-PUMP-008]]"
         ]
       }
     },
@@ -21036,14 +21256,15 @@
         "applicability_rationale": "Applicable to DEVC-PUMP-001 because the configured function or lifecycle control is within the requirement scope.",
         "compliance_method": "Verification and controlled-document review for CRI-PUMP-046",
         "compliance_status": "satisfied",
+        "topic": "clinical-evaluation",
         "instantiates_requirement": [
-          "[[01-Ontology instances/04-requirements/gspr/GSPR-0002-software-and-cybersecurity|GSPR-0002]]"
+          "[[01-Ontology instances/04-requirements/gspr/GSPR-0004-clinical-evaluation-and-evidence|GSPR-0004]]"
         ],
         "derived_from": [
           "[[02-Sources/legislation/PROV-MDR-ANNEX-I-mdr-annex-i-gsprs|PROV-MDR-ANNEX-I]]"
         ],
         "satisfied_by": [
-          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-016-touch-interface-usability-verification|EVD-PUMP-016]]"
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-029-clinical-claims-evidence-summary|EVD-PUMP-029]]"
         ]
       }
     },
@@ -21254,18 +21475,22 @@
         "note_origin": "human-reviewed synthetic example",
         "technical_file": "TF-04 GSPR/GSPR Checklist.xlsx",
         "technical_file_identifier": "CRI-PUMP-051",
-        "valid_from": "2026-08-15",
+        "valid_from": null,
         "review_status": "approved",
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
         "applicable": true,
         "applicability_rationale": "Applicable to DEVC-PUMP-001 because CHG-PUMP-001 changes the safety-critical battery-cell supply and the released endurance claim must be reconfirmed before change closure.",
         "compliance_method": "Planned battery-endurance verification against the released acceptance criteria after CHG-PUMP-001",
         "compliance_status": "planned",
+        "topic": "battery-power",
         "instantiates_requirement": [
           "[[01-Ontology instances/04-requirements/gspr/GSPR-0001-electrical-safety|GSPR-0001]]"
         ],
         "derived_from": [
           "[[02-Sources/legislation/PROV-MDR-ANNEX-I-mdr-annex-i-gsprs|PROV-MDR-ANNEX-I]]"
+        ],
+        "requires_evidence": [
+          "[[01-Ontology instances/08-technical-documentation/evidence-types/EVTYPE-PUMP-001-post-change-battery-endurance-verification|EVTYPE-PUMP-001]]"
         ]
       }
     },
@@ -21334,7 +21559,8 @@
         "review_status": "approved",
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
         "component_criticality": "safety-critical",
-        "part_number": "FG-1002"
+        "part_number": "FG-1002",
+        "topic": "air-in-line"
       }
     },
     {
@@ -21402,7 +21628,8 @@
         "review_status": "approved",
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
         "component_criticality": "safety-critical",
-        "part_number": "FG-1004"
+        "part_number": "FG-1004",
+        "topic": "battery-power"
       }
     },
     {
@@ -21680,8 +21907,8 @@
         "valid_from": "2026-08-15",
         "review_status": "approved",
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
-        "lifecycle_state": "design-verification",
-        "market_status": "not-marketed",
+        "lifecycle_state": "released",
+        "market_status": "marketed",
         "market_release_candidate": false,
         "risk_class": "IIb",
         "manufactured_by": [
@@ -21704,34 +21931,31 @@
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-008-transport-and-storage-protection|CRI-PUMP-008]]",
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-009-compatibility-with-medicinal-products|CRI-PUMP-009]]",
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-010-biological-safety-of-fluid-path-materials|CRI-PUMP-010]]",
-          "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-051-battery-endurance-after-cell-supplier-change|CRI-PUMP-051]]"
+          "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-051-battery-endurance-after-cell-supplier-change|CRI-PUMP-051]]",
+          "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-046-clinical-evaluation-support|CRI-PUMP-046]]"
         ],
         "has_hazard": [
           "[[06-Infpump FlowGuard ontology notes/hazard/HAZ-PUMP-001-unintended-excessive-flow|HAZ-PUMP-001]]",
-          "[[06-Infpump FlowGuard ontology notes/hazard/HAZ-PUMP-002-insufficient-delivered-flow|HAZ-PUMP-002]]",
-          "[[06-Infpump FlowGuard ontology notes/hazard/HAZ-PUMP-003-occluded-infusion-pathway|HAZ-PUMP-003]]",
-          "[[06-Infpump FlowGuard ontology notes/hazard/HAZ-PUMP-004-air-introduced-into-infusion-line|HAZ-PUMP-004]]"
+          "[[06-Infpump FlowGuard ontology notes/hazard/HAZ-PUMP-002-insufficient-delivered-flow|HAZ-PUMP-002]]"
         ],
         "has_risk": [
           "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-001-clinical-injury-following-unintended-excessive-flow|RISK-PUMP-001]]",
           "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-002-delayed-detection-or-secondary-harm-from-unintended-excessive-flow|RISK-PUMP-002]]",
           "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-003-clinical-injury-following-insufficient-delivered-flow|RISK-PUMP-003]]",
           "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-004-delayed-detection-or-secondary-harm-from-insufficient-delivered-flow|RISK-PUMP-004]]",
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-005-clinical-injury-following-occluded-infusion-pathway|RISK-PUMP-005]]",
           "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-006-delayed-detection-or-secondary-harm-from-occluded-infusion-pathway|RISK-PUMP-006]]",
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-007-clinical-injury-following-air-introduced-into-infusion-line|RISK-PUMP-007]]",
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-008-delayed-detection-or-secondary-harm-from-air-introduced-into-infusion-line|RISK-PUMP-008]]"
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-008-delayed-detection-or-secondary-harm-from-air-introduced-into-infusion-line|RISK-PUMP-008]]",
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-013-clinical-injury-following-premature-battery-depletion|RISK-PUMP-013]]"
         ],
         "includes_component": [
           "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-001-infusion-pumping-mechanism|COMP-PUMP-001]]",
-          "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-002-air-in-line-sensor-assembly|COMP-PUMP-002]]",
           "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-004-rechargeable-battery-pack|COMP-PUMP-004]]"
         ],
         "makes_clinical_claim": [
           "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-001-maintains-programmed-volumetric-flow-within-specified-accuracy|CLM-PUMP-001]]",
-          "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-002-supports-continuous-intravenous-therapy|CLM-PUMP-002]]",
           "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-003-supports-intermittent-intravenous-therapy|CLM-PUMP-003]]",
-          "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-004-reduces-unintended-free-flow-exposure|CLM-PUMP-004]]"
+          "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-004-reduces-unintended-free-flow-exposure|CLM-PUMP-004]]",
+          "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-002-supports-continuous-intravenous-therapy|CLM-PUMP-002]]"
         ],
         "has_certificate": [
           "[[06-Infpump FlowGuard ontology notes/certificate/CERT-PUMP-001-eu-mdr-quality-management-system-certificate|CERT-PUMP-001]]"
@@ -21809,36 +22033,40 @@
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-014-delivered-volume-accuracy|CRI-PUMP-014]]",
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-015-flow-rate-accuracy|CRI-PUMP-015]]",
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-016-protection-against-unintended-bolus|CRI-PUMP-016]]",
-          "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-017-occlusion-detection|CRI-PUMP-017]]",
-          "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-018-air-in-line-detection|CRI-PUMP-018]]",
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-019-free-flow-prevention|CRI-PUMP-019]]",
-          "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-020-alarm-priority-and-intelligibility|CRI-PUMP-020]]"
+          "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-020-alarm-priority-and-intelligibility|CRI-PUMP-020]]",
+          "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-017-occlusion-detection|CRI-PUMP-017]]",
+          "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-018-air-in-line-detection|CRI-PUMP-018]]"
         ],
         "has_hazard": [
           "[[06-Infpump FlowGuard ontology notes/hazard/HAZ-PUMP-005-uncontrolled-free-flow|HAZ-PUMP-005]]",
           "[[06-Infpump FlowGuard ontology notes/hazard/HAZ-PUMP-006-incorrect-drug-or-concentration-selection|HAZ-PUMP-006]]",
           "[[06-Infpump FlowGuard ontology notes/hazard/HAZ-PUMP-007-premature-battery-depletion|HAZ-PUMP-007]]",
-          "[[06-Infpump FlowGuard ontology notes/hazard/HAZ-PUMP-008-electrical-isolation-failure|HAZ-PUMP-008]]"
+          "[[06-Infpump FlowGuard ontology notes/hazard/HAZ-PUMP-003-occluded-infusion-pathway|HAZ-PUMP-003]]",
+          "[[06-Infpump FlowGuard ontology notes/hazard/HAZ-PUMP-004-air-introduced-into-infusion-line|HAZ-PUMP-004]]",
+          "[[06-Infpump FlowGuard ontology notes/hazard/HAZ-PUMP-012-cybersecurity-compromise|HAZ-PUMP-012]]"
         ],
         "has_risk": [
           "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-009-clinical-injury-following-uncontrolled-free-flow|RISK-PUMP-009]]",
           "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-010-delayed-detection-or-secondary-harm-from-uncontrolled-free-flow|RISK-PUMP-010]]",
           "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-011-clinical-injury-following-incorrect-drug-or-concentration-selection|RISK-PUMP-011]]",
           "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-012-delayed-detection-or-secondary-harm-from-incorrect-drug-or-concentration-selection|RISK-PUMP-012]]",
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-013-clinical-injury-following-premature-battery-depletion|RISK-PUMP-013]]",
           "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-014-delayed-detection-or-secondary-harm-from-premature-battery-depletion|RISK-PUMP-014]]",
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-015-clinical-injury-following-electrical-isolation-failure|RISK-PUMP-015]]",
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-016-delayed-detection-or-secondary-harm-from-electrical-isolation-failure|RISK-PUMP-016]]"
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-016-delayed-detection-or-secondary-harm-from-electrical-isolation-failure|RISK-PUMP-016]]",
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-005-clinical-injury-following-occluded-infusion-pathway|RISK-PUMP-005]]",
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-007-clinical-injury-following-air-introduced-into-infusion-line|RISK-PUMP-007]]",
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-023-clinical-injury-following-cybersecurity-compromise|RISK-PUMP-023]]"
         ],
         "includes_component": [
           "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-003-pressure-sensor-assembly|COMP-PUMP-003]]",
-          "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-004-rechargeable-battery-pack|COMP-PUMP-004]]"
+          "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-004-rechargeable-battery-pack|COMP-PUMP-004]]",
+          "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-002-air-in-line-sensor-assembly|COMP-PUMP-002]]"
         ],
         "makes_clinical_claim": [
-          "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-005-detects-downstream-occlusion-before-prolonged-therapy-interruption|CLM-PUMP-005]]",
           "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-006-detects-clinically-relevant-air-in-line|CLM-PUMP-006]]",
           "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-007-provides-timely-high-priority-alarm-notification|CLM-PUMP-007]]",
-          "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-008-supports-low-volume-paediatric-infusion|CLM-PUMP-008]]"
+          "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-008-supports-low-volume-paediatric-infusion|CLM-PUMP-008]]",
+          "[[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-005-detects-downstream-occlusion-before-prolonged-therapy-interruption|CLM-PUMP-005]]"
         ],
         "has_certificate": [
           "[[06-Infpump FlowGuard ontology notes/certificate/CERT-PUMP-002-eu-mdr-technical-documentation-assessment-certificate|CERT-PUMP-002]]"
@@ -21911,7 +22139,6 @@
         ],
         "has_applicable_requirement": [
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-021-alarm-system-self-test|CRI-PUMP-021]]",
-          "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-022-electrical-safety|CRI-PUMP-022]]",
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-023-electromagnetic-compatibility|CRI-PUMP-023]]",
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-024-battery-endurance|CRI-PUMP-024]]",
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-025-protective-earth-and-isolation|CRI-PUMP-025]]",
@@ -21919,13 +22146,14 @@
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-027-pole-clamp-integrity|CRI-PUMP-027]]",
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-028-fluid-ingress-protection|CRI-PUMP-028]]",
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-029-thermal-safety|CRI-PUMP-029]]",
-          "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-030-software-lifecycle-control|CRI-PUMP-030]]"
+          "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-030-software-lifecycle-control|CRI-PUMP-030]]",
+          "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-022-electrical-safety|CRI-PUMP-022]]"
         ],
         "has_hazard": [
           "[[06-Infpump FlowGuard ontology notes/hazard/HAZ-PUMP-009-software-dose-calculation-error|HAZ-PUMP-009]]",
           "[[06-Infpump FlowGuard ontology notes/hazard/HAZ-PUMP-010-suppressed-or-missed-alarm|HAZ-PUMP-010]]",
           "[[06-Infpump FlowGuard ontology notes/hazard/HAZ-PUMP-011-incorrect-touch-interface-input|HAZ-PUMP-011]]",
-          "[[06-Infpump FlowGuard ontology notes/hazard/HAZ-PUMP-012-cybersecurity-compromise|HAZ-PUMP-012]]"
+          "[[06-Infpump FlowGuard ontology notes/hazard/HAZ-PUMP-008-electrical-isolation-failure|HAZ-PUMP-008]]"
         ],
         "has_risk": [
           "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-017-clinical-injury-following-software-dose-calculation-error|RISK-PUMP-017]]",
@@ -21934,8 +22162,8 @@
           "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-020-delayed-detection-or-secondary-harm-from-suppressed-or-missed-alarm|RISK-PUMP-020]]",
           "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-021-clinical-injury-following-incorrect-touch-interface-input|RISK-PUMP-021]]",
           "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-022-delayed-detection-or-secondary-harm-from-incorrect-touch-interface-input|RISK-PUMP-022]]",
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-023-clinical-injury-following-cybersecurity-compromise|RISK-PUMP-023]]",
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-024-delayed-detection-or-secondary-harm-from-cybersecurity-compromise|RISK-PUMP-024]]"
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-024-delayed-detection-or-secondary-harm-from-cybersecurity-compromise|RISK-PUMP-024]]",
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-015-clinical-injury-following-electrical-isolation-failure|RISK-PUMP-015]]"
         ],
         "includes_component": [
           "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-005-touchscreen-user-interface|COMP-PUMP-005]]",
@@ -22129,7 +22357,6 @@
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-043-labelling-content|CRI-PUMP-043]]",
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-044-instructions-for-use-completeness|CRI-PUMP-044]]",
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-045-udi-traceability|CRI-PUMP-045]]",
-          "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-046-clinical-evaluation-support|CRI-PUMP-046]]",
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-047-pms-planning|CRI-PUMP-047]]",
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-048-vigilance-readiness|CRI-PUMP-048]]",
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-049-production-release-controls|CRI-PUMP-049]]",
@@ -22455,13 +22682,14 @@
         "technical_file_identifier": "DOC-PUMP-004",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004]]",
-        "document_revision": "D",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
+        "document_revision": "C",
+        "topic": "clinical-evaluation",
         "approved_by": [
           "[[01-Ontology instances/02-organisations/roles/ROLE-REGULATORY-AFFAIRS-regulatory-affairs|ROLE-REGULATORY-AFFAIRS]]"
         ],
         "applies_to_configuration": [
-          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004]]"
+          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
         ]
       }
     },
@@ -22501,6 +22729,46 @@
         ],
         "applies_to_configuration": [
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-005-infpump-flowguard-critical-care-configuration-11|DEVC-PUMP-005]]"
+        ]
+      }
+    },
+    {
+      "id": "DOC-PUMP-006",
+      "type": "document-version",
+      "title": "Clinical evaluation report Rev D",
+      "path": "06-Infpump FlowGuard ontology notes/document-version/DOC-PUMP-006-clinical-evaluation-report-rev-d.md",
+      "data": {
+        "id": "DOC-PUMP-006",
+        "type": "document-version",
+        "title": "Clinical evaluation report Rev D",
+        "aliases": [
+          "DOC-PUMP-006",
+          "DOC-PUMP-006-clinical-evaluation-report-rev-d",
+          "18-ontology-notes/document-version/DOC-PUMP-006-clinical-evaluation-report-rev-d",
+          "03-Ontology notes/document-version/DOC-PUMP-006-clinical-evaluation-report-rev-d"
+        ],
+        "status": "approved",
+        "version": "1",
+        "created": "2026-08-15",
+        "modified": "2026-08-15",
+        "tags": [
+          "ontology-note/document-version",
+          "device/infpump-flowguard"
+        ],
+        "draft": false,
+        "note_origin": "human-reviewed synthetic example",
+        "technical_file": "TF-00 Technical Documentation/Document Master List.xlsx",
+        "technical_file_identifier": "DOC-PUMP-006",
+        "valid_from": "2026-08-15",
+        "review_status": "approved",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
+        "document_revision": "D",
+        "topic": "clinical-evaluation",
+        "approved_by": [
+          "[[01-Ontology instances/02-organisations/roles/ROLE-REGULATORY-AFFAIRS-regulatory-affairs|ROLE-REGULATORY-AFFAIRS]]"
+        ],
+        "applies_to_configuration": [
+          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
         ]
       }
     },
@@ -22565,7 +22833,8 @@
         "technical_file_identifier": "HARM-PUMP-002",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]"
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
+        "topic": "occlusion"
       }
     },
     {
@@ -22597,7 +22866,8 @@
         "technical_file_identifier": "HARM-PUMP-003",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]"
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
+        "topic": "air-in-line"
       }
     },
     {
@@ -22821,7 +23091,8 @@
         "technical_file_identifier": "HARM-PUMP-010",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-005-infpump-flowguard-critical-care-configuration-11|DEVC-PUMP-005]]"
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
+        "topic": "cybersecurity"
       }
     },
     {
@@ -22925,8 +23196,9 @@
         "technical_file_identifier": "HAZ-PUMP-003",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
         "hazard_category": "therapy-delivery",
+        "topic": "occlusion",
         "can_lead_to": [
           "[[06-Infpump FlowGuard ontology notes/hazardous-situation/HS-PUMP-003-pressure-rises-while-downstream-occlusion-is-undetected|HS-PUMP-003]]"
         ]
@@ -22961,8 +23233,9 @@
         "technical_file_identifier": "HAZ-PUMP-004",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
         "hazard_category": "therapy-delivery",
+        "topic": "air-in-line",
         "can_lead_to": [
           "[[06-Infpump FlowGuard ontology notes/hazardous-situation/HS-PUMP-004-air-reaches-the-patient-line|HS-PUMP-004]]"
         ]
@@ -23107,6 +23380,7 @@
         "review_status": "approved",
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]",
         "hazard_category": "electrical-software",
+        "topic": "electrical-safety",
         "can_lead_to": [
           "[[06-Infpump FlowGuard ontology notes/hazardous-situation/HS-PUMP-008-user-or-patient-is-exposed-to-hazardous-leakage-current|HS-PUMP-008]]"
         ]
@@ -23251,6 +23525,7 @@
         "review_status": "approved",
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
         "hazard_category": "electrical-software",
+        "topic": "cybersecurity",
         "can_lead_to": [
           "[[06-Infpump FlowGuard ontology notes/hazardous-situation/HS-PUMP-012-unauthorised-actor-changes-therapy-or-device-configuration|HS-PUMP-012]]"
         ]
@@ -23643,9 +23918,10 @@
         "technical_file_identifier": "HS-PUMP-003",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
+        "topic": "occlusion",
         "may_cause": [
-          "[[06-Infpump FlowGuard ontology notes/harm/HARM-PUMP-003-air-embolism|HARM-PUMP-003]]"
+          "[[06-Infpump FlowGuard ontology notes/harm/HARM-PUMP-002-underdose-or-loss-of-therapy|HARM-PUMP-002]]"
         ]
       }
     },
@@ -23678,9 +23954,10 @@
         "technical_file_identifier": "HS-PUMP-004",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
+        "topic": "air-in-line",
         "may_cause": [
-          "[[06-Infpump FlowGuard ontology notes/harm/HARM-PUMP-004-medication-overdose|HARM-PUMP-004]]"
+          "[[06-Infpump FlowGuard ontology notes/harm/HARM-PUMP-003-air-embolism|HARM-PUMP-003]]"
         ]
       }
     },
@@ -23959,8 +24236,9 @@
         "valid_from": "2026-08-15",
         "review_status": "approved",
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
+        "topic": "cybersecurity",
         "may_cause": [
-          "[[06-Infpump FlowGuard ontology notes/harm/HARM-PUMP-002-underdose-or-loss-of-therapy|HARM-PUMP-002]]"
+          "[[06-Infpump FlowGuard ontology notes/harm/HARM-PUMP-010-serious-deterioration-or-death|HARM-PUMP-010]]"
         ]
       }
     },
@@ -24655,13 +24933,14 @@
         "technical_file_identifier": "PROC-PUMP-004",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
         "process_state": "effective",
+        "topic": "air-in-line",
         "owned_by": [
           "[[01-Ontology instances/02-organisations/roles/ROLE-REGULATORY-AFFAIRS-regulatory-affairs|ROLE-REGULATORY-AFFAIRS]]"
         ],
-        "outsourced_to": [
-          "[[06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-004-alarm-speaker-critical-supplier|SUP-PUMP-004]]"
+        "qualifies_supplier": [
+          "[[06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-002-air-sensor-critical-supplier|SUP-PUMP-002]]"
         ]
       }
     },
@@ -24882,12 +25161,13 @@
         "technical_file_identifier": "RISK-PUMP-005",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-005-infpump-flowguard-critical-care-configuration-11|DEVC-PUMP-005]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
         "risk_matrix_identifier": "RISK-PUMP-005",
         "initial_risk": "medium",
         "residual_risk": "low",
+        "topic": "occlusion",
         "concerns": [
-          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-005-infpump-flowguard-critical-care-configuration-11|DEVC-PUMP-005]]"
+          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]"
         ]
       }
     },
@@ -24962,6 +25242,7 @@
         "risk_matrix_identifier": "RISK-PUMP-007",
         "initial_risk": "high",
         "residual_risk": "low",
+        "topic": "air-in-line",
         "concerns": [
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]"
         ]
@@ -25190,6 +25471,9 @@
         "risk_matrix_identifier": "RISK-PUMP-013",
         "initial_risk": "high",
         "residual_risk": "low",
+        "risk_acceptance_state": "baseline-accepted",
+        "reassessment_state": "required",
+        "topic": "battery-power",
         "concerns": [
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
         ]
@@ -25262,12 +25546,13 @@
         "technical_file_identifier": "RISK-PUMP-015",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-005-infpump-flowguard-critical-care-configuration-11|DEVC-PUMP-005]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]",
         "risk_matrix_identifier": "RISK-PUMP-015",
         "initial_risk": "medium",
         "residual_risk": "low",
+        "topic": "electrical-safety",
         "concerns": [
-          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-005-infpump-flowguard-critical-care-configuration-11|DEVC-PUMP-005]]"
+          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]"
         ]
       }
     },
@@ -25566,12 +25851,13 @@
         "technical_file_identifier": "RISK-PUMP-023",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
         "risk_matrix_identifier": "RISK-PUMP-023",
         "initial_risk": "medium",
         "residual_risk": "low",
+        "topic": "cybersecurity",
         "concerns": [
-          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]"
+          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]"
         ]
       }
     },
@@ -26367,13 +26653,14 @@
         "technical_file_identifier": "RCM-PUMP-004",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
         "control_priority": "inherent-safety-or-protective-measure",
+        "topic": "occlusion",
         "mitigates": [
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-004-delayed-detection-or-secondary-harm-from-insufficient-delivered-flow|RISK-PUMP-004]]"
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-005-clinical-injury-following-occluded-infusion-pathway|RISK-PUMP-005]]"
         ],
         "verified_by": [
-          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-004-air-in-line-detector-validation-report|EVD-PUMP-004]]"
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-003-occlusion-detection-validation-report|EVD-PUMP-003]]"
         ]
       }
     },
@@ -26406,13 +26693,14 @@
         "technical_file_identifier": "RCM-PUMP-005",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-005-infpump-flowguard-critical-care-configuration-11|DEVC-PUMP-005]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
         "control_priority": "inherent-safety-or-protective-measure",
+        "topic": "occlusion",
         "mitigates": [
           "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-005-clinical-injury-following-occluded-infusion-pathway|RISK-PUMP-005]]"
         ],
         "verified_by": [
-          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-005-free-flow-protection-verification-report|EVD-PUMP-005]]"
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-003-occlusion-detection-validation-report|EVD-PUMP-003]]"
         ]
       }
     },
@@ -26445,13 +26733,14 @@
         "technical_file_identifier": "RCM-PUMP-006",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
         "control_priority": "inherent-safety-or-protective-measure",
+        "topic": "air-in-line",
         "mitigates": [
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-006-delayed-detection-or-secondary-harm-from-occluded-infusion-pathway|RISK-PUMP-006]]"
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-007-clinical-injury-following-air-introduced-into-infusion-line|RISK-PUMP-007]]"
         ],
         "verified_by": [
-          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-006-drug-library-limits-verification-report|EVD-PUMP-006]]"
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-004-air-in-line-detector-validation-report|EVD-PUMP-004]]"
         ]
       }
     },
@@ -26486,11 +26775,12 @@
         "review_status": "approved",
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
         "control_priority": "inherent-safety-or-protective-measure",
+        "topic": "air-in-line",
         "mitigates": [
           "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-007-clinical-injury-following-air-introduced-into-infusion-line|RISK-PUMP-007]]"
         ],
         "verified_by": [
-          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-007-battery-endurance-validation-report|EVD-PUMP-007]]"
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-004-air-in-line-detector-validation-report|EVD-PUMP-004]]"
         ]
       }
     },
@@ -26720,6 +27010,9 @@
         "review_status": "approved",
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
         "control_priority": "inherent-safety-or-protective-measure",
+        "implementation_state": "implemented",
+        "verification_state": "reassessment-required",
+        "topic": "battery-power",
         "mitigates": [
           "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-013-clinical-injury-following-premature-battery-depletion|RISK-PUMP-013]]"
         ],
@@ -26835,13 +27128,14 @@
         "technical_file_identifier": "RCM-PUMP-016",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]",
         "control_priority": "inherent-safety-or-protective-measure",
+        "topic": "electrical-safety",
         "mitigates": [
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-016-delayed-detection-or-secondary-harm-from-electrical-isolation-failure|RISK-PUMP-016]]"
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-015-clinical-injury-following-electrical-isolation-failure|RISK-PUMP-015]]"
         ],
         "verified_by": [
-          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-016-touch-interface-usability-verification|EVD-PUMP-016]]"
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-008-electrical-safety-test-report|EVD-PUMP-008]]"
         ]
       }
     },
@@ -27186,13 +27480,14 @@
         "technical_file_identifier": "RCM-PUMP-025",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-005-infpump-flowguard-critical-care-configuration-11|DEVC-PUMP-005]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
         "control_priority": "inherent-safety-or-protective-measure",
+        "topic": "cybersecurity",
         "mitigates": [
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-025-clinical-injury-following-electromagnetic-disturbance|RISK-PUMP-025]]"
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-023-clinical-injury-following-cybersecurity-compromise|RISK-PUMP-023]]"
         ],
         "verified_by": [
-          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-025-communication-loss-safe-state-test-report|EVD-PUMP-025]]"
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-012-cybersecurity-penetration-test-report|EVD-PUMP-012]]"
         ]
       }
     },
@@ -27225,13 +27520,14 @@
         "technical_file_identifier": "RCM-PUMP-026",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
         "control_priority": "inherent-safety-or-protective-measure",
+        "topic": "cybersecurity",
         "mitigates": [
-          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-026-delayed-detection-or-secondary-harm-from-electromagnetic-disturbance|RISK-PUMP-026]]"
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-023-clinical-injury-following-cybersecurity-compromise|RISK-PUMP-023]]"
         ],
         "verified_by": [
-          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-026-data-integrity-verification-report|EVD-PUMP-026]]"
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-012-cybersecurity-penetration-test-report|EVD-PUMP-012]]"
         ]
       }
     },
@@ -28008,6 +28304,7 @@
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
         "signal_state": "accepted",
         "detected_at": "2026-08-15",
+        "topic": "battery-power",
         "concerns": [
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
         ],
@@ -28048,6 +28345,7 @@
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
         "signal_state": "under-assessment",
         "detected_at": "2026-08-15",
+        "topic": "occlusion",
         "concerns": [
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]"
         ],
@@ -28248,6 +28546,7 @@
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
         "signal_state": "under-assessment",
         "detected_at": "2026-08-15",
+        "topic": "cybersecurity",
         "concerns": [
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]"
         ],
@@ -28405,8 +28704,9 @@
         "technical_file_identifier": "SW-PUMP-001",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
         "software_release_state": "released",
+        "topic": "cybersecurity",
         "source_provisions": [
           "[[02-Sources/standards/SRC-EUDAMED-european-commission-eudamed-overview|SRC-EUDAMED]]",
           "[[02-Sources/standards/SRC-UDI-european-commission-udi-overview|SRC-UDI]]"
@@ -28443,9 +28743,11 @@
         "valid_from": "2026-08-15",
         "review_status": "approved",
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
-        "supplied_component": "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-004-rechargeable-battery-pack|COMP-PUMP-004]]",
         "supplier_criticality": "critical",
-        "approval_state": "approved"
+        "approval_state": "approved",
+        "supplied_component": [
+          "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-004-rechargeable-battery-pack|COMP-PUMP-004]]"
+        ]
       }
     },
     {
@@ -28478,9 +28780,12 @@
         "valid_from": "2026-08-15",
         "review_status": "approved",
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
-        "supplied_component": "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-004-rechargeable-battery-pack|COMP-PUMP-004]]",
         "supplier_criticality": "critical",
-        "approval_state": "approved"
+        "approval_state": "approved",
+        "topic": "air-in-line",
+        "supplied_component": [
+          "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-002-air-in-line-sensor-assembly|COMP-PUMP-002]]"
+        ]
       }
     },
     {
@@ -28513,9 +28818,11 @@
         "valid_from": "2026-08-15",
         "review_status": "approved",
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]",
-        "supplied_component": "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-006-alarm-speaker-assembly|COMP-PUMP-006]]",
         "supplier_criticality": "critical",
-        "approval_state": "approved"
+        "approval_state": "approved",
+        "supplied_component": [
+          "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-006-alarm-speaker-assembly|COMP-PUMP-006]]"
+        ]
       }
     },
     {
@@ -28548,9 +28855,11 @@
         "valid_from": "2026-08-15",
         "review_status": "approved",
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004]]",
-        "supplied_component": "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-008-network-communication-module|COMP-PUMP-008]]",
         "supplier_criticality": "critical",
-        "approval_state": "approved"
+        "approval_state": "approved",
+        "supplied_component": [
+          "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-008-network-communication-module|COMP-PUMP-008]]"
+        ]
       }
     },
     {
@@ -28583,9 +28892,50 @@
         "valid_from": "2026-08-15",
         "review_status": "approved",
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-005-infpump-flowguard-critical-care-configuration-11|DEVC-PUMP-005]]",
-        "supplied_component": "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-010-pump-door-and-anti-free-flow-mechanism|COMP-PUMP-010]]",
         "supplier_criticality": "critical",
-        "approval_state": "approved"
+        "approval_state": "approved",
+        "supplied_component": [
+          "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-010-pump-door-and-anti-free-flow-mechanism|COMP-PUMP-010]]"
+        ]
+      }
+    },
+    {
+      "id": "SUP-PUMP-006",
+      "type": "supplier",
+      "title": "Proposed replacement battery-cell supplier",
+      "path": "06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-006-proposed-replacement-battery-cell-supplier.md",
+      "data": {
+        "id": "SUP-PUMP-006",
+        "type": "supplier",
+        "title": "Proposed replacement battery-cell supplier",
+        "aliases": [
+          "SUP-PUMP-006",
+          "SUP-PUMP-006-proposed-replacement-battery-cell-supplier",
+          "18-ontology-notes/supplier/SUP-PUMP-006-proposed-replacement-battery-cell-supplier",
+          "03-Ontology notes/supplier/SUP-PUMP-006-proposed-replacement-battery-cell-supplier"
+        ],
+        "status": "under-assessment",
+        "version": "1",
+        "created": "2026-08-15",
+        "modified": "2026-08-15",
+        "tags": [
+          "ontology-note/supplier",
+          "device/infpump-flowguard"
+        ],
+        "draft": false,
+        "note_origin": "human-reviewed synthetic example",
+        "technical_file": "TF-11 Supplier Controls/Supplier Qualification Register.xlsx",
+        "technical_file_identifier": "SUP-PUMP-006",
+        "valid_from": null,
+        "review_status": "approved",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
+        "supplier_criticality": "critical",
+        "approval_state": "qualification-in-progress",
+        "qualification_scope": "Replacement battery cells proposed under CHG-PUMP-001",
+        "topic": "battery-power",
+        "supplied_component": [
+          "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-004-rechargeable-battery-pack|COMP-PUMP-004]]"
+        ]
       }
     },
     {
@@ -28632,11 +28982,13 @@
           "[[06-Infpump FlowGuard ontology notes/document-version/DOC-PUMP-003-risk-management-file-rev-d|DOC-PUMP-003]]",
           "[[06-Infpump FlowGuard ontology notes/document-version/DOC-PUMP-004-clinical-evaluation-report-rev-c|DOC-PUMP-004]]",
           "[[06-Infpump FlowGuard ontology notes/document-version/DOC-PUMP-005-instructions-for-use-rev-f|DOC-PUMP-005]]",
+          "[[06-Infpump FlowGuard ontology notes/document-version/DOC-PUMP-006-clinical-evaluation-report-rev-d|DOC-PUMP-006]]",
           "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-001-flow-accuracy-verification-report|EVD-PUMP-001]]",
           "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-002-bolus-volume-verification-report|EVD-PUMP-002]]",
           "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-003-occlusion-detection-validation-report|EVD-PUMP-003]]",
           "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-004-air-in-line-detector-validation-report|EVD-PUMP-004]]",
-          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-005-free-flow-protection-verification-report|EVD-PUMP-005]]"
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-005-free-flow-protection-verification-report|EVD-PUMP-005]]",
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-008-electrical-safety-test-report|EVD-PUMP-008]]"
         ],
         "source_provisions": [
           "[[02-Sources/legislation/PROV-MDR-ANNEX-II-mdr-annex-ii-technical-documentation|PROV-MDR-ANNEX-II]]",
@@ -28748,11 +29100,12 @@
         "technical_file_identifier": "EVD-PUMP-003",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
         "approved_at": "2026-08-15",
         "evidence_scope": "Occlusion detection validation report",
+        "topic": "occlusion",
         "applies_to_configuration": [
-          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]"
+          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]"
         ]
       }
     },
@@ -28785,11 +29138,12 @@
         "technical_file_identifier": "EVD-PUMP-004",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
         "approved_at": "2026-08-15",
         "evidence_scope": "Air-in-line detector validation report",
+        "topic": "air-in-line",
         "applies_to_configuration": [
-          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004]]"
+          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]"
         ]
       }
     },
@@ -28899,6 +29253,8 @@
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
         "approved_at": "2026-08-15",
         "evidence_scope": "Battery endurance validation report",
+        "evidence_state": "approved-baseline",
+        "topic": "battery-power",
         "applies_to_configuration": [
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
         ]
@@ -28936,8 +29292,12 @@
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]",
         "approved_at": "2026-08-15",
         "evidence_scope": "Electrical safety test report",
+        "topic": "electrical-safety",
         "applies_to_configuration": [
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003]]"
+        ],
+        "supports_certificate": [
+          "[[06-Infpump FlowGuard ontology notes/certificate/CERT-PUMP-003-electrical-safety-cb-test-certificate|CERT-PUMP-003]]"
         ]
       }
     },
@@ -29084,6 +29444,7 @@
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
         "approved_at": "2026-08-15",
         "evidence_scope": "Cybersecurity penetration test report",
+        "topic": "cybersecurity",
         "applies_to_configuration": [
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]"
         ]
@@ -29710,11 +30071,12 @@
         "technical_file_identifier": "EVD-PUMP-029",
         "valid_from": "2026-08-15",
         "review_status": "approved",
-        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004]]",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
         "approved_at": "2026-08-15",
         "evidence_scope": "Clinical claims evidence summary",
+        "topic": "clinical-evaluation",
         "applies_to_configuration": [
-          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004]]"
+          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
         ]
       }
     },
@@ -29752,6 +30114,45 @@
         "evidence_scope": "Configuration baseline verification report",
         "applies_to_configuration": [
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-005-infpump-flowguard-critical-care-configuration-11|DEVC-PUMP-005]]"
+        ]
+      }
+    },
+    {
+      "id": "EVD-PUMP-031",
+      "type": "verification-evidence",
+      "title": "Post-change battery endurance verification",
+      "path": "06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-031-post-change-battery-endurance-verification.md",
+      "data": {
+        "id": "EVD-PUMP-031",
+        "type": "verification-evidence",
+        "title": "Post-change battery endurance verification",
+        "aliases": [
+          "EVD-PUMP-031",
+          "EVD-PUMP-031-post-change-battery-endurance-verification",
+          "18-ontology-notes/verification-evidence/EVD-PUMP-031-post-change-battery-endurance-verification",
+          "03-Ontology notes/verification-evidence/EVD-PUMP-031-post-change-battery-endurance-verification"
+        ],
+        "status": "draft",
+        "version": "1",
+        "created": "2026-08-15",
+        "modified": "2026-08-15",
+        "tags": [
+          "ontology-note/verification-evidence",
+          "device/infpump-flowguard"
+        ],
+        "draft": false,
+        "note_origin": "human-reviewed synthetic example",
+        "technical_file": "TF-07 Verification and Validation/V&V Evidence Index.xlsx",
+        "technical_file_identifier": "EVD-PUMP-031",
+        "valid_from": null,
+        "review_status": "approved",
+        "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
+        "evidence_scope": "Post-change battery endurance verification for CHG-PUMP-001",
+        "evidence_state": "planned",
+        "execution_state": "not-started",
+        "topic": "battery-power",
+        "applies_to_configuration": [
+          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
         ]
       }
     },
@@ -30077,8 +30478,7 @@
         "aliases": [
           "META-VIEWS",
           "Purpose of 04-Views",
-          "04-Views guidance",
-          "00-meta/META-VIEWS-views"
+          "04-Views guidance"
         ],
         "status": "active",
         "version": "1",
@@ -30779,6 +31179,18 @@
       "predicate": "derived_from",
       "object": "PROV-MDR-ANNEX-I",
       "source_note": "01-Ontology instances/04-requirements/gspr/GSPR-0002-software-and-cybersecurity.md"
+    },
+    {
+      "subject": "GSPR-0003",
+      "predicate": "derived_from",
+      "object": "PROV-MDR-ANNEX-I",
+      "source_note": "01-Ontology instances/04-requirements/gspr/GSPR-0003-therapy-delivery-protection.md"
+    },
+    {
+      "subject": "GSPR-0004",
+      "predicate": "derived_from",
+      "object": "PROV-MDR-ARTICLE-61",
+      "source_note": "01-Ontology instances/04-requirements/gspr/GSPR-0004-clinical-evaluation-and-evidence.md"
     },
     {
       "subject": "CRI-0001",
@@ -32726,6 +33138,12 @@
     },
     {
       "subject": "CHG-PUMP-001",
+      "predicate": "impacts",
+      "object": "EVD-PUMP-007",
+      "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-001-battery-cell-supplier-replacement.md"
+    },
+    {
+      "subject": "CHG-PUMP-001",
       "predicate": "has_impact_assessment",
       "object": "CIA-PUMP-001",
       "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-001-battery-cell-supplier-replacement.md"
@@ -32739,19 +33157,31 @@
     {
       "subject": "CHG-PUMP-002",
       "predicate": "impacts",
-      "object": "RISK-PUMP-003",
+      "object": "RISK-PUMP-005",
+      "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-002-occlusion-algorithm-threshold-update.md"
+    },
+    {
+      "subject": "CHG-PUMP-002",
+      "predicate": "impacts",
+      "object": "EVD-PUMP-003",
       "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-002-occlusion-algorithm-threshold-update.md"
     },
     {
       "subject": "CHG-PUMP-003",
       "predicate": "concerns",
-      "object": "DEVC-PUMP-003",
+      "object": "DEVC-PUMP-002",
       "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-003-air-sensor-component-revision.md"
     },
     {
       "subject": "CHG-PUMP-003",
       "predicate": "impacts",
-      "object": "RISK-PUMP-005",
+      "object": "RISK-PUMP-007",
+      "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-003-air-sensor-component-revision.md"
+    },
+    {
+      "subject": "CHG-PUMP-003",
+      "predicate": "impacts",
+      "object": "EVD-PUMP-004",
       "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-003-air-sensor-component-revision.md"
     },
     {
@@ -32767,6 +33197,12 @@
       "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-004-touchscreen-controller-replacement.md"
     },
     {
+      "subject": "CHG-PUMP-004",
+      "predicate": "impacts",
+      "object": "EVD-PUMP-004",
+      "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-004-touchscreen-controller-replacement.md"
+    },
+    {
       "subject": "CHG-PUMP-005",
       "predicate": "concerns",
       "object": "DEVC-PUMP-005",
@@ -32776,6 +33212,12 @@
       "subject": "CHG-PUMP-005",
       "predicate": "impacts",
       "object": "RISK-PUMP-009",
+      "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-005-alarm-speaker-supplier-change.md"
+    },
+    {
+      "subject": "CHG-PUMP-005",
+      "predicate": "impacts",
+      "object": "EVD-PUMP-005",
       "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-005-alarm-speaker-supplier-change.md"
     },
     {
@@ -32791,6 +33233,12 @@
       "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-006-drug-library-schema-update.md"
     },
     {
+      "subject": "CHG-PUMP-006",
+      "predicate": "impacts",
+      "object": "EVD-PUMP-006",
+      "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-006-drug-library-schema-update.md"
+    },
+    {
       "subject": "CHG-PUMP-007",
       "predicate": "concerns",
       "object": "DEVC-PUMP-002",
@@ -32799,7 +33247,19 @@
     {
       "subject": "CHG-PUMP-007",
       "predicate": "impacts",
-      "object": "RISK-PUMP-013",
+      "object": "RISK-PUMP-023",
+      "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-007-cybersecurity-operating-system-patch.md"
+    },
+    {
+      "subject": "CHG-PUMP-007",
+      "predicate": "impacts",
+      "object": "SW-PUMP-001",
+      "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-007-cybersecurity-operating-system-patch.md"
+    },
+    {
+      "subject": "CHG-PUMP-007",
+      "predicate": "impacts",
+      "object": "EVD-PUMP-012",
       "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-007-cybersecurity-operating-system-patch.md"
     },
     {
@@ -32815,6 +33275,12 @@
       "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-008-pole-clamp-material-change.md"
     },
     {
+      "subject": "CHG-PUMP-008",
+      "predicate": "impacts",
+      "object": "EVD-PUMP-008",
+      "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-008-pole-clamp-material-change.md"
+    },
+    {
       "subject": "CHG-PUMP-009",
       "predicate": "concerns",
       "object": "DEVC-PUMP-004",
@@ -32824,6 +33290,12 @@
       "subject": "CHG-PUMP-009",
       "predicate": "impacts",
       "object": "RISK-PUMP-017",
+      "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-009-ingress-seal-geometry-update.md"
+    },
+    {
+      "subject": "CHG-PUMP-009",
+      "predicate": "impacts",
+      "object": "EVD-PUMP-009",
       "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-009-ingress-seal-geometry-update.md"
     },
     {
@@ -32839,6 +33311,12 @@
       "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-010-administration-set-compatibility-extension.md"
     },
     {
+      "subject": "CHG-PUMP-010",
+      "predicate": "impacts",
+      "object": "EVD-PUMP-010",
+      "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-010-administration-set-compatibility-extension.md"
+    },
+    {
       "subject": "CHG-PUMP-011",
       "predicate": "concerns",
       "object": "DEVC-PUMP-001",
@@ -32851,6 +33329,12 @@
       "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-011-network-protocol-revision.md"
     },
     {
+      "subject": "CHG-PUMP-011",
+      "predicate": "impacts",
+      "object": "EVD-PUMP-011",
+      "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-011-network-protocol-revision.md"
+    },
+    {
       "subject": "CHG-PUMP-012",
       "predicate": "concerns",
       "object": "DEVC-PUMP-002",
@@ -32860,6 +33344,12 @@
       "subject": "CHG-PUMP-012",
       "predicate": "impacts",
       "object": "RISK-PUMP-023",
+      "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-012-manufacturing-test-station-software-update.md"
+    },
+    {
+      "subject": "CHG-PUMP-012",
+      "predicate": "impacts",
+      "object": "EVD-PUMP-012",
       "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-012-manufacturing-test-station-software-update.md"
     },
     {
@@ -33146,26 +33636,8 @@
     },
     {
       "subject": "CER-PUMP-001",
-      "predicate": "applies_to_configuration",
-      "object": "DEVC-PUMP-002",
-      "source_note": "06-Infpump FlowGuard ontology notes/clinical-evaluation-report/CER-PUMP-001-infpump-flowguard-clinical-evaluation-report-rev-d.md"
-    },
-    {
-      "subject": "CER-PUMP-001",
-      "predicate": "applies_to_configuration",
-      "object": "DEVC-PUMP-003",
-      "source_note": "06-Infpump FlowGuard ontology notes/clinical-evaluation-report/CER-PUMP-001-infpump-flowguard-clinical-evaluation-report-rev-d.md"
-    },
-    {
-      "subject": "CER-PUMP-001",
-      "predicate": "applies_to_configuration",
-      "object": "DEVC-PUMP-004",
-      "source_note": "06-Infpump FlowGuard ontology notes/clinical-evaluation-report/CER-PUMP-001-infpump-flowguard-clinical-evaluation-report-rev-d.md"
-    },
-    {
-      "subject": "CER-PUMP-001",
-      "predicate": "applies_to_configuration",
-      "object": "DEVC-PUMP-005",
+      "predicate": "represented_by_document_version",
+      "object": "DOC-PUMP-006",
       "source_note": "06-Infpump FlowGuard ontology notes/clinical-evaluation-report/CER-PUMP-001-infpump-flowguard-clinical-evaluation-report-rev-d.md"
     },
     {
@@ -33621,7 +34093,7 @@
     {
       "subject": "CRI-PUMP-017",
       "predicate": "instantiates_requirement",
-      "object": "GSPR-0001",
+      "object": "GSPR-0003",
       "source_note": "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-017-occlusion-detection.md"
     },
     {
@@ -33633,13 +34105,13 @@
     {
       "subject": "CRI-PUMP-017",
       "predicate": "satisfied_by",
-      "object": "EVD-PUMP-017",
+      "object": "EVD-PUMP-003",
       "source_note": "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-017-occlusion-detection.md"
     },
     {
       "subject": "CRI-PUMP-018",
       "predicate": "instantiates_requirement",
-      "object": "GSPR-0002",
+      "object": "GSPR-0003",
       "source_note": "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-018-air-in-line-detection.md"
     },
     {
@@ -33651,7 +34123,7 @@
     {
       "subject": "CRI-PUMP-018",
       "predicate": "satisfied_by",
-      "object": "EVD-PUMP-018",
+      "object": "EVD-PUMP-004",
       "source_note": "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-018-air-in-line-detection.md"
     },
     {
@@ -33711,7 +34183,7 @@
     {
       "subject": "CRI-PUMP-022",
       "predicate": "instantiates_requirement",
-      "object": "GSPR-0002",
+      "object": "GSPR-0001",
       "source_note": "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-022-electrical-safety.md"
     },
     {
@@ -33723,7 +34195,7 @@
     {
       "subject": "CRI-PUMP-022",
       "predicate": "satisfied_by",
-      "object": "EVD-PUMP-022",
+      "object": "EVD-PUMP-008",
       "source_note": "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-022-electrical-safety.md"
     },
     {
@@ -34143,7 +34615,7 @@
     {
       "subject": "CRI-PUMP-046",
       "predicate": "instantiates_requirement",
-      "object": "GSPR-0002",
+      "object": "GSPR-0004",
       "source_note": "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-046-clinical-evaluation-support.md"
     },
     {
@@ -34155,7 +34627,7 @@
     {
       "subject": "CRI-PUMP-046",
       "predicate": "satisfied_by",
-      "object": "EVD-PUMP-016",
+      "object": "EVD-PUMP-029",
       "source_note": "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-046-clinical-evaluation-support.md"
     },
     {
@@ -34240,6 +34712,12 @@
       "subject": "CRI-PUMP-051",
       "predicate": "derived_from",
       "object": "PROV-MDR-ANNEX-I",
+      "source_note": "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-051-battery-endurance-after-cell-supplier-change.md"
+    },
+    {
+      "subject": "CRI-PUMP-051",
+      "predicate": "requires_evidence",
+      "object": "EVTYPE-PUMP-001",
       "source_note": "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-051-battery-endurance-after-cell-supplier-change.md"
     },
     {
@@ -34352,6 +34830,12 @@
     },
     {
       "subject": "DEVC-PUMP-001",
+      "predicate": "has_applicable_requirement",
+      "object": "CRI-PUMP-046",
+      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
+    },
+    {
+      "subject": "DEVC-PUMP-001",
       "predicate": "has_hazard",
       "object": "HAZ-PUMP-001",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
@@ -34360,18 +34844,6 @@
       "subject": "DEVC-PUMP-001",
       "predicate": "has_hazard",
       "object": "HAZ-PUMP-002",
-      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
-    },
-    {
-      "subject": "DEVC-PUMP-001",
-      "predicate": "has_hazard",
-      "object": "HAZ-PUMP-003",
-      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
-    },
-    {
-      "subject": "DEVC-PUMP-001",
-      "predicate": "has_hazard",
-      "object": "HAZ-PUMP-004",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
     },
     {
@@ -34401,19 +34873,7 @@
     {
       "subject": "DEVC-PUMP-001",
       "predicate": "has_risk",
-      "object": "RISK-PUMP-005",
-      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
-    },
-    {
-      "subject": "DEVC-PUMP-001",
-      "predicate": "has_risk",
       "object": "RISK-PUMP-006",
-      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
-    },
-    {
-      "subject": "DEVC-PUMP-001",
-      "predicate": "has_risk",
-      "object": "RISK-PUMP-007",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
     },
     {
@@ -34424,14 +34884,14 @@
     },
     {
       "subject": "DEVC-PUMP-001",
-      "predicate": "includes_component",
-      "object": "COMP-PUMP-001",
+      "predicate": "has_risk",
+      "object": "RISK-PUMP-013",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
     },
     {
       "subject": "DEVC-PUMP-001",
       "predicate": "includes_component",
-      "object": "COMP-PUMP-002",
+      "object": "COMP-PUMP-001",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
     },
     {
@@ -34449,12 +34909,6 @@
     {
       "subject": "DEVC-PUMP-001",
       "predicate": "makes_clinical_claim",
-      "object": "CLM-PUMP-002",
-      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
-    },
-    {
-      "subject": "DEVC-PUMP-001",
-      "predicate": "makes_clinical_claim",
       "object": "CLM-PUMP-003",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
     },
@@ -34462,6 +34916,12 @@
       "subject": "DEVC-PUMP-001",
       "predicate": "makes_clinical_claim",
       "object": "CLM-PUMP-004",
+      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
+    },
+    {
+      "subject": "DEVC-PUMP-001",
+      "predicate": "makes_clinical_claim",
+      "object": "CLM-PUMP-002",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10.md"
     },
     {
@@ -34581,18 +35041,6 @@
     {
       "subject": "DEVC-PUMP-002",
       "predicate": "has_applicable_requirement",
-      "object": "CRI-PUMP-017",
-      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10.md"
-    },
-    {
-      "subject": "DEVC-PUMP-002",
-      "predicate": "has_applicable_requirement",
-      "object": "CRI-PUMP-018",
-      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10.md"
-    },
-    {
-      "subject": "DEVC-PUMP-002",
-      "predicate": "has_applicable_requirement",
       "object": "CRI-PUMP-019",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10.md"
     },
@@ -34600,6 +35048,18 @@
       "subject": "DEVC-PUMP-002",
       "predicate": "has_applicable_requirement",
       "object": "CRI-PUMP-020",
+      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10.md"
+    },
+    {
+      "subject": "DEVC-PUMP-002",
+      "predicate": "has_applicable_requirement",
+      "object": "CRI-PUMP-017",
+      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10.md"
+    },
+    {
+      "subject": "DEVC-PUMP-002",
+      "predicate": "has_applicable_requirement",
+      "object": "CRI-PUMP-018",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10.md"
     },
     {
@@ -34623,7 +35083,19 @@
     {
       "subject": "DEVC-PUMP-002",
       "predicate": "has_hazard",
-      "object": "HAZ-PUMP-008",
+      "object": "HAZ-PUMP-003",
+      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10.md"
+    },
+    {
+      "subject": "DEVC-PUMP-002",
+      "predicate": "has_hazard",
+      "object": "HAZ-PUMP-004",
+      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10.md"
+    },
+    {
+      "subject": "DEVC-PUMP-002",
+      "predicate": "has_hazard",
+      "object": "HAZ-PUMP-012",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10.md"
     },
     {
@@ -34653,25 +35125,31 @@
     {
       "subject": "DEVC-PUMP-002",
       "predicate": "has_risk",
-      "object": "RISK-PUMP-013",
-      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10.md"
-    },
-    {
-      "subject": "DEVC-PUMP-002",
-      "predicate": "has_risk",
       "object": "RISK-PUMP-014",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10.md"
     },
     {
       "subject": "DEVC-PUMP-002",
       "predicate": "has_risk",
-      "object": "RISK-PUMP-015",
+      "object": "RISK-PUMP-016",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10.md"
     },
     {
       "subject": "DEVC-PUMP-002",
       "predicate": "has_risk",
-      "object": "RISK-PUMP-016",
+      "object": "RISK-PUMP-005",
+      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10.md"
+    },
+    {
+      "subject": "DEVC-PUMP-002",
+      "predicate": "has_risk",
+      "object": "RISK-PUMP-007",
+      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10.md"
+    },
+    {
+      "subject": "DEVC-PUMP-002",
+      "predicate": "has_risk",
+      "object": "RISK-PUMP-023",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10.md"
     },
     {
@@ -34688,8 +35166,8 @@
     },
     {
       "subject": "DEVC-PUMP-002",
-      "predicate": "makes_clinical_claim",
-      "object": "CLM-PUMP-005",
+      "predicate": "includes_component",
+      "object": "COMP-PUMP-002",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10.md"
     },
     {
@@ -34708,6 +35186,12 @@
       "subject": "DEVC-PUMP-002",
       "predicate": "makes_clinical_claim",
       "object": "CLM-PUMP-008",
+      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10.md"
+    },
+    {
+      "subject": "DEVC-PUMP-002",
+      "predicate": "makes_clinical_claim",
+      "object": "CLM-PUMP-005",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10.md"
     },
     {
@@ -34797,12 +35281,6 @@
     {
       "subject": "DEVC-PUMP-003",
       "predicate": "has_applicable_requirement",
-      "object": "CRI-PUMP-022",
-      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10.md"
-    },
-    {
-      "subject": "DEVC-PUMP-003",
-      "predicate": "has_applicable_requirement",
       "object": "CRI-PUMP-023",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10.md"
     },
@@ -34850,6 +35328,12 @@
     },
     {
       "subject": "DEVC-PUMP-003",
+      "predicate": "has_applicable_requirement",
+      "object": "CRI-PUMP-022",
+      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10.md"
+    },
+    {
+      "subject": "DEVC-PUMP-003",
       "predicate": "has_hazard",
       "object": "HAZ-PUMP-009",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10.md"
@@ -34869,7 +35353,7 @@
     {
       "subject": "DEVC-PUMP-003",
       "predicate": "has_hazard",
-      "object": "HAZ-PUMP-012",
+      "object": "HAZ-PUMP-008",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10.md"
     },
     {
@@ -34911,13 +35395,13 @@
     {
       "subject": "DEVC-PUMP-003",
       "predicate": "has_risk",
-      "object": "RISK-PUMP-023",
+      "object": "RISK-PUMP-024",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10.md"
     },
     {
       "subject": "DEVC-PUMP-003",
       "predicate": "has_risk",
-      "object": "RISK-PUMP-024",
+      "object": "RISK-PUMP-015",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10.md"
     },
     {
@@ -35313,12 +35797,6 @@
     {
       "subject": "DEVC-PUMP-005",
       "predicate": "has_applicable_requirement",
-      "object": "CRI-PUMP-046",
-      "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-005-infpump-flowguard-critical-care-configuration-11.md"
-    },
-    {
-      "subject": "DEVC-PUMP-005",
-      "predicate": "has_applicable_requirement",
       "object": "CRI-PUMP-047",
       "source_note": "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-005-infpump-flowguard-critical-care-configuration-11.md"
     },
@@ -35625,7 +36103,7 @@
     {
       "subject": "DOC-PUMP-004",
       "predicate": "applies_to_configuration",
-      "object": "DEVC-PUMP-004",
+      "object": "DEVC-PUMP-001",
       "source_note": "06-Infpump FlowGuard ontology notes/document-version/DOC-PUMP-004-clinical-evaluation-report-rev-c.md"
     },
     {
@@ -35639,6 +36117,18 @@
       "predicate": "applies_to_configuration",
       "object": "DEVC-PUMP-005",
       "source_note": "06-Infpump FlowGuard ontology notes/document-version/DOC-PUMP-005-instructions-for-use-rev-f.md"
+    },
+    {
+      "subject": "DOC-PUMP-006",
+      "predicate": "approved_by",
+      "object": "ROLE-REGULATORY-AFFAIRS",
+      "source_note": "06-Infpump FlowGuard ontology notes/document-version/DOC-PUMP-006-clinical-evaluation-report-rev-d.md"
+    },
+    {
+      "subject": "DOC-PUMP-006",
+      "predicate": "applies_to_configuration",
+      "object": "DEVC-PUMP-001",
+      "source_note": "06-Infpump FlowGuard ontology notes/document-version/DOC-PUMP-006-clinical-evaluation-report-rev-d.md"
     },
     {
       "subject": "HAZ-PUMP-001",
@@ -35775,13 +36265,13 @@
     {
       "subject": "HS-PUMP-003",
       "predicate": "may_cause",
-      "object": "HARM-PUMP-003",
+      "object": "HARM-PUMP-002",
       "source_note": "06-Infpump FlowGuard ontology notes/hazardous-situation/HS-PUMP-003-pressure-rises-while-downstream-occlusion-is-undetected.md"
     },
     {
       "subject": "HS-PUMP-004",
       "predicate": "may_cause",
-      "object": "HARM-PUMP-004",
+      "object": "HARM-PUMP-003",
       "source_note": "06-Infpump FlowGuard ontology notes/hazardous-situation/HS-PUMP-004-air-reaches-the-patient-line.md"
     },
     {
@@ -35829,7 +36319,7 @@
     {
       "subject": "HS-PUMP-012",
       "predicate": "may_cause",
-      "object": "HARM-PUMP-002",
+      "object": "HARM-PUMP-010",
       "source_note": "06-Infpump FlowGuard ontology notes/hazardous-situation/HS-PUMP-012-unauthorised-actor-changes-therapy-or-device-configuration.md"
     },
     {
@@ -36068,8 +36558,8 @@
     },
     {
       "subject": "PROC-PUMP-004",
-      "predicate": "outsourced_to",
-      "object": "SUP-PUMP-004",
+      "predicate": "qualifies_supplier",
+      "object": "SUP-PUMP-002",
       "source_note": "06-Infpump FlowGuard ontology notes/qms-process/PROC-PUMP-004-infusion-pump-supplier-control-process.md"
     },
     {
@@ -36105,7 +36595,7 @@
     {
       "subject": "RISK-PUMP-005",
       "predicate": "concerns",
-      "object": "DEVC-PUMP-005",
+      "object": "DEVC-PUMP-002",
       "source_note": "06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-005-clinical-injury-following-occluded-infusion-pathway.md"
     },
     {
@@ -36165,7 +36655,7 @@
     {
       "subject": "RISK-PUMP-015",
       "predicate": "concerns",
-      "object": "DEVC-PUMP-005",
+      "object": "DEVC-PUMP-003",
       "source_note": "06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-015-clinical-injury-following-electrical-isolation-failure.md"
     },
     {
@@ -36213,7 +36703,7 @@
     {
       "subject": "RISK-PUMP-023",
       "predicate": "concerns",
-      "object": "DEVC-PUMP-003",
+      "object": "DEVC-PUMP-002",
       "source_note": "06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-023-clinical-injury-following-cybersecurity-compromise.md"
     },
     {
@@ -36357,13 +36847,13 @@
     {
       "subject": "RCM-PUMP-004",
       "predicate": "mitigates",
-      "object": "RISK-PUMP-004",
+      "object": "RISK-PUMP-005",
       "source_note": "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-004-occlusion-pressure-monitoring.md"
     },
     {
       "subject": "RCM-PUMP-004",
       "predicate": "verified_by",
-      "object": "EVD-PUMP-004",
+      "object": "EVD-PUMP-003",
       "source_note": "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-004-occlusion-pressure-monitoring.md"
     },
     {
@@ -36375,19 +36865,19 @@
     {
       "subject": "RCM-PUMP-005",
       "predicate": "verified_by",
-      "object": "EVD-PUMP-005",
+      "object": "EVD-PUMP-003",
       "source_note": "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-005-occlusion-alarm-escalation.md"
     },
     {
       "subject": "RCM-PUMP-006",
       "predicate": "mitigates",
-      "object": "RISK-PUMP-006",
+      "object": "RISK-PUMP-007",
       "source_note": "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-006-dual-air-in-line-sensors.md"
     },
     {
       "subject": "RCM-PUMP-006",
       "predicate": "verified_by",
-      "object": "EVD-PUMP-006",
+      "object": "EVD-PUMP-004",
       "source_note": "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-006-dual-air-in-line-sensors.md"
     },
     {
@@ -36399,7 +36889,7 @@
     {
       "subject": "RCM-PUMP-007",
       "predicate": "verified_by",
-      "object": "EVD-PUMP-007",
+      "object": "EVD-PUMP-004",
       "source_note": "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-007-air-in-line-automatic-stop.md"
     },
     {
@@ -36501,13 +36991,13 @@
     {
       "subject": "RCM-PUMP-016",
       "predicate": "mitigates",
-      "object": "RISK-PUMP-016",
+      "object": "RISK-PUMP-015",
       "source_note": "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-016-medical-grade-isolation-barrier.md"
     },
     {
       "subject": "RCM-PUMP-016",
       "predicate": "verified_by",
-      "object": "EVD-PUMP-016",
+      "object": "EVD-PUMP-008",
       "source_note": "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-016-medical-grade-isolation-barrier.md"
     },
     {
@@ -36609,25 +37099,25 @@
     {
       "subject": "RCM-PUMP-025",
       "predicate": "mitigates",
-      "object": "RISK-PUMP-025",
+      "object": "RISK-PUMP-023",
       "source_note": "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-025-role-based-access-control.md"
     },
     {
       "subject": "RCM-PUMP-025",
       "predicate": "verified_by",
-      "object": "EVD-PUMP-025",
+      "object": "EVD-PUMP-012",
       "source_note": "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-025-role-based-access-control.md"
     },
     {
       "subject": "RCM-PUMP-026",
       "predicate": "mitigates",
-      "object": "RISK-PUMP-026",
+      "object": "RISK-PUMP-023",
       "source_note": "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-026-signed-software-update-packages.md"
     },
     {
       "subject": "RCM-PUMP-026",
       "predicate": "verified_by",
-      "object": "EVD-PUMP-026",
+      "object": "EVD-PUMP-012",
       "source_note": "06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-026-signed-software-update-packages.md"
     },
     {
@@ -36991,6 +37481,42 @@
       "source_note": "06-Infpump FlowGuard ontology notes/software-version/SW-PUMP-001-infpump-flowguard-control-software-420.md"
     },
     {
+      "subject": "SUP-PUMP-001",
+      "predicate": "supplied_component",
+      "object": "COMP-PUMP-004",
+      "source_note": "06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-001-battery-pack-critical-supplier.md"
+    },
+    {
+      "subject": "SUP-PUMP-002",
+      "predicate": "supplied_component",
+      "object": "COMP-PUMP-002",
+      "source_note": "06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-002-air-sensor-critical-supplier.md"
+    },
+    {
+      "subject": "SUP-PUMP-003",
+      "predicate": "supplied_component",
+      "object": "COMP-PUMP-006",
+      "source_note": "06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-003-touchscreen-critical-supplier.md"
+    },
+    {
+      "subject": "SUP-PUMP-004",
+      "predicate": "supplied_component",
+      "object": "COMP-PUMP-008",
+      "source_note": "06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-004-alarm-speaker-critical-supplier.md"
+    },
+    {
+      "subject": "SUP-PUMP-005",
+      "predicate": "supplied_component",
+      "object": "COMP-PUMP-010",
+      "source_note": "06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-005-administration-set-critical-supplier.md"
+    },
+    {
+      "subject": "SUP-PUMP-006",
+      "predicate": "supplied_component",
+      "object": "COMP-PUMP-004",
+      "source_note": "06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-006-proposed-replacement-battery-cell-supplier.md"
+    },
+    {
       "subject": "TD-PUMP-001",
       "predicate": "applies_to_configuration",
       "object": "DEVC-PUMP-001",
@@ -37053,6 +37579,12 @@
     {
       "subject": "TD-PUMP-001",
       "predicate": "includes",
+      "object": "DOC-PUMP-006",
+      "source_note": "06-Infpump FlowGuard ontology notes/technical-documentation-set/TD-PUMP-001-infpump-flowguard-mdr-technical-documentation-set.md"
+    },
+    {
+      "subject": "TD-PUMP-001",
+      "predicate": "includes",
       "object": "EVD-PUMP-001",
       "source_note": "06-Infpump FlowGuard ontology notes/technical-documentation-set/TD-PUMP-001-infpump-flowguard-mdr-technical-documentation-set.md"
     },
@@ -37078,6 +37610,12 @@
       "subject": "TD-PUMP-001",
       "predicate": "includes",
       "object": "EVD-PUMP-005",
+      "source_note": "06-Infpump FlowGuard ontology notes/technical-documentation-set/TD-PUMP-001-infpump-flowguard-mdr-technical-documentation-set.md"
+    },
+    {
+      "subject": "TD-PUMP-001",
+      "predicate": "includes",
+      "object": "EVD-PUMP-008",
       "source_note": "06-Infpump FlowGuard ontology notes/technical-documentation-set/TD-PUMP-001-infpump-flowguard-mdr-technical-documentation-set.md"
     },
     {
@@ -37113,13 +37651,13 @@
     {
       "subject": "EVD-PUMP-003",
       "predicate": "applies_to_configuration",
-      "object": "DEVC-PUMP-003",
+      "object": "DEVC-PUMP-002",
       "source_note": "06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-003-occlusion-detection-validation-report.md"
     },
     {
       "subject": "EVD-PUMP-004",
       "predicate": "applies_to_configuration",
-      "object": "DEVC-PUMP-004",
+      "object": "DEVC-PUMP-002",
       "source_note": "06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-004-air-in-line-detector-validation-report.md"
     },
     {
@@ -37144,6 +37682,12 @@
       "subject": "EVD-PUMP-008",
       "predicate": "applies_to_configuration",
       "object": "DEVC-PUMP-003",
+      "source_note": "06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-008-electrical-safety-test-report.md"
+    },
+    {
+      "subject": "EVD-PUMP-008",
+      "predicate": "supports_certificate",
+      "object": "CERT-PUMP-003",
       "source_note": "06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-008-electrical-safety-test-report.md"
     },
     {
@@ -37269,7 +37813,7 @@
     {
       "subject": "EVD-PUMP-029",
       "predicate": "applies_to_configuration",
-      "object": "DEVC-PUMP-004",
+      "object": "DEVC-PUMP-001",
       "source_note": "06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-029-clinical-claims-evidence-summary.md"
     },
     {
@@ -37277,6 +37821,12 @@
       "predicate": "applies_to_configuration",
       "object": "DEVC-PUMP-005",
       "source_note": "06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-030-configuration-baseline-verification-report.md"
+    },
+    {
+      "subject": "EVD-PUMP-031",
+      "predicate": "applies_to_configuration",
+      "object": "DEVC-PUMP-001",
+      "source_note": "06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-031-post-change-battery-endurance-verification.md"
     }
   ],
   "assertions": [
@@ -37338,7 +37888,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-81122EB75BD8",
@@ -37355,7 +37905,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-6E7C43BC9CB8",
@@ -37372,7 +37922,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-4B5787A74E5D",
@@ -37389,7 +37939,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-EFB0092F071F",
@@ -37406,7 +37956,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-27C94DDCA8CB",
@@ -37423,7 +37973,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-0163AA7E4D7C",
@@ -37440,7 +37990,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-CC652520B58B",
@@ -37457,7 +38007,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-D3A4DCF2DDDB",
@@ -37474,7 +38024,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-391EFE47B45B",
@@ -37491,7 +38041,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-ADBBA24AE5BA",
@@ -37508,7 +38058,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-FE338DA101F0",
@@ -37525,7 +38075,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-01852D8AE610",
@@ -37542,7 +38092,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-0ECECDC12D62",
@@ -37559,7 +38109,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-16E530CEAC71",
@@ -37576,7 +38126,24 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
+    },
+    {
+      "id": "DA-8E24B35B150B",
+      "type": "derived-assertion",
+      "subject": "DOC-PUMP-006",
+      "predicate": "version_review_required",
+      "object": true,
+      "derived_by_rule": "RULE-DOC-VERSION-REVIEW-001",
+      "source_provisions": [
+        "PROV-MDR-ANNEX-II",
+        "PROV-MDR-ANNEX-II"
+      ],
+      "assurance_level": "review-trigger",
+      "normative_basis": "ontology-governance",
+      "confidence": "medium",
+      "human_review_required": true,
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-50F803A08888",
@@ -37593,7 +38160,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-521A07139240",
@@ -37610,7 +38177,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-B9286AA58A6A",
@@ -37627,7 +38194,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-E0CAA1760AED",
@@ -37644,7 +38211,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-C756BAB67F16",
@@ -37661,7 +38228,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-6FB6F0CFFBF9",
@@ -37678,7 +38245,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-488EC26119EF",
@@ -37695,7 +38262,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-0B60BFC9A186",
@@ -37712,7 +38279,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-50243EBD93B8",
@@ -37729,7 +38296,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-0CFDFF574757",
@@ -37746,7 +38313,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-4D3CDFA2EB9B",
@@ -37763,7 +38330,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-F64E53268FD7",
@@ -37780,7 +38347,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-ABD809DCB74E",
@@ -37797,7 +38364,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-CDB3936FB0C1",
@@ -37814,7 +38381,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-B2E4BFD1F9A7",
@@ -37831,7 +38398,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-AEA01D6C1D24",
@@ -37848,7 +38415,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-BF1C26C1EF40",
@@ -37865,7 +38432,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-88E7360BC220",
@@ -37882,7 +38449,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-49FDB8BB9A78",
@@ -37899,7 +38466,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-43E6716AC75B",
@@ -37916,7 +38483,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-5D674DD96EBE",
@@ -37933,7 +38500,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-D2C4CDEB08C3",
@@ -37950,7 +38517,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-C3BE0CEF5FC9",
@@ -37967,7 +38534,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-C3231261C944",
@@ -37984,7 +38551,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-F1230E0746CC",
@@ -38001,7 +38568,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-921FFF930EA5",
@@ -38018,7 +38585,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-1C1FD46083E0",
@@ -38035,7 +38602,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-E887FEE54745",
@@ -38052,7 +38619,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-4119B8F0D4E4",
@@ -38069,7 +38636,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-6EEE082D2FD9",
@@ -38086,7 +38653,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-BC2203EF516D",
@@ -38103,7 +38670,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-0B9E0AC256C2",
@@ -38120,7 +38687,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     },
     {
       "id": "DA-5F8027375BE6",
@@ -38137,7 +38704,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-17"
+      "evaluated_at": "2026-08-20"
     }
   ],
   "validation_results": [
@@ -38148,7 +38715,7 @@
       "subject": "CRI-0002",
       "severity": "major",
       "status": "open",
-      "detected_at": "2026-08-17",
+      "detected_at": "2026-08-20",
       "message": "Relation satisfied_by has 0; minimum is 1",
       "assurance_level": "hard",
       "normative_basis": "regulatory-source",
@@ -38163,7 +38730,7 @@
       "subject": "CRI-PUMP-051",
       "severity": "major",
       "status": "open",
-      "detected_at": "2026-08-17",
+      "detected_at": "2026-08-20",
       "message": "Relation satisfied_by has 0; minimum is 1",
       "assurance_level": "hard",
       "normative_basis": "regulatory-source",
@@ -38180,7 +38747,7 @@
       "subject": "CRI-0002",
       "severity": "major",
       "status": "open",
-      "detected_at": "2026-08-17",
+      "detected_at": "2026-08-20",
       "message": "Relation satisfied_by has 0; minimum is 1",
       "assurance_level": "hard",
       "normative_basis": "regulatory-source",
@@ -38195,7 +38762,7 @@
       "subject": "CRI-PUMP-051",
       "severity": "major",
       "status": "open",
-      "detected_at": "2026-08-17",
+      "detected_at": "2026-08-20",
       "message": "Relation satisfied_by has 0; minimum is 1",
       "assurance_level": "hard",
       "normative_basis": "regulatory-source",
@@ -38209,70 +38776,70 @@
     {
       "source": "SRC-MDCG-2021-24-R1",
       "retrieved_at": "2026-08-14",
-      "age_days": 3,
+      "age_days": 6,
       "review_interval_days": 180,
       "status": "current"
     },
     {
       "source": "SRC-MDCG-2025-10",
       "retrieved_at": "2026-08-14",
-      "age_days": 3,
+      "age_days": 6,
       "review_interval_days": 180,
       "status": "current"
     },
     {
       "source": "SRC-MDCG-INDEX",
       "retrieved_at": "2026-08-14",
-      "age_days": 3,
+      "age_days": 6,
       "review_interval_days": 180,
       "status": "current"
     },
     {
       "source": "SRC-TEAM-NB-TD-V4",
       "retrieved_at": "2026-08-14",
-      "age_days": 3,
+      "age_days": 6,
       "review_interval_days": 180,
       "status": "current"
     },
     {
       "source": "SRC-MDR-2017-745",
       "retrieved_at": "2026-08-14",
-      "age_days": 3,
+      "age_days": 6,
       "review_interval_days": 180,
       "status": "current"
     },
     {
       "source": "SRC-EMDN",
       "retrieved_at": "2026-08-14",
-      "age_days": 3,
+      "age_days": 6,
       "review_interval_days": 180,
       "status": "current"
     },
     {
       "source": "SRC-EUDAMED",
       "retrieved_at": "2026-08-14",
-      "age_days": 3,
+      "age_days": 6,
       "review_interval_days": 180,
       "status": "current"
     },
     {
       "source": "SRC-HARMONISED-STANDARDS",
       "retrieved_at": "2026-08-14",
-      "age_days": 3,
+      "age_days": 6,
       "review_interval_days": 180,
       "status": "current"
     },
     {
       "source": "SRC-QUARTZ-5",
       "retrieved_at": "2026-08-14",
-      "age_days": 3,
+      "age_days": 6,
       "review_interval_days": 180,
       "status": "current"
     },
     {
       "source": "SRC-UDI",
       "retrieved_at": "2026-08-14",
-      "age_days": 3,
+      "age_days": 6,
       "review_interval_days": 180,
       "status": "current"
     }

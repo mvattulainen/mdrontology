@@ -26,6 +26,7 @@
   "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
   "assessment_scope": "Battery endurance, supplier controls, residual risk and verification impact of CHG-PUMP-001",
   "assessment_state": "under-assessment",
+  "topic": "battery-power",
   "concerns": [
     "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
   ],
@@ -63,6 +64,7 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **device_context:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]
 - **assessment_scope:** `Battery endurance, supplier controls, residual risk and verification impact of CHG-PUMP-001`
 - **assessment_state:** `under-assessment`
+- **topic:** `battery-power`
 - **concerns:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]
 - **supported_by:** [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-007-battery-endurance-validation-report|EVD-PUMP-007]]
 

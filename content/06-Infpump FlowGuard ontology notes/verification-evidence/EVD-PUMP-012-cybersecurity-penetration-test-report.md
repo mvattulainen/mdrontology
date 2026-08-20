@@ -26,6 +26,7 @@
   "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]",
   "approved_at": "2026-08-15",
   "evidence_scope": "Cybersecurity penetration test report",
+  "topic": "cybersecurity",
   "applies_to_configuration": [
     "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]"
   ]
@@ -60,11 +61,12 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **device_context:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]
 - **approved_at:** `2026-08-15`
 - **evidence_scope:** `Cybersecurity penetration test report`
+- **topic:** `cybersecurity`
 - **applies_to_configuration:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002]]
 
 ## Traceability
 
-Previous dependencies are ontology notes that lead into this record. They reach it through `satisfied_by` from [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-012-cleaning-and-disinfection-instructions|CRI-PUMP-012 — Cleaning and disinfection instructions]], [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-042-control-panel-usability|CRI-PUMP-042 — Control-panel usability]]; `verified_by` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-012-patient-weight-plausibility-check|RCM-PUMP-012 — Patient-weight plausibility check]], [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-042-cleaning-compatibility-controls|RCM-PUMP-042 — Cleaning compatibility controls]]; `affected_evidence` from [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-012-manufacturing-test-station-software-update|CHG-PUMP-012 — Manufacturing test-station software update]]. These incoming links show which product, decision, process or evidence records depend on the current note.
+Previous dependencies are ontology notes that lead into this record. They reach it through `satisfied_by` from [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-012-cleaning-and-disinfection-instructions|CRI-PUMP-012 — Cleaning and disinfection instructions]], [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-042-control-panel-usability|CRI-PUMP-042 — Control-panel usability]]; `verified_by` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-012-patient-weight-plausibility-check|RCM-PUMP-012 — Patient-weight plausibility check]], [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-025-role-based-access-control|RCM-PUMP-025 — Role-based access control]], [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-026-signed-software-update-packages|RCM-PUMP-026 — Signed software update packages]] and 1 more linked note; `impacts` from [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-007-cybersecurity-operating-system-patch|CHG-PUMP-007 — Cybersecurity operating-system patch]], [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-012-manufacturing-test-station-software-update|CHG-PUMP-012 — Manufacturing test-station software update]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
 Succeeding dependencies are ontology notes to which this record leads. The trace continues through `applies_to_configuration` to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002 — Infpump FlowGuard transport configuration 1.0]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
@@ -79,10 +81,12 @@ flowchart LR
   PREV1 -->|"satisfied_by"| CURRENT
   PREV2["RCM-PUMP-012<br/>Patient-weight plausibility check"]
   PREV2 -->|"verified_by"| CURRENT
-  PREV3["RCM-PUMP-042<br/>Cleaning compatibility controls"]
+  PREV3["RCM-PUMP-025<br/>Role-based access control"]
   PREV3 -->|"verified_by"| CURRENT
-  PREV4["CHG-PUMP-012<br/>Manufacturing test-station software update"]
-  PREV4 -->|"affected_evidence"| CURRENT
+  PREV4["RCM-PUMP-026<br/>Signed software update packages"]
+  PREV4 -->|"verified_by"| CURRENT
+  PREV_MORE["3 more previous dependencies"]
+  PREV_MORE -->|"additional typed links"| CURRENT
   NEXT0["DEVC-PUMP-002<br/>Infpump FlowGuard transport configuration 1.0"]
   CURRENT -->|"applies_to_configuration"| NEXT0
   classDef current fill:#dbeafe,stroke:#2563eb,stroke-width:2px

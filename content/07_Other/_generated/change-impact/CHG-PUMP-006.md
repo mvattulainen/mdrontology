@@ -19,6 +19,7 @@
 ## Impacted nodes
 
 - RISK-PUMP-011 — Clinical injury following incorrect drug or concentration selection (`risk`)
+- EVD-PUMP-006 — Drug-library limits verification report (`verification-evidence`)
 
 ## Derived reassessments
 

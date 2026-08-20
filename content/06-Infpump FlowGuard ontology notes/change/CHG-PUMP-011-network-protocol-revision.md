@@ -30,9 +30,7 @@
     "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
   ],
   "impacts": [
-    "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-021-clinical-injury-following-incorrect-touch-interface-input|RISK-PUMP-021]]"
-  ],
-  "affected_evidence": [
+    "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-021-clinical-injury-following-incorrect-touch-interface-input|RISK-PUMP-021]]",
     "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-011-software-unit-verification-summary|EVD-PUMP-011]]"
   ]
 }
@@ -67,14 +65,13 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **impact_level:** `medium`
 - **change_state:** `under-assessment`
 - **concerns:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]
-- **impacts:** [[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-021-clinical-injury-following-incorrect-touch-interface-input|RISK-PUMP-021]]
-- **affected_evidence:** [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-011-software-unit-verification-summary|EVD-PUMP-011]]
+- **impacts:** [[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-021-clinical-injury-following-incorrect-touch-interface-input|RISK-PUMP-021]], [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-011-software-unit-verification-summary|EVD-PUMP-011]]
 
 ## Traceability
 
 No previous ontology-note dependency is currently asserted for this record. Its nearest governed context is [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]], which identifies the device configuration in which the note is interpreted.
 
-Succeeding dependencies are ontology notes to which this record leads. The trace continues through `concerns` to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]]; `impacts` to [[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-021-clinical-injury-following-incorrect-touch-interface-input|RISK-PUMP-021 — Clinical injury following incorrect touch-interface input]]; `affected_evidence` to [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-011-software-unit-verification-summary|EVD-PUMP-011 — Software unit verification summary]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
+Succeeding dependencies are ontology notes to which this record leads. The trace continues through `concerns` to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]]; `impacts` to [[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-021-clinical-injury-following-incorrect-touch-interface-input|RISK-PUMP-021 — Clinical injury following incorrect touch-interface input]], [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-011-software-unit-verification-summary|EVD-PUMP-011 — Software unit verification summary]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
 The left-to-right diagram shows up to five asserted previous and five asserted succeeding ontology-note dependencies. When more links exist, the additional-dependency node states how many remain available through the verbal links and structured metadata above.
 
@@ -88,7 +85,7 @@ flowchart LR
   NEXT1["RISK-PUMP-021<br/>Clinical injury following incorrect touch-interface input"]
   CURRENT -->|"impacts"| NEXT1
   NEXT2["EVD-PUMP-011<br/>Software unit verification summary"]
-  CURRENT -->|"affected_evidence"| NEXT2
+  CURRENT -->|"impacts"| NEXT2
   classDef current fill:#dbeafe,stroke:#2563eb,stroke-width:2px
   class CURRENT current
 ```

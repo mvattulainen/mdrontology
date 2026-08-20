@@ -222,11 +222,12 @@ for (const family of familyDefinitions) {
 records.push(
   { id: "EVD-PUMP-031", type: "verification-evidence", title: "Post-change battery endurance verification", number: 31, family: familyByType.get("verification-evidence"), relations: {}, extra: {} },
   { id: "SUP-PUMP-006", type: "supplier", title: "Proposed replacement battery-cell supplier", number: 6, family: familyByType.get("supplier"), relations: {}, extra: {} },
+  { id: "DOC-PUMP-006", type: "document-version", title: "Clinical evaluation report Rev D", number: 6, family: familyByType.get("document-version"), relations: {}, extra: {} },
 )
-if (records.length !== 314) throw new Error(`Expected 314 ontology notes (300 core, 10 architecture extensions and 4 battery-workflow extensions), found ${records.length}`)
+if (records.length !== 315) throw new Error(`Expected 315 ontology notes (300 core, 10 architecture extensions and 5 scenario-integrity extensions), found ${records.length}`)
 
 const byType = new Map(familyDefinitions.map((family) => [family.type, records.filter((record) => record.type === family.type)]))
-const extensionIds = new Set(["EVD-PUMP-031", "SUP-PUMP-006"])
+const extensionIds = new Set(["EVD-PUMP-031", "SUP-PUMP-006", "DOC-PUMP-006"])
 const at = (type, index) => {
   const candidates = byType.get(type).filter((record) => !extensionIds.has(record.id))
   return candidates[index % candidates.length]
@@ -342,13 +343,11 @@ for (const record of records) {
     }
   } else if (record.type === "change") {
     record.relations.concerns = [config.id]
-    record.relations.impacts = [at("risk", index * 2).id]
-    record.relations.affected_evidence = [at("verification-evidence", index).id]
+    record.relations.impacts = [at("risk", index * 2).id, at("verification-evidence", index).id]
     record.extra.impact_level = index % 3 === 0 ? "high" : "medium"
     record.extra.change_state = "under-assessment"
     if (record.id === "CHG-PUMP-001") {
-      record.relations.impacts = ["RISK-PUMP-013"]
-      record.relations.affected_evidence = ["EVD-PUMP-007"]
+      record.relations.impacts = ["RISK-PUMP-013", "EVD-PUMP-007"]
       record.relations.has_impact_assessment = ["CIA-PUMP-001"]
     }
   } else if (record.type === "change-impact-assessment") {
@@ -434,6 +433,98 @@ for (const record of records) {
     record.extra.plan_state = "effective"
   }
 }
+
+// Scenario records are deliberately normalized by subject matter. The generic
+// catalogue above provides breadth; these overrides prevent index-driven links
+// from mixing safety topics and device configurations in the audited views.
+const scenarioRecord = (id) => records.find((record) => record.id === id)
+const configure = (id, configurationId, topic) => {
+  const record = scenarioRecord(id)
+  record.extra.device_context = configurationId
+  record.extra.topic = topic
+  if (record.relations.concerns) record.relations.concerns = [configurationId]
+  if (record.relations.applies_to_configuration) record.relations.applies_to_configuration = [configurationId]
+  if (record.extra.claim_scope) record.extra.claim_scope = configurationId
+  return record
+}
+const ownByConfiguration = (predicate, id, configurationId) => {
+  for (const configuration of byType.get("device-configuration")) {
+    configuration.relations[predicate] = (configuration.relations[predicate] ?? []).filter((target) => target !== id)
+  }
+  const owner = scenarioRecord(configurationId)
+  if (!owner.relations[predicate].includes(id)) owner.relations[predicate].push(id)
+}
+
+for (const supplier of byType.get("supplier")) {
+  supplier.relations.supplied_component = [supplier.extra.supplied_component]
+  delete supplier.extra.supplied_component
+}
+
+// Occlusion detection and PMS feedback: DEVC-PUMP-002.
+for (const id of ["HAZ-PUMP-003", "HS-PUMP-003", "RISK-PUMP-005", "RCM-PUMP-004", "RCM-PUMP-005", "EVD-PUMP-003", "CRI-PUMP-017", "CLM-PUMP-005", "SIGNAL-PUMP-002", "CHG-PUMP-002", "HARM-PUMP-002"]) configure(id, "DEVC-PUMP-002", "occlusion")
+scenarioRecord("HAZ-PUMP-003").relations.can_lead_to = ["HS-PUMP-003"]
+scenarioRecord("HS-PUMP-003").relations.may_cause = ["HARM-PUMP-002"]
+for (const id of ["RCM-PUMP-004", "RCM-PUMP-005"]) {
+  scenarioRecord(id).relations.mitigates = ["RISK-PUMP-005"]
+  scenarioRecord(id).relations.verified_by = ["EVD-PUMP-003"]
+}
+scenarioRecord("CRI-PUMP-017").relations.instantiates_requirement = ["GSPR-0003"]
+scenarioRecord("CRI-PUMP-017").relations.satisfied_by = ["EVD-PUMP-003"]
+scenarioRecord("CHG-PUMP-002").relations.impacts = ["RISK-PUMP-005", "EVD-PUMP-003"]
+for (const [predicate, id] of [["has_hazard", "HAZ-PUMP-003"], ["has_risk", "RISK-PUMP-005"], ["has_applicable_requirement", "CRI-PUMP-017"], ["makes_clinical_claim", "CLM-PUMP-005"]]) ownByConfiguration(predicate, id, "DEVC-PUMP-002")
+
+// Air-in-line detection and air-sensor supplier change: DEVC-PUMP-002.
+for (const id of ["HAZ-PUMP-004", "HS-PUMP-004", "RISK-PUMP-007", "RCM-PUMP-006", "RCM-PUMP-007", "EVD-PUMP-004", "CRI-PUMP-018", "HARM-PUMP-003", "SUP-PUMP-002", "COMP-PUMP-002", "CHG-PUMP-003", "PROC-PUMP-004"]) configure(id, "DEVC-PUMP-002", "air-in-line")
+scenarioRecord("HAZ-PUMP-004").relations.can_lead_to = ["HS-PUMP-004"]
+scenarioRecord("HS-PUMP-004").relations.may_cause = ["HARM-PUMP-003"]
+for (const id of ["RCM-PUMP-006", "RCM-PUMP-007"]) {
+  scenarioRecord(id).relations.mitigates = ["RISK-PUMP-007"]
+  scenarioRecord(id).relations.verified_by = ["EVD-PUMP-004"]
+}
+scenarioRecord("CRI-PUMP-018").relations.instantiates_requirement = ["GSPR-0003"]
+scenarioRecord("CRI-PUMP-018").relations.satisfied_by = ["EVD-PUMP-004"]
+scenarioRecord("SUP-PUMP-002").relations.supplied_component = ["COMP-PUMP-002"]
+scenarioRecord("CHG-PUMP-003").relations.impacts = ["RISK-PUMP-007", "EVD-PUMP-004"]
+scenarioRecord("PROC-PUMP-004").relations.qualifies_supplier = ["SUP-PUMP-002"]
+delete scenarioRecord("PROC-PUMP-004").relations.outsourced_to
+for (const [predicate, id] of [["has_hazard", "HAZ-PUMP-004"], ["has_risk", "RISK-PUMP-007"], ["has_applicable_requirement", "CRI-PUMP-018"], ["includes_component", "COMP-PUMP-002"]]) ownByConfiguration(predicate, id, "DEVC-PUMP-002")
+
+// Cybersecurity feedback: DEVC-PUMP-002.
+for (const id of ["HAZ-PUMP-012", "HS-PUMP-012", "RISK-PUMP-023", "RCM-PUMP-025", "RCM-PUMP-026", "EVD-PUMP-012", "SIGNAL-PUMP-007", "CHG-PUMP-007", "SW-PUMP-001", "HARM-PUMP-010"]) configure(id, "DEVC-PUMP-002", "cybersecurity")
+scenarioRecord("HAZ-PUMP-012").relations.can_lead_to = ["HS-PUMP-012"]
+scenarioRecord("HS-PUMP-012").relations.may_cause = ["HARM-PUMP-010"]
+for (const id of ["RCM-PUMP-025", "RCM-PUMP-026"]) {
+  scenarioRecord(id).relations.mitigates = ["RISK-PUMP-023"]
+  scenarioRecord(id).relations.verified_by = ["EVD-PUMP-012"]
+}
+scenarioRecord("CHG-PUMP-007").relations.impacts = ["RISK-PUMP-023", "SW-PUMP-001", "EVD-PUMP-012"]
+for (const [predicate, id] of [["has_hazard", "HAZ-PUMP-012"], ["has_risk", "RISK-PUMP-023"]]) ownByConfiguration(predicate, id, "DEVC-PUMP-002")
+
+// Clinical evaluation example: DEVC-PUMP-001.
+for (const id of ["CLM-PUMP-002", "CRI-PUMP-046", "EVD-PUMP-029", "DOC-PUMP-004", "DOC-PUMP-006", "CER-PUMP-001"]) configure(id, "DEVC-PUMP-001", "clinical-evaluation")
+scenarioRecord("CRI-PUMP-046").relations.instantiates_requirement = ["GSPR-0004"]
+scenarioRecord("CRI-PUMP-046").relations.satisfied_by = ["EVD-PUMP-029"]
+scenarioRecord("DOC-PUMP-004").extra.document_revision = "C"
+scenarioRecord("DOC-PUMP-006").extra.document_revision = "D"
+scenarioRecord("CER-PUMP-001").relations.represented_by_document_version = ["DOC-PUMP-006"]
+for (const [predicate, id] of [["makes_clinical_claim", "CLM-PUMP-002"], ["has_applicable_requirement", "CRI-PUMP-046"]]) ownByConfiguration(predicate, id, "DEVC-PUMP-001")
+
+// Electrical safety trace: DEVC-PUMP-003.
+for (const id of ["HAZ-PUMP-008", "RISK-PUMP-015", "RCM-PUMP-016", "EVD-PUMP-008", "CRI-PUMP-022", "CERT-PUMP-003"]) configure(id, "DEVC-PUMP-003", "electrical-safety")
+scenarioRecord("CRI-PUMP-022").relations.instantiates_requirement = ["GSPR-0001"]
+scenarioRecord("CRI-PUMP-022").relations.satisfied_by = ["EVD-PUMP-008"]
+scenarioRecord("RCM-PUMP-016").relations.mitigates = ["RISK-PUMP-015"]
+scenarioRecord("RCM-PUMP-016").relations.verified_by = ["EVD-PUMP-008"]
+scenarioRecord("EVD-PUMP-008").relations.supports_certificate = ["CERT-PUMP-003"]
+if (!scenarioRecord("TD-PUMP-001").relations.includes.includes("EVD-PUMP-008")) scenarioRecord("TD-PUMP-001").relations.includes.push("EVD-PUMP-008")
+for (const [predicate, id] of [["has_hazard", "HAZ-PUMP-008"], ["has_risk", "RISK-PUMP-015"], ["has_applicable_requirement", "CRI-PUMP-022"]]) ownByConfiguration(predicate, id, "DEVC-PUMP-003")
+
+// Battery feedback: DEVC-PUMP-001. Planned evidence is expressed as a required
+// evidence type; the future report is not treated as satisfying CRI-PUMP-051.
+for (const id of ["RISK-PUMP-013", "RCM-PUMP-013", "EVD-PUMP-007", "SIGNAL-PUMP-001", "CHG-PUMP-001", "CIA-PUMP-001", "CRI-PUMP-051", "EVD-PUMP-031", "SUP-PUMP-006", "COMP-PUMP-004"]) configure(id, "DEVC-PUMP-001", "battery-power")
+scenarioRecord("CRI-PUMP-051").relations.requires_evidence = ["EVTYPE-PUMP-001"]
+scenarioRecord("SUP-PUMP-006").relations.supplied_component = ["COMP-PUMP-004"]
+ownByConfiguration("has_risk", "RISK-PUMP-013", "DEVC-PUMP-001")
 
 const existingFiles = await walk(contentRoot)
 const basenameById = new Map()
@@ -721,7 +812,7 @@ const ontologyOverviewBody = [
   "",
   "It is also made of **relations**, which give meaning to connections between records. Relations express statements such as a manufacturer produces a device, a requirement applies to a configuration, evidence demonstrates compliance, or a risk control mitigates a risk. These typed connections turn separate Markdown pages into a traceable knowledge graph and preserve the source and scope of regulatory claims.",
   "",
-  "The current ontology has 179 class definitions, 81 relation definitions, 22 constraints and 9 executable rules. Its executable governance uses three assurance levels: hard constraints and rules may block a lifecycle decision, advisory constraints identify non-blocking data-quality findings, and review-trigger rules derive a need for qualified assessment rather than a final legal conclusion. This tiering permits broader machine assistance while keeping device-specific judgement and legally sensitive interpretation under accountable human review.",
+  "The current ontology has 179 class definitions, 85 relation definitions, 22 constraints and 9 executable rules. Its executable governance uses three assurance levels: hard constraints and rules may block a lifecycle decision, advisory constraints identify non-blocking data-quality findings, and review-trigger rules derive a need for qualified assessment rather than a final legal conclusion. This tiering permits broader machine assistance while keeping device-specific judgement and legally sensitive interpretation under accountable human review.",
   "",
   "The ontology is used by linking technical-file records to the concepts and relations that describe their regulatory meaning. People can follow those links to review a device’s intended purpose, classification, requirements, risks, evidence and open gaps, while software can validate identifiers and relationships, apply governed rules and constraints, distinguish blocking gaps from advisory findings, and assemble grounded context for the competency questions. The result supports navigation and reasoning without replacing accountable regulatory decision-making.",
 ].join("\n")
@@ -729,7 +820,7 @@ const ontologyOverviewBody = [
 const allIndexBody = [
   "# 06-Infpump FlowGuard ontology notes",
   "",
-  "This index groups all 314 ontology notes by their existing vault class. Shared organisations and other reusable domain instances remain canonical under 01 — Ontology instances, while regulatory sources remain canonical under 02 — Sources. This section adds device-specific Infpump FlowGuard notes and links to those canonical nodes rather than duplicating them.",
+  "This index groups all 315 ontology notes by their existing vault class. Shared organisations and other reusable domain instances remain canonical under 01 — Ontology instances, while regulatory sources remain canonical under 02 — Sources. This section adds device-specific Infpump FlowGuard notes and links to those canonical nodes rather than duplicating them.",
   "",
   "## Canonical-node policy",
   "",

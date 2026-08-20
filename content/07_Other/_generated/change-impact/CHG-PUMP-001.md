@@ -19,6 +19,7 @@
 ## Impacted nodes
 
 - RISK-PUMP-013 — Clinical injury following premature battery depletion (`risk`)
+- EVD-PUMP-007 — Battery endurance validation report (`verification-evidence`)
 
 ## Derived reassessments
 

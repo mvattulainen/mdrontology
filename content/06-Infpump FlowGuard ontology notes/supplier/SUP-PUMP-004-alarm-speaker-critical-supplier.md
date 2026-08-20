@@ -24,9 +24,11 @@
   "valid_from": "2026-08-15",
   "review_status": "approved",
   "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004]]",
-  "supplied_component": "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-008-network-communication-module|COMP-PUMP-008]]",
   "supplier_criticality": "critical",
-  "approval_state": "approved"
+  "approval_state": "approved",
+  "supplied_component": [
+    "[[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-008-network-communication-module|COMP-PUMP-008]]"
+  ]
 }
 ---
 
@@ -56,13 +58,13 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **valid_from:** `2026-08-15`
 - **review_status:** `approved`
 - **device_context:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004]]
-- **supplied_component:** [[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-008-network-communication-module|COMP-PUMP-008]]
 - **supplier_criticality:** `critical`
 - **approval_state:** `approved`
+- **supplied_component:** [[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-008-network-communication-module|COMP-PUMP-008]]
 
 ## Traceability
 
-Previous dependencies are ontology notes that lead into this record. They reach it through `outsourced_to` from [[06-Infpump FlowGuard ontology notes/qms-process/PROC-PUMP-004-infusion-pump-supplier-control-process|PROC-PUMP-004 — Infusion-pump supplier-control process]]. These incoming links show which product, decision, process or evidence records depend on the current note.
+No previous ontology-note dependency is currently asserted for this record. Its nearest governed context is [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-004-infpump-flowguard-oncology-configuration-11|DEVC-PUMP-004 — Infpump FlowGuard oncology configuration 1.1]], which identifies the device configuration in which the note is interpreted.
 
 Succeeding dependencies are ontology notes to which this record leads. The trace continues through `supplied_component` to [[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-008-network-communication-module|COMP-PUMP-008 — Network communication module]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
@@ -71,8 +73,8 @@ The left-to-right diagram shows up to five asserted previous and five asserted s
 ```mermaid
 flowchart LR
   CURRENT["SUP-PUMP-004<br/>Alarm speaker critical supplier"]
-  PREV0["PROC-PUMP-004<br/>Infusion-pump supplier-control process"]
-  PREV0 -->|"outsourced_to"| CURRENT
+  PREV_NONE["No asserted previous dependency"]
+  PREV_NONE -.-> CURRENT
   NEXT0["COMP-PUMP-008<br/>Network communication module"]
   CURRENT -->|"supplied_component"| NEXT0
   classDef current fill:#dbeafe,stroke:#2563eb,stroke-width:2px

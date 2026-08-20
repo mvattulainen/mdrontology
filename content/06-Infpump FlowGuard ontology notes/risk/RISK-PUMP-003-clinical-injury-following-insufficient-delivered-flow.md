@@ -66,7 +66,7 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 
 ## Traceability
 
-Previous dependencies are ontology notes that lead into this record. They reach it through `has_risk` from [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]]; `mitigates` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-003-dose-error-reduction-library|RCM-PUMP-003 — Dose-error reduction library]], [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-043-setup-workflow-checklist|RCM-PUMP-043 — Setup workflow checklist]]; `impacts` from [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-002-occlusion-algorithm-threshold-update|CHG-PUMP-002 — Occlusion algorithm threshold update]]. These incoming links show which product, decision, process or evidence records depend on the current note.
+Previous dependencies are ontology notes that lead into this record. They reach it through `has_risk` from [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]]; `mitigates` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-003-dose-error-reduction-library|RCM-PUMP-003 — Dose-error reduction library]], [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-043-setup-workflow-checklist|RCM-PUMP-043 — Setup workflow checklist]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
 Succeeding dependencies are ontology notes to which this record leads. The trace continues through `concerns` to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-003-infpump-flowguard-paediatric-configuration-10|DEVC-PUMP-003 — Infpump FlowGuard paediatric configuration 1.0]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
@@ -81,8 +81,6 @@ flowchart LR
   PREV1 -->|"mitigates"| CURRENT
   PREV2["RCM-PUMP-043<br/>Setup workflow checklist"]
   PREV2 -->|"mitigates"| CURRENT
-  PREV3["CHG-PUMP-002<br/>Occlusion algorithm threshold update"]
-  PREV3 -->|"impacts"| CURRENT
   NEXT0["DEVC-PUMP-003<br/>Infpump FlowGuard paediatric configuration 1.0"]
   CURRENT -->|"concerns"| NEXT0
   classDef current fill:#dbeafe,stroke:#2563eb,stroke-width:2px

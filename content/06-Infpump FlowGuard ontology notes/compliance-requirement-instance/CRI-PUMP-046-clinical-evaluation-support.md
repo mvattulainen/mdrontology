@@ -28,14 +28,15 @@
   "applicability_rationale": "Applicable to DEVC-PUMP-001 because the configured function or lifecycle control is within the requirement scope.",
   "compliance_method": "Verification and controlled-document review for CRI-PUMP-046",
   "compliance_status": "satisfied",
+  "topic": "clinical-evaluation",
   "instantiates_requirement": [
-    "[[01-Ontology instances/04-requirements/gspr/GSPR-0002-software-and-cybersecurity|GSPR-0002]]"
+    "[[01-Ontology instances/04-requirements/gspr/GSPR-0004-clinical-evaluation-and-evidence|GSPR-0004]]"
   ],
   "derived_from": [
     "[[02-Sources/legislation/PROV-MDR-ANNEX-I-mdr-annex-i-gsprs|PROV-MDR-ANNEX-I]]"
   ],
   "satisfied_by": [
-    "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-016-touch-interface-usability-verification|EVD-PUMP-016]]"
+    "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-029-clinical-claims-evidence-summary|EVD-PUMP-029]]"
   ]
 }
 ---
@@ -70,24 +71,25 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **applicability_rationale:** `Applicable to DEVC-PUMP-001 because the configured function or lifecycle control is within the requirement scope.`
 - **compliance_method:** `Verification and controlled-document review for CRI-PUMP-046`
 - **compliance_status:** `satisfied`
-- **instantiates_requirement:** [[01-Ontology instances/04-requirements/gspr/GSPR-0002-software-and-cybersecurity|GSPR-0002]]
+- **topic:** `clinical-evaluation`
+- **instantiates_requirement:** [[01-Ontology instances/04-requirements/gspr/GSPR-0004-clinical-evaluation-and-evidence|GSPR-0004]]
 - **derived_from:** [[02-Sources/legislation/PROV-MDR-ANNEX-I-mdr-annex-i-gsprs|PROV-MDR-ANNEX-I]]
-- **satisfied_by:** [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-016-touch-interface-usability-verification|EVD-PUMP-016]]
+- **satisfied_by:** [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-029-clinical-claims-evidence-summary|EVD-PUMP-029]]
 
 ## Traceability
 
-Previous dependencies are ontology notes that lead into this record. They reach it through `has_applicable_requirement` from [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-005-infpump-flowguard-critical-care-configuration-11|DEVC-PUMP-005 — Infpump FlowGuard critical-care configuration 1.1]]. These incoming links show which product, decision, process or evidence records depend on the current note.
+Previous dependencies are ontology notes that lead into this record. They reach it through `has_applicable_requirement` from [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
-Succeeding dependencies are ontology notes to which this record leads. The trace continues through `satisfied_by` to [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-016-touch-interface-usability-verification|EVD-PUMP-016 — Touch-interface usability verification]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
+Succeeding dependencies are ontology notes to which this record leads. The trace continues through `satisfied_by` to [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-029-clinical-claims-evidence-summary|EVD-PUMP-029 — Clinical claims evidence summary]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
 The left-to-right diagram shows up to five asserted previous and five asserted succeeding ontology-note dependencies. When more links exist, the additional-dependency node states how many remain available through the verbal links and structured metadata above.
 
 ```mermaid
 flowchart LR
   CURRENT["CRI-PUMP-046<br/>Clinical evaluation support"]
-  PREV0["DEVC-PUMP-005<br/>Infpump FlowGuard critical-care configuration 1.1"]
+  PREV0["DEVC-PUMP-001<br/>Infpump FlowGuard bedside configuration 1.0"]
   PREV0 -->|"has_applicable_requirement"| CURRENT
-  NEXT0["EVD-PUMP-016<br/>Touch-interface usability verification"]
+  NEXT0["EVD-PUMP-029<br/>Clinical claims evidence summary"]
   CURRENT -->|"satisfied_by"| NEXT0
   classDef current fill:#dbeafe,stroke:#2563eb,stroke-width:2px
   class CURRENT current
