@@ -25,6 +25,8 @@
   "review_status": "approved",
   "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
   "control_priority": "inherent-safety-or-protective-measure",
+  "implementation_state": "implemented",
+  "verification_state": "reassessment-required",
   "mitigates": [
     "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-013-clinical-injury-following-premature-battery-depletion|RISK-PUMP-013]]"
   ],
@@ -61,6 +63,8 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **review_status:** `approved`
 - **device_context:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]
 - **control_priority:** `inherent-safety-or-protective-measure`
+- **implementation_state:** `implemented`
+- **verification_state:** `reassessment-required`
 - **mitigates:** [[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-013-clinical-injury-following-premature-battery-depletion|RISK-PUMP-013]]
 - **verified_by:** [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-007-battery-endurance-validation-report|EVD-PUMP-007]]
 

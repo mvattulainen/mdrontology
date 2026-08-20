@@ -21,7 +21,7 @@
   "note_origin": "human-reviewed synthetic example",
   "technical_file": "TF-04 GSPR/GSPR Checklist.xlsx",
   "technical_file_identifier": "CRI-PUMP-051",
-  "valid_from": "2026-08-15",
+  "valid_from": null,
   "review_status": "approved",
   "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
   "applicable": true,
@@ -60,7 +60,7 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **note_origin:** `human-reviewed synthetic example`
 - **technical_file:** `TF-04 GSPR/GSPR Checklist.xlsx`
 - **technical_file_identifier:** `CRI-PUMP-051`
-- **valid_from:** `2026-08-15`
+- **valid_from:** `null`
 - **review_status:** `approved`
 - **device_context:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]
 - **applicable:** `true`

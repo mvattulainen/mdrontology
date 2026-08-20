@@ -18,62 +18,58 @@
 
 # Battery signal to change assessment
 
-Shows a post-market battery signal flowing through supplier and component context into a controlled change, its change-impact assessment, a newly drafted compliance-requirement instance and the evidence needed to reassess residual risk.
+Shows the controlled battery baseline that existed before a post-market signal and the resulting regulatory sequence from signal confirmation to planned post-change evidence.
 
-The arrows reproduce typed relationships in the linked ontology-note metadata. Select a diagram node, or use the links below, to open the underlying ontology note. All boxes use the same neutral border, and connections are routed as horizontal and vertical segments with square corners.
+The graph deliberately uses one top-to-bottom sequence. Each connection is therefore a straight vertical link and no links cross. The labels show class-specific lifecycle fields instead of treating `status` as one universal state machine. Select a box, or use the links below, to open the underlying ontology note.
 
 ```mermaid
-%%{init: {"flowchart": {"curve": "stepAfter"}}}%%
 flowchart TD
-  N1["DEVC-PUMP-001<br/>Bedside configuration<br/>status: approved"]
-  N2["SUP-PUMP-001<br/>Battery supplier<br/>status: approved"]
-  N3["COMP-PUMP-004<br/>Battery pack<br/>status: approved"]
-  N4["SIGNAL-PUMP-001<br/>Runtime reduction signal<br/>status: accepted"]
-  N5["CHG-PUMP-001<br/>Supplier replacement<br/>status: under-assessment"]
-  N6["RISK-PUMP-013<br/>Premature depletion risk<br/>status: accepted"]
-  N7["RCM-PUMP-013<br/>State-of-charge estimation<br/>status: implemented"]
-  N8["EVD-PUMP-007<br/>Battery endurance validation<br/>status: approved"]
-  N9["CRI-PUMP-051<br/>Post-change endurance requirement<br/>status: draft"]
-  N10["CIA-PUMP-001<br/>Battery change-impact assessment<br/>status: under-assessment"]
-  N2 -->|supplied_component| N3
-  N1 -->|includes_component| N3
-  N1 -->|has_applicable_requirement| N9
-  N4 -->|triggers| N5
-  N5 -->|has_impact_assessment| N10
-  N5 -->|impacts| N6
-  N5 -->|affected_evidence| N8
-  N10 -->|concerns| N1
-  N10 -->|supported_by| N8
-  N7 -->|mitigates| N6
-  N7 -->|verified_by| N8
-  N8 -->|applies_to_configuration| N1
-  click N1 "/06-infpump-flowguard-ontology-notes/device-configuration/devc-pump-001-infpump-flowguard-bedside-configuration-10" "Open DEVC-PUMP-001"
-  click N2 "/06-infpump-flowguard-ontology-notes/supplier/sup-pump-001-battery-pack-critical-supplier" "Open SUP-PUMP-001"
-  click N3 "/06-infpump-flowguard-ontology-notes/component/comp-pump-004-rechargeable-battery-pack" "Open COMP-PUMP-004"
-  click N4 "/06-infpump-flowguard-ontology-notes/signal/signal-pump-001-unexpected-battery-runtime-reduction" "Open SIGNAL-PUMP-001"
-  click N5 "/06-infpump-flowguard-ontology-notes/change/chg-pump-001-battery-cell-supplier-replacement" "Open CHG-PUMP-001"
-  click N6 "/06-infpump-flowguard-ontology-notes/risk/risk-pump-013-clinical-injury-following-premature-battery-depletion" "Open RISK-PUMP-013"
-  click N7 "/06-infpump-flowguard-ontology-notes/risk-control-measure/rcm-pump-013-battery-state-of-charge-estimation" "Open RCM-PUMP-013"
-  click N8 "/06-infpump-flowguard-ontology-notes/verification-evidence/evd-pump-007-battery-endurance-validation-report" "Open EVD-PUMP-007"
-  click N9 "/06-infpump-flowguard-ontology-notes/compliance-requirement-instance/cri-pump-051-battery-endurance-after-cell-supplier-change" "Open CRI-PUMP-051"
-  click N10 "/06-infpump-flowguard-ontology-notes/change-impact-assessment/cia-pump-001-battery-cell-supplier-change-impact-assessment" "Open CIA-PUMP-001"
+  N1["COMP-PUMP-004<br/>Battery pack<br/>component: safety-critical"]
+  N2["RCM-PUMP-013<br/>State-of-charge estimation<br/>implementation: implemented"]
+  N3["EVD-PUMP-007<br/>Battery endurance validation<br/>evidence: approved baseline"]
+  N4["RISK-PUMP-013<br/>Premature depletion risk<br/>acceptance: baseline accepted<br/>reassessment: required"]
+  N5["SIGNAL-PUMP-001<br/>Runtime reduction signal<br/>signal: accepted"]
+  N6["CHG-PUMP-001<br/>Supplier replacement<br/>change: under assessment"]
+  N7["CIA-PUMP-001<br/>Change-impact assessment<br/>assessment: under assessment"]
+  N8["CRI-PUMP-051<br/>Post-change endurance requirement<br/>requirement: draft<br/>compliance: planned"]
+  N9["SUP-PUMP-006<br/>Proposed replacement cell supplier<br/>qualification: in progress"]
+  N10["EVD-PUMP-031<br/>Post-change endurance verification<br/>evidence: planned"]
+  N1 -->|controlled by| N2
+  N2 -->|verified by| N3
+  N3 -->|supports baseline acceptance| N4
+  N4 -->|challenged by PMS signal| N5
+  N5 -->|triggers| N6
+  N6 -->|has impact assessment| N7
+  N7 -->|defines verification need| N8
+  N8 -->|sets qualification criteria| N9
+  N9 -->|enables post-change verification| N10
+  click N1 "/06-infpump-flowguard-ontology-notes/component/comp-pump-004-rechargeable-battery-pack" "Open COMP-PUMP-004"
+  click N2 "/06-infpump-flowguard-ontology-notes/risk-control-measure/rcm-pump-013-battery-state-of-charge-estimation" "Open RCM-PUMP-013"
+  click N3 "/06-infpump-flowguard-ontology-notes/verification-evidence/evd-pump-007-battery-endurance-validation-report" "Open EVD-PUMP-007"
+  click N4 "/06-infpump-flowguard-ontology-notes/risk/risk-pump-013-clinical-injury-following-premature-battery-depletion" "Open RISK-PUMP-013"
+  click N5 "/06-infpump-flowguard-ontology-notes/signal/signal-pump-001-unexpected-battery-runtime-reduction" "Open SIGNAL-PUMP-001"
+  click N6 "/06-infpump-flowguard-ontology-notes/change/chg-pump-001-battery-cell-supplier-replacement" "Open CHG-PUMP-001"
+  click N7 "/06-infpump-flowguard-ontology-notes/change-impact-assessment/cia-pump-001-battery-cell-supplier-change-impact-assessment" "Open CIA-PUMP-001"
+  click N8 "/06-infpump-flowguard-ontology-notes/compliance-requirement-instance/cri-pump-051-battery-endurance-after-cell-supplier-change" "Open CRI-PUMP-051"
+  click N9 "/06-infpump-flowguard-ontology-notes/supplier/sup-pump-006-proposed-replacement-battery-cell-supplier" "Open SUP-PUMP-006"
+  click N10 "/06-infpump-flowguard-ontology-notes/verification-evidence/evd-pump-031-post-change-battery-endurance-verification" "Open EVD-PUMP-031"
 ```
 
 ## Lifecycle reading
 
-The statuses form a realistic technical-file snapshot rather than one universal state machine. The configuration, critical supplier, battery component and existing endurance evidence are `approved`; the post-market signal has been `accepted` as a confirmed input; the related change and impact assessment remain `under-assessment`; the post-change endurance requirement is still `draft`; the existing state-of-charge control is `implemented`; and the currently documented residual risk is `accepted`. Before the change can close, the draft requirement must be approved, the assessment completed and the evidence reconfirmed so the risk acceptance remains valid for the changed configuration.
+This is a regulatory lifecycle sequence, not a universal status state machine. The first four notes describe the controlled baseline. The accepted PMS signal challenges that baseline and opens a change package. The impact assessment then drives a draft device-specific requirement, qualification of the proposed replacement supplier and planned post-change evidence. The change must not be released until the evidence is approved and the affected risk is reassessed and accepted for the changed configuration.
 
 ## Linked ontology notes
 
-- [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Bedside configuration]]
-- [[06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-001-battery-pack-critical-supplier|SUP-PUMP-001 — Battery supplier]]
 - [[06-Infpump FlowGuard ontology notes/component/COMP-PUMP-004-rechargeable-battery-pack|COMP-PUMP-004 — Battery pack]]
-- [[06-Infpump FlowGuard ontology notes/signal/SIGNAL-PUMP-001-unexpected-battery-runtime-reduction|SIGNAL-PUMP-001 — Runtime reduction signal]]
-- [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-001-battery-cell-supplier-replacement|CHG-PUMP-001 — Supplier replacement]]
-- [[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-013-clinical-injury-following-premature-battery-depletion|RISK-PUMP-013 — Premature depletion risk]]
 - [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-013-battery-state-of-charge-estimation|RCM-PUMP-013 — State-of-charge estimation]]
 - [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-007-battery-endurance-validation-report|EVD-PUMP-007 — Battery endurance validation]]
-- [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-051-battery-endurance-after-cell-supplier-change|CRI-PUMP-051 — Battery endurance after cell-supplier change]]
+- [[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-013-clinical-injury-following-premature-battery-depletion|RISK-PUMP-013 — Premature depletion risk]]
+- [[06-Infpump FlowGuard ontology notes/signal/SIGNAL-PUMP-001-unexpected-battery-runtime-reduction|SIGNAL-PUMP-001 — Runtime reduction signal]]
+- [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-001-battery-cell-supplier-replacement|CHG-PUMP-001 — Supplier replacement]]
 - [[06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-001-battery-cell-supplier-change-impact-assessment|CIA-PUMP-001 — Battery cell-supplier change impact assessment]]
+- [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-051-battery-endurance-after-cell-supplier-change|CRI-PUMP-051 — Battery endurance after cell-supplier change]]
+- [[06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-006-proposed-replacement-battery-cell-supplier|SUP-PUMP-006 — Proposed replacement battery-cell supplier]]
+- [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-031-post-change-battery-endurance-verification|EVD-PUMP-031 — Post-change battery endurance verification]]
 
 These connections are navigation and reasoning aids. The linked notes and their governed metadata remain the semantic source; the diagram does not create additional regulatory facts.

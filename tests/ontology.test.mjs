@@ -100,7 +100,7 @@ test("five high-impact use cases are assessed and executable as demonstrations",
 
 test("the infusion-pump core and architecture extensions are complete and use established classes", () => {
   const notes = api.notes.filter((note) => note.path.startsWith("06-Infpump FlowGuard ontology notes/") && note.data.id)
-  assert.equal(notes.length, 312)
+  assert.equal(notes.length, 314)
   assert.equal(new Set(notes.map((note) => note.data.type)).size, 29)
   for (const note of notes) {
     assert.ok(api.classes.has(note.data.type), `${note.data.id} uses an unknown ontology class`)
@@ -133,7 +133,7 @@ test("the infusion-pump core and architecture extensions are complete and use es
   assert.match(risk.data.technical_file, /Risk Analysis and Risk Matrix\.xlsx/)
 
   const batteryWorkflowStatuses = new Set([
-    "CRI-PUMP-051", "CIA-PUMP-001", "SIGNAL-PUMP-001", "RCM-PUMP-013", "EVD-PUMP-007", "RISK-PUMP-013",
+    "CRI-PUMP-051", "CIA-PUMP-001", "SIGNAL-PUMP-001", "RCM-PUMP-013", "EVD-PUMP-007", "RISK-PUMP-013", "SUP-PUMP-006", "EVD-PUMP-031",
   ].map((id) => api.byId.get(id)?.data.status))
   assert.deepEqual(batteryWorkflowStatuses, new Set(["draft", "under-assessment", "accepted", "implemented", "approved"]))
 })
@@ -164,11 +164,17 @@ test("ontology-note guidance and ten linked Mermaid narratives are complete", as
   }
 
   const batteryPage = await readFile(new URL("05-battery-signal-to-change-assessment.md", directory), "utf8")
-  assert.match(batteryPage, /%%\{init: \{"flowchart": \{"curve": "stepAfter"\}\}\}%%/)
   assert.doesNotMatch(batteryPage, /classDef (?:draft|approved|accepted|under_assessment|implemented)/)
   assert.doesNotMatch(batteryPage, /Status border legend/)
+  const batteryEdges = [...batteryPage.matchAll(/^\s*N\d+ -->\|[^|]+\| N\d+$/gm)]
+  assert.equal(batteryEdges.length, 9)
+  assert.deepEqual(batteryEdges.map((match) => match[0].match(/N(\d+) -->.* N(\d+)/).slice(1).map(Number)), [
+    [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10],
+  ])
   assert.match(batteryPage, /CRI-PUMP-051/)
   assert.match(batteryPage, /CIA-PUMP-001/)
+  assert.match(batteryPage, /SUP-PUMP-006/)
+  assert.match(batteryPage, /EVD-PUMP-031/)
 
   const notesIndex = await readFile(new URL("../content/06-Infpump%20FlowGuard%20ontology%20notes/index.md", import.meta.url), "utf8")
   assert.match(notesIndex, /META-ONTOLOGY-NOTE-ontology-note/)

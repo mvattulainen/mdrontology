@@ -11,7 +11,7 @@
 
 # Supplier ontology notes
 
-5 independently identifiable supplier notes for the imaginary Infpump FlowGuard infusion pump.
+6 independently identifiable supplier notes for the imaginary Infpump FlowGuard infusion pump.
 
 ## Notes
 
@@ -20,6 +20,7 @@
 - [[06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-003-touchscreen-critical-supplier|SUP-PUMP-003 — Touchscreen critical supplier]]
 - [[06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-004-alarm-speaker-critical-supplier|SUP-PUMP-004 — Alarm speaker critical supplier]]
 - [[06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-005-administration-set-critical-supplier|SUP-PUMP-005 — Administration-set critical supplier]]
+- [[06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-006-proposed-replacement-battery-cell-supplier|SUP-PUMP-006 — Proposed replacement battery-cell supplier]]
 
 ## Continue
 

@@ -26,6 +26,7 @@
   "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
   "approved_at": "2026-08-15",
   "evidence_scope": "Battery endurance validation report",
+  "evidence_state": "approved-baseline",
   "applies_to_configuration": [
     "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
   ]
@@ -60,6 +61,7 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **device_context:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]
 - **approved_at:** `2026-08-15`
 - **evidence_scope:** `Battery endurance validation report`
+- **evidence_state:** `approved-baseline`
 - **applies_to_configuration:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]
 
 ## Traceability

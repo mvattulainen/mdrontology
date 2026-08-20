@@ -219,10 +219,18 @@ for (const family of familyDefinitions) {
     records.push({ id, type: family.type, title, number, family, relations: {}, extra: {} })
   })
 }
-if (records.length !== 312) throw new Error(`Expected 312 ontology notes (300 core, 10 architecture extensions and 2 battery-workflow extensions), found ${records.length}`)
+records.push(
+  { id: "EVD-PUMP-031", type: "verification-evidence", title: "Post-change battery endurance verification", number: 31, family: familyByType.get("verification-evidence"), relations: {}, extra: {} },
+  { id: "SUP-PUMP-006", type: "supplier", title: "Proposed replacement battery-cell supplier", number: 6, family: familyByType.get("supplier"), relations: {}, extra: {} },
+)
+if (records.length !== 314) throw new Error(`Expected 314 ontology notes (300 core, 10 architecture extensions and 4 battery-workflow extensions), found ${records.length}`)
 
 const byType = new Map(familyDefinitions.map((family) => [family.type, records.filter((record) => record.type === family.type)]))
-const at = (type, index) => byType.get(type)[index % byType.get(type).length]
+const extensionIds = new Set(["EVD-PUMP-031", "SUP-PUMP-006"])
+const at = (type, index) => {
+  const candidates = byType.get(type).filter((record) => !extensionIds.has(record.id))
+  return candidates[index % candidates.length]
+}
 
 for (const record of records) {
   const index = record.number - 1
@@ -241,6 +249,9 @@ for (const record of records) {
     record.relations.has_risk = byType.get("risk").slice(index * 8, index * 8 + 8).map((item) => item.id)
     record.relations.includes_component = byType.get("component").slice(index * 2, index * 2 + 2).map((item) => item.id)
     if (index === 0) {
+      record.extra.lifecycle_state = "released"
+      record.extra.market_status = "marketed"
+      record.extra.market_release_candidate = false
       record.relations.has_applicable_requirement.push("CRI-PUMP-051")
       record.relations.includes_component.push("COMP-PUMP-004")
     }
@@ -296,6 +307,8 @@ for (const record of records) {
     if (record.id === "RISK-PUMP-013") {
       record.extra.device_context = "DEVC-PUMP-001"
       record.relations.concerns = ["DEVC-PUMP-001"]
+      record.extra.risk_acceptance_state = "baseline-accepted"
+      record.extra.reassessment_state = "required"
     }
   } else if (record.type === "risk-control-measure") {
     record.relations.mitigates = [at("risk", index).id]
@@ -304,6 +317,8 @@ for (const record of records) {
     if (record.id === "RCM-PUMP-013") {
       record.extra.device_context = "DEVC-PUMP-001"
       record.relations.verified_by = ["EVD-PUMP-007"]
+      record.extra.implementation_state = "implemented"
+      record.extra.verification_state = "reassessment-required"
     }
   } else if (record.type === "clinical-claim") {
     record.extra.claim_status = "supported"
@@ -315,6 +330,15 @@ for (const record of records) {
     if (record.id === "EVD-PUMP-007") {
       record.extra.device_context = "DEVC-PUMP-001"
       record.relations.applies_to_configuration = ["DEVC-PUMP-001"]
+      record.extra.evidence_state = "approved-baseline"
+    }
+    if (record.id === "EVD-PUMP-031") {
+      record.extra.device_context = "DEVC-PUMP-001"
+      record.relations.applies_to_configuration = ["DEVC-PUMP-001"]
+      delete record.extra.approved_at
+      record.extra.evidence_scope = "Post-change battery endurance verification for CHG-PUMP-001"
+      record.extra.evidence_state = "planned"
+      record.extra.execution_state = "not-started"
     }
   } else if (record.type === "change") {
     record.relations.concerns = [config.id]
@@ -352,6 +376,13 @@ for (const record of records) {
     record.extra.supplier_criticality = "critical"
     record.extra.approval_state = "approved"
     if (record.id === "SUP-PUMP-001") record.extra.supplied_component = "COMP-PUMP-004"
+    if (record.id === "SUP-PUMP-006") {
+      record.extra.device_context = "DEVC-PUMP-001"
+      record.extra.technical_file = "TF-11 Supplier Controls/Supplier Qualification Register.xlsx"
+      record.extra.supplied_component = "COMP-PUMP-004"
+      record.extra.approval_state = "qualification-in-progress"
+      record.extra.qualification_scope = "Replacement battery cells proposed under CHG-PUMP-001"
+    }
   } else if (record.type === "qms-process") {
     record.relations.owned_by = [index % 2 === 0 ? "ROLE-QUALITY" : "ROLE-REGULATORY-AFFAIRS"]
     if (index === 3) record.relations.outsourced_to = [at("supplier", index).id]
@@ -581,8 +612,10 @@ for (const record of records) {
       `18-ontology-notes/${record.type}/${basenameById.get(record.id)}`,
       `03-Ontology notes/${record.type}/${basenameById.get(record.id)}`,
     ],
-    status: record.id === "CRI-PUMP-051"
+    status: record.id === "CRI-PUMP-051" || record.id === "EVD-PUMP-031"
       ? "draft"
+      : record.id === "SUP-PUMP-006"
+        ? "under-assessment"
       : record.id === "SIGNAL-PUMP-001" || record.type === "risk"
         ? "accepted"
         : record.id === "RCM-PUMP-013"
@@ -596,11 +629,11 @@ for (const record of records) {
     tags: [`ontology-note/${record.type}`, "device/infpump-flowguard"],
     draft: false,
     note_origin: "human-reviewed synthetic example",
-    technical_file: record.family.file,
+    technical_file: record.extra.technical_file ?? record.family.file,
     technical_file_identifier: record.id,
-    valid_from: today,
+    valid_from: ["CRI-PUMP-051", "EVD-PUMP-031", "SUP-PUMP-006"].includes(record.id) ? null : today,
     review_status: "approved",
-    ...Object.fromEntries(Object.entries(record.extra).map(([key, value]) => {
+    ...Object.fromEntries(Object.entries(record.extra).filter(([key]) => key !== "technical_file").map(([key, value]) => {
       if (key === "device_context" || key === "supplied_component" || key === "claim_scope") return [key, link(value)]
       return [key, value]
     })),
@@ -696,7 +729,7 @@ const ontologyOverviewBody = [
 const allIndexBody = [
   "# 06-Infpump FlowGuard ontology notes",
   "",
-  "This index groups all 312 ontology notes by their existing vault class. Shared organisations and other reusable domain instances remain canonical under 01 — Ontology instances, while regulatory sources remain canonical under 02 — Sources. This section adds device-specific Infpump FlowGuard notes and links to those canonical nodes rather than duplicating them.",
+  "This index groups all 314 ontology notes by their existing vault class. Shared organisations and other reusable domain instances remain canonical under 01 — Ontology instances, while regulatory sources remain canonical under 02 — Sources. This section adds device-specific Infpump FlowGuard notes and links to those canonical nodes rather than duplicating them.",
   "",
   "## Canonical-node policy",
   "",
@@ -724,7 +757,7 @@ const allIndexBody = [
   ...familyDefinitions.flatMap((family) => [
     `## ${family.label}`,
     "",
-    `[Browse ${family.count} ${family.label.toLowerCase()} notes](/06-infpump-flowguard-ontology-notes/${family.type}/). Example: ${link(byType.get(family.type)[0].id)}.`,
+    `[Browse ${byType.get(family.type).length} ${family.label.toLowerCase()} notes](/06-infpump-flowguard-ontology-notes/${family.type}/). Example: ${link(byType.get(family.type)[0].id)}.`,
     "",
   ]),
 ].join("\n")
@@ -767,9 +800,7 @@ const questionTargets = {
 
 const questionFiles = (await walk(path.join(contentRoot, "05-Questions"))).sort()
 const atForQuestion = (type, index) => {
-  const candidates = type === "compliance-requirement-instance"
-    ? byType.get(type).filter((record) => record.id !== "CRI-PUMP-051")
-    : byType.get(type)
+  const candidates = byType.get(type).filter((record) => record.id !== "CRI-PUMP-051" && !extensionIds.has(record.id))
   return candidates[index % candidates.length]
 }
 const removedQuestionSections = [

@@ -60,7 +60,7 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 
 ## Traceability
 
-Previous dependencies are ontology notes that lead into this record. They reach it through `includes_component` from [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]], [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002 — Infpump FlowGuard transport configuration 1.0]]; `supplied_component` from [[06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-001-battery-pack-critical-supplier|SUP-PUMP-001 — Battery pack critical supplier]], [[06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-002-air-sensor-critical-supplier|SUP-PUMP-002 — Air sensor critical supplier]]. These incoming links show which product, decision, process or evidence records depend on the current note.
+Previous dependencies are ontology notes that lead into this record. They reach it through `includes_component` from [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]], [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-002-infpump-flowguard-transport-configuration-10|DEVC-PUMP-002 — Infpump FlowGuard transport configuration 1.0]]; `supplied_component` from [[06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-001-battery-pack-critical-supplier|SUP-PUMP-001 — Battery pack critical supplier]], [[06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-002-air-sensor-critical-supplier|SUP-PUMP-002 — Air sensor critical supplier]], [[06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-006-proposed-replacement-battery-cell-supplier|SUP-PUMP-006 — Proposed replacement battery-cell supplier]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
 No succeeding ontology-note dependency is currently asserted for this record. It remains scoped to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]], and any future downstream dependency should be added as a typed relationship rather than inferred from prose.
 
@@ -77,6 +77,8 @@ flowchart LR
   PREV2 -->|"supplied_component"| CURRENT
   PREV3["SUP-PUMP-002<br/>Air sensor critical supplier"]
   PREV3 -->|"supplied_component"| CURRENT
+  PREV4["SUP-PUMP-006<br/>Proposed replacement battery-cell supplier"]
+  PREV4 -->|"supplied_component"| CURRENT
   NEXT_NONE["No asserted succeeding dependency"]
   CURRENT -.-> NEXT_NONE
   classDef current fill:#dbeafe,stroke:#2563eb,stroke-width:2px

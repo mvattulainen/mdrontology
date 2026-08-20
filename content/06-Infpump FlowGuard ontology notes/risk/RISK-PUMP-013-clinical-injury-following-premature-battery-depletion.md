@@ -27,6 +27,8 @@
   "risk_matrix_identifier": "RISK-PUMP-013",
   "initial_risk": "high",
   "residual_risk": "low",
+  "risk_acceptance_state": "baseline-accepted",
+  "reassessment_state": "required",
   "concerns": [
     "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
   ]
@@ -62,6 +64,8 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **risk_matrix_identifier:** `RISK-PUMP-013`
 - **initial_risk:** `high`
 - **residual_risk:** `low`
+- **risk_acceptance_state:** `baseline-accepted`
+- **reassessment_state:** `required`
 - **concerns:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]
 
 ## Traceability

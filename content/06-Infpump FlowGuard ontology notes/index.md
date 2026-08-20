@@ -12,7 +12,7 @@
 
 # 06-Infpump FlowGuard ontology notes
 
-This index groups all 312 ontology notes by their existing vault class. Shared organisations and other reusable domain instances remain canonical under 01 — Ontology instances, while regulatory sources remain canonical under 02 — Sources. This section adds device-specific Infpump FlowGuard notes and links to those canonical nodes rather than duplicating them.
+This index groups all 314 ontology notes by their existing vault class. Shared organisations and other reusable domain instances remain canonical under 01 — Ontology instances, while regulatory sources remain canonical under 02 — Sources. This section adds device-specific Infpump FlowGuard notes and links to those canonical nodes rather than duplicating them.
 
 ## Canonical-node policy
 
@@ -79,7 +79,7 @@ The following diagrams connect real Infpump FlowGuard notes into regulatory reas
 
 ## Verification evidence
 
-[Browse 30 verification evidence notes](/06-infpump-flowguard-ontology-notes/verification-evidence/). Example: [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-001-flow-accuracy-verification-report|EVD-PUMP-001]].
+[Browse 31 verification evidence notes](/06-infpump-flowguard-ontology-notes/verification-evidence/). Example: [[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-001-flow-accuracy-verification-report|EVD-PUMP-001]].
 
 ## Change
 
@@ -103,7 +103,7 @@ The following diagrams connect real Infpump FlowGuard notes into regulatory reas
 
 ## Supplier
 
-[Browse 5 supplier notes](/06-infpump-flowguard-ontology-notes/supplier/). Example: [[06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-001-battery-pack-critical-supplier|SUP-PUMP-001]].
+[Browse 6 supplier notes](/06-infpump-flowguard-ontology-notes/supplier/). Example: [[06-Infpump FlowGuard ontology notes/supplier/SUP-PUMP-001-battery-pack-critical-supplier|SUP-PUMP-001]].
 
 ## QMS process
 
