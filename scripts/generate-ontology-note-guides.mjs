@@ -196,8 +196,8 @@ const diagrams = [
   {
     slug: "11-completed-battery-endurance-lifecycle",
     title: "Completed battery-endurance lifecycle",
-    layout: "block",
-    columns: 4,
+    layout: "block-snake",
+    columns: 7,
     purpose: "Shows one completed, configuration-specific regulatory sequence from planned post-market surveillance through signal handling, change assessment, risk reassessment, requirement implementation and verification to a supported clinical claim.",
     nodes: [
       note("DEVC-PUMP-001", "Released bedside configuration", "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10"),
@@ -222,18 +222,31 @@ function routeFor(target) {
 
 function mermaidFor(diagram) {
   const visualNodes = diagram.visualNodes ?? diagram.nodes
-  if (diagram.layout === "block") {
-    const lines = ["block-beta", `  columns ${diagram.columns ?? 4}`]
-    const rows = [visualNodes.slice(0, 4), visualNodes.slice(4, 7), visualNodes.slice(7, 10)]
-    rows.forEach((row) => {
-      row.forEach((item) => {
-        const nodeIndex = visualNodes.indexOf(item) + 1
-        const href = `../../${routeFor(item.target).slice(1)}`
-        lines.push(`  N${nodeIndex}["${item.id}<br/><a href='${href}'>${item.label}</a>"]`)
-      })
-      if (row.length < (diagram.columns ?? 4)) lines.push("  space")
-    })
-    diagram.edges.forEach(([from, to, label]) => lines.push(`  N${from + 1} -- "${label}" --> N${to + 1}`))
+  if (diagram.layout === "block-snake") {
+    if (visualNodes.length !== 10 || diagram.edges.length !== 9) throw new Error(`${diagram.slug} block-snake layout requires ten sequential nodes`)
+    const lines = ['%%{init: {"block": {"useMaxWidth": false}}}%%', "block-beta", `  columns ${diagram.columns ?? 7}`]
+    const node = (index) => {
+      const item = visualNodes[index]
+      const href = `../../${routeFor(item.target).slice(1)}`
+      return `N${index + 1}["${item.id}<br/><a href='${href}'>${item.label}</a>"]`
+    }
+    const edgeLabel = (index) => {
+      const label = diagram.edges[index][2].replace(/_(?=[^_]+$)/, "_<br/>")
+      return `L${index + 1}["${label}"]`
+    }
+    lines.push(`  ${node(0)} ${edgeLabel(0)} ${node(1)} ${edgeLabel(1)} ${node(2)} ${edgeLabel(2)} ${node(3)}`)
+    lines.push(`  P1[" "] space:2 ${edgeLabel(3)} space:2 P4[" "]`)
+    lines.push(`  ${node(4)} ${edgeLabel(4)} ${node(5)} ${edgeLabel(5)} ${node(6)} space:2`)
+    lines.push(`  Q1[" "] space ${edgeLabel(6)} space Q5[" "] space:2`)
+    lines.push(`  ${node(7)} ${edgeLabel(7)} ${node(8)} ${edgeLabel(8)} ${node(9)} space:2`)
+    lines.push("  N1 --- L1", "  L1 --> N2", "  N2 --- L2", "  L2 --> N3", "  N3 --- L3", "  L3 --> N4")
+    lines.push("  N4 --- P4", "  P4 --- L4", "  L4 --- P1", "  P1 --> N5")
+    lines.push("  N5 --- L5", "  L5 --> N6", "  N6 --- L6", "  L6 --> N7")
+    lines.push("  N7 --- Q5", "  Q5 --- L7", "  L7 --- Q1", "  Q1 --> N8")
+    lines.push("  N8 --- L8", "  L8 --> N9", "  N9 --- L9", "  L9 --> N10")
+    lines.push("  classDef edgeLabel fill:transparent,stroke:transparent", "  classDef route fill:transparent,stroke:transparent,color:transparent")
+    lines.push("  class L1,L2,L3,L4,L5,L6,L7,L8,L9 edgeLabel", "  class P1,P4,Q1,Q5 route")
+    diagram.edges.forEach(([from, to, label]) => lines.push(`  %% typed-edge N${from + 1}|${label}|N${to + 1}`))
     return lines.join("\n")
   }
   const flowchartConfig = diagram.fitWidth === false

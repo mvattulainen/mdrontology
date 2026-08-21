@@ -157,18 +157,21 @@ test("ontology-note guidance and eleven linked Mermaid narratives are complete",
   const hasEdge = (subject, predicate, object) => (api.outgoing.get(subject) ?? []).some((edge) => edge.predicate === predicate && edge.object === object)
   for (const page of pages) {
     const source = await readFile(new URL(page.name, directory), "utf8")
-    assert.match(source, /```mermaid\r?\n(?:%%\{init: \{"flowchart": \{"curve": "linear"(?:, "useMaxWidth": false)?\}\}\}%%\r?\nflowchart (?:TD|LR)|block-beta)/)
+    assert.match(source, /```mermaid\r?\n(?:%%\{init: \{"flowchart": \{"curve": "linear"(?:, "useMaxWidth": false)?\}\}\}%%\r?\nflowchart (?:TD|LR)|%%\{init: \{"block": \{"useMaxWidth": false\}\}\}%%\r?\nblock-beta)/)
     const linkedTargets = new Set([...source.matchAll(/^- \[\[([^|\]]+)\|/gm)].map((match) => match[1]))
     assert.ok(linkedTargets.size >= 4 && linkedTargets.size <= 10, `${page.name} must link 4–10 ontology notes`)
-    const nodes = new Map([...source.matchAll(/^\s*N(\d+)\["([^<"]+)/gm)].map((match) => [Number(match[1]), match[2]]))
+    const nodes = new Map([...source.matchAll(/\bN(\d+)\["([^<"]+)/g)].map((match) => [Number(match[1]), match[2]]))
     const clickableNodes = [...source.matchAll(/^\s*click N\d+ "\/[^"]+"/gm)]
-    const linkedBlockNodes = [...source.matchAll(/^\s*N\d+\["[^"]*<a href=/gm)]
+    const linkedBlockNodes = [...source.matchAll(/\bN\d+\["[^"]*<a href=/g)]
     assert.equal(clickableNodes.length + linkedBlockNodes.length, nodes.size, `${page.name} must make every Mermaid node clickable`)
-    const diagramEdges = [...source.matchAll(/^\s*N(\d+)(?: -->\|([a-z_]+)\|| -- "([a-z_]+)" -->) N(\d+)$/gm)]
+    const diagramEdges = [
+      ...[...source.matchAll(/^\s*N(\d+)(?: -->\|([a-z_]+)\|| -- "([a-z_]+)" -->) N(\d+)$/gm)]
+        .map((match) => [match[1], match[2] ?? match[3], match[4]]),
+      ...[...source.matchAll(/^\s*%% typed-edge N(\d+)\|([a-z_]+)\|N(\d+)$/gm)]
+        .map((match) => match.slice(1)),
+    ]
     assert.ok(diagramEdges.length >= 1, `${page.name} has no typed diagram edges`)
-    for (const match of diagramEdges) {
-      const [, from, flowchartPredicate, blockPredicate, to] = match
-      const predicate = flowchartPredicate ?? blockPredicate
+    for (const [from, predicate, to] of diagramEdges) {
       const subject = nodes.get(Number(from))
       const object = nodes.get(Number(to))
       assert.ok(api.relations.has(predicate), `${page.name} uses undefined predicate ${predicate}`)
@@ -189,18 +192,19 @@ test("ontology-note guidance and eleven linked Mermaid narratives are complete",
   assert.match(batteryPage, /EVTYPE-PUMP-001/)
 
   const lifecyclePage = await readFile(new URL("11-completed-battery-endurance-lifecycle.md", directory), "utf8")
-  const lifecycleIds = [...lifecyclePage.matchAll(/^\s*N\d+\["([^<"]+)/gm)].map((match) => match[1])
+  const lifecycleIds = [...lifecyclePage.matchAll(/\bN\d+\["([^<"]+)/g)].map((match) => match[1])
   assert.equal(lifecycleIds.length, 10)
   assert.equal(new Set(lifecycleIds).size, 10, "the lifecycle must use one note per type")
   assert.deepEqual(new Set(lifecycleIds.map((id) => api.byId.get(id).data.type)), new Set([
     "device-configuration", "pms-plan", "signal", "change", "change-impact-assessment", "risk",
     "compliance-requirement-instance", "risk-control-measure", "verification-evidence", "clinical-claim",
   ]))
-  const lifecycleEdges = [...lifecyclePage.matchAll(/^\s*N(\d+) -- "[a-z_]+" --> N(\d+)$/gm)]
+  const lifecycleEdges = [...lifecyclePage.matchAll(/^\s*%% typed-edge N(\d+)\|[a-z_]+\|N(\d+)$/gm)]
   assert.deepEqual(lifecycleEdges.map((match) => match.slice(1).map(Number)), [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]])
   for (const id of lifecycleIds) assert.match(JSON.stringify(api.byId.get(id).data.device_context), /DEVC-PUMP-001/, `${id} is not scoped to DEVC-PUMP-001`)
   assert.deepEqual(lifecycleIds.map((id) => api.byId.get(id).data.status), ["approved", "approved", "accepted", "implemented", "approved", "accepted", "approved", "implemented", "approved", "approved"])
-  assert.match(lifecyclePage, /block-beta\r?\n  columns 4/)
+  assert.match(lifecyclePage, /"useMaxWidth": false[\s\S]*block-beta\r?\n  columns 7/)
+  assert.match(lifecyclePage, /classDef route fill:transparent,stroke:transparent,color:transparent/)
 
   const notesIndex = await readFile(new URL("../content/06-Infpump%20FlowGuard%20ontology%20notes/index.md", import.meta.url), "utf8")
   assert.match(notesIndex, /META-ONTOLOGY-NOTE-ontology-note/)
