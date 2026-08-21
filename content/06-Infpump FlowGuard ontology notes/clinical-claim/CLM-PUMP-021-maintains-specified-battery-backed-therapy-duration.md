@@ -27,7 +27,8 @@
   "claim_status": "supported",
   "claim_scope": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
   "topic": "completed-battery-endurance-lifecycle",
-  "claim_state": "supported"
+  "claim_state": "supported-in-part-by-technical-verification",
+  "support_boundary": "Clinical substantiation remains governed by the clinical evaluation; EVD-PUMP-032 supplies only the battery-performance verification contribution."
 }
 ---
 
@@ -60,7 +61,8 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **claim_status:** `supported`
 - **claim_scope:** [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]
 - **topic:** `completed-battery-endurance-lifecycle`
-- **claim_state:** `supported`
+- **claim_state:** `supported-in-part-by-technical-verification`
+- **support_boundary:** `Clinical substantiation remains governed by the clinical evaluation; EVD-PUMP-032 supplies only the battery-performance verification contribution.`
 
 ## Traceability
 

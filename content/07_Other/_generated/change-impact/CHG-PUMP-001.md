@@ -14,7 +14,7 @@
 - Status: `under-assessment`
 - Affected configuration: DEVC-PUMP-001
 - Impact assessment: CIA-PUMP-001
-- Mandatory impact domains reviewed: 
+- Mandatory impact domains reviewed: not recorded
 
 ## Impacted nodes
 

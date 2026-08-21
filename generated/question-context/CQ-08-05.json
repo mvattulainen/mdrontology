@@ -8,7 +8,7 @@
     "subject": "DEVC-0001",
     "manufacturer": "ORG-MFR-0001"
   },
-  "relevant_date": "2026-08-20",
+  "relevant_date": "2026-08-21",
   "facts": {
     "subject": {
       "id": "DEVC-0001",
@@ -313,7 +313,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-D3A4DCF2DDDB",
@@ -330,7 +330,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-391EFE47B45B",
@@ -347,7 +347,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-50F803A08888",
@@ -364,7 +364,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-521A07139240",
@@ -381,7 +381,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-B9286AA58A6A",
@@ -398,7 +398,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-E0CAA1760AED",
@@ -415,7 +415,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-C756BAB67F16",
@@ -432,7 +432,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-6FB6F0CFFBF9",
@@ -449,7 +449,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-488EC26119EF",
@@ -466,7 +466,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-0B60BFC9A186",
@@ -483,7 +483,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-50243EBD93B8",
@@ -500,7 +500,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-0CFDFF574757",
@@ -517,7 +517,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-4D3CDFA2EB9B",
@@ -534,7 +534,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-F64E53268FD7",
@@ -551,7 +551,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-ABD809DCB74E",
@@ -568,7 +568,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-CDB3936FB0C1",
@@ -585,7 +585,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     }
   ],
   "rules_evaluated": [
@@ -604,7 +604,7 @@
       "subject": "CRI-0002",
       "severity": "major",
       "status": "open",
-      "detected_at": "2026-08-20",
+      "detected_at": "2026-08-21",
       "message": "Relation satisfied_by has 0; minimum is 1",
       "assurance_level": "hard",
       "normative_basis": "regulatory-source",
@@ -648,7 +648,7 @@
       "subject": "CRI-0002",
       "severity": "major",
       "status": "open",
-      "detected_at": "2026-08-20",
+      "detected_at": "2026-08-21",
       "message": "Relation satisfied_by has 0; minimum is 1",
       "assurance_level": "hard",
       "normative_basis": "regulatory-source",

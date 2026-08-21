@@ -14,7 +14,7 @@
 - Status: `implemented`
 - Affected configuration: DEVC-PUMP-001
 - Impact assessment: CIA-PUMP-002
-- Mandatory impact domains reviewed:
+- Mandatory impact domains reviewed: not recorded
 
 ## Impacted nodes
 

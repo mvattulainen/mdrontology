@@ -547,27 +547,31 @@ const completedLifecycleIds = [
 for (const id of completedLifecycleIds) configure(id, "DEVC-PUMP-001", "completed-battery-endurance-lifecycle")
 const bedsideConfiguration = scenarioRecord("DEVC-PUMP-001")
 if (!bedsideConfiguration.relations.covered_by_pms_plan.includes("PMS-PLAN-PUMP-002")) bedsideConfiguration.relations.covered_by_pms_plan.push("PMS-PLAN-PUMP-002")
-scenarioRecord("PMS-PLAN-PUMP-002").relations.identifies_signal = ["SIGNAL-PUMP-011"]
+scenarioRecord("PMS-PLAN-PUMP-002").relations.provides_detection_criteria_for = ["SIGNAL-PUMP-011"]
 scenarioRecord("PMS-PLAN-PUMP-002").extra.plan_state = "effective"
 scenarioRecord("SIGNAL-PUMP-011").relations.triggers = ["CHG-PUMP-013"]
-scenarioRecord("SIGNAL-PUMP-011").extra.signal_state = "accepted"
+scenarioRecord("SIGNAL-PUMP-011").extra.signal_state = "accepted-for-action"
 scenarioRecord("CHG-PUMP-013").relations.has_impact_assessment = ["CIA-PUMP-002"]
 scenarioRecord("CHG-PUMP-013").relations.impacts = ["RISK-PUMP-041", "EVD-PUMP-032"]
-scenarioRecord("CHG-PUMP-013").extra.change_state = "implemented"
+scenarioRecord("CHG-PUMP-013").relations.updates_baseline = ["BASE-PUMP-001"]
+scenarioRecord("CHG-PUMP-013").extra.change_state = "implemented-after-approved-impact-assessment-and-verification"
 scenarioRecord("CIA-PUMP-002").relations.requires_reassessment_of = ["RISK-PUMP-041"]
 scenarioRecord("CIA-PUMP-002").extra.assessment_state = "completed"
 scenarioRecord("RISK-PUMP-041").relations.informs_requirement = ["CRI-PUMP-052"]
-scenarioRecord("RISK-PUMP-041").extra.risk_acceptance_state = "accepted-after-reassessment"
+scenarioRecord("RISK-PUMP-041").relations.acceptance_supported_by = ["EVD-PUMP-032"]
+scenarioRecord("RISK-PUMP-041").extra.pre_control_decision = "additional-risk-control-required"
+scenarioRecord("RISK-PUMP-041").extra.risk_acceptance_state = "accepted-after-control-verification"
 scenarioRecord("CRI-PUMP-052").relations.instantiates_requirement = ["GSPR-0003"]
 scenarioRecord("CRI-PUMP-052").relations.implemented_by_control = ["RCM-PUMP-046"]
 scenarioRecord("CRI-PUMP-052").relations.satisfied_by = ["EVD-PUMP-032"]
-scenarioRecord("CRI-PUMP-052").extra.compliance_status = "satisfied"
+scenarioRecord("CRI-PUMP-052").extra.compliance_status = "satisfied-by-approved-evidence"
 scenarioRecord("RCM-PUMP-046").relations.mitigates = ["RISK-PUMP-041"]
 scenarioRecord("RCM-PUMP-046").relations.verified_by = ["EVD-PUMP-032"]
 scenarioRecord("RCM-PUMP-046").extra.implementation_state = "implemented"
 scenarioRecord("EVD-PUMP-032").relations.supports_claim = ["CLM-PUMP-021"]
 scenarioRecord("EVD-PUMP-032").extra.evidence_state = "approved"
-scenarioRecord("CLM-PUMP-021").extra.claim_state = "supported"
+scenarioRecord("CLM-PUMP-021").extra.claim_state = "supported-in-part-by-technical-verification"
+scenarioRecord("CLM-PUMP-021").extra.support_boundary = "Clinical substantiation remains governed by the clinical evaluation; EVD-PUMP-032 supplies only the battery-performance verification contribution."
 for (const [predicate, id] of [["has_risk", "RISK-PUMP-041"], ["has_applicable_requirement", "CRI-PUMP-052"], ["makes_clinical_claim", "CLM-PUMP-021"]]) ownByConfiguration(predicate, id, "DEVC-PUMP-001")
 
 const existingFiles = await walk(contentRoot)
@@ -862,7 +866,7 @@ const ontologyOverviewBody = [
   "",
   "It is also made of **relations**, which give meaning to connections between records. Relations express statements such as a manufacturer produces a device, a requirement applies to a configuration, evidence demonstrates compliance, or a risk control mitigates a risk. These typed connections turn separate Markdown pages into a traceable knowledge graph and preserve the source and scope of regulatory claims.",
   "",
-  "The current ontology has 179 class definitions, 88 relation definitions, 22 constraints and 9 executable rules. Its executable governance uses three assurance levels: hard constraints and rules may block a lifecycle decision, advisory constraints identify non-blocking data-quality findings, and review-trigger rules derive a need for qualified assessment rather than a final legal conclusion. This tiering permits broader machine assistance while keeping device-specific judgement and legally sensitive interpretation under accountable human review.",
+  "The current ontology has 179 class definitions, 91 relation definitions, 22 constraints and 9 executable rules. Its executable governance uses three assurance levels: hard constraints and rules may block a lifecycle decision, advisory constraints identify non-blocking data-quality findings, and review-trigger rules derive a need for qualified assessment rather than a final legal conclusion. This tiering permits broader machine assistance while keeping device-specific judgement and legally sensitive interpretation under accountable human review.",
   "",
   "The ontology is used by linking technical-file records to the concepts and relations that describe their regulatory meaning. People can follow those links to review a device’s intended purpose, classification, requirements, risks, evidence and open gaps, while software can validate identifiers and relationships, apply governed rules and constraints, distinguish blocking gaps from advisory findings, and assemble grounded context for the competency questions. The result supports navigation and reasoning without replacing accountable regulatory decision-making.",
 ].join("\n")

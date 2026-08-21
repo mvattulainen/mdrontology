@@ -27,7 +27,7 @@
   "applicable": true,
   "applicability_rationale": "Applicable to DEVC-PUMP-002 because the configured function or lifecycle control is within the requirement scope.",
   "compliance_method": "Verification and controlled-document review for CRI-PUMP-052",
-  "compliance_status": "satisfied",
+  "compliance_status": "satisfied-by-approved-evidence",
   "topic": "completed-battery-endurance-lifecycle",
   "instantiates_requirement": [
     "[[01-Ontology instances/04-requirements/gspr/GSPR-0003-therapy-delivery-protection|GSPR-0003]]"
@@ -73,7 +73,7 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 - **applicable:** `true`
 - **applicability_rationale:** `Applicable to DEVC-PUMP-002 because the configured function or lifecycle control is within the requirement scope.`
 - **compliance_method:** `Verification and controlled-document review for CRI-PUMP-052`
-- **compliance_status:** `satisfied`
+- **compliance_status:** `satisfied-by-approved-evidence`
 - **topic:** `completed-battery-endurance-lifecycle`
 - **instantiates_requirement:** [[01-Ontology instances/04-requirements/gspr/GSPR-0003-therapy-delivery-protection|GSPR-0003]]
 - **derived_from:** [[02-Sources/legislation/PROV-MDR-ANNEX-I-mdr-annex-i-gsprs|PROV-MDR-ANNEX-I]]

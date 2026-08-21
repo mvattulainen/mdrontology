@@ -38,11 +38,11 @@
 
 # supports_claim
 
-Relates clinical or verification evidence to a clinical claim supported by that evidence.
+Relates clinical or verification evidence to a clinical claim to which that evidence contributes. The relation is non-exclusive: verification evidence may support the technical-performance aspect of a claim without being sufficient clinical substantiation for the whole claim.
 
 ## Purpose
 
-Defines the ontology predicate `supports_claim`. It constrains which subject and object classes may be connected and gives graph edges a stable, machine-checkable meaning.
+Defines the ontology predicate `supports_claim`, while preventing a single evidence link from being interpreted automatically as complete claim substantiation. Claim adequacy remains a governed conclusion of the relevant clinical evaluation.
 
 ## Relation contract
 

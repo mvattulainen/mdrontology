@@ -72,7 +72,7 @@ Human-readable rendering of this note's YAML/JSON frontmatter:
 
 ## Traceability
 
-Previous dependencies are ontology notes that lead into this record. They reach it through `impacts` from [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-013-battery-energy-reserve-threshold-update|CHG-PUMP-013 — Battery energy-reserve threshold update]]; `satisfied_by` from [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-052-minimum-post-change-battery-endurance|CRI-PUMP-052 — Minimum post-change battery endurance]]; `verified_by` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-046-conservative-low-battery-shutdown-reserve|RCM-PUMP-046 — Conservative low-battery shutdown reserve]]. These incoming links show which product, decision, process or evidence records depend on the current note.
+Previous dependencies are ontology notes that lead into this record. They reach it through `impacts` from [[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-013-battery-energy-reserve-threshold-update|CHG-PUMP-013 — Battery energy-reserve threshold update]]; `acceptance_supported_by` from [[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-041-therapy-interruption-after-battery-endurance-degradation|RISK-PUMP-041 — Therapy interruption after battery-endurance degradation]]; `satisfied_by` from [[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-052-minimum-post-change-battery-endurance|CRI-PUMP-052 — Minimum post-change battery endurance]]; `verified_by` from [[06-Infpump FlowGuard ontology notes/risk-control-measure/RCM-PUMP-046-conservative-low-battery-shutdown-reserve|RCM-PUMP-046 — Conservative low-battery shutdown reserve]]. These incoming links show which product, decision, process or evidence records depend on the current note.
 
 Succeeding dependencies are ontology notes to which this record leads. The trace continues through `applies_to_configuration` to [[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001 — Infpump FlowGuard bedside configuration 1.0]]; `supports_claim` to [[06-Infpump FlowGuard ontology notes/clinical-claim/CLM-PUMP-021-maintains-specified-battery-backed-therapy-duration|CLM-PUMP-021 — Maintains specified battery-backed therapy duration]]. These outgoing links identify the next product, risk, control, evidence, change or lifecycle records used by downstream reasoning.
 
@@ -83,10 +83,12 @@ flowchart LR
   CURRENT["EVD-PUMP-032<br/>Post-change battery-endurance verification report"]
   PREV0["CHG-PUMP-013<br/>Battery energy-reserve threshold update"]
   PREV0 -->|"impacts"| CURRENT
-  PREV1["CRI-PUMP-052<br/>Minimum post-change battery endurance"]
-  PREV1 -->|"satisfied_by"| CURRENT
-  PREV2["RCM-PUMP-046<br/>Conservative low-battery shutdown reserve"]
-  PREV2 -->|"verified_by"| CURRENT
+  PREV1["RISK-PUMP-041<br/>Therapy interruption after battery-endurance degradation"]
+  PREV1 -->|"acceptance_supported_by"| CURRENT
+  PREV2["CRI-PUMP-052<br/>Minimum post-change battery endurance"]
+  PREV2 -->|"satisfied_by"| CURRENT
+  PREV3["RCM-PUMP-046<br/>Conservative low-battery shutdown reserve"]
+  PREV3 -->|"verified_by"| CURRENT
   NEXT0["DEVC-PUMP-001<br/>Infpump FlowGuard bedside configuration 1.0"]
   CURRENT -->|"applies_to_configuration"| NEXT0
   NEXT1["CLM-PUMP-021<br/>Maintains specified battery-backed therapy duration"]

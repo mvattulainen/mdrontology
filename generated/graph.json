@@ -1,8 +1,8 @@
 {
   "metadata": {
     "specification": "SPEC-MDR-MFR-ONTOLOGY-001",
-    "generated_at": "2026-08-20T13:14:34.034Z",
-    "relevant_date": "2026-08-20",
+    "generated_at": "2026-08-21T06:28:34.216Z",
+    "relevant_date": "2026-08-21",
     "canonical_source": "content/**/*.md"
   },
   "nodes": [
@@ -6302,6 +6302,45 @@
       }
     },
     {
+      "id": "REL-ACCEPTANCE-SUPPORTED-BY",
+      "type": "relation-definition",
+      "title": "acceptance_supported_by",
+      "path": "00-Ontology/relations/REL-ACCEPTANCE-SUPPORTED-BY-acceptance-supported-by.md",
+      "data": {
+        "id": "REL-ACCEPTANCE-SUPPORTED-BY",
+        "type": "relation-definition",
+        "title": "acceptance_supported_by",
+        "aliases": [
+          "REL-ACCEPTANCE-SUPPORTED-BY"
+        ],
+        "status": "active",
+        "version": "1",
+        "created": "2026-08-21",
+        "modified": "2026-08-21",
+        "tags": [
+          "ontology/relation-definition"
+        ],
+        "draft": false,
+        "predicate": "acceptance_supported_by",
+        "label": "acceptance supported by",
+        "domain": [
+          "risk"
+        ],
+        "range": [
+          "verification-evidence"
+        ],
+        "inverse": null,
+        "transitive": false,
+        "symmetric": false,
+        "functional": false,
+        "provenance_required": true,
+        "temporal_qualification_required": true,
+        "example_ontology_notes": [
+          "[[06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-041-therapy-interruption-after-battery-endurance-degradation|RISK-PUMP-041]]"
+        ]
+      }
+    },
+    {
       "id": "REL-ANSWER-PATTERN",
       "type": "relation-definition",
       "title": "answer_pattern",
@@ -8076,7 +8115,7 @@
         "provenance_required": false,
         "temporal_qualification_required": false,
         "example_ontology_notes": [
-          "[[06-Infpump FlowGuard ontology notes/pms-plan/PMS-PLAN-PUMP-002-bedside-battery-endurance-post-market-surveillance-plan|PMS-PLAN-PUMP-002]]"
+          "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
         ]
       }
     },
@@ -8939,6 +8978,45 @@
       }
     },
     {
+      "id": "REL-PROVIDES-DETECTION-CRITERIA-FOR",
+      "type": "relation-definition",
+      "title": "provides_detection_criteria_for",
+      "path": "00-Ontology/relations/REL-PROVIDES-DETECTION-CRITERIA-FOR-provides-detection-criteria-for.md",
+      "data": {
+        "id": "REL-PROVIDES-DETECTION-CRITERIA-FOR",
+        "type": "relation-definition",
+        "title": "provides_detection_criteria_for",
+        "aliases": [
+          "REL-PROVIDES-DETECTION-CRITERIA-FOR"
+        ],
+        "status": "active",
+        "version": "1",
+        "created": "2026-08-21",
+        "modified": "2026-08-21",
+        "tags": [
+          "ontology/relation-definition"
+        ],
+        "draft": false,
+        "predicate": "provides_detection_criteria_for",
+        "label": "provides detection criteria for",
+        "domain": [
+          "pms-plan"
+        ],
+        "range": [
+          "signal"
+        ],
+        "inverse": null,
+        "transitive": false,
+        "symmetric": false,
+        "functional": false,
+        "provenance_required": true,
+        "temporal_qualification_required": true,
+        "example_ontology_notes": [
+          "[[06-Infpump FlowGuard ontology notes/pms-plan/PMS-PLAN-PUMP-002-bedside-battery-endurance-post-market-surveillance-plan|PMS-PLAN-PUMP-002]]"
+        ]
+      }
+    },
+    {
       "id": "REL-QUALIFIES-SUPPLIER",
       "type": "relation-definition",
       "title": "qualifies_supplier",
@@ -9727,6 +9805,45 @@
         "temporal_qualification_required": false,
         "example_ontology_notes": [
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
+        ]
+      }
+    },
+    {
+      "id": "REL-UPDATES-BASELINE",
+      "type": "relation-definition",
+      "title": "updates_baseline",
+      "path": "00-Ontology/relations/REL-UPDATES-BASELINE-updates-baseline.md",
+      "data": {
+        "id": "REL-UPDATES-BASELINE",
+        "type": "relation-definition",
+        "title": "updates_baseline",
+        "aliases": [
+          "REL-UPDATES-BASELINE"
+        ],
+        "status": "active",
+        "version": "1",
+        "created": "2026-08-21",
+        "modified": "2026-08-21",
+        "tags": [
+          "ontology/relation-definition"
+        ],
+        "draft": false,
+        "predicate": "updates_baseline",
+        "label": "updates baseline",
+        "domain": [
+          "change"
+        ],
+        "range": [
+          "configuration-baseline"
+        ],
+        "inverse": null,
+        "transitive": false,
+        "symmetric": false,
+        "functional": false,
+        "provenance_required": true,
+        "temporal_qualification_required": true,
+        "example_ontology_notes": [
+          "[[06-Infpump FlowGuard ontology notes/change/CHG-PUMP-013-battery-energy-reserve-threshold-update|CHG-PUMP-013]]"
         ]
       }
     },
@@ -18200,7 +18317,7 @@
         "review_status": "approved",
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
         "impact_level": "high",
-        "change_state": "implemented",
+        "change_state": "implemented-after-approved-impact-assessment-and-verification",
         "topic": "completed-battery-endurance-lifecycle",
         "concerns": [
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
@@ -18211,6 +18328,9 @@
         ],
         "has_impact_assessment": [
           "[[06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-002-battery-endurance-signal-change-impact-assessment|CIA-PUMP-002]]"
+        ],
+        "updates_baseline": [
+          "[[06-Infpump FlowGuard ontology notes/configuration-baseline/BASE-PUMP-001-infpump-flowguard-released-design-baseline-11|BASE-PUMP-001]]"
         ]
       }
     },
@@ -19279,7 +19399,8 @@
         "claim_status": "supported",
         "claim_scope": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
         "topic": "completed-battery-endurance-lifecycle",
-        "claim_state": "supported"
+        "claim_state": "supported-in-part-by-technical-verification",
+        "support_boundary": "Clinical substantiation remains governed by the clinical evaluation; EVD-PUMP-032 supplies only the battery-performance verification contribution."
       }
     },
     {
@@ -21773,7 +21894,7 @@
         "applicable": true,
         "applicability_rationale": "Applicable to DEVC-PUMP-002 because the configured function or lifecycle control is within the requirement scope.",
         "compliance_method": "Verification and controlled-document review for CRI-PUMP-052",
-        "compliance_status": "satisfied",
+        "compliance_status": "satisfied-by-approved-evidence",
         "topic": "completed-battery-endurance-lifecycle",
         "instantiates_requirement": [
           "[[01-Ontology instances/04-requirements/gspr/GSPR-0003-therapy-delivery-protection|GSPR-0003]]"
@@ -25134,7 +25255,7 @@
           "[[02-Sources/legislation/PROV-MDR-ARTICLE-83-mdr-article-83-pms-system|PROV-MDR-ARTICLE-83]]",
           "[[02-Sources/guidance/SRC-MDCG-2025-10-mdcg-2025-10-post-market-surveillance|SRC-MDCG-2025-10]]"
         ],
-        "identifies_signal": [
+        "provides_detection_criteria_for": [
           "[[06-Infpump FlowGuard ontology notes/signal/SIGNAL-PUMP-011-confirmed-battery-endurance-degradation-trend|SIGNAL-PUMP-011]]"
         ]
       }
@@ -26884,12 +27005,16 @@
         "initial_risk": "medium",
         "residual_risk": "medium",
         "topic": "completed-battery-endurance-lifecycle",
-        "risk_acceptance_state": "accepted-after-reassessment",
+        "pre_control_decision": "additional-risk-control-required",
+        "risk_acceptance_state": "accepted-after-control-verification",
         "concerns": [
           "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]"
         ],
         "informs_requirement": [
           "[[06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-052-minimum-post-change-battery-endurance|CRI-PUMP-052]]"
+        ],
+        "acceptance_supported_by": [
+          "[[06-Infpump FlowGuard ontology notes/verification-evidence/EVD-PUMP-032-post-change-battery-endurance-verification-report|EVD-PUMP-032]]"
         ]
       }
     },
@@ -29132,7 +29257,7 @@
         "valid_from": "2026-08-15",
         "review_status": "approved",
         "device_context": "[[06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10|DEVC-PUMP-001]]",
-        "signal_state": "accepted",
+        "signal_state": "accepted-for-action",
         "detected_at": "2026-08-15",
         "topic": "completed-battery-endurance-lifecycle",
         "concerns": [
@@ -33887,6 +34012,12 @@
       "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-013-battery-energy-reserve-threshold-update.md"
     },
     {
+      "subject": "CHG-PUMP-013",
+      "predicate": "updates_baseline",
+      "object": "BASE-PUMP-001",
+      "source_note": "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-013-battery-energy-reserve-threshold-update.md"
+    },
+    {
       "subject": "CIA-PUMP-001",
       "predicate": "concerns",
       "object": "DEVC-PUMP-001",
@@ -37158,7 +37289,7 @@
     },
     {
       "subject": "PMS-PLAN-PUMP-002",
-      "predicate": "identifies_signal",
+      "predicate": "provides_detection_criteria_for",
       "object": "SIGNAL-PUMP-011",
       "source_note": "06-Infpump FlowGuard ontology notes/pms-plan/PMS-PLAN-PUMP-002-bedside-battery-endurance-post-market-surveillance-plan.md"
     },
@@ -37448,6 +37579,12 @@
       "subject": "RISK-PUMP-041",
       "predicate": "informs_requirement",
       "object": "CRI-PUMP-052",
+      "source_note": "06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-041-therapy-interruption-after-battery-endurance-degradation.md"
+    },
+    {
+      "subject": "RISK-PUMP-041",
+      "predicate": "acceptance_supported_by",
+      "object": "EVD-PUMP-032",
       "source_note": "06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-041-therapy-interruption-after-battery-endurance-degradation.md"
     },
     {
@@ -38566,7 +38703,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-81122EB75BD8",
@@ -38583,7 +38720,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-6E7C43BC9CB8",
@@ -38600,7 +38737,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-4B5787A74E5D",
@@ -38617,7 +38754,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-EFB0092F071F",
@@ -38634,7 +38771,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-27C94DDCA8CB",
@@ -38651,7 +38788,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-0163AA7E4D7C",
@@ -38668,7 +38805,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-CC652520B58B",
@@ -38685,7 +38822,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-E6F2F03DB7F9",
@@ -38702,7 +38839,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-D3A4DCF2DDDB",
@@ -38719,7 +38856,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-391EFE47B45B",
@@ -38736,7 +38873,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-ADBBA24AE5BA",
@@ -38753,7 +38890,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-FE338DA101F0",
@@ -38770,7 +38907,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-01852D8AE610",
@@ -38787,7 +38924,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-0ECECDC12D62",
@@ -38804,7 +38941,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-16E530CEAC71",
@@ -38821,7 +38958,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-8E24B35B150B",
@@ -38838,7 +38975,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-50F803A08888",
@@ -38855,7 +38992,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-521A07139240",
@@ -38872,7 +39009,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-B9286AA58A6A",
@@ -38889,7 +39026,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-E0CAA1760AED",
@@ -38906,7 +39043,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-C756BAB67F16",
@@ -38923,7 +39060,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-6FB6F0CFFBF9",
@@ -38940,7 +39077,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-488EC26119EF",
@@ -38957,7 +39094,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-0B60BFC9A186",
@@ -38974,7 +39111,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-50243EBD93B8",
@@ -38991,7 +39128,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-0CFDFF574757",
@@ -39008,7 +39145,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-4D3CDFA2EB9B",
@@ -39025,7 +39162,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-F64E53268FD7",
@@ -39042,7 +39179,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-ABD809DCB74E",
@@ -39059,7 +39196,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "high",
       "human_review_required": false,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-CDB3936FB0C1",
@@ -39076,7 +39213,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-B2E4BFD1F9A7",
@@ -39093,7 +39230,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-AEA01D6C1D24",
@@ -39110,7 +39247,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-BF1C26C1EF40",
@@ -39127,7 +39264,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-88E7360BC220",
@@ -39144,7 +39281,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-49FDB8BB9A78",
@@ -39161,7 +39298,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-43E6716AC75B",
@@ -39178,7 +39315,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-5D674DD96EBE",
@@ -39195,7 +39332,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-D2C4CDEB08C3",
@@ -39212,7 +39349,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-C3BE0CEF5FC9",
@@ -39229,7 +39366,7 @@
       "normative_basis": "regulatory-source",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-C3231261C944",
@@ -39246,7 +39383,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-F1230E0746CC",
@@ -39263,7 +39400,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-921FFF930EA5",
@@ -39280,7 +39417,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-1C1FD46083E0",
@@ -39297,7 +39434,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-E887FEE54745",
@@ -39314,7 +39451,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-4119B8F0D4E4",
@@ -39331,7 +39468,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-6EEE082D2FD9",
@@ -39348,7 +39485,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-BC2203EF516D",
@@ -39365,7 +39502,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-0B9E0AC256C2",
@@ -39382,7 +39519,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     },
     {
       "id": "DA-5F8027375BE6",
@@ -39399,7 +39536,7 @@
       "normative_basis": "ontology-governance",
       "confidence": "medium",
       "human_review_required": true,
-      "evaluated_at": "2026-08-20"
+      "evaluated_at": "2026-08-21"
     }
   ],
   "validation_results": [
@@ -39410,7 +39547,7 @@
       "subject": "CRI-0002",
       "severity": "major",
       "status": "open",
-      "detected_at": "2026-08-20",
+      "detected_at": "2026-08-21",
       "message": "Relation satisfied_by has 0; minimum is 1",
       "assurance_level": "hard",
       "normative_basis": "regulatory-source",
@@ -39425,7 +39562,7 @@
       "subject": "CRI-PUMP-051",
       "severity": "major",
       "status": "open",
-      "detected_at": "2026-08-20",
+      "detected_at": "2026-08-21",
       "message": "Relation satisfied_by has 0; minimum is 1",
       "assurance_level": "hard",
       "normative_basis": "regulatory-source",
@@ -39442,7 +39579,7 @@
       "subject": "CRI-0002",
       "severity": "major",
       "status": "open",
-      "detected_at": "2026-08-20",
+      "detected_at": "2026-08-21",
       "message": "Relation satisfied_by has 0; minimum is 1",
       "assurance_level": "hard",
       "normative_basis": "regulatory-source",
@@ -39457,7 +39594,7 @@
       "subject": "CRI-PUMP-051",
       "severity": "major",
       "status": "open",
-      "detected_at": "2026-08-20",
+      "detected_at": "2026-08-21",
       "message": "Relation satisfied_by has 0; minimum is 1",
       "assurance_level": "hard",
       "normative_basis": "regulatory-source",
@@ -39471,70 +39608,70 @@
     {
       "source": "SRC-MDCG-2021-24-R1",
       "retrieved_at": "2026-08-14",
-      "age_days": 6,
+      "age_days": 7,
       "review_interval_days": 180,
       "status": "current"
     },
     {
       "source": "SRC-MDCG-2025-10",
       "retrieved_at": "2026-08-14",
-      "age_days": 6,
+      "age_days": 7,
       "review_interval_days": 180,
       "status": "current"
     },
     {
       "source": "SRC-MDCG-INDEX",
       "retrieved_at": "2026-08-14",
-      "age_days": 6,
+      "age_days": 7,
       "review_interval_days": 180,
       "status": "current"
     },
     {
       "source": "SRC-TEAM-NB-TD-V4",
       "retrieved_at": "2026-08-14",
-      "age_days": 6,
+      "age_days": 7,
       "review_interval_days": 180,
       "status": "current"
     },
     {
       "source": "SRC-MDR-2017-745",
       "retrieved_at": "2026-08-14",
-      "age_days": 6,
+      "age_days": 7,
       "review_interval_days": 180,
       "status": "current"
     },
     {
       "source": "SRC-EMDN",
       "retrieved_at": "2026-08-14",
-      "age_days": 6,
+      "age_days": 7,
       "review_interval_days": 180,
       "status": "current"
     },
     {
       "source": "SRC-EUDAMED",
       "retrieved_at": "2026-08-14",
-      "age_days": 6,
+      "age_days": 7,
       "review_interval_days": 180,
       "status": "current"
     },
     {
       "source": "SRC-HARMONISED-STANDARDS",
       "retrieved_at": "2026-08-14",
-      "age_days": 6,
+      "age_days": 7,
       "review_interval_days": 180,
       "status": "current"
     },
     {
       "source": "SRC-QUARTZ-5",
       "retrieved_at": "2026-08-14",
-      "age_days": 6,
+      "age_days": 7,
       "review_interval_days": 180,
       "status": "current"
     },
     {
       "source": "SRC-UDI",
       "retrieved_at": "2026-08-14",
-      "age_days": 6,
+      "age_days": 7,
       "review_interval_days": 180,
       "status": "current"
     }
