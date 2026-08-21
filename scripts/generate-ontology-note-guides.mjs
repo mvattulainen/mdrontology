@@ -196,14 +196,14 @@ const diagrams = [
   {
     slug: "11-completed-battery-endurance-lifecycle",
     title: "Completed battery-endurance lifecycle",
-    direction: "LR",
-    fitWidth: false,
+    layout: "block",
+    columns: 4,
     purpose: "Shows one completed, configuration-specific regulatory sequence from planned post-market surveillance through signal handling, change assessment, risk reassessment, requirement implementation and verification to a supported clinical claim.",
     nodes: [
       note("DEVC-PUMP-001", "Released bedside configuration", "06-Infpump FlowGuard ontology notes/device-configuration/DEVC-PUMP-001-infpump-flowguard-bedside-configuration-10"),
       note("PMS-PLAN-PUMP-002", "Battery-endurance PMS plan", "06-Infpump FlowGuard ontology notes/pms-plan/PMS-PLAN-PUMP-002-bedside-battery-endurance-post-market-surveillance-plan"),
       note("SIGNAL-PUMP-011", "Accepted degradation signal", "06-Infpump FlowGuard ontology notes/signal/SIGNAL-PUMP-011-confirmed-battery-endurance-degradation-trend"),
-      note("CHG-PUMP-013", "Controlled change record<br/>current state: implemented", "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-013-battery-energy-reserve-threshold-update"),
+      note("CHG-PUMP-013", "Implemented change record", "06-Infpump FlowGuard ontology notes/change/CHG-PUMP-013-battery-energy-reserve-threshold-update"),
       note("CIA-PUMP-002", "Completed impact assessment", "06-Infpump FlowGuard ontology notes/change-impact-assessment/CIA-PUMP-002-battery-endurance-signal-change-impact-assessment"),
       note("RISK-PUMP-041", "Reassessed and accepted risk", "06-Infpump FlowGuard ontology notes/risk/RISK-PUMP-041-therapy-interruption-after-battery-endurance-degradation"),
       note("CRI-PUMP-052", "Satisfied endurance requirement", "06-Infpump FlowGuard ontology notes/compliance-requirement-instance/CRI-PUMP-052-minimum-post-change-battery-endurance"),
@@ -221,11 +221,25 @@ function routeFor(target) {
 }
 
 function mermaidFor(diagram) {
+  const visualNodes = diagram.visualNodes ?? diagram.nodes
+  if (diagram.layout === "block") {
+    const lines = ["block-beta", `  columns ${diagram.columns ?? 4}`]
+    const rows = [visualNodes.slice(0, 4), visualNodes.slice(4, 7), visualNodes.slice(7, 10)]
+    rows.forEach((row) => {
+      row.forEach((item) => {
+        const nodeIndex = visualNodes.indexOf(item) + 1
+        const href = `../../${routeFor(item.target).slice(1)}`
+        lines.push(`  N${nodeIndex}["${item.id}<br/><a href='${href}'>${item.label}</a>"]`)
+      })
+      if (row.length < (diagram.columns ?? 4)) lines.push("  space")
+    })
+    diagram.edges.forEach(([from, to, label]) => lines.push(`  N${from + 1} -- "${label}" --> N${to + 1}`))
+    return lines.join("\n")
+  }
   const flowchartConfig = diagram.fitWidth === false
     ? '{"curve": "linear", "useMaxWidth": false}'
     : '{"curve": "linear"}'
   const lines = [`%%{init: {"flowchart": ${flowchartConfig}}}%%`, `flowchart ${diagram.direction ?? "TD"}`]
-  const visualNodes = diagram.visualNodes ?? diagram.nodes
   visualNodes.forEach((item, index) => lines.push(`  N${index + 1}["${item.id}<br/>${item.label}"]`))
   diagram.edges.forEach(([from, to, label]) => lines.push(`  N${from + 1} -->|${label}| N${to + 1}`))
   visualNodes.forEach((item, index) => lines.push(`  click N${index + 1} "${routeFor(item.target)}" "Open ${item.id}"`))
